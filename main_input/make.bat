@@ -1,0 +1,1 @@
+g++ -Wall -g node_input.cc main_input.cc -o satisfactory_code_input

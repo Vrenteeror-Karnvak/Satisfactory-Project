@@ -1,3 +1,6 @@
+#ifndef NODE_CC
+#define NODE_CC
+
 #include "node.h"
 
 using namespace std;
@@ -119,3 +122,5 @@ void Node::set_values_rate(int rate, string resource, int x_coord, int y_coord) 
     y = y_coord;
     tier = 0;
 }
+
+#endif
