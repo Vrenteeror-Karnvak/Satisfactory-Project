@@ -1,5 +1,5 @@
-#ifndef NODE_INPUT_CC
-#define NODE_INPUT_CC
+#ifndef NODE_CC
+#define NODE_CC
 
 #include "node_input.h"
 
