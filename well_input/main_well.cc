@@ -161,6 +161,7 @@ int main() {
                     nodes.push_back(center);
                     fout << center.to_string() << '\n';
                     cout << "Full well added to file." << endl;
+                    //goto resource section
                     quality_flag = false;
                     coordinate_flag = false;
                 }

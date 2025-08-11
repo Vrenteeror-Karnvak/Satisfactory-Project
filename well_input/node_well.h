@@ -8,12 +8,13 @@
 
 class Node {
     public:
-        //HERE
         Node();
         Node(std::istream& fin);
 
+        //@param list of all nodes in network
+        //for every child node id, adds reference
         static void find_children(std::vector<Node> list);
-        //END
+
         int get_rate() const;
         std::string get_resource() const;
         std::pair<int,int> get_position() const;
@@ -38,9 +39,24 @@ class Node {
         void set_values_quality(std::string node_quality, std::string resource, int x_coord, int y_coord);
         void set_values_rate(int rate, std::string resource, int x_coord, int y_coord);
         //HERE
+        //adds child id
         void add_child(int nid);
+        //add_child(n, false);
         void add_child(Node n);
+        //adds child reference
+        //b ? check for unique : no check
         void add_child(Node n, bool b);
+
+        /*
+        @param list of nodes, id for created node
+        @return node with these properties:
+            ipm: summation of list ipms
+            type: type of list[0]
+            position: average of list
+            tier: highest tier in list + 1
+            id: id param
+            children: nodes in list
+        */
         Node create_center_node(std::vector<Node> nodes, int id);
         //END
         bool operator==(const Node& other);

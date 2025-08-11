@@ -188,13 +188,14 @@ void Node::add_child(Node n, bool b) {
 Node Node::create_center_node(vector<Node> nodes, int id) {
     Node created;
     created.set_id(id);
-    int a_x = 0;
-    int a_y = 0;
-    int total_ipm = 0;
-    int highest_tier = 0;
+    int a_x = 0,
+        a_y = 0,
+        total_ipm = 0,
+        highest_tier = 0;
     
     for (int i = 0; i < nodes.size(); i++) {
-        Node n = nodes.at(i);
+        Node n = nodes[i];
+
         //sum position
         a_x += n.get_x();
         a_y += n.get_y();
@@ -212,7 +213,7 @@ Node Node::create_center_node(vector<Node> nodes, int id) {
     a_x /= nodes.size();
     a_y /= nodes.size();
     created.set_rate(total_ipm);
-    created.set_resource(nodes.at(0).get_resource());
+    created.set_resource(nodes[0].get_resource());
     created.set_position(a_x, a_y);
     created.set_tier(highest_tier + 1);
     return created;
