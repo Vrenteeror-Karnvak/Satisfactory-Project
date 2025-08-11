@@ -44,15 +44,7 @@ class Node {
         //END
         bool operator==(const Node& other);
     private:
-        std::string fix_string(std::string s) {
-            if (s.size()>0) {
-                s[0] = std::toupper(s[0]);
-                for (int i = 1; i<s.size(); i++) {
-                    s[i] = tolower(s[i]);
-                }
-            }
-            return s;
-        }
+        std::string fix_string(std::string s);
         int ipm; // the rate that the node produces its resource in items per minute
         std::string type; // the type of resource the node produces
         int x; // the x-coordinate of the node

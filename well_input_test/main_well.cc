@@ -67,7 +67,7 @@ int main() {
     Node node;
 
     resource_flag = true;
-    while (resource_flag) {        
+    while (resource_flag) {
         cout << "Enter the name of the resource (q to quit): ";
         cin >> input;
         if (input == "q") {

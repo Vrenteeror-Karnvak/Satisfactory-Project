@@ -16,7 +16,7 @@ class Node {
         int get_rate() const;
         std::string get_resource();
         std::pair<int,int> get_position() const;
-        int get_tier() const {return tier;}
+        int get_tier() const;
         std::string data_string() const;
 
         //setters
