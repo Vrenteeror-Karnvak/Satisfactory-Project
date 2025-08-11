@@ -210,8 +210,11 @@ Node Node::create_center_node(vector<Node> nodes, int id) {
         created.add_child(n.get_id());
         created.add_child(n);
     }
-    a_x /= nodes.size();
-    a_y /= nodes.size();
+
+    int count = nodes.size();
+    a_x /= count;
+    a_y /= count;
+
     created.set_rate(total_ipm);
     created.set_resource(nodes[0].get_resource());
     created.set_position(a_x, a_y);

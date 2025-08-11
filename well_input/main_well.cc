@@ -157,6 +157,7 @@ int main() {
 
                 if (input == "y") {
                     Node center = node.create_center_node(well_nodes, ID_num);
+                    well_nodes.clear();
                     ID_num += 1;
                     nodes.push_back(center);
                     fout << center.to_string() << '\n';

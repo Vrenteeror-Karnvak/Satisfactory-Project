@@ -157,6 +157,7 @@ int main() {
 
                 if (input == "y") {
                     Node center = node.create_center_node(well_nodes, ID_num);
+                    well_nodes.clear();
                     ID_num += 1;
                     nodes.push_back(center);
                     fout << center.to_string() << '\n';
@@ -188,4 +189,13 @@ int main() {
 2100 Nitrogen -144342 124610 0
 1950 Nitrogen -249449 -188216 0
 1800 Nitrogen 225242 -309813 0
+*/
+
+/*
+150 Oil -40200 -4304 0 401 0
+150 Oil -43759 -8409 0 402 0
+150 Oil -41776 -9868 0 403 0
+300 Oil -38957 -10363 0 404 0
+300 Oil -36959 -7834 0 405 0
+300 Oil -43239 -6519 0 406 0
 */

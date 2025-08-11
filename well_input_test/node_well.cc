@@ -215,10 +215,11 @@ Node Node::create_center_node(vector<Node> nodes, int id) {
         created.add_child(n);
     }
 
-    a_x /= nodes.size();
 
+    int count = nodes.size();
     cout << a_y << endl;
-    a_y /= nodes.size();
+    a_x /= count;
+    a_y /= count;
     cout << a_y << endl;
 
     created.set_rate(total_ipm);
