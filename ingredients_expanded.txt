@@ -1,0 +1,30 @@
+(
+    (
+        ItemClass =
+        "/Script/Engine.BlueprintGeneratedClass
+        '/Game/FactoryGame/Resource/Parts/IronRod/Desc_IronRod.Desc_IronRod_C'
+        ",
+        Amount=10
+    ),
+    (
+        ItemClass = 
+        "/Script/Engine.BlueprintGeneratedClass
+        '/Game/FactoryGame/Resource/Parts/IronPlateReinforced/Desc_IronPlateReinforced.Desc_IronPlateReinforced_C'
+        ",
+        Amount=2
+    ),
+    (
+        ItemClass = 
+        "/Script/Engine.BlueprintGeneratedClass
+        '/Game/FactoryGame/Resource/Parts/Cable/Desc_Cable.Desc_Cable_C'
+        ",
+        Amount=15
+    ),
+    (
+        ItemClass = 
+        "/Script/Engine.BlueprintGeneratedClass
+        '/Game/FactoryGame/Resource/Parts/Wire/Desc_Wire.Desc_Wire_C'
+        ",
+        Amount=50
+    )
+)
