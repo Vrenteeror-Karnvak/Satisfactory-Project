@@ -1,0 +1,474 @@
+[
+    {
+        "ClassName": "Desc_AluminumIngot_C",
+        "DisplayName": "Aluminum Ingot"
+    },
+    {
+        "ClassName": "Desc_HazmatFilter_C",
+        "DisplayName": "Iodine-Infused Filter"
+    },
+    {
+        "ClassName": "Desc_IronPlate_C",
+        "DisplayName": "Iron Plate"
+    },
+    {
+        "ClassName": "Desc_IronRod_C",
+        "DisplayName": "Iron Rod"
+    },
+    {
+        "ClassName": "Desc_IronIngot_C",
+        "DisplayName": "Iron Ingot"
+    },
+    {
+        "ClassName": "Desc_Cable_C",
+        "DisplayName": "Cable"
+    },
+    {
+        "ClassName": "Desc_IronPlateReinforced_C",
+        "DisplayName": "Reinforced Iron Plate"
+    },
+    {
+        "ClassName": "Desc_Wire_C",
+        "DisplayName": "Wire"
+    },
+    {
+        "ClassName": "Desc_Cement_C",
+        "DisplayName": "Concrete"
+    },
+    {
+        "ClassName": "Desc_Rotor_C",
+        "DisplayName": "Rotor"
+    },
+    {
+        "ClassName": "Desc_CompactedCoal_C",
+        "DisplayName": "Compacted Coal"
+    },
+    {
+        "ClassName": "Desc_LiquidFuel_C",
+        "DisplayName": "Fuel"
+    },
+    {
+        "ClassName": "Desc_RocketFuel_C",
+        "DisplayName": "Rocket Fuel"
+    },
+    {
+        "ClassName": "Desc_CopperSheet_C",
+        "DisplayName": "Copper Sheet"
+    },
+    {
+        "ClassName": "Desc_ModularFrame_C",
+        "DisplayName": "Modular Frame"
+    },
+    {
+        "ClassName": "Desc_IronScrew_C",
+        "DisplayName": "Screws"
+    },
+    {
+        "ClassName": "Desc_NitricAcid_C",
+        "DisplayName": "Nitric Acid"
+    },
+    {
+        "ClassName": "Desc_LiquidTurboFuel_C",
+        "DisplayName": "Turbofuel"
+    },
+    {
+        "ClassName": "Desc_GasTank_C",
+        "DisplayName": "Empty Fluid Tank"
+    },
+    {
+        "ClassName": "Desc_PackagedRocketFuel_C",
+        "DisplayName": "Packaged Rocket Fuel"
+    },
+    {
+        "ClassName": "Desc_CrystalOscillator_C",
+        "DisplayName": "Crystal Oscillator"
+    },
+    {
+        "ClassName": "Desc_Motor_C",
+        "DisplayName": "Motor"
+    },
+    {
+        "ClassName": "Desc_TurboFuel_C",
+        "DisplayName": "Packaged Turbofuel"
+    },
+    {
+        "ClassName": "Desc_DarkMatter_C",
+        "DisplayName": "Dark Matter Crystal"
+    },
+    {
+        "ClassName": "Desc_IonizedFuel_C",
+        "DisplayName": "Ionized Fuel"
+    },
+    {
+        "ClassName": "Desc_ComputerSuper_C",
+        "DisplayName": "Supercomputer"
+    },
+    {
+        "ClassName": "Desc_CoolingSystem_C",
+        "DisplayName": "Cooling System"
+    },
+    {
+        "ClassName": "Desc_FicsiteMesh_C",
+        "DisplayName": "Ficsite Trigon"
+    },
+    {
+        "ClassName": "Desc_MotorLightweight_C",
+        "DisplayName": "Turbo Motor"
+    },
+    {
+        "ClassName": "Desc_TimeCrystal_C",
+        "DisplayName": "Time Crystal"
+    },
+    {
+        "ClassName": "Desc_DarkEnergy_C",
+        "DisplayName": "Dark Matter Residue"
+    },
+    {
+        "ClassName": "Desc_SAMIngot_C",
+        "DisplayName": "Reanimated SAM"
+    },
+    {
+        "ClassName": "Desc_QuantumEnergy_C",
+        "DisplayName": "Excited Photonic Matter"
+    },
+    {
+        "ClassName": "Desc_Diamond_C",
+        "DisplayName": "Diamonds"
+    },
+    {
+        "ClassName": "Desc_AluminumPlate_C",
+        "DisplayName": "Alclad Aluminum Sheet"
+    },
+    {
+        "ClassName": "Desc_QuantumOscillator_C",
+        "DisplayName": "Superposition Oscillator"
+    },
+    {
+        "ClassName": "Desc_TemporalProcessor_C",
+        "DisplayName": "Neural-Quantum Processor"
+    },
+    {
+        "ClassName": "Desc_SpaceElevatorPart_12_C",
+        "DisplayName": "AI Expansion Server"
+    },
+    {
+        "ClassName": "Desc_SpaceElevatorPart_6_C",
+        "DisplayName": "Magnetic Field Generator"
+    },
+    {
+        "ClassName": "Desc_PackagedIonizedFuel_C",
+        "DisplayName": "Packaged Ionized Fuel"
+    },
+    {
+        "ClassName": "Desc_SAMFluctuator_C",
+        "DisplayName": "SAM Fluctuator"
+    },
+    {
+        "ClassName": "Desc_SteelPipe_C",
+        "DisplayName": "Steel Pipe"
+    },
+    {
+        "ClassName": "Desc_ModularFrameFused_C",
+        "DisplayName": "Fused Modular Frame"
+    },
+    {
+        "ClassName": "Desc_ModularFrameLightweight_C",
+        "DisplayName": "Radio Control Unit"
+    },
+    {
+        "ClassName": "Desc_FicsiteIngot_C",
+        "DisplayName": "Ficsite Ingot"
+    },
+    {
+        "ClassName": "Desc_SpaceElevatorPart_10_C",
+        "DisplayName": "Biochemical Sculptor"
+    },
+    {
+        "ClassName": "Desc_SpaceElevatorPart_7_C",
+        "DisplayName": "Assembly Director System"
+    },
+    {
+        "ClassName": "Desc_GoldIngot_C",
+        "DisplayName": "Caterium Ingot"
+    },
+    {
+        "ClassName": "Desc_FluidCanister_C",
+        "DisplayName": "Empty Canister"
+    },
+    {
+        "ClassName": "Desc_Fuel_C",
+        "DisplayName": "Packaged Fuel"
+    },
+    {
+        "ClassName": "Desc_CircuitBoard_C",
+        "DisplayName": "Circuit Board"
+    },
+    {
+        "ClassName": "Desc_Plastic_C",
+        "DisplayName": "Plastic"
+    },
+    {
+        "ClassName": "Desc_SteelPlateReinforced_C",
+        "DisplayName": "Encased Industrial Beam"
+    },
+    {
+        "ClassName": "Desc_Rubber_C",
+        "DisplayName": "Rubber"
+    },
+    {
+        "ClassName": "Desc_SteelPlate_C",
+        "DisplayName": "Steel Beam"
+    },
+    {
+        "ClassName": "Desc_PolymerResin_C",
+        "DisplayName": "Polymer Resin"
+    },
+    {
+        "ClassName": "Desc_HeavyOilResidue_C",
+        "DisplayName": "Heavy Oil Residue"
+    },
+    {
+        "ClassName": "Desc_PetroleumCoke_C",
+        "DisplayName": "Petroleum Coke"
+    },
+    {
+        "ClassName": "Desc_QuartzCrystal_C",
+        "DisplayName": "Quartz Crystal"
+    },
+    {
+        "ClassName": "Desc_SteelIngot_C",
+        "DisplayName": "Steel Ingot"
+    },
+    {
+        "ClassName": "Desc_SpaceElevatorPart_2_C",
+        "DisplayName": "Versatile Framework"
+    },
+    {
+        "ClassName": "Desc_PackagedOil_C",
+        "DisplayName": "Packaged Oil"
+    },
+    {
+        "ClassName": "Desc_PackagedOilResidue_C",
+        "DisplayName": "Packaged Heavy Oil Residue"
+    },
+    {
+        "ClassName": "Desc_PackagedWater_C",
+        "DisplayName": "Packaged Water"
+    },
+    {
+        "ClassName": "Desc_CopperIngot_C",
+        "DisplayName": "Copper Ingot"
+    },
+    {
+        "ClassName": "Desc_AluminumScrap_C",
+        "DisplayName": "Aluminum Scrap"
+    },
+    {
+        "ClassName": "Desc_AluminumCasing_C",
+        "DisplayName": "Aluminum Casing"
+    },
+    {
+        "ClassName": "Desc_AluminaSolution_C",
+        "DisplayName": "Alumina Solution"
+    },
+    {
+        "ClassName": "Desc_Silica_C",
+        "DisplayName": "Silica"
+    },
+    {
+        "ClassName": "Desc_Computer_C",
+        "DisplayName": "Computer"
+    },
+    {
+        "ClassName": "Desc_ModularFrameHeavy_C",
+        "DisplayName": "Heavy Modular Frame"
+    },
+    {
+        "ClassName": "Desc_SpaceElevatorPart_1_C",
+        "DisplayName": "Smart Plating"
+    },
+    {
+        "ClassName": "Desc_HighSpeedConnector_C",
+        "DisplayName": "High-Speed Connector"
+    },
+    {
+        "ClassName": "Desc_SpaceElevatorPart_3_C",
+        "DisplayName": "Automated Wiring"
+    },
+    {
+        "ClassName": "Desc_Stator_C",
+        "DisplayName": "Stator"
+    },
+    {
+        "ClassName": "Desc_CircuitBoardHighSpeed_C",
+        "DisplayName": "AI Limiter"
+    },
+    {
+        "ClassName": "Desc_HighSpeedWire_C",
+        "DisplayName": "Quickwire"
+    },
+    {
+        "ClassName": "Desc_SpaceElevatorPart_4_C",
+        "DisplayName": "Modular Engine"
+    },
+    {
+        "ClassName": "Desc_SpaceElevatorPart_5_C",
+        "DisplayName": "Adaptive Control Unit"
+    },
+    {
+        "ClassName": "Desc_PressureConversionCube_C",
+        "DisplayName": "Pressure Conversion Cube"
+    },
+    {
+        "ClassName": "Desc_PlutoniumCell_C",
+        "DisplayName": "Encased Plutonium Cell"
+    },
+    {
+        "ClassName": "Desc_PlutoniumPellet_C",
+        "DisplayName": "Plutonium Pellet"
+    },
+    {
+        "ClassName": "Desc_NonFissibleUranium_C",
+        "DisplayName": "Non-Fissile Uranium"
+    },
+    {
+        "ClassName": "Desc_NuclearWaste_C",
+        "DisplayName": "Uranium Waste"
+    },
+    {
+        "ClassName": "Desc_SulfuricAcid_C",
+        "DisplayName": "Sulfuric Acid"
+    },
+    {
+        "ClassName": "Desc_CopperDust_C",
+        "DisplayName": "Copper Powder"
+    },
+    {
+        "ClassName": "Desc_AluminumPlateReinforced_C",
+        "DisplayName": "Heat Sink"
+    },
+    {
+        "ClassName": "Desc_ElectromagneticControlRod_C",
+        "DisplayName": "Electromagnetic Control Rod"
+    },
+    {
+        "ClassName": "Desc_PlutoniumWaste_C",
+        "DisplayName": "Plutonium Waste"
+    },
+    {
+        "ClassName": "Desc_SpaceElevatorPart_9_C",
+        "DisplayName": "Nuclear Pasta"
+    },
+    {
+        "ClassName": "Desc_UraniumCell_C",
+        "DisplayName": "Encased Uranium Cell"
+    },
+    {
+        "ClassName": "Desc_Battery_C",
+        "DisplayName": "Battery"
+    },
+    {
+        "ClassName": "Desc_DissolvedSilica_C",
+        "DisplayName": "Dissolved Silica"
+    },
+    {
+        "ClassName": "Desc_SpaceElevatorPart_8_C",
+        "DisplayName": "Thermal Propulsion Rocket"
+    },
+    {
+        "ClassName": "Desc_Gunpowder_C",
+        "DisplayName": "Black Powder"
+    },
+    {
+        "ClassName": "Desc_Ficsonium_C",
+        "DisplayName": "Ficsonium"
+    },
+    {
+        "ClassName": "Desc_SingularityCell_C",
+        "DisplayName": "Singularity Cell"
+    },
+    {
+        "ClassName": "Desc_SpaceElevatorPart_11_C",
+        "DisplayName": "Ballistic Warp Drive"
+    },
+    {
+        "ClassName": "Desc_Filter_C",
+        "DisplayName": "Gas Filter"
+    },
+    {
+        "ClassName": "Desc_AlienProtein_C",
+        "DisplayName": "Alien Protein"
+    },
+    {
+        "ClassName": "Desc_Crystal_C",
+        "DisplayName": "Blue Power Slug"
+    },
+    {
+        "ClassName": "Desc_AlienDNACapsule_C",
+        "DisplayName": "Alien DNA Capsule"
+    },
+    {
+        "ClassName": "Desc_WAT2_C",
+        "DisplayName": "Mercer Sphere"
+    },
+    {
+        "ClassName": "Desc_Crystal_mk3_C",
+        "DisplayName": "Purple Power Slug"
+    },
+    {
+        "ClassName": "Desc_Crystal_mk2_C",
+        "DisplayName": "Yellow Power Slug"
+    },
+    {
+        "ClassName": "Desc_GunpowderMK2_C",
+        "DisplayName": "Smokeless Powder"
+    },
+    {
+        "ClassName": "Desc_XmasStar_C",
+        "DisplayName": "FICSMAS Wonder Star"
+    },
+    {
+        "ClassName": "Desc_XmasBallCluster_C",
+        "DisplayName": "FICSMAS Ornament Bundle"
+    },
+    {
+        "ClassName": "Desc_XmasBranch_C",
+        "DisplayName": "FICSMAS Tree Branch"
+    },
+    {
+        "ClassName": "Desc_XmasWreath_C",
+        "DisplayName": "FICSMAS Wreath"
+    },
+    {
+        "ClassName": "Desc_CandyCane_C",
+        "DisplayName": "Candy Cane"
+    },
+    {
+        "ClassName": "Desc_Snow_C",
+        "DisplayName": "FICSMAS Actual Snow"
+    },
+    {
+        "ClassName": "Desc_XmasBow_C",
+        "DisplayName": "FICSMAS Bow"
+    },
+    {
+        "ClassName": "Desc_Gift_C",
+        "DisplayName": "FICSMAS Gift"
+    },
+    {
+        "ClassName": "Desc_XmasBall1_C",
+        "DisplayName": "Red FICSMAS Ornament"
+    },
+    {
+        "ClassName": "Desc_XmasBall2_C",
+        "DisplayName": "Blue FICSMAS Ornament"
+    },
+    {
+        "ClassName": "Desc_XmasBall3_C",
+        "DisplayName": "Copper FICSMAS Ornament"
+    },
+    {
+        "ClassName": "Desc_XmasBall4_C",
+        "DisplayName": "Iron FICSMAS Ornament"
+    }
+]
