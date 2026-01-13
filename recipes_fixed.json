@@ -1,0 +1,6296 @@
+[
+    {
+        "DisplayName": "Iron Plate",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Ingot",
+                "Amount": 3
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iron Plate",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Iron Rod",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Ingot",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iron Rod",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Iron Ingot",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Ore",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iron Ingot",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Smelter",
+        "ManufactoringDuration": 2
+    },
+    {
+        "DisplayName": "Alternate: Nitro Rocket Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Fuel",
+                "Amount": 4000
+            },
+            {
+                "ItemClass": "Nitrogen Gas",
+                "Amount": 3000
+            },
+            {
+                "ItemClass": "Sulfur",
+                "Amount": 4
+            },
+            {
+                "ItemClass": "Coal",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Rocket Fuel",
+                "Amount": 6000
+            },
+            {
+                "ItemClass": "Compacted Coal",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Blender",
+        "ManufactoringDuration": 2
+    },
+    {
+        "DisplayName": "Rocket Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Turbofuel",
+                "Amount": 6000
+            },
+            {
+                "ItemClass": "Nitric Acid",
+                "Amount": 1000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Rocket Fuel",
+                "Amount": 10000
+            },
+            {
+                "ItemClass": "Compacted Coal",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Blender",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Packaged Rocket Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Rocket Fuel",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Fluid Tank",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Rocket Fuel",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 1
+    },
+    {
+        "DisplayName": "Unpackage Rocket Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Rocket Fuel",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Rocket Fuel",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Fluid Tank",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 1
+    },
+    {
+        "DisplayName": "Alternate: Dark-Ion Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Rocket Fuel",
+                "Amount": 12
+            },
+            {
+                "ItemClass": "Dark Matter Crystal",
+                "Amount": 4
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Ionized Fuel",
+                "Amount": 10000
+            },
+            {
+                "ItemClass": "Compacted Coal",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "Dark Matter Residue",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 5
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Dark Matter Residue",
+                "Amount": 10000
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Excited Photonic Matter",
+        "Ingredients": [],
+        "Product": [
+            {
+                "ItemClass": "Excited Photonic Matter",
+                "Amount": 10000
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "Dark Matter Crystal",
+        "Ingredients": [
+            {
+                "ItemClass": "Diamonds",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Dark Matter Residue",
+                "Amount": 5000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Dark Matter Crystal",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Particle Accelerator",
+        "ManufactoringDuration": 2
+    },
+    {
+        "DisplayName": "Superposition Oscillator",
+        "Ingredients": [
+            {
+                "ItemClass": "Dark Matter Crystal",
+                "Amount": 6
+            },
+            {
+                "ItemClass": "Crystal Oscillator",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Alclad Aluminum Sheet",
+                "Amount": 9
+            },
+            {
+                "ItemClass": "Excited Photonic Matter",
+                "Amount": 25000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Superposition Oscillator",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Dark Matter Residue",
+                "Amount": 25000
+            }
+        ],
+        "ProducedIn": "Quantum Encoder",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Neural-Quantum Processor",
+        "Ingredients": [
+            {
+                "ItemClass": "Time Crystal",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Supercomputer",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Ficsite Trigon",
+                "Amount": 15
+            },
+            {
+                "ItemClass": "Excited Photonic Matter",
+                "Amount": 25000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Neural-Quantum Processor",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Dark Matter Residue",
+                "Amount": 25000
+            }
+        ],
+        "ProducedIn": "Quantum Encoder",
+        "ManufactoringDuration": 20
+    },
+    {
+        "DisplayName": "AI Expansion Server",
+        "Ingredients": [
+            {
+                "ItemClass": "Magnetic Field Generator",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Neural-Quantum Processor",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Superposition Oscillator",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Excited Photonic Matter",
+                "Amount": 25000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "AI Expansion Server",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Dark Matter Residue",
+                "Amount": 25000
+            }
+        ],
+        "ProducedIn": "Quantum Encoder",
+        "ManufactoringDuration": 15
+    },
+    {
+        "DisplayName": "Ionized Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Rocket Fuel",
+                "Amount": 16000
+            },
+            {
+                "ItemClass": "Power Shard",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Ionized Fuel",
+                "Amount": 16000
+            },
+            {
+                "ItemClass": "Compacted Coal",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 24
+    },
+    {
+        "DisplayName": "Packaged Ionized Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Ionized Fuel",
+                "Amount": 4000
+            },
+            {
+                "ItemClass": "Empty Fluid Tank",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Ionized Fuel",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "Unpackage Ionized Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Ionized Fuel",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Ionized Fuel",
+                "Amount": 4000
+            },
+            {
+                "ItemClass": "Empty Fluid Tank",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "Alternate: Turbo Diamonds",
+        "Ingredients": [
+            {
+                "ItemClass": "Coal",
+                "Amount": 30
+            },
+            {
+                "ItemClass": "Packaged Turbofuel",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Diamonds",
+                "Amount": 3
+            }
+        ],
+        "ProducedIn": "Particle Accelerator",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "SAM Fluctuator",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 6
+            },
+            {
+                "ItemClass": "Wire",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Steel Pipe",
+                "Amount": 3
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "SAM Fluctuator",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Ficsite Trigon",
+        "Ingredients": [
+            {
+                "ItemClass": "Ficsite Ingot",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Ficsite Trigon",
+                "Amount": 3
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Ficsite Ingot (Iron)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 4
+            },
+            {
+                "ItemClass": "Iron Ingot",
+                "Amount": 24
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Ficsite Ingot",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Time Crystal",
+        "Ingredients": [
+            {
+                "ItemClass": "Diamonds",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Time Crystal",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 10
+    },
+    {
+        "DisplayName": "Diamonds",
+        "Ingredients": [
+            {
+                "ItemClass": "Coal",
+                "Amount": 20
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Diamonds",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Particle Accelerator",
+        "ManufactoringDuration": 2
+    },
+    {
+        "DisplayName": "Reanimated SAM",
+        "Ingredients": [
+            {
+                "ItemClass": "SAM",
+                "Amount": 4
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 2
+    },
+    {
+        "DisplayName": "Biochemical Sculptor",
+        "Ingredients": [
+            {
+                "ItemClass": "Assembly Director System",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Ficsite Trigon",
+                "Amount": 80
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 20000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Biochemical Sculptor",
+                "Amount": 4
+            }
+        ],
+        "ProducedIn": "Blender",
+        "ManufactoringDuration": 120
+    },
+    {
+        "DisplayName": "Ficsite Ingot (Aluminum)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Aluminum Ingot",
+                "Amount": 4
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Ficsite Ingot",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 2
+    },
+    {
+        "DisplayName": "Ficsite Ingot (Caterium)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Caterium Ingot",
+                "Amount": 4
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Ficsite Ingot",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Bauxite (Caterium)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Caterium Ore",
+                "Amount": 15
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Bauxite",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Bauxite (Copper)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Copper Ore",
+                "Amount": 18
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Bauxite",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Caterium Ore (Copper)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Copper Ore",
+                "Amount": 15
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Caterium Ore",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Caterium Ore (Quartz)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Raw Quartz",
+                "Amount": 12
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Caterium Ore",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Coal (Iron)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Iron Ore",
+                "Amount": 18
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Coal",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Coal (Limestone)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Limestone",
+                "Amount": 36
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Coal",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Copper Ore (Quartz)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Raw Quartz",
+                "Amount": 10
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Copper Ore",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Copper Ore (Sulfur)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Sulfur",
+                "Amount": 12
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Copper Ore",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Iron Ore (Limestone)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Limestone",
+                "Amount": 24
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iron Ore",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Limestone (Sulfur)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Sulfur",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Limestone",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Nitrogen Gas (Bauxite)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Bauxite",
+                "Amount": 10
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Nitrogen Gas",
+                "Amount": 12000
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Nitrogen Gas (Caterium)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Caterium Ore",
+                "Amount": 12
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Nitrogen Gas",
+                "Amount": 12000
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Raw Quartz (Bauxite)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Bauxite",
+                "Amount": 10
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Raw Quartz",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Raw Quartz (Coal)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Coal",
+                "Amount": 24
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Raw Quartz",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Sulfur (Coal)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Coal",
+                "Amount": 20
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Sulfur",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Sulfur (Iron)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Iron Ore",
+                "Amount": 30
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Sulfur",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Uranium Ore (Bauxite)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Bauxite",
+                "Amount": 48
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Uranium",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Turbofuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Fuel",
+                "Amount": 6000
+            },
+            {
+                "ItemClass": "Compacted Coal",
+                "Amount": 4
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Turbofuel",
+                "Amount": 5000
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 16
+    },
+    {
+        "DisplayName": "Packaged Turbofuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Turbofuel",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Turbofuel",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Unpackage Turbofuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Turbofuel",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Turbofuel",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Alternate: Charcoal",
+        "Ingredients": [
+            {
+                "ItemClass": "Wood",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Coal",
+                "Amount": 10
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Alternate: Biocoal",
+        "Ingredients": [
+            {
+                "ItemClass": "Biomass",
+                "Amount": 5
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Coal",
+                "Amount": 6
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 8
+    },
+    {
+        "DisplayName": "Alternate: Compacted Coal",
+        "Ingredients": [
+            {
+                "ItemClass": "Coal",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Sulfur",
+                "Amount": 5
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Compacted Coal",
+                "Amount": 5
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Circuit Board",
+        "Ingredients": [
+            {
+                "ItemClass": "Copper Sheet",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Plastic",
+                "Amount": 4
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Circuit Board",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 8
+    },
+    {
+        "DisplayName": "Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Crude Oil",
+                "Amount": 6000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Fuel",
+                "Amount": 4000
+            },
+            {
+                "ItemClass": "Polymer Resin",
+                "Amount": 3
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Petroleum Coke",
+        "Ingredients": [
+            {
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": 4000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Petroleum Coke",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Plastic",
+        "Ingredients": [
+            {
+                "ItemClass": "Crude Oil",
+                "Amount": 3000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Plastic",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": 1000
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Rubber",
+        "Ingredients": [
+            {
+                "ItemClass": "Crude Oil",
+                "Amount": 3000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Rubber",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": 2000
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Residual Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": 6000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Fuel",
+                "Amount": 4000
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Residual Plastic",
+        "Ingredients": [
+            {
+                "ItemClass": "Polymer Resin",
+                "Amount": 6
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 2000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Plastic",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Residual Rubber",
+        "Ingredients": [
+            {
+                "ItemClass": "Polymer Resin",
+                "Amount": 4
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 4000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Rubber",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Alternate: Pink Diamonds",
+        "Ingredients": [
+            {
+                "ItemClass": "Coal",
+                "Amount": 8
+            },
+            {
+                "ItemClass": "Quartz Crystal",
+                "Amount": 3
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Diamonds",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Alternate: Petroleum Diamonds",
+        "Ingredients": [
+            {
+                "ItemClass": "Petroleum Coke",
+                "Amount": 24
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Diamonds",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Particle Accelerator",
+        "ManufactoringDuration": 2
+    },
+    {
+        "DisplayName": "Alternate: Oil-Based Diamonds",
+        "Ingredients": [
+            {
+                "ItemClass": "Crude Oil",
+                "Amount": 10000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Diamonds",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Particle Accelerator",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "Alternate: Cloudy Diamonds",
+        "Ingredients": [
+            {
+                "ItemClass": "Coal",
+                "Amount": 12
+            },
+            {
+                "ItemClass": "Limestone",
+                "Amount": 24
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Diamonds",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Particle Accelerator",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "Alternate: Dark Matter Trap",
+        "Ingredients": [
+            {
+                "ItemClass": "Time Crystal",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Dark Matter Residue",
+                "Amount": 5000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Dark Matter Crystal",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Particle Accelerator",
+        "ManufactoringDuration": 2
+    },
+    {
+        "DisplayName": "Alternate: Dark Matter Crystallization",
+        "Ingredients": [
+            {
+                "ItemClass": "Dark Matter Residue",
+                "Amount": 10000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Dark Matter Crystal",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Particle Accelerator",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "Alternate: Wet Concrete",
+        "Ingredients": [
+            {
+                "ItemClass": "Limestone",
+                "Amount": 6
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 5000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Concrete",
+                "Amount": 4
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "Alternate: Turbo Heavy Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": 5000
+            },
+            {
+                "ItemClass": "Compacted Coal",
+                "Amount": 4
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Turbofuel",
+                "Amount": 4000
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 8
+    },
+    {
+        "DisplayName": "Alternate: Steel Rod",
+        "Ingredients": [
+            {
+                "ItemClass": "Steel Ingot",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iron Rod",
+                "Amount": 4
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 5
+    },
+    {
+        "DisplayName": "Steel Beam",
+        "Ingredients": [
+            {
+                "ItemClass": "Steel Ingot",
+                "Amount": 4
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Steel Beam",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Steel Pipe",
+        "Ingredients": [
+            {
+                "ItemClass": "Steel Ingot",
+                "Amount": 3
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Steel Pipe",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Steel Ingot",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Ore",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Coal",
+                "Amount": 3
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Steel Ingot",
+                "Amount": 3
+            }
+        ],
+        "ProducedIn": "Foundry",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Versatile Framework",
+        "Ingredients": [
+            {
+                "ItemClass": "Modular Frame",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Steel Beam",
+                "Amount": 12
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Versatile Framework",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 24
+    },
+    {
+        "DisplayName": "Alternate: Steel Canister",
+        "Ingredients": [
+            {
+                "ItemClass": "Steel Ingot",
+                "Amount": 4
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 4
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Empty Canister",
+        "Ingredients": [
+            {
+                "ItemClass": "Plastic",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 4
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Packaged Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Fuel",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Fuel",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "Liquid Biofuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Solid Biofuel",
+                "Amount": 6
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 3000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Liquid Biofuel",
+                "Amount": 4000
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Packaged Liquid Biofuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Liquid Biofuel",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Liquid Biofuel",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "Packaged Oil",
+        "Ingredients": [
+            {
+                "ItemClass": "Crude Oil",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Oil",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Packaged Heavy Oil Residue",
+        "Ingredients": [
+            {
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Heavy Oil Residue",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Packaged Water",
+        "Ingredients": [
+            {
+                "ItemClass": "Water",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Water",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 2
+    },
+    {
+        "DisplayName": "Unpackage Liquid Biofuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Liquid Biofuel",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Liquid Biofuel",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 2
+    },
+    {
+        "DisplayName": "Unpackage Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Fuel",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Fuel",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 2
+    },
+    {
+        "DisplayName": "Unpackage Oil",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Oil",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Crude Oil",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 2
+    },
+    {
+        "DisplayName": "Unpackage Heavy Oil Residue",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Heavy Oil Residue",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Unpackage Water",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Water",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Water",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 1
+    },
+    {
+        "DisplayName": "Alternate: Steamed Copper Sheet",
+        "Ingredients": [
+            {
+                "ItemClass": "Copper Ingot",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 3000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Copper Sheet",
+                "Amount": 3
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 8
+    },
+    {
+        "DisplayName": "Alternate: Rubber Concrete",
+        "Ingredients": [
+            {
+                "ItemClass": "Limestone",
+                "Amount": 10
+            },
+            {
+                "ItemClass": "Rubber",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Concrete",
+                "Amount": 9
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Alternate: Recycled Rubber",
+        "Ingredients": [
+            {
+                "ItemClass": "Plastic",
+                "Amount": 6
+            },
+            {
+                "ItemClass": "Fuel",
+                "Amount": 6000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Rubber",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Alternate: Pure Quartz Crystal",
+        "Ingredients": [
+            {
+                "ItemClass": "Raw Quartz",
+                "Amount": 9
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 5000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Quartz Crystal",
+                "Amount": 7
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 8
+    },
+    {
+        "DisplayName": "Quartz Crystal",
+        "Ingredients": [
+            {
+                "ItemClass": "Raw Quartz",
+                "Amount": 5
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Quartz Crystal",
+                "Amount": 3
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 8
+    },
+    {
+        "DisplayName": "Alternate: Pure Iron Ingot",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Ore",
+                "Amount": 7
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 4000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iron Ingot",
+                "Amount": 13
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Alternate: Pure Copper Ingot",
+        "Ingredients": [
+            {
+                "ItemClass": "Copper Ore",
+                "Amount": 6
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 4000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Copper Ingot",
+                "Amount": 15
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 24
+    },
+    {
+        "DisplayName": "Alternate: Pure Caterium Ingot",
+        "Ingredients": [
+            {
+                "ItemClass": "Caterium Ore",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 2000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Caterium Ingot",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 5
+    },
+    {
+        "DisplayName": "Alternate: Pure Aluminum Ingot",
+        "Ingredients": [
+            {
+                "ItemClass": "Aluminum Scrap",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Aluminum Ingot",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Smelter",
+        "ManufactoringDuration": 2
+    },
+    {
+        "DisplayName": "Aluminum Casing",
+        "Ingredients": [
+            {
+                "ItemClass": "Aluminum Ingot",
+                "Amount": 3
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Aluminum Casing",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 2
+    },
+    {
+        "DisplayName": "Alclad Aluminum Sheet",
+        "Ingredients": [
+            {
+                "ItemClass": "Aluminum Ingot",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Copper Ingot",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Alclad Aluminum Sheet",
+                "Amount": 3
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Alumina Solution",
+        "Ingredients": [
+            {
+                "ItemClass": "Bauxite",
+                "Amount": 12
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 18000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Alumina Solution",
+                "Amount": 12000
+            },
+            {
+                "ItemClass": "Silica",
+                "Amount": 5
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Aluminum Scrap",
+        "Ingredients": [
+            {
+                "ItemClass": "Alumina Solution",
+                "Amount": 4000
+            },
+            {
+                "ItemClass": "Coal",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Aluminum Scrap",
+                "Amount": 6
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 2000
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 1
+    },
+    {
+        "DisplayName": "Packaged Alumina Solution",
+        "Ingredients": [
+            {
+                "ItemClass": "Alumina Solution",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Alumina Solution",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 1
+    },
+    {
+        "DisplayName": "Aluminum Ingot",
+        "Ingredients": [
+            {
+                "ItemClass": "Aluminum Scrap",
+                "Amount": 6
+            },
+            {
+                "ItemClass": "Silica",
+                "Amount": 5
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Aluminum Ingot",
+                "Amount": 4
+            }
+        ],
+        "ProducedIn": "Foundry",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Silica",
+        "Ingredients": [
+            {
+                "ItemClass": "Raw Quartz",
+                "Amount": 3
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Silica",
+                "Amount": 5
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 8
+    },
+    {
+        "DisplayName": "Crystal Oscillator",
+        "Ingredients": [
+            {
+                "ItemClass": "Quartz Crystal",
+                "Amount": 36
+            },
+            {
+                "ItemClass": "Cable",
+                "Amount": 28
+            },
+            {
+                "ItemClass": "Reinforced Iron Plate",
+                "Amount": 5
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Crystal Oscillator",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 120
+    },
+    {
+        "DisplayName": "Unpackage Alumina Solution",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Alumina Solution",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Alumina Solution",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 1
+    },
+    {
+        "DisplayName": "Alternate: Polymer Resin",
+        "Ingredients": [
+            {
+                "ItemClass": "Crude Oil",
+                "Amount": 6000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Polymer Resin",
+                "Amount": 13
+            },
+            {
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": 2000
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Alternate: Plastic Smart Plating",
+        "Ingredients": [
+            {
+                "ItemClass": "Reinforced Iron Plate",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Rotor",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Plastic",
+                "Amount": 3
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Smart Plating",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 24
+    },
+    {
+        "DisplayName": "Alternate: Automated Speed Wiring",
+        "Ingredients": [
+            {
+                "ItemClass": "Stator",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Wire",
+                "Amount": 40
+            },
+            {
+                "ItemClass": "High-Speed Connector",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Automated Wiring",
+                "Amount": 4
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 32
+    },
+    {
+        "DisplayName": "Encased Industrial Beam",
+        "Ingredients": [
+            {
+                "ItemClass": "Steel Beam",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Concrete",
+                "Amount": 6
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Encased Industrial Beam",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 10
+    },
+    {
+        "DisplayName": "Motor",
+        "Ingredients": [
+            {
+                "ItemClass": "Rotor",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Stator",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Motor",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Stator",
+        "Ingredients": [
+            {
+                "ItemClass": "Steel Pipe",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Wire",
+                "Amount": 8
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Stator",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Automated Wiring",
+        "Ingredients": [
+            {
+                "ItemClass": "Stator",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Cable",
+                "Amount": 20
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Automated Wiring",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 24
+    },
+    {
+        "DisplayName": "AI Limiter",
+        "Ingredients": [
+            {
+                "ItemClass": "Copper Sheet",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Quickwire",
+                "Amount": 20
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "AI Limiter",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Alternate: Heavy Oil Residue",
+        "Ingredients": [
+            {
+                "ItemClass": "Crude Oil",
+                "Amount": 3000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": 4000
+            },
+            {
+                "ItemClass": "Polymer Resin",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Alternate: Heavy Flexible Frame",
+        "Ingredients": [
+            {
+                "ItemClass": "Modular Frame",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Encased Industrial Beam",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Rubber",
+                "Amount": 20
+            },
+            {
+                "ItemClass": "Screws",
+                "Amount": 104
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Heavy Modular Frame",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 16
+    },
+    {
+        "DisplayName": "Computer",
+        "Ingredients": [
+            {
+                "ItemClass": "Circuit Board",
+                "Amount": 4
+            },
+            {
+                "ItemClass": "Cable",
+                "Amount": 8
+            },
+            {
+                "ItemClass": "Plastic",
+                "Amount": 16
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Computer",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 24
+    },
+    {
+        "DisplayName": "Heavy Modular Frame",
+        "Ingredients": [
+            {
+                "ItemClass": "Modular Frame",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Steel Pipe",
+                "Amount": 20
+            },
+            {
+                "ItemClass": "Encased Industrial Beam",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Screws",
+                "Amount": 120
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Heavy Modular Frame",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 30
+    },
+    {
+        "DisplayName": "Modular Engine",
+        "Ingredients": [
+            {
+                "ItemClass": "Motor",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Rubber",
+                "Amount": 15
+            },
+            {
+                "ItemClass": "Smart Plating",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Modular Engine",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 60
+    },
+    {
+        "DisplayName": "Adaptive Control Unit",
+        "Ingredients": [
+            {
+                "ItemClass": "Automated Wiring",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Circuit Board",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Heavy Modular Frame",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Computer",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Adaptive Control Unit",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 60
+    },
+    {
+        "DisplayName": "Alternate: Fused Wire",
+        "Ingredients": [
+            {
+                "ItemClass": "Copper Ingot",
+                "Amount": 4
+            },
+            {
+                "ItemClass": "Caterium Ingot",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Wire",
+                "Amount": 30
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 20
+    },
+    {
+        "DisplayName": "Alternate: Flexible Framework",
+        "Ingredients": [
+            {
+                "ItemClass": "Modular Frame",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Steel Beam",
+                "Amount": 6
+            },
+            {
+                "ItemClass": "Rubber",
+                "Amount": 8
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Versatile Framework",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 16
+    },
+    {
+        "DisplayName": "Alternate: Electrode Circuit Board",
+        "Ingredients": [
+            {
+                "ItemClass": "Rubber",
+                "Amount": 4
+            },
+            {
+                "ItemClass": "Petroleum Coke",
+                "Amount": 8
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Circuit Board",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Alternate: Electrode Aluminum Scrap",
+        "Ingredients": [
+            {
+                "ItemClass": "Alumina Solution",
+                "Amount": 12000
+            },
+            {
+                "ItemClass": "Petroleum Coke",
+                "Amount": 4
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Aluminum Scrap",
+                "Amount": 20
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 7000
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Alternate: Diluted Packaged Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": 1000
+            },
+            {
+                "ItemClass": "Packaged Water",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Fuel",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 2
+    },
+    {
+        "DisplayName": "Alternate: Copper Rotor",
+        "Ingredients": [
+            {
+                "ItemClass": "Copper Sheet",
+                "Amount": 6
+            },
+            {
+                "ItemClass": "Screws",
+                "Amount": 52
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Rotor",
+                "Amount": 3
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 16
+    },
+    {
+        "DisplayName": "Modular Frame",
+        "Ingredients": [
+            {
+                "ItemClass": "Reinforced Iron Plate",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Iron Rod",
+                "Amount": 12
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Modular Frame",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 60
+    },
+    {
+        "DisplayName": "Rotor",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Rod",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Screws",
+                "Amount": 25
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Rotor",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 15
+    },
+    {
+        "DisplayName": "Copper Sheet",
+        "Ingredients": [
+            {
+                "ItemClass": "Copper Ingot",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Copper Sheet",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Smart Plating",
+        "Ingredients": [
+            {
+                "ItemClass": "Reinforced Iron Plate",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Rotor",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Smart Plating",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 30
+    },
+    {
+        "DisplayName": "Alternate: Copper Alloy Ingot",
+        "Ingredients": [
+            {
+                "ItemClass": "Copper Ore",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Iron Ore",
+                "Amount": 5
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Copper Ingot",
+                "Amount": 10
+            }
+        ],
+        "ProducedIn": "Foundry",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Alternate: Coke Steel Ingot",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Ore",
+                "Amount": 15
+            },
+            {
+                "ItemClass": "Petroleum Coke",
+                "Amount": 15
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Steel Ingot",
+                "Amount": 20
+            }
+        ],
+        "ProducedIn": "Foundry",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Alternate: Coated Iron Plate",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Ingot",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Plastic",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iron Plate",
+                "Amount": 10
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 8
+    },
+    {
+        "DisplayName": "Alternate: Coated Iron Canister",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Plate",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Copper Sheet",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 4
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Alternate: Coated Cable",
+        "Ingredients": [
+            {
+                "ItemClass": "Wire",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": 2000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Cable",
+                "Amount": 9
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 8
+    },
+    {
+        "DisplayName": "Alternate: Bolted Frame",
+        "Ingredients": [
+            {
+                "ItemClass": "Reinforced Iron Plate",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Screws",
+                "Amount": 56
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Modular Frame",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 24
+    },
+    {
+        "DisplayName": "Alternate: Adhered Iron Plate",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Plate",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Rubber",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Reinforced Iron Plate",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 16
+    },
+    {
+        "DisplayName": "Alternate: Turbo Pressure Motor",
+        "Ingredients": [
+            {
+                "ItemClass": "Motor",
+                "Amount": 4
+            },
+            {
+                "ItemClass": "Pressure Conversion Cube",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Packaged Nitrogen Gas",
+                "Amount": 24
+            },
+            {
+                "ItemClass": "Stator",
+                "Amount": 8
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Turbo Motor",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 32
+    },
+    {
+        "DisplayName": "Encased Plutonium Cell",
+        "Ingredients": [
+            {
+                "ItemClass": "Plutonium Pellet",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Concrete",
+                "Amount": 4
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Encased Plutonium Cell",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Pressure Conversion Cube",
+        "Ingredients": [
+            {
+                "ItemClass": "Fused Modular Frame",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Radio Control Unit",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Pressure Conversion Cube",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 60
+    },
+    {
+        "DisplayName": "Nitric Acid",
+        "Ingredients": [
+            {
+                "ItemClass": "Nitrogen Gas",
+                "Amount": 12000
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 3000
+            },
+            {
+                "ItemClass": "Iron Plate",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Nitric Acid",
+                "Amount": 3000
+            }
+        ],
+        "ProducedIn": "Blender",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Non-Fissile Uranium",
+        "Ingredients": [
+            {
+                "ItemClass": "Uranium Waste",
+                "Amount": 15
+            },
+            {
+                "ItemClass": "Silica",
+                "Amount": 10
+            },
+            {
+                "ItemClass": "Nitric Acid",
+                "Amount": 6000
+            },
+            {
+                "ItemClass": "Sulfuric Acid",
+                "Amount": 6000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Non-Fissile Uranium",
+                "Amount": 20
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 6000
+            }
+        ],
+        "ProducedIn": "Blender",
+        "ManufactoringDuration": 24
+    },
+    {
+        "DisplayName": "Copper Powder",
+        "Ingredients": [
+            {
+                "ItemClass": "Copper Ingot",
+                "Amount": 30
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Copper Powder",
+                "Amount": 5
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Plutonium Pellet",
+        "Ingredients": [
+            {
+                "ItemClass": "Non-Fissile Uranium",
+                "Amount": 100
+            },
+            {
+                "ItemClass": "Uranium Waste",
+                "Amount": 25
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Plutonium Pellet",
+                "Amount": 30
+            }
+        ],
+        "ProducedIn": "Particle Accelerator",
+        "ManufactoringDuration": 60
+    },
+    {
+        "DisplayName": "Plutonium Fuel Rod",
+        "Ingredients": [
+            {
+                "ItemClass": "Encased Plutonium Cell",
+                "Amount": 30
+            },
+            {
+                "ItemClass": "Steel Beam",
+                "Amount": 18
+            },
+            {
+                "ItemClass": "Electromagnetic Control Rod",
+                "Amount": 6
+            },
+            {
+                "ItemClass": "Heat Sink",
+                "Amount": 10
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Plutonium Fuel Rod",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 240
+    },
+    {
+        "DisplayName": "Packaged Nitric Acid",
+        "Ingredients": [
+            {
+                "ItemClass": "Nitric Acid",
+                "Amount": 1000
+            },
+            {
+                "ItemClass": "Empty Fluid Tank",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Nitric Acid",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 2
+    },
+    {
+        "DisplayName": "Nuclear Pasta",
+        "Ingredients": [
+            {
+                "ItemClass": "Copper Powder",
+                "Amount": 200
+            },
+            {
+                "ItemClass": "Pressure Conversion Cube",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Nuclear Pasta",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Particle Accelerator",
+        "ManufactoringDuration": 120
+    },
+    {
+        "DisplayName": "Unpackage Nitric Acid",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Nitric Acid",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Nitric Acid",
+                "Amount": 1000
+            },
+            {
+                "ItemClass": "Empty Fluid Tank",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "Alternate: Turbo Blend Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Fuel",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": 4000
+            },
+            {
+                "ItemClass": "Sulfur",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Petroleum Coke",
+                "Amount": 3
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Turbofuel",
+                "Amount": 6000
+            }
+        ],
+        "ProducedIn": "Blender",
+        "ManufactoringDuration": 8
+    },
+    {
+        "DisplayName": "Encased Uranium Cell",
+        "Ingredients": [
+            {
+                "ItemClass": "Uranium",
+                "Amount": 10
+            },
+            {
+                "ItemClass": "Concrete",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Sulfuric Acid",
+                "Amount": 8000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Encased Uranium Cell",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Sulfuric Acid",
+                "Amount": 2000
+            }
+        ],
+        "ProducedIn": "Blender",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Cooling System",
+        "Ingredients": [
+            {
+                "ItemClass": "Heat Sink",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Rubber",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 5000
+            },
+            {
+                "ItemClass": "Nitrogen Gas",
+                "Amount": 25000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Cooling System",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Blender",
+        "ManufactoringDuration": 10
+    },
+    {
+        "DisplayName": "Battery",
+        "Ingredients": [
+            {
+                "ItemClass": "Sulfuric Acid",
+                "Amount": 2500
+            },
+            {
+                "ItemClass": "Alumina Solution",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Aluminum Casing",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Battery",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 1500
+            }
+        ],
+        "ProducedIn": "Blender",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "Supercomputer",
+        "Ingredients": [
+            {
+                "ItemClass": "Computer",
+                "Amount": 4
+            },
+            {
+                "ItemClass": "AI Limiter",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "High-Speed Connector",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Plastic",
+                "Amount": 28
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Supercomputer",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 32
+    },
+    {
+        "DisplayName": "Radio Control Unit",
+        "Ingredients": [
+            {
+                "ItemClass": "Aluminum Casing",
+                "Amount": 32
+            },
+            {
+                "ItemClass": "Crystal Oscillator",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Computer",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Radio Control Unit",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 48
+    },
+    {
+        "DisplayName": "Sulfuric Acid",
+        "Ingredients": [
+            {
+                "ItemClass": "Sulfur",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 5000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Sulfuric Acid",
+                "Amount": 5000
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Packaged Sulfuric Acid",
+        "Ingredients": [
+            {
+                "ItemClass": "Sulfuric Acid",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Sulfuric Acid",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "Assembly Director System",
+        "Ingredients": [
+            {
+                "ItemClass": "Adaptive Control Unit",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Supercomputer",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Assembly Director System",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 80
+    },
+    {
+        "DisplayName": "High-Speed Connector",
+        "Ingredients": [
+            {
+                "ItemClass": "Quickwire",
+                "Amount": 56
+            },
+            {
+                "ItemClass": "Cable",
+                "Amount": 10
+            },
+            {
+                "ItemClass": "Circuit Board",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "High-Speed Connector",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 16
+    },
+    {
+        "DisplayName": "Unpackage Sulfuric Acid",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Sulfuric Acid",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Sulfuric Acid",
+                "Amount": 1000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 1
+    },
+    {
+        "DisplayName": "Alternate: Super-State Computer",
+        "Ingredients": [
+            {
+                "ItemClass": "Computer",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Electromagnetic Control Rod",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Battery",
+                "Amount": 10
+            },
+            {
+                "ItemClass": "Wire",
+                "Amount": 25
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Supercomputer",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 25
+    },
+    {
+        "DisplayName": "Electromagnetic Control Rod",
+        "Ingredients": [
+            {
+                "ItemClass": "Stator",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "AI Limiter",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Electromagnetic Control Rod",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 30
+    },
+    {
+        "DisplayName": "Uranium Fuel Rod",
+        "Ingredients": [
+            {
+                "ItemClass": "Encased Uranium Cell",
+                "Amount": 50
+            },
+            {
+                "ItemClass": "Encased Industrial Beam",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Electromagnetic Control Rod",
+                "Amount": 5
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Uranium Fuel Rod",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 150
+    },
+    {
+        "DisplayName": "Magnetic Field Generator",
+        "Ingredients": [
+            {
+                "ItemClass": "Versatile Framework",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Electromagnetic Control Rod",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Magnetic Field Generator",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 120
+    },
+    {
+        "DisplayName": "Alternate: Sloppy Alumina",
+        "Ingredients": [
+            {
+                "ItemClass": "Bauxite",
+                "Amount": 10
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 10000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Alumina Solution",
+                "Amount": 12000
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "Alternate: Radio Control System",
+        "Ingredients": [
+            {
+                "ItemClass": "Crystal Oscillator",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Circuit Board",
+                "Amount": 10
+            },
+            {
+                "ItemClass": "Aluminum Casing",
+                "Amount": 60
+            },
+            {
+                "ItemClass": "Rubber",
+                "Amount": 30
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Radio Control Unit",
+                "Amount": 3
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 40
+    },
+    {
+        "DisplayName": "Alternate: Plutonium Fuel Unit",
+        "Ingredients": [
+            {
+                "ItemClass": "Encased Plutonium Cell",
+                "Amount": 20
+            },
+            {
+                "ItemClass": "Pressure Conversion Cube",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Plutonium Fuel Rod",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 120
+    },
+    {
+        "DisplayName": "Alternate: OC Supercomputer",
+        "Ingredients": [
+            {
+                "ItemClass": "Radio Control Unit",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Cooling System",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Supercomputer",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 20
+    },
+    {
+        "DisplayName": "Heat Sink",
+        "Ingredients": [
+            {
+                "ItemClass": "Alclad Aluminum Sheet",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Copper Sheet",
+                "Amount": 3
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Heat Sink",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 8
+    },
+    {
+        "DisplayName": "Fused Modular Frame",
+        "Ingredients": [
+            {
+                "ItemClass": "Heavy Modular Frame",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Aluminum Casing",
+                "Amount": 50
+            },
+            {
+                "ItemClass": "Nitrogen Gas",
+                "Amount": 25000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Fused Modular Frame",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Blender",
+        "ManufactoringDuration": 40
+    },
+    {
+        "DisplayName": "Empty Fluid Tank",
+        "Ingredients": [
+            {
+                "ItemClass": "Aluminum Ingot",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Empty Fluid Tank",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 1
+    },
+    {
+        "DisplayName": "Packaged Nitrogen Gas",
+        "Ingredients": [
+            {
+                "ItemClass": "Nitrogen Gas",
+                "Amount": 4000
+            },
+            {
+                "ItemClass": "Empty Fluid Tank",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Nitrogen Gas",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 1
+    },
+    {
+        "DisplayName": "Unpackage Nitrogen Gas",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Nitrogen Gas",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Nitrogen Gas",
+                "Amount": 4000
+            },
+            {
+                "ItemClass": "Empty Fluid Tank",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 1
+    },
+    {
+        "DisplayName": "Alternate: Instant Scrap",
+        "Ingredients": [
+            {
+                "ItemClass": "Bauxite",
+                "Amount": 15
+            },
+            {
+                "ItemClass": "Coal",
+                "Amount": 10
+            },
+            {
+                "ItemClass": "Sulfuric Acid",
+                "Amount": 5000
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 6000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Aluminum Scrap",
+                "Amount": 30
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 5000
+            }
+        ],
+        "ProducedIn": "Blender",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Alternate: Instant Plutonium Cell",
+        "Ingredients": [
+            {
+                "ItemClass": "Non-Fissile Uranium",
+                "Amount": 150
+            },
+            {
+                "ItemClass": "Aluminum Casing",
+                "Amount": 20
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Encased Plutonium Cell",
+                "Amount": 20
+            }
+        ],
+        "ProducedIn": "Particle Accelerator",
+        "ManufactoringDuration": 120
+    },
+    {
+        "DisplayName": "Alternate: Heat-Fused Frame",
+        "Ingredients": [
+            {
+                "ItemClass": "Heavy Modular Frame",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Aluminum Ingot",
+                "Amount": 50
+            },
+            {
+                "ItemClass": "Nitric Acid",
+                "Amount": 8000
+            },
+            {
+                "ItemClass": "Fuel",
+                "Amount": 10000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Fused Modular Frame",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Blender",
+        "ManufactoringDuration": 20
+    },
+    {
+        "DisplayName": "Alternate: Fertile Uranium",
+        "Ingredients": [
+            {
+                "ItemClass": "Uranium",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Uranium Waste",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Nitric Acid",
+                "Amount": 3000
+            },
+            {
+                "ItemClass": "Sulfuric Acid",
+                "Amount": 5000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Non-Fissile Uranium",
+                "Amount": 20
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 8000
+            }
+        ],
+        "ProducedIn": "Blender",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Alternate: Electric Motor",
+        "Ingredients": [
+            {
+                "ItemClass": "Electromagnetic Control Rod",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Rotor",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Motor",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 16
+    },
+    {
+        "DisplayName": "Alternate: Diluted Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": 5000
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 10000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Fuel",
+                "Amount": 10000
+            }
+        ],
+        "ProducedIn": "Blender",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Alternate: Cooling Device",
+        "Ingredients": [
+            {
+                "ItemClass": "Heat Sink",
+                "Amount": 4
+            },
+            {
+                "ItemClass": "Motor",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Nitrogen Gas",
+                "Amount": 24000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Cooling System",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Blender",
+        "ManufactoringDuration": 24
+    },
+    {
+        "DisplayName": "Alternate: Classic Battery",
+        "Ingredients": [
+            {
+                "ItemClass": "Sulfur",
+                "Amount": 6
+            },
+            {
+                "ItemClass": "Alclad Aluminum Sheet",
+                "Amount": 7
+            },
+            {
+                "ItemClass": "Plastic",
+                "Amount": 8
+            },
+            {
+                "ItemClass": "Wire",
+                "Amount": 12
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Battery",
+                "Amount": 4
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 8
+    },
+    {
+        "DisplayName": "Alternate: Automated Miner",
+        "Ingredients": [
+            {
+                "ItemClass": "Steel Pipe",
+                "Amount": 4
+            },
+            {
+                "ItemClass": "Iron Plate",
+                "Amount": 4
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Portable Miner",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 60
+    },
+    {
+        "DisplayName": "Alternate: Alclad Casing",
+        "Ingredients": [
+            {
+                "ItemClass": "Aluminum Ingot",
+                "Amount": 20
+            },
+            {
+                "ItemClass": "Copper Ingot",
+                "Amount": 10
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Aluminum Casing",
+                "Amount": 15
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 8
+    },
+    {
+        "DisplayName": "Alternate: Molded Steel Pipe",
+        "Ingredients": [
+            {
+                "ItemClass": "Steel Ingot",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Concrete",
+                "Amount": 3
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Steel Pipe",
+                "Amount": 5
+            }
+        ],
+        "ProducedIn": "Foundry",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Alternate: Iron Pipe",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Ingot",
+                "Amount": 20
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Steel Pipe",
+                "Amount": 5
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Alternate: Steel Cast Plate",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Ingot",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Steel Ingot",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iron Plate",
+                "Amount": 3
+            }
+        ],
+        "ProducedIn": "Foundry",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Alternate: Molded Beam",
+        "Ingredients": [
+            {
+                "ItemClass": "Steel Ingot",
+                "Amount": 24
+            },
+            {
+                "ItemClass": "Concrete",
+                "Amount": 16
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Steel Beam",
+                "Amount": 9
+            }
+        ],
+        "ProducedIn": "Foundry",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Alternate: Aluminum Beam",
+        "Ingredients": [
+            {
+                "ItemClass": "Aluminum Ingot",
+                "Amount": 3
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Steel Beam",
+                "Amount": 3
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 8
+    },
+    {
+        "DisplayName": "Alternate: Aluminum Rod",
+        "Ingredients": [
+            {
+                "ItemClass": "Aluminum Ingot",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iron Rod",
+                "Amount": 7
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 8
+    },
+    {
+        "DisplayName": "Alternate: Plastic AI Limiter",
+        "Ingredients": [
+            {
+                "ItemClass": "Quickwire",
+                "Amount": 30
+            },
+            {
+                "ItemClass": "Plastic",
+                "Amount": 7
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "AI Limiter",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 15
+    },
+    {
+        "DisplayName": "Alternate: Distilled Silica",
+        "Ingredients": [
+            {
+                "ItemClass": "Dissolved Silica",
+                "Amount": 12000
+            },
+            {
+                "ItemClass": "Limestone",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 10000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Silica",
+                "Amount": 27
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 8000
+            }
+        ],
+        "ProducedIn": "Blender",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Alternate: Quartz Purification",
+        "Ingredients": [
+            {
+                "ItemClass": "Raw Quartz",
+                "Amount": 24
+            },
+            {
+                "ItemClass": "Nitric Acid",
+                "Amount": 2000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Quartz Crystal",
+                "Amount": 15
+            },
+            {
+                "ItemClass": "Dissolved Silica",
+                "Amount": 12000
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Alternate: Fused Quartz Crystal",
+        "Ingredients": [
+            {
+                "ItemClass": "Raw Quartz",
+                "Amount": 25
+            },
+            {
+                "ItemClass": "Coal",
+                "Amount": 12
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Quartz Crystal",
+                "Amount": 18
+            }
+        ],
+        "ProducedIn": "Foundry",
+        "ManufactoringDuration": 20
+    },
+    {
+        "DisplayName": "Alternate: Leached Iron Ingot",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Ore",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Sulfuric Acid",
+                "Amount": 1000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iron Ingot",
+                "Amount": 10
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Alternate: Basic Iron Ingot",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Ore",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Limestone",
+                "Amount": 8
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iron Ingot",
+                "Amount": 10
+            }
+        ],
+        "ProducedIn": "Foundry",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Alternate: Tempered Copper Ingot",
+        "Ingredients": [
+            {
+                "ItemClass": "Copper Ore",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Petroleum Coke",
+                "Amount": 8
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Copper Ingot",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Foundry",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Alternate: Leached Copper Ingot",
+        "Ingredients": [
+            {
+                "ItemClass": "Copper Ore",
+                "Amount": 9
+            },
+            {
+                "ItemClass": "Sulfuric Acid",
+                "Amount": 5000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Copper Ingot",
+                "Amount": 22
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Alternate: Tempered Caterium Ingot",
+        "Ingredients": [
+            {
+                "ItemClass": "Caterium Ore",
+                "Amount": 6
+            },
+            {
+                "ItemClass": "Petroleum Coke",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Caterium Ingot",
+                "Amount": 3
+            }
+        ],
+        "ProducedIn": "Foundry",
+        "ManufactoringDuration": 8
+    },
+    {
+        "DisplayName": "Alternate: Leached Caterium Ingot",
+        "Ingredients": [
+            {
+                "ItemClass": "Caterium Ore",
+                "Amount": 9
+            },
+            {
+                "ItemClass": "Sulfuric Acid",
+                "Amount": 5000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Caterium Ingot",
+                "Amount": 6
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 10
+    },
+    {
+        "DisplayName": "Alternate: Caterium Wire",
+        "Ingredients": [
+            {
+                "ItemClass": "Caterium Ingot",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Wire",
+                "Amount": 8
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Alternate: Iron Wire",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Ingot",
+                "Amount": 5
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Wire",
+                "Amount": 9
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 24
+    },
+    {
+        "DisplayName": "Alternate: Infused Uranium Cell",
+        "Ingredients": [
+            {
+                "ItemClass": "Uranium",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Silica",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Sulfur",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Quickwire",
+                "Amount": 15
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Encased Uranium Cell",
+                "Amount": 4
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Caterium Ingot",
+        "Ingredients": [
+            {
+                "ItemClass": "Caterium Ore",
+                "Amount": 3
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Caterium Ingot",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Smelter",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Alternate: Turbo Electric Motor",
+        "Ingredients": [
+            {
+                "ItemClass": "Motor",
+                "Amount": 7
+            },
+            {
+                "ItemClass": "Radio Control Unit",
+                "Amount": 9
+            },
+            {
+                "ItemClass": "Electromagnetic Control Rod",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Rotor",
+                "Amount": 7
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Turbo Motor",
+                "Amount": 3
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 64
+    },
+    {
+        "DisplayName": "Turbo Motor",
+        "Ingredients": [
+            {
+                "ItemClass": "Cooling System",
+                "Amount": 4
+            },
+            {
+                "ItemClass": "Radio Control Unit",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Motor",
+                "Amount": 4
+            },
+            {
+                "ItemClass": "Rubber",
+                "Amount": 24
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Turbo Motor",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 32
+    },
+    {
+        "DisplayName": "Thermal Propulsion Rocket",
+        "Ingredients": [
+            {
+                "ItemClass": "Modular Engine",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Turbo Motor",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Cooling System",
+                "Amount": 6
+            },
+            {
+                "ItemClass": "Fused Modular Frame",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Thermal Propulsion Rocket",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 120
+    },
+    {
+        "DisplayName": "Alternate: Quickwire Stator",
+        "Ingredients": [
+            {
+                "ItemClass": "Steel Pipe",
+                "Amount": 4
+            },
+            {
+                "ItemClass": "Quickwire",
+                "Amount": 15
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Stator",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 15
+    },
+    {
+        "DisplayName": "Alternate: Cheap Silica",
+        "Ingredients": [
+            {
+                "ItemClass": "Raw Quartz",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Limestone",
+                "Amount": 5
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Silica",
+                "Amount": 7
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 8
+    },
+    {
+        "DisplayName": "Alternate: Steel Screws",
+        "Ingredients": [
+            {
+                "ItemClass": "Steel Beam",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Screws",
+                "Amount": 52
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Alternate: Cast Screws",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Ingot",
+                "Amount": 5
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Screws",
+                "Amount": 20
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 24
+    },
+    {
+        "DisplayName": "Alternate: Steel Rotor",
+        "Ingredients": [
+            {
+                "ItemClass": "Steel Pipe",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Wire",
+                "Amount": 6
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Rotor",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Alternate: Encased Industrial Pipe",
+        "Ingredients": [
+            {
+                "ItemClass": "Steel Pipe",
+                "Amount": 6
+            },
+            {
+                "ItemClass": "Concrete",
+                "Amount": 5
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Encased Industrial Beam",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 15
+    },
+    {
+        "DisplayName": "Alternate: Stitched Iron Plate",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Plate",
+                "Amount": 10
+            },
+            {
+                "ItemClass": "Wire",
+                "Amount": 20
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Reinforced Iron Plate",
+                "Amount": 3
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 32
+    },
+    {
+        "DisplayName": "Alternate: Bolted Iron Plate",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Plate",
+                "Amount": 18
+            },
+            {
+                "ItemClass": "Screws",
+                "Amount": 50
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Reinforced Iron Plate",
+                "Amount": 3
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Alternate: Radio Connection Unit",
+        "Ingredients": [
+            {
+                "ItemClass": "Heat Sink",
+                "Amount": 4
+            },
+            {
+                "ItemClass": "High-Speed Connector",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Quartz Crystal",
+                "Amount": 12
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Radio Control Unit",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 16
+    },
+    {
+        "DisplayName": "Alternate: Fused Quickwire",
+        "Ingredients": [
+            {
+                "ItemClass": "Caterium Ingot",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Copper Ingot",
+                "Amount": 5
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Quickwire",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 8
+    },
+    {
+        "DisplayName": "Alternate: Recycled Plastic",
+        "Ingredients": [
+            {
+                "ItemClass": "Rubber",
+                "Amount": 6
+            },
+            {
+                "ItemClass": "Fuel",
+                "Amount": 6000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Plastic",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Alternate: Uranium Fuel Unit",
+        "Ingredients": [
+            {
+                "ItemClass": "Encased Uranium Cell",
+                "Amount": 100
+            },
+            {
+                "ItemClass": "Electromagnetic Control Rod",
+                "Amount": 10
+            },
+            {
+                "ItemClass": "Crystal Oscillator",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Rotor",
+                "Amount": 10
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Uranium Fuel Rod",
+                "Amount": 3
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 300
+    },
+    {
+        "DisplayName": "Alternate: Rigor Motor",
+        "Ingredients": [
+            {
+                "ItemClass": "Rotor",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Stator",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Crystal Oscillator",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Motor",
+                "Amount": 6
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 48
+    },
+    {
+        "DisplayName": "Alternate: Steeled Frame",
+        "Ingredients": [
+            {
+                "ItemClass": "Reinforced Iron Plate",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Steel Pipe",
+                "Amount": 10
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Modular Frame",
+                "Amount": 3
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 60
+    },
+    {
+        "DisplayName": "Alternate: Compacted Steel Ingot",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Ore",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Compacted Coal",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Steel Ingot",
+                "Amount": 4
+            }
+        ],
+        "ProducedIn": "Foundry",
+        "ManufactoringDuration": 24
+    },
+    {
+        "DisplayName": "Alternate: Solid Steel Ingot",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Ingot",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Coal",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Steel Ingot",
+                "Amount": 3
+            }
+        ],
+        "ProducedIn": "Foundry",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "Alternate: Iron Alloy Ingot",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Ore",
+                "Amount": 8
+            },
+            {
+                "ItemClass": "Copper Ore",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iron Ingot",
+                "Amount": 15
+            }
+        ],
+        "ProducedIn": "Foundry",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Alternate: Silicon High-Speed Connector",
+        "Ingredients": [
+            {
+                "ItemClass": "Quickwire",
+                "Amount": 60
+            },
+            {
+                "ItemClass": "Silica",
+                "Amount": 25
+            },
+            {
+                "ItemClass": "Circuit Board",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "High-Speed Connector",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 40
+    },
+    {
+        "DisplayName": "Alternate: Heavy Encased Frame",
+        "Ingredients": [
+            {
+                "ItemClass": "Modular Frame",
+                "Amount": 8
+            },
+            {
+                "ItemClass": "Encased Industrial Beam",
+                "Amount": 10
+            },
+            {
+                "ItemClass": "Steel Pipe",
+                "Amount": 36
+            },
+            {
+                "ItemClass": "Concrete",
+                "Amount": 22
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Heavy Modular Frame",
+                "Amount": 3
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 64
+    },
+    {
+        "DisplayName": "Alternate: Heat Exchanger",
+        "Ingredients": [
+            {
+                "ItemClass": "Aluminum Casing",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Rubber",
+                "Amount": 3
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Heat Sink",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Alternate: Fine Black Powder",
+        "Ingredients": [
+            {
+                "ItemClass": "Sulfur",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Compacted Coal",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Black Powder",
+                "Amount": 6
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 8
+    },
+    {
+        "DisplayName": "Alternate: Electromagnetic Connection Rod",
+        "Ingredients": [
+            {
+                "ItemClass": "Stator",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "High-Speed Connector",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Electromagnetic Control Rod",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 15
+    },
+    {
+        "DisplayName": "Alternate: Insulated Crystal Oscillator",
+        "Ingredients": [
+            {
+                "ItemClass": "Quartz Crystal",
+                "Amount": 10
+            },
+            {
+                "ItemClass": "Rubber",
+                "Amount": 7
+            },
+            {
+                "ItemClass": "AI Limiter",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Crystal Oscillator",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 32
+    },
+    {
+        "DisplayName": "Alternate: Fine Concrete",
+        "Ingredients": [
+            {
+                "ItemClass": "Silica",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Limestone",
+                "Amount": 12
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Concrete",
+                "Amount": 10
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Alternate: Crystal Computer",
+        "Ingredients": [
+            {
+                "ItemClass": "Circuit Board",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Crystal Oscillator",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Computer",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 36
+    },
+    {
+        "DisplayName": "Alternate: Caterium Computer",
+        "Ingredients": [
+            {
+                "ItemClass": "Circuit Board",
+                "Amount": 4
+            },
+            {
+                "ItemClass": "Quickwire",
+                "Amount": 14
+            },
+            {
+                "ItemClass": "Rubber",
+                "Amount": 6
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Computer",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 16
+    },
+    {
+        "DisplayName": "Alternate: Caterium Circuit Board",
+        "Ingredients": [
+            {
+                "ItemClass": "Plastic",
+                "Amount": 10
+            },
+            {
+                "ItemClass": "Quickwire",
+                "Amount": 30
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Circuit Board",
+                "Amount": 7
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 48
+    },
+    {
+        "DisplayName": "Alternate: Silicon Circuit Board",
+        "Ingredients": [
+            {
+                "ItemClass": "Copper Sheet",
+                "Amount": 11
+            },
+            {
+                "ItemClass": "Silica",
+                "Amount": 11
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Circuit Board",
+                "Amount": 5
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 24
+    },
+    {
+        "DisplayName": "Alternate: Quickwire Cable",
+        "Ingredients": [
+            {
+                "ItemClass": "Quickwire",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Rubber",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Cable",
+                "Amount": 11
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 24
+    },
+    {
+        "DisplayName": "Alternate: Insulated Cable",
+        "Ingredients": [
+            {
+                "ItemClass": "Wire",
+                "Amount": 9
+            },
+            {
+                "ItemClass": "Rubber",
+                "Amount": 6
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Cable",
+                "Amount": 20
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Ficsonium",
+        "Ingredients": [
+            {
+                "ItemClass": "Plutonium Waste",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Singularity Cell",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Dark Matter Residue",
+                "Amount": 20000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Ficsonium",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Particle Accelerator",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Ficsonium Fuel Rod",
+        "Ingredients": [
+            {
+                "ItemClass": "Ficsonium",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Electromagnetic Control Rod",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Ficsite Trigon",
+                "Amount": 40
+            },
+            {
+                "ItemClass": "Excited Photonic Matter",
+                "Amount": 20000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Ficsonium Fuel Rod",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Dark Matter Residue",
+                "Amount": 20000
+            }
+        ],
+        "ProducedIn": "Quantum Encoder",
+        "ManufactoringDuration": 24
+    },
+    {
+        "DisplayName": "Singularity Cell",
+        "Ingredients": [
+            {
+                "ItemClass": "Nuclear Pasta",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Dark Matter Crystal",
+                "Amount": 20
+            },
+            {
+                "ItemClass": "Iron Plate",
+                "Amount": 100
+            },
+            {
+                "ItemClass": "Concrete",
+                "Amount": 200
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Singularity Cell",
+                "Amount": 10
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 60
+    },
+    {
+        "DisplayName": "Ballistic Warp Drive",
+        "Ingredients": [
+            {
+                "ItemClass": "Thermal Propulsion Rocket",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Singularity Cell",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Superposition Oscillator",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Dark Matter Crystal",
+                "Amount": 40
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Ballistic Warp Drive",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 60
+    },
+    {
+        "DisplayName": "Iodine-Infused Filter",
+        "Ingredients": [
+            {
+                "ItemClass": "Gas Filter",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Quickwire",
+                "Amount": 8
+            },
+            {
+                "ItemClass": "Aluminum Casing",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iodine-Infused Filter",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 16
+    },
+    {
+        "DisplayName": "Quickwire",
+        "Ingredients": [
+            {
+                "ItemClass": "Caterium Ingot",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Quickwire",
+                "Amount": 5
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 5
+    },
+    {
+        "DisplayName": "Solid Biofuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Biomass",
+                "Amount": 8
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Solid Biofuel",
+                "Amount": 4
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Hog Protein",
+        "Ingredients": [
+            {
+                "ItemClass": "Hog Remains",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Alien Protein",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "Spitter Protein",
+        "Ingredients": [
+            {
+                "ItemClass": "Spitter Remains",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Alien Protein",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "Biomass (Mycelia)",
+        "Ingredients": [
+            {
+                "ItemClass": "Mycelia",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Biomass",
+                "Amount": 10
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Power Shard (1)",
+        "Ingredients": [
+            {
+                "ItemClass": "Blue Power Slug",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Power Shard",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 8
+    },
+    {
+        "DisplayName": "Black Powder",
+        "Ingredients": [
+            {
+                "ItemClass": "Coal",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Sulfur",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Black Powder",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Stinger Protein",
+        "Ingredients": [
+            {
+                "ItemClass": "Stinger Remains",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Alien Protein",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "Hatcher Protein",
+        "Ingredients": [
+            {
+                "ItemClass": "Hatcher Remains",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Alien Protein",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "Alien DNA Capsule",
+        "Ingredients": [
+            {
+                "ItemClass": "Alien Protein",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Alien DNA Capsule",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Biomass (Alien Protein)",
+        "Ingredients": [
+            {
+                "ItemClass": "Alien Protein",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Biomass",
+                "Amount": 100
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Iron Rebar",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Rod",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iron Rebar",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Alien Power Matrix",
+        "Ingredients": [
+            {
+                "ItemClass": "SAM Fluctuator",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Power Shard",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Superposition Oscillator",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Excited Photonic Matter",
+                "Amount": 24000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Alien Power Matrix",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Dark Matter Residue",
+                "Amount": 24000
+            }
+        ],
+        "ProducedIn": "Quantum Encoder",
+        "ManufactoringDuration": 24
+    },
+    {
+        "DisplayName": "Homing Rifle Ammo",
+        "Ingredients": [
+            {
+                "ItemClass": "Rifle Ammo",
+                "Amount": 20
+            },
+            {
+                "ItemClass": "High-Speed Connector",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Homing Rifle Ammo",
+                "Amount": 10
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 24
+    },
+    {
+        "DisplayName": "Stun Rebar",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Rebar",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Quickwire",
+                "Amount": 5
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Stun Rebar",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Gas Filter",
+        "Ingredients": [
+            {
+                "ItemClass": "Fabric",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Coal",
+                "Amount": 4
+            },
+            {
+                "ItemClass": "Iron Plate",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Gas Filter",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 8
+    },
+    {
+        "DisplayName": "Gas Nobelisk",
+        "Ingredients": [
+            {
+                "ItemClass": "Nobelisk",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Biomass",
+                "Amount": 10
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Gas Nobelisk",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Alternate: Polyester Fabric",
+        "Ingredients": [
+            {
+                "ItemClass": "Polymer Resin",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 1000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Fabric",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 2
+    },
+    {
+        "DisplayName": "Fabric",
+        "Ingredients": [
+            {
+                "ItemClass": "Mycelia",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Biomass",
+                "Amount": 5
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Fabric",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Synthetic Power Shard",
+        "Ingredients": [
+            {
+                "ItemClass": "Time Crystal",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Dark Matter Crystal",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Quartz Crystal",
+                "Amount": 12
+            },
+            {
+                "ItemClass": "Excited Photonic Matter",
+                "Amount": 12000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Power Shard",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Dark Matter Residue",
+                "Amount": 12000
+            }
+        ],
+        "ProducedIn": "Quantum Encoder",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Power Shard (5)",
+        "Ingredients": [
+            {
+                "ItemClass": "Purple Power Slug",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Power Shard",
+                "Amount": 5
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 24
+    },
+    {
+        "DisplayName": "Power Shard (2)",
+        "Ingredients": [
+            {
+                "ItemClass": "Yellow Power Slug",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Power Shard",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Pulse Nobelisk",
+        "Ingredients": [
+            {
+                "ItemClass": "Nobelisk",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Crystal Oscillator",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Pulse Nobelisk",
+                "Amount": 5
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 60
+    },
+    {
+        "DisplayName": "Shatter Rebar",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Rebar",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Quartz Crystal",
+                "Amount": 3
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Shatter Rebar",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Turbo Rifle Ammo",
+        "Ingredients": [
+            {
+                "ItemClass": "Rifle Ammo",
+                "Amount": 25
+            },
+            {
+                "ItemClass": "Aluminum Casing",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Packaged Turbofuel",
+                "Amount": 3
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Turbo Rifle Ammo",
+                "Amount": 50
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Turbo Rifle Ammo",
+        "Ingredients": [
+            {
+                "ItemClass": "Rifle Ammo",
+                "Amount": 25
+            },
+            {
+                "ItemClass": "Aluminum Casing",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Turbofuel",
+                "Amount": 3000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Turbo Rifle Ammo",
+                "Amount": 50
+            }
+        ],
+        "ProducedIn": "Blender",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Nuke Nobelisk",
+        "Ingredients": [
+            {
+                "ItemClass": "Nobelisk",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Encased Uranium Cell",
+                "Amount": 20
+            },
+            {
+                "ItemClass": "Smokeless Powder",
+                "Amount": 10
+            },
+            {
+                "ItemClass": "AI Limiter",
+                "Amount": 6
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Nuke Nobelisk",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 120
+    },
+    {
+        "DisplayName": "Rifle Ammo",
+        "Ingredients": [
+            {
+                "ItemClass": "Copper Sheet",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Smokeless Powder",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Rifle Ammo",
+                "Amount": 15
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Explosive Rebar",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Rebar",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Smokeless Powder",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Steel Pipe",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Explosive Rebar",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Cluster Nobelisk",
+        "Ingredients": [
+            {
+                "ItemClass": "Nobelisk",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Smokeless Powder",
+                "Amount": 4
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Cluster Nobelisk",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 24
+    },
+    {
+        "DisplayName": "Nobelisk",
+        "Ingredients": [
+            {
+                "ItemClass": "Black Powder",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Steel Pipe",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Nobelisk",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Smokeless Powder",
+        "Ingredients": [
+            {
+                "ItemClass": "Black Powder",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": 1000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Smokeless Powder",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "FICSMAS Wreath",
+        "Ingredients": [
+            {
+                "ItemClass": "FICSMAS Tree Branch",
+                "Amount": 15
+            },
+            {
+                "ItemClass": "FICSMAS Ornament Bundle",
+                "Amount": 6
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "FICSMAS Wreath",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 60
+    },
+    {
+        "DisplayName": "Snowball",
+        "Ingredients": [
+            {
+                "ItemClass": "FICSMAS Actual Snow",
+                "Amount": 3
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Snowball",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "FICSMAS Wonder Star",
+        "Ingredients": [
+            {
+                "ItemClass": "FICSMAS Wreath",
+                "Amount": 5
+            },
+            {
+                "ItemClass": "Candy Cane",
+                "Amount": 20
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "FICSMAS Wonder Star",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 60
+    },
+    {
+        "DisplayName": "Copper FICSMAS Ornament",
+        "Ingredients": [
+            {
+                "ItemClass": "Red FICSMAS Ornament",
+                "Amount": 2
+            },
+            {
+                "ItemClass": "Copper Ingot",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Copper FICSMAS Ornament",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Foundry",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Iron FICSMAS Ornament",
+        "Ingredients": [
+            {
+                "ItemClass": "Blue FICSMAS Ornament",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "Iron Ingot",
+                "Amount": 3
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iron FICSMAS Ornament",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Foundry",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "FICSMAS Ornament Bundle",
+        "Ingredients": [
+            {
+                "ItemClass": "Copper FICSMAS Ornament",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Iron FICSMAS Ornament",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "FICSMAS Ornament Bundle",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Red FICSMAS Ornament",
+        "Ingredients": [
+            {
+                "ItemClass": "FICSMAS Gift",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Red FICSMAS Ornament",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Smelter",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Blue FICSMAS Ornament",
+        "Ingredients": [
+            {
+                "ItemClass": "FICSMAS Gift",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Blue FICSMAS Ornament",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Smelter",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "FICSMAS Actual Snow",
+        "Ingredients": [
+            {
+                "ItemClass": "FICSMAS Gift",
+                "Amount": 5
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "FICSMAS Actual Snow",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "FICSMAS Tree Branch",
+        "Ingredients": [
+            {
+                "ItemClass": "FICSMAS Gift",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "FICSMAS Tree Branch",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "FICSMAS Bow",
+        "Ingredients": [
+            {
+                "ItemClass": "FICSMAS Gift",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "FICSMAS Bow",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Candy Cane",
+        "Ingredients": [
+            {
+                "ItemClass": "FICSMAS Gift",
+                "Amount": 3
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Candy Cane",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Biomass (Leaves)",
+        "Ingredients": [
+            {
+                "ItemClass": "Leaves",
+                "Amount": 10
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Biomass",
+                "Amount": 5
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 5
+    },
+    {
+        "DisplayName": "Biomass (Wood)",
+        "Ingredients": [
+            {
+                "ItemClass": "Wood",
+                "Amount": 4
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Biomass",
+                "Amount": 20
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Reinforced Iron Plate",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Plate",
+                "Amount": 6
+            },
+            {
+                "ItemClass": "Screws",
+                "Amount": 12
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Reinforced Iron Plate",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Concrete",
+        "Ingredients": [
+            {
+                "ItemClass": "Limestone",
+                "Amount": 3
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Concrete",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Screws",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Rod",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Screws",
+                "Amount": 4
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Cable",
+        "Ingredients": [
+            {
+                "ItemClass": "Wire",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Cable",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 2
+    },
+    {
+        "DisplayName": "Wire",
+        "Ingredients": [
+            {
+                "ItemClass": "Copper Ingot",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Wire",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Copper Ingot",
+        "Ingredients": [
+            {
+                "ItemClass": "Copper Ore",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Copper Ingot",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Smelter",
+        "ManufactoringDuration": 2
+    },
+    {
+        "DisplayName": "Sweet Fireworks",
+        "Ingredients": [
+            {
+                "ItemClass": "FICSMAS Tree Branch",
+                "Amount": 6
+            },
+            {
+                "ItemClass": "Candy Cane",
+                "Amount": 3
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Sweet Fireworks",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 24
+    },
+    {
+        "DisplayName": "Fancy Fireworks",
+        "Ingredients": [
+            {
+                "ItemClass": "FICSMAS Tree Branch",
+                "Amount": 4
+            },
+            {
+                "ItemClass": "FICSMAS Bow",
+                "Amount": 3
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Fancy Fireworks",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 24
+    },
+    {
+        "DisplayName": "Sparkly Fireworks",
+        "Ingredients": [
+            {
+                "ItemClass": "FICSMAS Tree Branch",
+                "Amount": 3
+            },
+            {
+                "ItemClass": "FICSMAS Actual Snow",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Sparkly Fireworks",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 24
+    }
+]
