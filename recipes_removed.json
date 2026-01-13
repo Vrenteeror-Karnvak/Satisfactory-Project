@@ -1,0 +1,1121 @@
+[
+    {
+        "DisplayName": "Packaged Rocket Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Rocket Fuel",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Fluid Tank",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Rocket Fuel",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 1
+    },
+    {
+        "DisplayName": "Unpackage Rocket Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Rocket Fuel",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Rocket Fuel",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Fluid Tank",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 1
+    },
+    {
+        "DisplayName": "Packaged Ionized Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Ionized Fuel",
+                "Amount": 4000
+            },
+            {
+                "ItemClass": "Empty Fluid Tank",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Ionized Fuel",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "Unpackage Ionized Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Ionized Fuel",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Ionized Fuel",
+                "Amount": 4000
+            },
+            {
+                "ItemClass": "Empty Fluid Tank",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "Bauxite (Caterium)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Caterium Ore",
+                "Amount": 15
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Bauxite",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Bauxite (Copper)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Copper Ore",
+                "Amount": 18
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Bauxite",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Caterium Ore (Copper)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Copper Ore",
+                "Amount": 15
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Caterium Ore",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Caterium Ore (Quartz)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Raw Quartz",
+                "Amount": 12
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Caterium Ore",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Coal (Iron)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Iron Ore",
+                "Amount": 18
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Coal",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Coal (Limestone)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Limestone",
+                "Amount": 36
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Coal",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Copper Ore (Quartz)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Raw Quartz",
+                "Amount": 10
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Copper Ore",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Copper Ore (Sulfur)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Sulfur",
+                "Amount": 12
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Copper Ore",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Iron Ore (Limestone)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Limestone",
+                "Amount": 24
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iron Ore",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Limestone (Sulfur)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Sulfur",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Limestone",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Nitrogen Gas (Bauxite)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Bauxite",
+                "Amount": 10
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Nitrogen Gas",
+                "Amount": 12000
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Nitrogen Gas (Caterium)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Caterium Ore",
+                "Amount": 12
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Nitrogen Gas",
+                "Amount": 12000
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Raw Quartz (Bauxite)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Bauxite",
+                "Amount": 10
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Raw Quartz",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Raw Quartz (Coal)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Coal",
+                "Amount": 24
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Raw Quartz",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Sulfur (Coal)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Coal",
+                "Amount": 20
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Sulfur",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Sulfur (Iron)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Iron Ore",
+                "Amount": 30
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Sulfur",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Uranium Ore (Bauxite)",
+        "Ingredients": [
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Bauxite",
+                "Amount": 48
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Uranium",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Packaged Turbofuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Turbofuel",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Turbofuel",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Unpackage Turbofuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Turbofuel",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Turbofuel",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Alternate: Biocoal",
+        "Ingredients": [
+            {
+                "ItemClass": "Biomass",
+                "Amount": 5
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Coal",
+                "Amount": 6
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 8
+    },
+    {
+        "DisplayName": "Packaged Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Fuel",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Fuel",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "Liquid Biofuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Solid Biofuel",
+                "Amount": 6
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": 3000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Liquid Biofuel",
+                "Amount": 4000
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Packaged Liquid Biofuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Liquid Biofuel",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Liquid Biofuel",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "Packaged Oil",
+        "Ingredients": [
+            {
+                "ItemClass": "Crude Oil",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Oil",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Packaged Heavy Oil Residue",
+        "Ingredients": [
+            {
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Heavy Oil Residue",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Packaged Water",
+        "Ingredients": [
+            {
+                "ItemClass": "Water",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Water",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 2
+    },
+    {
+        "DisplayName": "Unpackage Liquid Biofuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Liquid Biofuel",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Liquid Biofuel",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 2
+    },
+    {
+        "DisplayName": "Unpackage Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Fuel",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Fuel",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 2
+    },
+    {
+        "DisplayName": "Unpackage Oil",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Oil",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Crude Oil",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 2
+    },
+    {
+        "DisplayName": "Unpackage Heavy Oil Residue",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Heavy Oil Residue",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 6
+    },
+    {
+        "DisplayName": "Unpackage Water",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Water",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Water",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 1
+    },
+    {
+        "DisplayName": "Alternate: Recycled Rubber",
+        "Ingredients": [
+            {
+                "ItemClass": "Plastic",
+                "Amount": 6
+            },
+            {
+                "ItemClass": "Fuel",
+                "Amount": 6000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Rubber",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Packaged Alumina Solution",
+        "Ingredients": [
+            {
+                "ItemClass": "Alumina Solution",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Alumina Solution",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 1
+    },
+    {
+        "DisplayName": "Unpackage Alumina Solution",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Alumina Solution",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Alumina Solution",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 1
+    },
+    {
+        "DisplayName": "Alternate: Diluted Packaged Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": 1000
+            },
+            {
+                "ItemClass": "Packaged Water",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Fuel",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 2
+    },
+    {
+        "DisplayName": "Packaged Nitric Acid",
+        "Ingredients": [
+            {
+                "ItemClass": "Nitric Acid",
+                "Amount": 1000
+            },
+            {
+                "ItemClass": "Empty Fluid Tank",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Nitric Acid",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 2
+    },
+    {
+        "DisplayName": "Unpackage Nitric Acid",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Nitric Acid",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Nitric Acid",
+                "Amount": 1000
+            },
+            {
+                "ItemClass": "Empty Fluid Tank",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "Packaged Sulfuric Acid",
+        "Ingredients": [
+            {
+                "ItemClass": "Sulfuric Acid",
+                "Amount": 2000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 2
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Sulfuric Acid",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 3
+    },
+    {
+        "DisplayName": "Unpackage Sulfuric Acid",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Sulfuric Acid",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Sulfuric Acid",
+                "Amount": 1000
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 1
+    },
+    {
+        "DisplayName": "Packaged Nitrogen Gas",
+        "Ingredients": [
+            {
+                "ItemClass": "Nitrogen Gas",
+                "Amount": 4000
+            },
+            {
+                "ItemClass": "Empty Fluid Tank",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Packaged Nitrogen Gas",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 1
+    },
+    {
+        "DisplayName": "Unpackage Nitrogen Gas",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Nitrogen Gas",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Nitrogen Gas",
+                "Amount": 4000
+            },
+            {
+                "ItemClass": "Empty Fluid Tank",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Packager",
+        "ManufactoringDuration": 1
+    },
+    {
+        "DisplayName": "Alternate: Recycled Plastic",
+        "Ingredients": [
+            {
+                "ItemClass": "Rubber",
+                "Amount": 6
+            },
+            {
+                "ItemClass": "Fuel",
+                "Amount": 6000
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Plastic",
+                "Amount": 12
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Solid Biofuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Biomass",
+                "Amount": 8
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Solid Biofuel",
+                "Amount": 4
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Biomass (Mycelia)",
+        "Ingredients": [
+            {
+                "ItemClass": "Mycelia",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Biomass",
+                "Amount": 10
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Power Shard (1)",
+        "Ingredients": [
+            {
+                "ItemClass": "Blue Power Slug",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Power Shard",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 8
+    },
+    {
+        "DisplayName": "Biomass (Alien Protein)",
+        "Ingredients": [
+            {
+                "ItemClass": "Alien Protein",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Biomass",
+                "Amount": 100
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Fabric",
+        "Ingredients": [
+            {
+                "ItemClass": "Mycelia",
+                "Amount": 1
+            },
+            {
+                "ItemClass": "Biomass",
+                "Amount": 5
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Fabric",
+                "Amount": 1
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 4
+    },
+    {
+        "DisplayName": "Power Shard (5)",
+        "Ingredients": [
+            {
+                "ItemClass": "Purple Power Slug",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Power Shard",
+                "Amount": 5
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 24
+    },
+    {
+        "DisplayName": "Power Shard (2)",
+        "Ingredients": [
+            {
+                "ItemClass": "Yellow Power Slug",
+                "Amount": 1
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Power Shard",
+                "Amount": 2
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 12
+    },
+    {
+        "DisplayName": "Biomass (Leaves)",
+        "Ingredients": [
+            {
+                "ItemClass": "Leaves",
+                "Amount": 10
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Biomass",
+                "Amount": 5
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 5
+    },
+    {
+        "DisplayName": "Biomass (Wood)",
+        "Ingredients": [
+            {
+                "ItemClass": "Wood",
+                "Amount": 4
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Biomass",
+                "Amount": 20
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 4
+    }
+]

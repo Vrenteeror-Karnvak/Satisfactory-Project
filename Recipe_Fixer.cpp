@@ -16,6 +16,7 @@ int main(int argc, char* argv[]) {
     ifstream resource_in(exePath / "name_pairs.json");
     ifstream recipe_in(exePath / "recipes_raw.json");
     ofstream recipe_out(exePath / "recipes_fixed.json");
+    ofstream recipe_names(exePath / "original_recipe_names.txt");
 
     if (!resource_in.is_open()) {
         cerr << "Failed to open name input file.\n";
@@ -27,6 +28,10 @@ int main(int argc, char* argv[]) {
 
     if (!recipe_out.is_open()) {
         cerr << "Failed to open recipe output file.\n";
+    }
+
+    if (!recipe_names.is_open()) {
+        cerr << "Failed to open recipe name output file.\n";
     }
 
     // pulls the resource file for usage
@@ -61,6 +66,8 @@ int main(int argc, char* argv[]) {
         }
         ingredient = block.value("ProducedIn", ""); // pulls the data
         block["ProducedIn"] = parseData(ingredient, Class_Name, Display_Name); // makes the data usable
+
+        recipe_names << block.value("DisplayName", "") << endl;
     }
 
     // puts the new recipes in the output file
