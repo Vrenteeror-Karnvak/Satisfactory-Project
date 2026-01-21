@@ -1,0 +1,44 @@
+Recipe_Extractor {
+
+    en-US.json >> [
+        name_pairs.json,
+        recipe_raw.json
+    ],
+
+    (Recipe Source File) >> [
+        (Class Names): (Display Names),
+        (Trimmed Recipe Objects)
+    ]
+}
+Recipe_Fixer {
+
+    [
+        name_pairs.json,
+        recipe_raw.json
+    ] >> [
+        recipes_fixed.json,
+        original_recipe_names.txt
+    ]
+
+    [
+        (Class Names): (Display Names),
+        (Trimmed Recipe Objects)
+    ] >> [
+        (Recipe Objects with Display Names),
+        (Display Names)
+    ]
+}
+Recipe_Trimmer {
+
+    recipes_fixed.json >> [
+        recipes.json
+        recipes_removed.json
+        recipe_names.txt
+    ]
+
+    (Recipe Objects with Display Names) >> [
+        (Restricted List of Recipe Objects),
+        (Recipes Objects in fixed and out recipes),
+        (Restricted Display Names)
+    ]
+}

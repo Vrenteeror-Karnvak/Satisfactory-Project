@@ -7,6 +7,12 @@
 using namespace std;
 using json = nlohmann::ordered_json;
 
+/**
+ * @brief pulls ingredient class and amount from string 
+ * 
+ * @param data a list of ingredients as a string 
+ * @return vector<json> a list of ingredients: class and amount 
+ */
 vector<json> parseIngredients(const string data);
 
 int main(int argc, char* argv[]) {
@@ -36,7 +42,7 @@ int main(int argc, char* argv[]) {
     json root;
     fin >> root;
 
-    json name_data= json::object();
+    json name_data = json::object();
     json recipe_data = json::object();
     json nameOut = json::array();
     json recipeOut = json::array();
