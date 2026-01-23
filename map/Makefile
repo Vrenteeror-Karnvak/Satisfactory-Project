@@ -2,14 +2,13 @@ GXX = g++
 
 GXXFLAGS = -Wall -g
 
-Targets = $(wildcard src/*.cpp)
+SOURCES = $(wildcard src/*.cpp)
+TARGETS = $(addprefix bin/,$(notdir $(basename $(SOURCES))))
 
-Names = $(notdir $(basename $(Targets)))
+all: $(TARGETS)
 
-all: $(Names)
-
-$(Names): $(Targets)
-	$(GXX) $(GXXFLAGS) src/$@.cpp -o bin/$@
+$(TARGETS): $(SOURCES)
+	$(GXX) $(GXXFLAGS) src/$(notdir $(basename $@)).cpp -o $@
 
 clean:
-	rm $(addprefix bin/,$(Names))
+	rm $(TARGETS)
