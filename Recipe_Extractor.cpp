@@ -89,7 +89,7 @@ int main(int argc, char* argv[]) {
 
                     recipe_data["ProducedIn"] = data.value("mProducedIn", ""); // grabs where the part is made
 
-                    recipe_data["ManufactoringDuration"] = stoi(data.value("mManufactoringDuration", "")); // grabs the manufacturing time
+                    recipe_data["ManufactoringDuration"] = data.value("mManufactoringDuration", ""); // grabs the manufacturing time
 
                     recipeOut.push_back(recipe_data); // adds the collected data to the vector
                 }
@@ -147,7 +147,7 @@ vector<json> parseIngredients(string data) {
         size_t amountStart = part.find("Amount=");
         if (amountStart != string::npos) {
             amountStart += 7; // increases amountStart by the length of length of "Amount=", effectively removing it
-            ingredient["Amount"] = stoi(part.substr(amountStart)); // adds Amount to the json object
+            ingredient["Amount"] = part.substr(amountStart); // adds Amount to the json object
         }
 
         result.push_back(ingredient); // adds the json object to the vector
