@@ -3,7 +3,11 @@ GXX = g++
 GXXFLAGS = -Wall -g
 
 SOURCES := $(wildcard src/*.cpp)
-TARGETS := $(addprefix bin/,$(notdir $(basename $(SOURCES))))
+#windows
+TARGETS := $(addsuffix .exe,$(addprefix bin/,$(notdir $(basename $(SOURCES)))))
+#linux
+#TARGETS := $(addprefix bin/,$(notdir $(basename $(SOURCES))))
+
 
 TARGET_A := bin/Resource
 SOURCE_A := $(wildcard src/resources/*.cc)
@@ -21,4 +25,4 @@ $(TARGET_A): $(SOURCE_A)
 	$(GXX) $(GXXFLAGS) $^ -o $@ 
 
 clean:
-	rm $(TARGETS) $(TARGET_A)
+	rm -f $(TARGETS) $(TARGET_A)
