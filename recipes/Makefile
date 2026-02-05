@@ -2,16 +2,10 @@ GXX = g++
 
 GXXFLAGS = -Wall -g
 
-#windows
-/ := \\#
-#linux
-#/ := /
+/ := /
 
 SOURCES := $(wildcard src$(/)*.cpp)
-#windows
 TARGETS := $(addsuffix .exe,$(addprefix bin$(/),$(notdir $(basename $(SOURCES)))))
-#linux
-#TARGETS := $(addprefix bin$(/),$(notdir $(basename $(SOURCES))))
 
 TARGET_A := bin/Resource
 SOURCE_A := $(wildcard src$(/)resources$(/)*.cc)
