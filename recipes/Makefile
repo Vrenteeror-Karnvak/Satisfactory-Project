@@ -2,22 +2,26 @@ GXX = g++
 
 GXXFLAGS = -Wall -g
 
-SOURCES := $(wildcard src/*.cpp)
 #windows
-TARGETS := $(addsuffix .exe,$(addprefix bin/,$(notdir $(basename $(SOURCES)))))
+/ := \\#
 #linux
-#TARGETS := $(addprefix bin/,$(notdir $(basename $(SOURCES))))
+#/ := /
 
+SOURCES := $(wildcard src$(/)*.cpp)
+#windows
+TARGETS := $(addsuffix .exe,$(addprefix bin$(/),$(notdir $(basename $(SOURCES)))))
+#linux
+#TARGETS := $(addprefix bin$(/),$(notdir $(basename $(SOURCES))))
 
 TARGET_A := bin/Resource
-SOURCE_A := $(wildcard src/resources/*.cc)
+SOURCE_A := $(wildcard src$(/)resources$(/)*.cc)
 
 all: recipes resources
 
 recipes: $(TARGETS)
 
 $(TARGETS): $(SOURCES)
-	$(GXX) $(GXXFLAGS) src/$(notdir $(basename $@)).cpp -o $@
+	$(GXX) $(GXXFLAGS) src$(/)$(notdir $(basename $@)).cpp -o $@
 
 resources: $(TARGET_A)
 
