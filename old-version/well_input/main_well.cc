@@ -1,11 +1,11 @@
-#include <vector>
 #include <fstream>
-#include "node_input.h"
+
+#include "node_well.h"
 
 using namespace std;
 
 int main() {
-    string PATH = "C:\\Users\\AdamB\\OneDrive\\Desktop\\Satisfactory Coding Project\\satisfactory_node_data.txt";
+    string PATH = "C:\\Users\\AdamB\\OneDrive\\Desktop\\Satisfactory Coding Project\\satisfactory_node_data+ids.txt";
     ifstream fin(PATH);
     vector<Node> nodes;
     if (fin) {
@@ -41,6 +41,8 @@ int main() {
     }
     fin.close();
 
+    int ID_num = 0;
+
     ofstream fout(PATH, ios_base::trunc);
 
     if (fout.is_open()) {
@@ -53,8 +55,9 @@ int main() {
 
     if (nodes.size()>0) {
         cout << "Writing nodes to file. ";
-        for (int i = 0; i<nodes.size(); i++) {
+        for (size_t i = 0; i<nodes.size(); i++) {
             fout << nodes[i].to_string() << '\n';
+            ID_num += 1;
         }
         cout << "Finished." << endl;
     }
@@ -62,7 +65,7 @@ int main() {
     bool resource_flag, quality_flag, coordinate_flag;
     string input;
     Node node;
-    
+
     resource_flag = true;
     while (resource_flag) {        
         cout << "Enter the name of the resource (q to quit): ";
@@ -78,6 +81,10 @@ int main() {
         if (input != "y") {
             continue;
         }
+
+        //int first_ID = ID_num;
+        int count = 0;
+        vector<Node> well_nodes;
 
         quality_flag = true;
         while (quality_flag) {
@@ -107,7 +114,6 @@ int main() {
             }
 
             coordinate_flag = true;
-            int count = 0;
             while (coordinate_flag) {
                 cout << "Enter the x- and y-coordinates (q to quit) ";
                 cin >> input;
@@ -127,7 +133,7 @@ int main() {
                 }
 
                 bool duplicate_node = false;
-                for (int i = 0; i<nodes.size() && !duplicate_node; i++) {
+                for (size_t i = 0; i<nodes.size() && !duplicate_node; i++) {
                     if (nodes[i]==node) {
                         cout << "Found in list: " << nodes[i].to_string() << endl;
                         duplicate_node = true;
@@ -137,9 +143,29 @@ int main() {
                     cout << "Node already exists, not adding to file." << endl;
                     continue;
                 }
+
+                node.set_id(ID_num);
+                ID_num += 1;
+
+                well_nodes.push_back(node);
                 nodes.push_back(node);
                 fout << node.to_string() << '\n';
-                cout << "Added to file. " << (++count) << " values entered so far." << endl;
+                cout << "Added to well. " << (++count) << " values entered so far." << endl;
+
+                cout << "Is that all nodes? (y/n): ";
+                cin >> input;
+
+                if (input == "y") {
+                    Node center = node.create_center_node(well_nodes, ID_num);
+                    well_nodes.clear();
+                    ID_num += 1;
+                    nodes.push_back(center);
+                    fout << center.to_string() << '\n';
+                    cout << "Full well added to file." << endl;
+                    //goto resource section
+                    quality_flag = false;
+                    coordinate_flag = false;
+                }
             }
         }
     }
@@ -147,3 +173,21 @@ int main() {
 
     return 0;
 }
+
+
+
+
+
+
+
+
+/*
+450 Oil 267123 115156 0
+900 Oil -263342 72360 0
+1350 Oil -43239 -6519 0
+1650 Nitrogen 214660 137994 0
+3000 Nitrogen 87991 105052 0
+2100 Nitrogen -144342 124610 0
+1950 Nitrogen -249449 -188216 0
+1800 Nitrogen 225242 -309813 0
+*/

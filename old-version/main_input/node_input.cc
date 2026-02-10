@@ -120,7 +120,7 @@ bool Node::operator==(const Node& other) {
 string Node::fix_string(string s) {
     if (s.size() > 0) {
         s[0] = std::toupper(s[0]);
-        for (int i = 1; i < s.size(); i++) {
+        for (size_t i = 1; i < s.size(); i++) {
             s[i] = tolower(s[i]);
         }
         if (s == "Sam") {

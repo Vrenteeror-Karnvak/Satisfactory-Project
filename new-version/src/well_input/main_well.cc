@@ -55,7 +55,7 @@ int main() {
 
     if (nodes.size()>0) {
         cout << "Writing nodes to file. ";
-        for (int i = 0; i<nodes.size(); i++) {
+        for (size_t i = 0; i<nodes.size(); i++) {
             fout << nodes[i].to_string() << '\n';
             ID_num += 1;
         }
@@ -82,7 +82,7 @@ int main() {
             continue;
         }
 
-        int first_ID = ID_num;
+        //int first_ID = ID_num;
         int count = 0;
         vector<Node> well_nodes;
 
@@ -133,7 +133,7 @@ int main() {
                 }
 
                 bool duplicate_node = false;
-                for (int i = 0; i<nodes.size() && !duplicate_node; i++) {
+                for (size_t i = 0; i<nodes.size() && !duplicate_node; i++) {
                     if (nodes[i]==node) {
                         cout << "Found in list: " << nodes[i].to_string() << endl;
                         duplicate_node = true;

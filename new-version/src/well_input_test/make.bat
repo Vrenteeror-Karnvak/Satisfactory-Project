@@ -1,0 +1,1 @@
+g++ -Wall -g node_well.cc main_well.cc -o satisfactory_code_well_input

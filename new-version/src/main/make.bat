@@ -1,0 +1,1 @@
+g++ -Wall -g node.cc satisfactory_main.cc -o satisfactory_code

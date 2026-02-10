@@ -27,15 +27,15 @@ Node::Node(istream& fin) {
 
 void Node::find_children(vector<Node> list) {
     map<int,Node*> id_to_Node;
-    for (int i = 0; i<list.size(); i++) {
+    for (size_t i = 0; i<list.size(); i++) {
         Node n = list[i];
         id_to_Node[n.get_id()] = &n;
     }
     //create child list from child ids
-    for (int i = 0; i<list.size(); i++) {
+    for (size_t i = 0; i<list.size(); i++) {
         Node n = list[i];
         const vector<int> v = n.get_child_ids();
-        for (int j = 0; j<v.size(); j++) {
+        for (size_t j = 0; j<v.size(); j++) {
             int id = v[j];
             if (id_to_Node.count(id)>0) {
                 n.add_child(*id_to_Node[id], false);
@@ -174,7 +174,7 @@ void Node::add_child(Node n, bool b) {
     int id = n.get_id();
     if (b) {
         bool found;
-        for (int i = 0; i<child_ids.size(); i++) {
+        for (size_t i = 0; i<child_ids.size(); i++) {
             if (child_ids[i]==id) {
                 found = true;
             }
@@ -193,7 +193,7 @@ Node Node::create_center_node(vector<Node> nodes, int id) {
         total_ipm = 0,
         highest_tier = 0;
     
-    for (int i = 0; i < nodes.size(); i++) {
+    for (size_t i = 0; i < nodes.size(); i++) {
         Node n = nodes[i];
 
         //sum position
@@ -233,7 +233,7 @@ bool Node::operator==(const Node& other) {
 string Node::fix_string(string s) {
     if (s.size()>0) {
         s[0] = std::toupper(s[0]);
-        for (int i = 1; i<s.size(); i++) {
+        for (size_t i = 1; i<s.size(); i++) {
             s[i] = tolower(s[i]);
         }
     }
