@@ -1,26 +1,38 @@
-GXX = g++
+GXX := g++
+GXXFLAGS := -g
 
-GXXFLAGS = -Wall -g
+initializer := bin/initializer
+recipe_extractor := bin/recipe_extractor
+recipe_fixer := bin/recipe_fixer
+recipe_trimmer := bin/recipe_trimmer
+test_file := bin/test_file
+resource := bin/resource
 
-/ := /
+TARGETS := $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_trimmer) $(test_file) $(resource)
 
-SOURCES := $(wildcard src$(/)*.cpp)
-TARGETS := $(addsuffix .exe,$(addprefix bin$(/),$(notdir $(basename $(SOURCES)))))
+all: recipes test resource
 
-TARGET_A := bin/Resource
-SOURCE_A := $(wildcard src$(/)resources$(/)*.cc)
+recipes: $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_trimmer)
+test: $(test_file)
+resource: $(resource)
 
-all: recipes resources
+$(initializer): src/Initializer.cpp
+	$(GXX) $(GXXFLAGS) $^ -o $@
 
-recipes: $(TARGETS)
+$(recipe_extractor): src/Recipe_Extractor.cpp
+	$(GXX) $(GXXFLAGS) $^ -o $@
 
-$(TARGETS): $(SOURCES)
-	$(GXX) $(GXXFLAGS) src$(/)$(notdir $(basename $@)).cpp -o $@
+$(recipe_fixer): src/Recipe_Fixer.cpp
+	$(GXX) $(GXXFLAGS) $^ -o $@
 
-resources: $(TARGET_A)
+$(recipe_trimmer): src/Recipe_Trimmer.cpp
+	$(GXX) $(GXXFLAGS) $^ -o $@
 
-$(TARGET_A): $(SOURCE_A) 
-	$(GXX) $(GXXFLAGS) $^ -o $@ 
+$(test_file): src/Test_File.cpp
+	$(GXX) $(GXXFLAGS) $^ -o $@
+
+$(resource): src/resources/*.cc
+	$(GXX) $(GXXFLAGS) $^ -o $@
 
 clean:
-	rm -f $(TARGETS) $(TARGET_A)
+	rm -f $(TARGETS)
