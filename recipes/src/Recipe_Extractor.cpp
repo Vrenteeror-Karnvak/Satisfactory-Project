@@ -8,10 +8,10 @@ using namespace std;
 using json = nlohmann::ordered_json;
 
 /**
- * @brief pulls ingredient class and amount from string 
+ * @brief Pulls ingredient name and amount from string .
  * 
- * @param data a list of ingredients as a string 
- * @return vector<json> a list of ingredients: class and amount 
+ * @param data A list of ingredients as a string.
+ * @return A vector<json> containing a list of ingredients: name and amount.
  */
 vector<json> parseIngredients(const string data);
 
@@ -20,8 +20,8 @@ int main(int argc, char* argv[]) {
 
     // opens all of the input and output file streams
     ifstream fin(exePath / "dat/en-US.json");
-    ofstream name_out(exePath / "name_pairs.json");
-    ofstream recipe_out(exePath / "recipes_raw.json");
+    ofstream name_out(exePath / "dat/name_pairs.json");
+    ofstream recipe_out(exePath / "int/recipes_raw.json");
 
     if (!fin.is_open()) {
         cerr << "Failed to open input file.\n";

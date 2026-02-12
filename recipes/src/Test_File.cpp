@@ -10,6 +10,17 @@ using namespace std;
 using json = nlohmann::ordered_json;
 
 int main(int argc, char* argv[]) {
+    
+}
+
+
+
+/*
+    I haven't the foggiest idea why I made this,
+    but I'm assuming it was important, so I'm storing it down here.
+
+    
+
     filesystem::path exePath = filesystem::absolute(argv[0]).parent_path();
 
     // opens all of the input and output file streams
@@ -30,4 +41,4 @@ int main(int argc, char* argv[]) {
 
     recipe_in.close();
     recipe_out.close();
-}
+*/

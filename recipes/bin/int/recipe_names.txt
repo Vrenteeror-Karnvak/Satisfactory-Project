@@ -138,8 +138,6 @@ Alternate: Molded Beam
 Alternate: Aluminum Beam
 Alternate: Aluminum Rod
 Alternate: Plastic AI Limiter
-Alternate: Distilled Silica
-Alternate: Quartz Purification
 Alternate: Fused Quartz Crystal
 Alternate: Leached Iron Ingot
 Alternate: Basic Iron Ingot

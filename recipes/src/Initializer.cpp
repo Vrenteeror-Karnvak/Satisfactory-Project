@@ -4,67 +4,70 @@
 #include <iostream>
 #include <fstream>
 
+#include "resources/recipe.h"
+#include "resources/resource.h"
+
 using namespace std;
 using json = nlohmann::ordered_json;
 
-class Resource {
-    public:
-        Resource(string name_in, int amount_in) {
-            name = name_in;
-            amount = amount_in;
+int main(int argc, char* argv[]) {
+    filesystem::path exePath = filesystem::absolute(argv[0]).parent_path();
+
+    // opens all of the input and output file streams
+    ifstream recipe_in(exePath / "dat" / "recipes.json");
+    ofstream recipe_out(exePath / "int" / "byproducts.json");
+
+    json recipe;
+    recipe_in >> recipe;
+
+    json byproducts = json::object();
+    json double_output = json::array();
+
+    bool byproduct_found = false;
+
+    for (auto& block : recipe) {
+        if (block["Product"].size() != 1) {
+            byproduct_found = false;
+
+            for (auto& product : block["Product"]) {
+                if (product["ItemClass"] == "Compacted Coal" || product["ItemClass"] == "Polymer Resin"
+                || product["ItemClass"] == "Dark Matter Residue" || product["ItemClass"] == "Water"
+                || product["ItemClass"] == "Dissolved Silica" || product["ItemClass"] == "Sulfuric Acid"
+                || product["ItemClass"] == "Heavy Oil Residue" || product["ItemClass"] == "Silica")  {
+                    byproduct_found = true;
+                }
+            }
+
+            /*
+            Label as terminal:
+            Polymer Resin
+            Compacted Coal
+            Dark Matter Residue
+            Water
+            Heavy Oil Residue
+            Sulfuric Acid
+            
+            Remove the associated recipes entirely:
+            Dissolved Silica
+
+            Needs more consideration:
+            Silica
+            */
+
+            if (!byproduct_found) {
+                byproducts["DisplayName"] = block["DisplayName"];
+                byproducts["Product"] = block["Product"];
+                double_output.push_back(byproducts);
+            }
         }
-        string get_name() {return name;}
-        int get_amount() {return amount;}
-    private:
-        string name;
-        int amount;
-};
-
-class recipe {
-    public:
-
-    private:
-        vector<Resource> inputs;
-        vector<Resource> outputs;
-        double speed;
-};
-
-void variableInitializer(string path);
-
-int main() {
-    string name_in = "names.json";
-    string recipe_in = "recipes.json";
-
-    variableInitializer(name_in);
-    variableInitializer(recipe_in);
-
-    ifstream fin(recipe_in);
-    ofstream fout("values.txt");
-
-    json data;
-    fin >> data;
-
-    int input;
-    double output;
-
-    //block is unused?
-    for (const auto& block : data) {
-        input = stoi(data.value("ManufactoringDuration", ""));
-        output = 60/input;
-        fout << output << "\n";
     }
 
-    fin.close();
-    fout.close();
+    recipe_out << double_output.dump(4);
 
-    return 0;
+    recipe_in.close();
+    recipe_out.close();
 }
 
-void variableInitializer(string path) {
-    ifstream fin(path);
-    
-    json data;
-    fin >> data;
-    
-    fin.close();
-}
+
+// Hello World! It took me 8 minutes to figure out what a camera was.
+// In my defense, I was asked to determine an item that was art related and a device.
