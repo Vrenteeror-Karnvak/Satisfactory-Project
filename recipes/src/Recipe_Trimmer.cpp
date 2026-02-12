@@ -11,10 +11,10 @@ int main(int argc, char* argv[]) {
     filesystem::path exePath = filesystem::absolute(argv[0]).parent_path();
 
     // opens all of the input and output file streams
-    ifstream recipe_in(exePath / "recipes_fixed.json");
-    ofstream recipe_out(exePath / "recipes.json");
-    ofstream removed_recipes_out(exePath / "recipes_removed.json");
-    ofstream recipe_names(exePath / "recipe_names.txt");
+    ifstream recipe_in(exePath / "int/recipes_fixed.json");
+    ofstream recipe_out(exePath / "dat/recipes.json");
+    ofstream removed_recipes_out(exePath / "int/recipes_removed.json");
+    ofstream recipe_names(exePath / "int/recipe_names.txt");
 
     if (!recipe_in.is_open()) {
         cerr << "Failed to open recipe input file.\n";
@@ -48,10 +48,16 @@ int main(int argc, char* argv[]) {
             if (data.value("ItemClass", "").find("Bio") != string::npos && block.value("DisplayName", "").find("Gas Nobelisk") == string::npos) {
                 to_delete = true;
             }
+            if (data.value("ItemClass", "").find("Dissolved Silica") != string::npos) {
+                to_delete = true;
+            }
         }
 
         for (auto& data : block["Product"]) {
             if (data.value("ItemClass", "").find("Biomass") != string::npos) {
+                to_delete = true;
+            }
+            if (data.value("ItemClass", "").find("Dissolved Silica") != string::npos) {
                 to_delete = true;
             }
         }

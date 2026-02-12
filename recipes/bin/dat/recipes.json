@@ -1,7 +1,6 @@
 [
     {
         "DisplayName": "Iron Plate",
-        "Ingredients": [
             {
                 "ItemClass": "Iron Ingot",
                 "Amount": "3"
@@ -3089,60 +3088,6 @@
         ],
         "ProducedIn": "Assembler",
         "ManufactoringDuration": "15.000000"
-    },
-    {
-        "DisplayName": "Alternate: Distilled Silica",
-        "Ingredients": [
-            {
-                "ItemClass": "Dissolved Silica",
-                "Amount": "12000"
-            },
-            {
-                "ItemClass": "Limestone",
-                "Amount": "5"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "10000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Silica",
-                "Amount": "27"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "8000"
-            }
-        ],
-        "ProducedIn": "Blender",
-        "ManufactoringDuration": "6.000000"
-    },
-    {
-        "DisplayName": "Alternate: Quartz Purification",
-        "Ingredients": [
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "24"
-            },
-            {
-                "ItemClass": "Nitric Acid",
-                "Amount": "2000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Quartz Crystal",
-                "Amount": "15"
-            },
-            {
-                "ItemClass": "Dissolved Silica",
-                "Amount": "12000"
-            }
-        ],
-        "ProducedIn": "Refinery",
-        "ManufactoringDuration": "12.000000"
     },
     {
         "DisplayName": "Alternate: Fused Quartz Crystal",

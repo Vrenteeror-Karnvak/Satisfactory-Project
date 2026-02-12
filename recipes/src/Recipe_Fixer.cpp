@@ -7,16 +7,24 @@
 using namespace std;
 using json = nlohmann::ordered_json;
 
+/**
+ * @brief Converts a name from a file path to human readable text.
+ * 
+ * @param data A file path version of a name as a string.
+ * @param Class_Name A vector parallel with Display_Name. Contains the file path version of the names.
+ * @param Display_Name A vector parallel with Class_Name. Contains the human readable version of the names.
+ * @return A string containing the human readable version of the name.
+ */
 string parseData(const string data, vector<string> Class_Name, vector<string> Display_Name);
 
 int main(int argc, char* argv[]) {
     filesystem::path exePath = filesystem::absolute(argv[0]).parent_path();
 
     // opens all of the input and output file streams
-    ifstream resource_in(exePath / "name_pairs.json");
-    ifstream recipe_in(exePath / "recipes_raw.json");
-    ofstream recipe_out(exePath / "recipes_fixed.json");
-    ofstream recipe_names(exePath / "original_recipe_names.txt");
+    ifstream resource_in(exePath / "dat/name_pairs.json");
+    ifstream recipe_in(exePath / "int/recipes_raw.json");
+    ofstream recipe_out(exePath / "int/recipes_fixed.json");
+    ofstream recipe_names(exePath / "int/original_recipe_names.txt");
 
     if (!resource_in.is_open()) {
         cerr << "Failed to open name input file.\n";
