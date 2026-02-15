@@ -85,6 +85,9 @@ int main(int argc, char* argv[]) {
     resource_in.close();
     recipe_in.close();
     recipe_out.close();
+    recipe_names.close();
+
+    return 0;
 }
 
 string parseData(const string data, vector<string> Class_Name, vector<string> Display_Name) {

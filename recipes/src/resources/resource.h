@@ -15,10 +15,13 @@ class Resource {
         Resource();
         Resource(const json& data);
         Resource(const string title, const double rate);
+        Resource(const string title);
+        void set_resource(const json& data);
         void set_name(const string title);
         void set_amount(const double rate);
         string get_name() const;
         double get_amount() const;
+        bool operator==(const Resource& other) const;
 
     private:
         string name;

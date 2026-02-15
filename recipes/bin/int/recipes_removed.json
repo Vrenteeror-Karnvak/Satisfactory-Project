@@ -483,6 +483,23 @@
         "ManufactoringDuration": "6.000000"
     },
     {
+        "DisplayName": "Alternate: Charcoal",
+        "Ingredients": [
+            {
+                "ItemClass": "Wood",
+                "Amount": "1"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Coal",
+                "Amount": "10"
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": "4.000000"
+    },
+    {
         "DisplayName": "Alternate: Biocoal",
         "Ingredients": [
             {
