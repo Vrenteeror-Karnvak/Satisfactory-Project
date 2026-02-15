@@ -22,7 +22,6 @@ Biochemical Sculptor
 Ficsite Ingot (Aluminum)
 Ficsite Ingot (Caterium)
 Turbofuel
-Alternate: Charcoal
 Alternate: Compacted Coal
 Circuit Board
 Fuel

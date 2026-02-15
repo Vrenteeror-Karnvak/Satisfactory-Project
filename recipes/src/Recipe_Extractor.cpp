@@ -21,6 +21,7 @@ int main(int argc, char* argv[]) {
     // opens all of the input and output file streams
     ifstream fin(exePath / "dat/en-US.json");
     ofstream name_out(exePath / "dat/name_pairs.json");
+    ofstream resource_out(exePath / "dat/terminal_resources.json");
     ofstream recipe_out(exePath / "int/recipes_raw.json");
 
     if (!fin.is_open()) {
@@ -33,6 +34,10 @@ int main(int argc, char* argv[]) {
         return 0;
     }
 
+    if (!resource_out.is_open()) {
+        cerr << "Failed to open resource output file.\n";
+    }
+
     if (!recipe_out.is_open()) {
         cerr << "Failed to open recipe output file.\n";
         return 0;
@@ -43,8 +48,10 @@ int main(int argc, char* argv[]) {
     fin >> root;
 
     json name_data = json::object();
+    json resource_data = json::object();
     json recipe_data = json::object();
     json nameOut = json::array();
+    json resourceOut = json::array();
     json recipeOut = json::array();
 
     string ingredients;
@@ -52,7 +59,7 @@ int main(int argc, char* argv[]) {
     vector<string> Display_Name;
 
     for (const auto& block : root) {
-        // if the value of "NativeClass" is correct for the item description section, this is true
+        // if the value of "NativeClass" is correct for the item, equipment, and building description section, this is true
         if (block.value("NativeClass", "") == "/Script/CoreUObject.Class'/Script/FactoryGame.FGItemDescriptor'"
         || block.value("NativeClass", "") == "/Script/CoreUObject.Class'/Script/FactoryGame.FGResourceDescriptor'"
         || block.value("NativeClass", "") == "/Script/CoreUObject.Class'/Script/FactoryGame.FGPowerShardDescriptor'"
@@ -72,8 +79,14 @@ int main(int argc, char* argv[]) {
 
                 nameOut.push_back(name_data); // adds the collected data to the vector
             }
+        }
 
-            // outputs the data to its file and then clears the vector
+        if (block.value("NativeClass", "") == "/Script/CoreUObject.Class'/Script/FactoryGame.FGResourceDescriptor'") {
+            for (const auto& data : block["Classes"]) {
+                resource_data["ItemClass"] = data.value("mDisplayName", ""); // adds the display name
+                resource_data["Amount"] = "0"; // sets amount to 0;
+                resourceOut.push_back(resource_data); // adds the collected data to the vector
+            }
         }
 
         // if the value of "NativeClass" is correct for the recipe section, this is true
@@ -99,15 +112,33 @@ int main(int argc, char* argv[]) {
 
                     recipeOut.push_back(recipe_data); // adds the collected data to the vector
                 }
-            }
-
-            // outputs the data to its file and then clears the vector
-            
+            }            
         }
     }
+    
+    resource_data["ItemClass"] = "Polymer Resin"; // adds the display name
+    resource_data["Amount"] = "0"; // sets amount to 0;
+    resourceOut.push_back(resource_data); // adds the  data to the vector
 
+    resource_data["ItemClass"] = "Compacted Coal"; // adds the display name
+    resource_data["Amount"] = "0"; // sets amount to 0;
+    resourceOut.push_back(resource_data); // adds the  data to the vector
+
+    resource_data["ItemClass"] = "Dark Matter Residue"; // adds the display name
+    resource_data["Amount"] = "0"; // sets amount to 0;
+    resourceOut.push_back(resource_data); // adds the  data to the vector
+
+    resource_data["ItemClass"] = "Heavy Oil Residue"; // adds the display name
+    resource_data["Amount"] = "0"; // sets amount to 0;
+    resourceOut.push_back(resource_data); // adds the  data to the vector
+
+    resource_data["ItemClass"] = "Sulfuric Acid"; // adds the display name
+    resource_data["Amount"] = "0"; // sets amount to 0;
+    resourceOut.push_back(resource_data); // adds the  data to the vector
+
+    // outputs the collected data
     name_out << nameOut.dump(4);
-
+    resource_out << resourceOut.dump(4);
     recipe_out << recipeOut.dump(4);
 
     // closes all the opened files

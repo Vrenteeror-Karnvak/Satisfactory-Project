@@ -12,7 +12,7 @@ int main(int argc, char* argv[]) {
 
     // opens all of the input and output file streams
     ifstream recipe_in(exePath / "int/recipes_fixed.json");
-    ofstream recipe_out(exePath / "dat/recipes.json");
+    ofstream recipe_out(exePath / "int/recipes_trimmed.json");
     ofstream removed_recipes_out(exePath / "int/recipes_removed.json");
     ofstream recipe_names(exePath / "int/recipe_names.txt");
 
@@ -48,7 +48,9 @@ int main(int argc, char* argv[]) {
             if (data.value("ItemClass", "").find("Bio") != string::npos && block.value("DisplayName", "").find("Gas Nobelisk") == string::npos) {
                 to_delete = true;
             }
-            if (data.value("ItemClass", "").find("Dissolved Silica") != string::npos) {
+            if (data.value("ItemClass", "").find("Dissolved Silica") != string::npos
+            || data.value("ItemClass", "").find("Wood") != string::npos
+            || data.value("ItemClass", "").find("Leaves") != string::npos) {
                 to_delete = true;
             }
         }
@@ -89,4 +91,5 @@ int main(int argc, char* argv[]) {
     // closes all the opened files
     recipe_in.close();
     recipe_out.close();
+    recipe_names.close();
 }

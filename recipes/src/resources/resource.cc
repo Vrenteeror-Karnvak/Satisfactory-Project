@@ -21,6 +21,16 @@ Resource::Resource(const string title, const double rate) {
     amount = rate;
 }
 
+Resource::Resource(const string title) {
+    name = title;
+    amount = 0;
+}
+
+void Resource::set_resource(const json& data) {
+    name = data.value("ItemClass", "");
+    amount = stod(data.value("Amount", ""));
+}
+
 void Resource::set_name(const string title) {
     name = title;
 }
@@ -35,6 +45,10 @@ string Resource::get_name() const {
 
 double Resource::get_amount() const {
     return amount;
+}
+
+bool Resource::operator==(const Resource& other) const {
+    return name == other.get_name();
 }
 
 #endif

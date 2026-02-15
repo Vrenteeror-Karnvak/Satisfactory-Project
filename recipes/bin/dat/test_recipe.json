@@ -1,0 +1,21 @@
+{
+    "DisplayName": "Modular Frame",
+    "Ingredients": [
+        {
+            "ItemClass": "Reinforced Iron Plate",
+            "Amount": "3"
+        },
+        {
+            "ItemClass": "Iron Rod",
+            "Amount": "12"
+        }
+    ],
+    "Product": [
+        {
+            "ItemClass": "Modular Frame",
+            "Amount": "2"
+        }
+    ],
+    "ProducedIn": "Assembler",
+    "ManufactoringDuration": "60.000000"
+}
