@@ -39,6 +39,15 @@ void Resource::set_amount(const double rate) {
     amount = rate;
 }
 
+void Resource::combine_resource(const Resource other) {
+    if (name != other.get_name()) {
+        // Terminates the process if the resources aren't the same.
+        cout << "These are not the same resource. Can not combine." << endl;
+        return;
+    }
+    amount += other.get_amount(); // adds the other amount to the original
+}
+
 string Resource::get_name() const {
     return name;
 }

@@ -1,21 +1,29 @@
 {
-    "DisplayName": "Modular Frame",
+    "DisplayName": "Supercomputer",
     "Ingredients": [
         {
-            "ItemClass": "Reinforced Iron Plate",
+            "ItemClass": "Computer",
+            "Amount": "4"
+        },
+        {
+            "ItemClass": "AI Limiter",
+            "Amount": "2"
+        },
+        {
+            "ItemClass": "High-Speed Connector",
             "Amount": "3"
         },
         {
-            "ItemClass": "Iron Rod",
-            "Amount": "12"
+            "ItemClass": "Plastic",
+            "Amount": "28"
         }
     ],
     "Product": [
         {
-            "ItemClass": "Modular Frame",
-            "Amount": "2"
+            "ItemClass": "Supercomputer",
+            "Amount": "1"
         }
     ],
-    "ProducedIn": "Assembler",
-    "ManufactoringDuration": "60.000000"
+    "ProducedIn": "Manufacturer",
+    "ManufactoringDuration": "32.000000"
 }

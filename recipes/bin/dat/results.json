@@ -1,0 +1,279 @@
+[
+    {
+        "DisplayName": "Crude Oil (Terminal)",
+        "Product": [
+            {
+                "ItemClass": "Crude Oil",
+                "Amount": 252000.0
+            }
+        ],
+        "ProducedIn": "Terminal Resource",
+        "ManufactoringDuration": 1.0
+    },
+    {
+        "DisplayName": "Plastic",
+        "Ingredients": [
+            {
+                "ItemClass": "Crude Oil",
+                "Amount": 252000.0
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Plastic",
+                "Amount": 168.0
+            },
+            {
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": 84000.0
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": 6.0
+    },
+    {
+        "DisplayName": "Copper Ore (Terminal)",
+        "Product": [
+            {
+                "ItemClass": "Copper Ore",
+                "Amount": 158.0
+            }
+        ],
+        "ProducedIn": "Terminal Resource",
+        "ManufactoringDuration": 1.0
+    },
+    {
+        "DisplayName": "Copper Ingot",
+        "Ingredients": [
+            {
+                "ItemClass": "Copper Ore",
+                "Amount": 158.0
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Copper Ingot",
+                "Amount": 158.0
+            }
+        ],
+        "ProducedIn": "Smelter",
+        "ManufactoringDuration": 2.0
+    },
+    {
+        "DisplayName": "Copper Sheet",
+        "Ingredients": [
+            {
+                "ItemClass": "Copper Ingot",
+                "Amount": 96.0
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Copper Sheet",
+                "Amount": 48.0
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 6.0
+    },
+    {
+        "DisplayName": "Circuit Board",
+        "Ingredients": [
+            {
+                "ItemClass": "Copper Sheet",
+                "Amount": 38.0
+            },
+            {
+                "ItemClass": "Plastic",
+                "Amount": 76.0
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Circuit Board",
+                "Amount": 19.0
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 8.0
+    },
+    {
+        "DisplayName": "Wire",
+        "Ingredients": [
+            {
+                "ItemClass": "Copper Ingot",
+                "Amount": 62.0
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Wire",
+                "Amount": 124.0
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 4.0
+    },
+    {
+        "DisplayName": "Cable",
+        "Ingredients": [
+            {
+                "ItemClass": "Wire",
+                "Amount": 124.0
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Cable",
+                "Amount": 62.0
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 2.0
+    },
+    {
+        "DisplayName": "Caterium Ore (Terminal)",
+        "Product": [
+            {
+                "ItemClass": "Caterium Ore",
+                "Amount": 124.80000000000001
+            }
+        ],
+        "ProducedIn": "Terminal Resource",
+        "ManufactoringDuration": 1.0
+    },
+    {
+        "DisplayName": "Caterium Ingot",
+        "Ingredients": [
+            {
+                "ItemClass": "Caterium Ore",
+                "Amount": 124.80000000000001
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Caterium Ingot",
+                "Amount": 41.6
+            }
+        ],
+        "ProducedIn": "Smelter",
+        "ManufactoringDuration": 4.0
+    },
+    {
+        "DisplayName": "Quickwire",
+        "Ingredients": [
+            {
+                "ItemClass": "Caterium Ingot",
+                "Amount": 41.6
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Quickwire",
+                "Amount": 208.0
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": 5.0
+    },
+    {
+        "DisplayName": "High-Speed Connector",
+        "Ingredients": [
+            {
+                "ItemClass": "Quickwire",
+                "Amount": 168.0
+            },
+            {
+                "ItemClass": "Cable",
+                "Amount": 30.0
+            },
+            {
+                "ItemClass": "Circuit Board",
+                "Amount": 3.0
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "High-Speed Connector",
+                "Amount": 3.0
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 16.0
+    },
+    {
+        "DisplayName": "AI Limiter",
+        "Ingredients": [
+            {
+                "ItemClass": "Copper Sheet",
+                "Amount": 10.0
+            },
+            {
+                "ItemClass": "Quickwire",
+                "Amount": 40.0
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "AI Limiter",
+                "Amount": 2.0
+            }
+        ],
+        "ProducedIn": "Assembler",
+        "ManufactoringDuration": 12.0
+    },
+    {
+        "DisplayName": "Computer",
+        "Ingredients": [
+            {
+                "ItemClass": "Circuit Board",
+                "Amount": 16.0
+            },
+            {
+                "ItemClass": "Cable",
+                "Amount": 32.0
+            },
+            {
+                "ItemClass": "Plastic",
+                "Amount": 64.0
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Computer",
+                "Amount": 4.0
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 24.0
+    },
+    {
+        "DisplayName": "Supercomputer",
+        "Ingredients": [
+            {
+                "ItemClass": "Computer",
+                "Amount": 4.0
+            },
+            {
+                "ItemClass": "AI Limiter",
+                "Amount": 2.0
+            },
+            {
+                "ItemClass": "High-Speed Connector",
+                "Amount": 3.0
+            },
+            {
+                "ItemClass": "Plastic",
+                "Amount": 28.0
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Supercomputer",
+                "Amount": 1.0
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": 32.0
+    }
+]

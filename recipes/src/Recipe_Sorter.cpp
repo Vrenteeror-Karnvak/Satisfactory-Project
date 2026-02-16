@@ -42,7 +42,7 @@ int main(int argc, char* argv[]) {
 
     json empty_array = json::array();
 
-    string ingredient;
+    string product;
     vector<string> names;
 
     int original_count = 0;
@@ -57,11 +57,21 @@ int main(int argc, char* argv[]) {
     }
 
     for (int i = 0; i < names.size(); i++) {
-        ingredient = names.at(i);
+        product = names.at(i);
 
         for (const auto& block : recipe) {
             recipe_data = block.value("Product", empty_array).at(0);
-            if (ingredient == recipe_data.value("ItemClass", "")) {
+            if (product == recipe_data.value("ItemClass", "")
+            && (block.value("DisplayName", "").find("Alternate:") == string::npos)) {
+                recipe_group.push_back(block);
+                new_count += 1;
+            }
+        }
+        
+        for (const auto& block : recipe) {
+            recipe_data = block.value("Product", empty_array).at(0);
+            if (product == recipe_data.value("ItemClass", "")
+            && (block.value("DisplayName", "").find("Alternate:") != string::npos)) {
                 recipe_group.push_back(block);
                 new_count += 1;
             }
@@ -71,7 +81,7 @@ int main(int argc, char* argv[]) {
             continue;
         }
 
-        recipe_object["Category"] = ingredient;
+        recipe_object["Category"] = product;
         recipe_object["Data"] = recipe_group;
         dataOut.push_back(recipe_object);
         recipe_group.clear();

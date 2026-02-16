@@ -3,23 +3,6 @@
         "Category": "Aluminum Ingot",
         "Data": [
             {
-                "DisplayName": "Alternate: Pure Aluminum Ingot",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Aluminum Scrap",
-                        "Amount": "2"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Aluminum Ingot",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Smelter",
-                "ManufactoringDuration": "2.000000"
-            },
-            {
                 "DisplayName": "Aluminum Ingot",
                 "Ingredients": [
                     {
@@ -39,6 +22,23 @@
                 ],
                 "ProducedIn": "Foundry",
                 "ManufactoringDuration": "4.000000"
+            },
+            {
+                "DisplayName": "Alternate: Pure Aluminum Ingot",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Aluminum Scrap",
+                        "Amount": "2"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Aluminum Ingot",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Smelter",
+                "ManufactoringDuration": "2.000000"
             }
         ]
     },
@@ -302,6 +302,23 @@
         "Category": "Cable",
         "Data": [
             {
+                "DisplayName": "Cable",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Wire",
+                        "Amount": "2"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Cable",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Constructor",
+                "ManufactoringDuration": "2.000000"
+            },
+            {
                 "DisplayName": "Alternate: Coated Cable",
                 "Ingredients": [
                     {
@@ -363,29 +380,33 @@
                 ],
                 "ProducedIn": "Assembler",
                 "ManufactoringDuration": "12.000000"
-            },
-            {
-                "DisplayName": "Cable",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Wire",
-                        "Amount": "2"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Cable",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Constructor",
-                "ManufactoringDuration": "2.000000"
             }
         ]
     },
     {
         "Category": "Reinforced Iron Plate",
         "Data": [
+            {
+                "DisplayName": "Reinforced Iron Plate",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Iron Plate",
+                        "Amount": "6"
+                    },
+                    {
+                        "ItemClass": "Screws",
+                        "Amount": "12"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Reinforced Iron Plate",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Assembler",
+                "ManufactoringDuration": "12.000000"
+            },
             {
                 "DisplayName": "Alternate: Adhered Iron Plate",
                 "Ingredients": [
@@ -448,33 +469,29 @@
                 ],
                 "ProducedIn": "Assembler",
                 "ManufactoringDuration": "12.000000"
-            },
-            {
-                "DisplayName": "Reinforced Iron Plate",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Iron Plate",
-                        "Amount": "6"
-                    },
-                    {
-                        "ItemClass": "Screws",
-                        "Amount": "12"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Reinforced Iron Plate",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "12.000000"
             }
         ]
     },
     {
         "Category": "Wire",
         "Data": [
+            {
+                "DisplayName": "Wire",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Copper Ingot",
+                        "Amount": "1"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Wire",
+                        "Amount": "2"
+                    }
+                ],
+                "ProducedIn": "Constructor",
+                "ManufactoringDuration": "4.000000"
+            },
             {
                 "DisplayName": "Alternate: Fused Wire",
                 "Ingredients": [
@@ -529,29 +546,29 @@
                 ],
                 "ProducedIn": "Constructor",
                 "ManufactoringDuration": "24.000000"
-            },
-            {
-                "DisplayName": "Wire",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Copper Ingot",
-                        "Amount": "1"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Wire",
-                        "Amount": "2"
-                    }
-                ],
-                "ProducedIn": "Constructor",
-                "ManufactoringDuration": "4.000000"
             }
         ]
     },
     {
         "Category": "Concrete",
         "Data": [
+            {
+                "DisplayName": "Concrete",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Limestone",
+                        "Amount": "3"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Concrete",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Constructor",
+                "ManufactoringDuration": "4.000000"
+            },
             {
                 "DisplayName": "Alternate: Wet Concrete",
                 "Ingredients": [
@@ -614,50 +631,12 @@
                 ],
                 "ProducedIn": "Assembler",
                 "ManufactoringDuration": "12.000000"
-            },
-            {
-                "DisplayName": "Concrete",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Limestone",
-                        "Amount": "3"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Concrete",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Constructor",
-                "ManufactoringDuration": "4.000000"
             }
         ]
     },
     {
         "Category": "Rotor",
         "Data": [
-            {
-                "DisplayName": "Alternate: Copper Rotor",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Copper Sheet",
-                        "Amount": "6"
-                    },
-                    {
-                        "ItemClass": "Screws",
-                        "Amount": "52"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Rotor",
-                        "Amount": "3"
-                    }
-                ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "16.000000"
-            },
             {
                 "DisplayName": "Rotor",
                 "Ingredients": [
@@ -678,6 +657,27 @@
                 ],
                 "ProducedIn": "Assembler",
                 "ManufactoringDuration": "15.000000"
+            },
+            {
+                "DisplayName": "Alternate: Copper Rotor",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Copper Sheet",
+                        "Amount": "6"
+                    },
+                    {
+                        "ItemClass": "Screws",
+                        "Amount": "52"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Rotor",
+                        "Amount": "3"
+                    }
+                ],
+                "ProducedIn": "Assembler",
+                "ManufactoringDuration": "16.000000"
             },
             {
                 "DisplayName": "Alternate: Steel Rotor",
@@ -796,6 +796,31 @@
         "Category": "Rocket Fuel",
         "Data": [
             {
+                "DisplayName": "Rocket Fuel",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Turbofuel",
+                        "Amount": "6000"
+                    },
+                    {
+                        "ItemClass": "Nitric Acid",
+                        "Amount": "1000"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Rocket Fuel",
+                        "Amount": "10000"
+                    },
+                    {
+                        "ItemClass": "Compacted Coal",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Blender",
+                "ManufactoringDuration": "6.000000"
+            },
+            {
                 "DisplayName": "Alternate: Nitro Rocket Fuel",
                 "Ingredients": [
                     {
@@ -827,37 +852,29 @@
                 ],
                 "ProducedIn": "Blender",
                 "ManufactoringDuration": "2.400000"
-            },
-            {
-                "DisplayName": "Rocket Fuel",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Turbofuel",
-                        "Amount": "6000"
-                    },
-                    {
-                        "ItemClass": "Nitric Acid",
-                        "Amount": "1000"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Rocket Fuel",
-                        "Amount": "10000"
-                    },
-                    {
-                        "ItemClass": "Compacted Coal",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Blender",
-                "ManufactoringDuration": "6.000000"
             }
         ]
     },
     {
         "Category": "Copper Sheet",
         "Data": [
+            {
+                "DisplayName": "Copper Sheet",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Copper Ingot",
+                        "Amount": "2"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Copper Sheet",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Constructor",
+                "ManufactoringDuration": "6.000000"
+            },
             {
                 "DisplayName": "Alternate: Steamed Copper Sheet",
                 "Ingredients": [
@@ -878,23 +895,6 @@
                 ],
                 "ProducedIn": "Refinery",
                 "ManufactoringDuration": "8.000000"
-            },
-            {
-                "DisplayName": "Copper Sheet",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Copper Ingot",
-                        "Amount": "2"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Copper Sheet",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Constructor",
-                "ManufactoringDuration": "6.000000"
             }
         ]
     },
@@ -970,6 +970,23 @@
         "Category": "Screws",
         "Data": [
             {
+                "DisplayName": "Screws",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Iron Rod",
+                        "Amount": "1"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Screws",
+                        "Amount": "4"
+                    }
+                ],
+                "ProducedIn": "Constructor",
+                "ManufactoringDuration": "6.000000"
+            },
+            {
                 "DisplayName": "Alternate: Steel Screws",
                 "Ingredients": [
                     {
@@ -1002,23 +1019,6 @@
                 ],
                 "ProducedIn": "Constructor",
                 "ManufactoringDuration": "24.000000"
-            },
-            {
-                "DisplayName": "Screws",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Iron Rod",
-                        "Amount": "1"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Screws",
-                        "Amount": "4"
-                    }
-                ],
-                "ProducedIn": "Constructor",
-                "ManufactoringDuration": "6.000000"
             }
         ]
     },
@@ -1345,31 +1345,6 @@
         "Category": "Ionized Fuel",
         "Data": [
             {
-                "DisplayName": "Alternate: Dark-Ion Fuel",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Packaged Rocket Fuel",
-                        "Amount": "12"
-                    },
-                    {
-                        "ItemClass": "Dark Matter Crystal",
-                        "Amount": "4"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Ionized Fuel",
-                        "Amount": "10000"
-                    },
-                    {
-                        "ItemClass": "Compacted Coal",
-                        "Amount": "2"
-                    }
-                ],
-                "ProducedIn": "Converter",
-                "ManufactoringDuration": "3.000000"
-            },
-            {
                 "DisplayName": "Ionized Fuel",
                 "Ingredients": [
                     {
@@ -1393,6 +1368,31 @@
                 ],
                 "ProducedIn": "Refinery",
                 "ManufactoringDuration": "24.000000"
+            },
+            {
+                "DisplayName": "Alternate: Dark-Ion Fuel",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Packaged Rocket Fuel",
+                        "Amount": "12"
+                    },
+                    {
+                        "ItemClass": "Dark Matter Crystal",
+                        "Amount": "4"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Ionized Fuel",
+                        "Amount": "10000"
+                    },
+                    {
+                        "ItemClass": "Compacted Coal",
+                        "Amount": "2"
+                    }
+                ],
+                "ProducedIn": "Converter",
+                "ManufactoringDuration": "3.000000"
             }
         ]
     },
@@ -1565,6 +1565,35 @@
         "Category": "Turbo Motor",
         "Data": [
             {
+                "DisplayName": "Turbo Motor",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Cooling System",
+                        "Amount": "4"
+                    },
+                    {
+                        "ItemClass": "Radio Control Unit",
+                        "Amount": "2"
+                    },
+                    {
+                        "ItemClass": "Motor",
+                        "Amount": "4"
+                    },
+                    {
+                        "ItemClass": "Rubber",
+                        "Amount": "24"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Turbo Motor",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Manufacturer",
+                "ManufactoringDuration": "32.000000"
+            },
+            {
                 "DisplayName": "Alternate: Turbo Pressure Motor",
                 "Ingredients": [
                     {
@@ -1621,35 +1650,6 @@
                 ],
                 "ProducedIn": "Manufacturer",
                 "ManufactoringDuration": "64.000000"
-            },
-            {
-                "DisplayName": "Turbo Motor",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Cooling System",
-                        "Amount": "4"
-                    },
-                    {
-                        "ItemClass": "Radio Control Unit",
-                        "Amount": "2"
-                    },
-                    {
-                        "ItemClass": "Motor",
-                        "Amount": "4"
-                    },
-                    {
-                        "ItemClass": "Rubber",
-                        "Amount": "24"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Turbo Motor",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Manufacturer",
-                "ManufactoringDuration": "32.000000"
             }
         ]
     },
@@ -1740,6 +1740,23 @@
         "Category": "Diamonds",
         "Data": [
             {
+                "DisplayName": "Diamonds",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Coal",
+                        "Amount": "20"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Diamonds",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Particle Accelerator",
+                "ManufactoringDuration": "2.000000"
+            },
+            {
                 "DisplayName": "Alternate: Turbo Diamonds",
                 "Ingredients": [
                     {
@@ -1759,23 +1776,6 @@
                 ],
                 "ProducedIn": "Particle Accelerator",
                 "ManufactoringDuration": "3.000000"
-            },
-            {
-                "DisplayName": "Diamonds",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Coal",
-                        "Amount": "20"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Diamonds",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Particle Accelerator",
-                "ManufactoringDuration": "2.000000"
             },
             {
                 "DisplayName": "Alternate: Pink Diamonds",
@@ -2382,6 +2382,23 @@
         "Category": "Caterium Ingot",
         "Data": [
             {
+                "DisplayName": "Caterium Ingot",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Caterium Ore",
+                        "Amount": "3"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Caterium Ingot",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Smelter",
+                "ManufactoringDuration": "4.000000"
+            },
+            {
                 "DisplayName": "Alternate: Pure Caterium Ingot",
                 "Ingredients": [
                     {
@@ -2443,46 +2460,12 @@
                 ],
                 "ProducedIn": "Refinery",
                 "ManufactoringDuration": "10.000000"
-            },
-            {
-                "DisplayName": "Caterium Ingot",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Caterium Ore",
-                        "Amount": "3"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Caterium Ingot",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Smelter",
-                "ManufactoringDuration": "4.000000"
             }
         ]
     },
     {
         "Category": "Empty Canister",
         "Data": [
-            {
-                "DisplayName": "Alternate: Steel Canister",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Steel Ingot",
-                        "Amount": "4"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Empty Canister",
-                        "Amount": "4"
-                    }
-                ],
-                "ProducedIn": "Constructor",
-                "ManufactoringDuration": "6.000000"
-            },
             {
                 "DisplayName": "Empty Canister",
                 "Ingredients": [
@@ -2499,6 +2482,23 @@
                 ],
                 "ProducedIn": "Constructor",
                 "ManufactoringDuration": "4.000000"
+            },
+            {
+                "DisplayName": "Alternate: Steel Canister",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Steel Ingot",
+                        "Amount": "4"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Empty Canister",
+                        "Amount": "4"
+                    }
+                ],
+                "ProducedIn": "Constructor",
+                "ManufactoringDuration": "6.000000"
             },
             {
                 "DisplayName": "Alternate: Coated Iron Canister",
@@ -2891,6 +2891,23 @@
         "Category": "Quartz Crystal",
         "Data": [
             {
+                "DisplayName": "Quartz Crystal",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Raw Quartz",
+                        "Amount": "5"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Quartz Crystal",
+                        "Amount": "3"
+                    }
+                ],
+                "ProducedIn": "Constructor",
+                "ManufactoringDuration": "8.000000"
+            },
+            {
                 "DisplayName": "Alternate: Pure Quartz Crystal",
                 "Ingredients": [
                     {
@@ -2909,23 +2926,6 @@
                     }
                 ],
                 "ProducedIn": "Refinery",
-                "ManufactoringDuration": "8.000000"
-            },
-            {
-                "DisplayName": "Quartz Crystal",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Raw Quartz",
-                        "Amount": "5"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Quartz Crystal",
-                        "Amount": "3"
-                    }
-                ],
-                "ProducedIn": "Constructor",
                 "ManufactoringDuration": "8.000000"
             },
             {
@@ -3095,6 +3095,23 @@
         "Category": "Copper Ingot",
         "Data": [
             {
+                "DisplayName": "Copper Ingot",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Copper Ore",
+                        "Amount": "1"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Copper Ingot",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Smelter",
+                "ManufactoringDuration": "2.000000"
+            },
+            {
                 "DisplayName": "Alternate: Pure Copper Ingot",
                 "Ingredients": [
                     {
@@ -3177,23 +3194,6 @@
                 ],
                 "ProducedIn": "Refinery",
                 "ManufactoringDuration": "12.000000"
-            },
-            {
-                "DisplayName": "Copper Ingot",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Copper Ore",
-                        "Amount": "1"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Copper Ingot",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Smelter",
-                "ManufactoringDuration": "2.000000"
             }
         ]
     },
@@ -3502,35 +3502,6 @@
         "Category": "Heavy Modular Frame",
         "Data": [
             {
-                "DisplayName": "Alternate: Heavy Flexible Frame",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Modular Frame",
-                        "Amount": "5"
-                    },
-                    {
-                        "ItemClass": "Encased Industrial Beam",
-                        "Amount": "3"
-                    },
-                    {
-                        "ItemClass": "Rubber",
-                        "Amount": "20"
-                    },
-                    {
-                        "ItemClass": "Screws",
-                        "Amount": "104"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Heavy Modular Frame",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Manufacturer",
-                "ManufactoringDuration": "16.000000"
-            },
-            {
                 "DisplayName": "Heavy Modular Frame",
                 "Ingredients": [
                     {
@@ -3558,6 +3529,35 @@
                 ],
                 "ProducedIn": "Manufacturer",
                 "ManufactoringDuration": "30.000000"
+            },
+            {
+                "DisplayName": "Alternate: Heavy Flexible Frame",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Modular Frame",
+                        "Amount": "5"
+                    },
+                    {
+                        "ItemClass": "Encased Industrial Beam",
+                        "Amount": "3"
+                    },
+                    {
+                        "ItemClass": "Rubber",
+                        "Amount": "20"
+                    },
+                    {
+                        "ItemClass": "Screws",
+                        "Amount": "104"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Heavy Modular Frame",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Manufacturer",
+                "ManufactoringDuration": "16.000000"
             },
             {
                 "DisplayName": "Alternate: Heavy Encased Frame",
@@ -3594,6 +3594,27 @@
         "Category": "Smart Plating",
         "Data": [
             {
+                "DisplayName": "Smart Plating",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Reinforced Iron Plate",
+                        "Amount": "1"
+                    },
+                    {
+                        "ItemClass": "Rotor",
+                        "Amount": "1"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Smart Plating",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Assembler",
+                "ManufactoringDuration": "30.000000"
+            },
+            {
                 "DisplayName": "Alternate: Plastic Smart Plating",
                 "Ingredients": [
                     {
@@ -3617,27 +3638,6 @@
                 ],
                 "ProducedIn": "Manufacturer",
                 "ManufactoringDuration": "24.000000"
-            },
-            {
-                "DisplayName": "Smart Plating",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Reinforced Iron Plate",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Rotor",
-                        "Amount": "1"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Smart Plating",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "30.000000"
             }
         ]
     },
@@ -3700,6 +3700,27 @@
         "Category": "Automated Wiring",
         "Data": [
             {
+                "DisplayName": "Automated Wiring",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Stator",
+                        "Amount": "1"
+                    },
+                    {
+                        "ItemClass": "Cable",
+                        "Amount": "20"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Automated Wiring",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Assembler",
+                "ManufactoringDuration": "24.000000"
+            },
+            {
                 "DisplayName": "Alternate: Automated Speed Wiring",
                 "Ingredients": [
                     {
@@ -3723,27 +3744,6 @@
                 ],
                 "ProducedIn": "Manufacturer",
                 "ManufactoringDuration": "32.000000"
-            },
-            {
-                "DisplayName": "Automated Wiring",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Stator",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Cable",
-                        "Amount": "20"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Automated Wiring",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "24.000000"
             }
         ]
     },
@@ -3845,6 +3845,23 @@
         "Category": "Quickwire",
         "Data": [
             {
+                "DisplayName": "Quickwire",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Caterium Ingot",
+                        "Amount": "1"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Quickwire",
+                        "Amount": "5"
+                    }
+                ],
+                "ProducedIn": "Constructor",
+                "ManufactoringDuration": "5.000000"
+            },
+            {
                 "DisplayName": "Alternate: Fused Quickwire",
                 "Ingredients": [
                     {
@@ -3864,23 +3881,6 @@
                 ],
                 "ProducedIn": "Assembler",
                 "ManufactoringDuration": "8.000000"
-            },
-            {
-                "DisplayName": "Quickwire",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Caterium Ingot",
-                        "Amount": "1"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Quickwire",
-                        "Amount": "5"
-                    }
-                ],
-                "ProducedIn": "Constructor",
-                "ManufactoringDuration": "5.000000"
             }
         ]
     },
@@ -4450,27 +4450,6 @@
         "Category": "Black Powder",
         "Data": [
             {
-                "DisplayName": "Alternate: Fine Black Powder",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Sulfur",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Compacted Coal",
-                        "Amount": "2"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Black Powder",
-                        "Amount": "6"
-                    }
-                ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "8.000000"
-            },
-            {
                 "DisplayName": "Black Powder",
                 "Ingredients": [
                     {
@@ -4490,6 +4469,27 @@
                 ],
                 "ProducedIn": "Assembler",
                 "ManufactoringDuration": "4.000000"
+            },
+            {
+                "DisplayName": "Alternate: Fine Black Powder",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Sulfur",
+                        "Amount": "1"
+                    },
+                    {
+                        "ItemClass": "Compacted Coal",
+                        "Amount": "2"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Black Powder",
+                        "Amount": "6"
+                    }
+                ],
+                "ProducedIn": "Assembler",
+                "ManufactoringDuration": "8.000000"
             }
         ]
     },
