@@ -9,7 +9,7 @@ recipe_trimmer := bin/recipe_trimmer
 test_file := bin/test_file
 resource := bin/resource
 
-TARGETS := $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_trimmer) $(test_file) $(resource)
+TARGETS := $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_sorter) $(recipe_trimmer) $(test_file) $(resource)
 
 all: recipes test resource
 

@@ -9,13 +9,13 @@ using json = nlohmann::ordered_json;
 Recipe::Recipe() {
     name = "N/A";
     factory = "N/A";
-    ipm = 0;
+    machine_speed = 0;
 }
 
 Recipe::Recipe(const json& data) {
     name = data.value("DisplayName", "");
     factory = data.value("ProducedIn", "");
-    ipm = stod(data.value("ManufactoringDuration", ""));
+    machine_speed = stod(data.value("ManufactoringDuration", ""));
     
     ingredients.clear();
     for (auto& ingredient : data["Ingredients"]) {
@@ -33,7 +33,7 @@ Recipe::Recipe(const json& data) {
 void Recipe::set_recipe(const json& data) {
     name = data.value("DisplayName", "");
     factory = data.value("ProducedIn", "");
-    ipm = stod(data.value("ManufactoringDuration", ""));
+    machine_speed = stod(data.value("ManufactoringDuration", ""));
     
     ingredients.clear();
     for (auto& ingredient : data["Ingredients"]) {
@@ -53,12 +53,14 @@ void Recipe::set_recipe(const json& data) {
 void Recipe::set_terminal_recipe(const Resource product) {
     name = product.get_name() + " (Terminal)";
     factory = "Terminal Resource";
-    ipm = 1;
+    machine_speed = 1;
     
     ingredients.clear();
 
     products.clear();
     products.push_back(product);
+
+    processed = true;
 }
 
 void Recipe::set_name(const string title) {
@@ -69,8 +71,8 @@ void Recipe::set_factory(const string building) {
     factory = building;
 }
 
-void Recipe::set_ipm(const double rate) {
-    ipm = rate;
+void Recipe::set_machine_speed(const double rate) {
+    machine_speed = rate;
 }
 
 void Recipe::set_ingredients(const vector<Resource> ingredient) {
@@ -97,6 +99,21 @@ void Recipe::set_processed() {
     processed = true;
 }
 
+void Recipe::combine_recipes(const Recipe other) {
+    if (name != other.get_name()) {
+        // Terminates the process if the recipes aren't the same.
+        cout << "These are not the same recipe. Can not combine." << endl;
+        return;
+    }
+
+    for (int i = 0; i < ingredients.size(); i++) {
+        ingredients.at(i).combine_resource(other.get_ingredient(i));
+    }
+    for (int i = 0; i < products.size(); i++) {
+        products.at(i).combine_resource(other.get_product(i));
+    }
+}
+
 string Recipe::get_name() const {
     return name;
 }
@@ -105,8 +122,8 @@ string Recipe::get_factory() const {
     return factory;
 }
 
-double Recipe::get_ipm() const {
-    return ipm;
+double Recipe::get_machine_speed() const {
+    return machine_speed;
 }
 
 vector<Resource> Recipe::get_ingredients() const {
@@ -125,8 +142,45 @@ Resource Recipe::get_product(int i) const {
     return products.at(i);
 }
 
+json Recipe::to_json() const {
+    json output = json::object();
+    json current = json::object();
+
+    output["DisplayName"] = name;
+    for (int i = 0; i < ingredients.size(); i++) {
+        current["ItemClass"] = ingredients.at(i).get_name();
+        current["Amount"] = ingredients.at(i).get_amount();
+        output["Ingredients"].push_back(current);
+    }
+    for (int i = 0; i < products.size(); i++) {
+        current["ItemClass"] = products.at(i).get_name();
+        current["Amount"] = products.at(i).get_amount();
+        output["Product"].push_back(current);
+    }
+    output["ProducedIn"] = factory;
+    output["ManufactoringDuration"] = machine_speed;
+    return output;
+}
+
+void Recipe::set_to(const double end_result) {
+    double multiple = end_result / products.at(0).get_amount();
+    double old = products.at(0).get_amount();
+
+    for (int i = 0; i < ingredients.size(); i++) {
+        ingredients.at(i).set_amount(ingredients.at(i).get_amount() * multiple);
+    }
+
+    for (int i = 0; i < products.size(); i++) {
+        products.at(i).set_amount(products.at(i).get_amount() * multiple);
+    }
+}
+
 bool Recipe::is_processed() const {
     return processed;
+}
+
+bool Recipe::operator==(const Recipe& other) const {
+    return (name == other.get_name() && factory == other.get_factory());
 }
 
 #endif

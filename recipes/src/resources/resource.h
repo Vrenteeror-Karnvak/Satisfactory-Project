@@ -19,6 +19,7 @@ class Resource {
         void set_resource(const json& data);
         void set_name(const string title);
         void set_amount(const double rate);
+        void combine_resource(const Resource other);
         string get_name() const;
         double get_amount() const;
         bool operator==(const Resource& other) const;
