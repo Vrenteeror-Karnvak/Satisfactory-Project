@@ -8,14 +8,16 @@ recipe_sorter := bin/recipe_sorter
 recipe_trimmer := bin/recipe_trimmer
 test_file := bin/test_file
 resource := bin/resource
+obsidian := bin/obsidian
 
-TARGETS := $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_sorter) $(recipe_trimmer) $(test_file) $(resource)
+TARGETS := $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_sorter) $(recipe_trimmer) $(test_file) $(resource) $(obsidian)
 
-all: recipes test resource
+all: recipes test resource obsidian
 
 recipes: $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_trimmer) $(recipe_sorter)
 test: $(test_file)
 resource: $(resource)
+obsidian: $(obsidian)
 
 $(initializer): src/Initializer.cpp
 	$(GXX) $(GXXFLAGS) $^ -o $@
@@ -37,6 +39,12 @@ $(test_file): src/Test_File.cpp
 
 $(resource): src/resources/*.cc
 	$(GXX) $(GXXFLAGS) $^ -o $@
+
+$(obsidian): src/Obsidian.cpp
+	$(GXX) $(GXXFLAGS) $^ -o $@
+
+clear_obs:
+	rm -f bin/dat/satisfactory_vault/*
 
 .PHONY: run_recipe
 
