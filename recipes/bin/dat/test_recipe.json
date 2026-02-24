@@ -1,29 +1,22 @@
-{
-    "DisplayName": "Supercomputer",
-    "Ingredients": [
-        {
-            "ItemClass": "Computer",
-            "Amount": "4"
-        },
-        {
-            "ItemClass": "AI Limiter",
-            "Amount": "2"
-        },
-        {
-            "ItemClass": "High-Speed Connector",
-            "Amount": "3"
-        },
-        {
-            "ItemClass": "Plastic",
-            "Amount": "28"
-        }
-    ],
-    "Product": [
-        {
-            "ItemClass": "Supercomputer",
-            "Amount": "1"
-        }
-    ],
-    "ProducedIn": "Manufacturer",
-    "ManufactoringDuration": "32.000000"
-}
+[
+    {
+        "DisplayName": "Iron Rod",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Ingot",
+                "Amount": "1"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iron Rod",
+                "Amount": "1"
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": "4.000000"
+    },
+    {
+        "ItemClass": "Heavy Modular Frame"
+    }
+]

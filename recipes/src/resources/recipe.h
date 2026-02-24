@@ -37,7 +37,9 @@ class Recipe {
         json to_json() const;
         void set_to(const double end_result);
         bool is_processed() const;
+        bool same_name(const Recipe& other) const;
         bool operator==(const Recipe& other) const;
+        bool operator!=(const Recipe& other) const;
 
     private:
         string name; // the name of the recipe

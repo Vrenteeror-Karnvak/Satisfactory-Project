@@ -56,8 +56,16 @@ double Resource::get_amount() const {
     return amount;
 }
 
-bool Resource::operator==(const Resource& other) const {
+bool Resource::equal_name(const Resource& other) const {
     return name == other.get_name();
+}
+
+bool Resource::operator==(const Resource& other) const {
+    return (name == other.get_name() && amount == other.get_amount());
+}
+
+bool Resource::operator!=(const Resource& other) const {
+    return !(*this == other);
 }
 
 #endif

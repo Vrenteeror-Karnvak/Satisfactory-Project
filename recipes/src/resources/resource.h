@@ -22,7 +22,9 @@ class Resource {
         void combine_resource(const Resource other);
         string get_name() const;
         double get_amount() const;
+        bool equal_name(const Resource& other) const;
         bool operator==(const Resource& other) const;
+        bool operator!=(const Resource& other) const;
 
     private:
         string name;

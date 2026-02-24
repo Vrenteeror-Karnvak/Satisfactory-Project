@@ -164,7 +164,6 @@ json Recipe::to_json() const {
 
 void Recipe::set_to(const double end_result) {
     double multiple = end_result / products.at(0).get_amount();
-    double old = products.at(0).get_amount();
 
     for (int i = 0; i < ingredients.size(); i++) {
         ingredients.at(i).set_amount(ingredients.at(i).get_amount() * multiple);
@@ -179,8 +178,40 @@ bool Recipe::is_processed() const {
     return processed;
 }
 
-bool Recipe::operator==(const Recipe& other) const {
+bool Recipe::same_name(const Recipe& other) const {
     return (name == other.get_name() && factory == other.get_factory());
+}
+
+bool Recipe::operator==(const Recipe& other) const {
+    // if name, factory, or machine speed are not equivalent, return false
+    if (name != other.get_name() || factory != other.get_factory() || machine_speed != other.get_machine_speed()) {
+        return false;
+    }
+
+    // if either the product or ingredient vectors aren't the same size, return false
+    if (ingredients.size() != other.get_ingredients().size() || products.size() != other.get_products().size()) {
+        return false;
+    }
+
+    // if any of the ingredients or products do not match, return false;
+    for (int i = 0; i < ingredients.size(); i++) {
+        if (ingredients.at(i) != other.get_ingredient(i)) {
+            return false;
+        }
+    }
+    for (int i = 0; i < products.size(); i++) {
+        if (products.at(i) != other.get_product(i)) {
+            return false;
+        }
+    }
+
+    // if everything matches, return true
+    // The processed flag is not compared as it is irrelevent
+    return true;
+}
+
+bool Recipe::operator!=(const Recipe& other) const {
+    return !(*this == other);
 }
 
 #endif
