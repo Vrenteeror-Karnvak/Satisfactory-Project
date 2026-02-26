@@ -13,7 +13,7 @@ int main(int argc, char* argv[]) {
     // opens all of the input and output file streams
     ifstream resource_name(exePath / "dat/name_pairs.json");
     ifstream recipe_in(exePath / "int/recipes_trimmed.json");
-    ofstream recipe_out(exePath / "dat/recipes.json");
+    ofstream recipe_out(exePath / "int/recipes_sorted.json");
 
 
     if (!resource_name.is_open()) {

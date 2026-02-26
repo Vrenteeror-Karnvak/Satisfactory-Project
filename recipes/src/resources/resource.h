@@ -19,12 +19,20 @@ class Resource {
         void set_resource(const json& data);
         void set_name(const string title);
         void set_amount(const double rate);
-        void combine_resource(const Resource other);
         string get_name() const;
         double get_amount() const;
-        bool equal_name(const Resource& other) const;
+        bool same_name(const Resource& other) const;
+
         bool operator==(const Resource& other) const;
         bool operator!=(const Resource& other) const;
+        Resource& operator+=(const Resource& other);
+        Resource operator+(const Resource& other) const;
+        Resource& operator-=(const Resource& other);
+        Resource operator-(const Resource& other) const;
+        Resource& operator*=(const double multiple);
+        Resource operator*(const double multiple) const;
+
+        inline static const double EPSILON = 1e-9;
 
     private:
         string name;

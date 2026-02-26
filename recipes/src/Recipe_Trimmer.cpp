@@ -35,6 +35,10 @@ int main(int argc, char* argv[]) {
     json recipe_data = json::object();
     json removed_recipes = json::array();
     json dataOut = json::array();
+    
+    // Used to add the conversion from fuel rods to waste
+    json nuclear_object = json::object();
+    json water_object = json::object();
 
     string ingredient;
     vector<string> Class_Name;
@@ -82,7 +86,33 @@ int main(int argc, char* argv[]) {
         }
     }
 
- 
+    // Adds the Uranium Fuel Rod conversion
+    recipe_data["DisplayName"] = "Uranium Fuel Rod (Burning)";
+    nuclear_object["ItemClass"] = "Uranium Fuel Rod";
+    nuclear_object["Amount"] = "1";
+    water_object["ItemClass"] = "Water";
+    water_object["Amount"] = "1200";
+    recipe_data["Ingredients"] = {nuclear_object, water_object};
+    nuclear_object["ItemClass"] = "Uranium Waste";
+    nuclear_object["Amount"] = "50";
+    recipe_data["Product"] = {nuclear_object};
+    recipe_data["ProducedIn"] = "Nuclear Power Plant";
+    recipe_data["ManufactoringDuration"] = "300";
+    dataOut.push_back(recipe_data);
+
+    // Adds the Plutonium Fuel Rod conversion
+    recipe_data["DisplayName"] = "Plutonium Fuel Rod (Burning)";
+    nuclear_object["ItemClass"] = "Plutonium Fuel Rod";
+    nuclear_object["Amount"] = "1";
+    water_object["ItemClass"] = "Water";
+    water_object["Amount"] = "2400";
+    recipe_data["Ingredients"] = {nuclear_object, water_object};
+    nuclear_object["ItemClass"] = "Plutonium Waste";
+    nuclear_object["Amount"] = "10";
+    recipe_data["Product"] = {nuclear_object};
+    recipe_data["ProducedIn"] = "Nuclear Power Plant";
+    recipe_data["ManufactoringDuration"] = "600";
+    dataOut.push_back(recipe_data);
 
     // puts the new recipes in the output file
     removed_recipes_out << removed_recipes.dump(4);
