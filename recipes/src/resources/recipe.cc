@@ -100,17 +100,63 @@ void Recipe::set_processed() {
 }
 
 void Recipe::combine_recipes(const Recipe other) {
-    if (name != other.get_name()) {
-        // Terminates the process if the recipes aren't the same.
-        cout << "These are not the same recipe. Can not combine." << endl;
-        return;
+    bool found = false;
+    // combines the ingredients
+    for (int i = 0; i < other.get_ingredients().size(); i++) {
+        found = false;
+        for (int j = 0; j < ingredients.size(); j++) {
+            if (ingredients.at(j) == other.get_ingredient(i)) {
+                ingredients.at(j) += other.get_ingredient(i);
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            ingredients.push_back(other.get_ingredient(i));
+        }
     }
 
-    for (int i = 0; i < ingredients.size(); i++) {
-        ingredients.at(i).combine_resource(other.get_ingredient(i));
+    // combines the products
+    for (int i = 0; i < other.get_products().size(); i++) {
+        found = false;
+        for (int j = 0; j < products.size(); j++) {
+            if (products.at(j) == other.get_product(i)) {
+                products.at(j) += other.get_product(i);
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            products.push_back(other.get_product(i));
+        }
     }
+
+    // Removes any similarities between the products and ingredients
     for (int i = 0; i < products.size(); i++) {
-        products.at(i).combine_resource(other.get_product(i));
+        for (int j = 0; j < ingredients.size(); j++) {
+            if (products.at(i).same_name(ingredients.at(j))) {
+                products.at(i) -= ingredients.at(j);
+                ingredients.erase(find(ingredients.begin(), ingredients.end(), ingredients.at(j)));
+            }
+        }
+    }
+
+    // Removes any products that have an amount of 0
+    // Also converts and products with a negative amount into ingredients
+    for (int i = 0; i < products.size(); i++) {
+        if (abs(products.at(i).get_amount()) < EPSILON) {
+            products.erase(find(products.begin(), products.end(), products.at(i)));
+        }
+        else if (products.at(i).get_amount() < 0) {
+            ingredients.push_back(products.at(i));
+            products.erase(find(products.begin(), products.end(), products.at(i)));
+        }
+    }
+}
+
+void Recipe::merge_recipes(const vector<Recipe> data) {
+    for (int i = 0; i < data.size(); i++) {
+        this->combine_recipes(data.at(i));
     }
 }
 
@@ -162,6 +208,26 @@ json Recipe::to_json() const {
     return output;
 }
 
+json Recipe::to_compressed_json() const {
+    json output = json::object();
+    json current = json::object();
+
+    output["DisplayName"] = products.at(0).get_name();
+    for (int i = 0; i < ingredients.size(); i++) {
+        current["ItemClass"] = ingredients.at(i).get_name();
+        current["Amount"] = ingredients.at(i).get_amount();
+        output["Ingredients"].push_back(current);
+    }
+    for (int i = 0; i < products.size(); i++) {
+        current["ItemClass"] = products.at(i).get_name();
+        current["Amount"] = products.at(i).get_amount();
+        output["Product"].push_back(current);
+    }
+    output["ProducedIn"] = factory;
+    output["ManufactoringDuration"] = machine_speed;
+    return output;
+}
+
 void Recipe::set_to(const double end_result) {
     double multiple = end_result / products.at(0).get_amount();
 
@@ -179,7 +245,10 @@ bool Recipe::is_processed() const {
 }
 
 bool Recipe::same_name(const Recipe& other) const {
-    return (name == other.get_name() && factory == other.get_factory());
+    return (name == other.get_name() && factory == other.get_factory()
+            && machine_speed == other.get_machine_speed()
+            && ingredients.size() == other.get_ingredients().size()
+            && products.size() == other.get_products().size());
 }
 
 bool Recipe::operator==(const Recipe& other) const {
@@ -212,6 +281,63 @@ bool Recipe::operator==(const Recipe& other) const {
 
 bool Recipe::operator!=(const Recipe& other) const {
     return !(*this == other);
+}
+
+Recipe& Recipe::operator+=(const Recipe& other) {
+    if (!same_name(other)) {
+        throw invalid_argument("Cannot combine different recipes.");
+    }
+
+    for (int i = 0; i < ingredients.size(); i++) {
+        ingredients.at(i) += other.get_ingredient(i);
+    }
+    for (int i = 0; i < products.size(); i++) {
+        products.at(i) += other.get_product(i);
+    }
+    return *this;
+}
+
+Recipe Recipe::operator+(const Recipe& other) const {
+    Recipe result = *this;
+    result += other;
+    return result;
+}
+
+Recipe& Recipe::operator-=(const Recipe& other) {
+    if (!same_name(other)) {
+        throw invalid_argument("Cannot combine different recipes.");
+    }
+
+    for (int i = 0; i < ingredients.size(); i++) {
+        ingredients.at(i) -= other.get_ingredient(i);
+    }
+    for (int i = 0; i < products.size(); i++) {
+        products.at(i) -= other.get_product(i);
+    }
+    return *this;
+}
+
+Recipe Recipe::operator-(const Recipe& other) const {
+    Recipe result = *this;
+    result -= other;
+    return result;
+}
+
+
+Recipe& Recipe::operator*=(const double multiple) {
+    for (int i = 0; i < ingredients.size(); i++) {
+        ingredients.at(i) *= multiple;
+    }
+    for (int i = 0; i < products.size(); i++) {
+        products.at(i) *= multiple;
+    }
+    return *this;
+}
+
+Recipe Recipe::operator*(const double multiple) const {
+    Recipe result = *this;
+    result *= multiple;
+    return result;
 }
 
 #endif

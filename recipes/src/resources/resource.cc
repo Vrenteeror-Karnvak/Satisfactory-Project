@@ -39,15 +39,6 @@ void Resource::set_amount(const double rate) {
     amount = rate;
 }
 
-void Resource::combine_resource(const Resource other) {
-    if (name != other.get_name()) {
-        // Terminates the process if the resources aren't the same.
-        cout << "These are not the same resource. Can not combine." << endl;
-        return;
-    }
-    amount += other.get_amount(); // adds the other amount to the original
-}
-
 string Resource::get_name() const {
     return name;
 }
@@ -56,16 +47,57 @@ double Resource::get_amount() const {
     return amount;
 }
 
-bool Resource::equal_name(const Resource& other) const {
+bool Resource::same_name(const Resource& other) const {
     return name == other.get_name();
 }
 
 bool Resource::operator==(const Resource& other) const {
-    return (name == other.get_name() && amount == other.get_amount());
+    return (name == other.get_name() && ((amount - other.get_amount())) < EPSILON);
 }
 
 bool Resource::operator!=(const Resource& other) const {
     return !(*this == other);
+}
+
+Resource& Resource::operator+=(const Resource& other) {
+    if (!same_name(other)) {
+        throw invalid_argument("Cannot combine different resources.");
+    }
+
+    amount += other.get_amount();
+    return *this;
+}
+
+Resource Resource::operator+(const Resource& other) const {
+    Resource result = *this;
+    result += other;
+    return result;
+}
+
+Resource& Resource::operator-=(const Resource& other) {
+    if (!same_name(other)) {
+        throw invalid_argument("Cannot combine different resources.");
+    }
+
+    amount -= other.get_amount();
+    return *this;
+}
+
+Resource Resource::operator-(const Resource& other) const {
+    Resource result = *this;
+    result -= other;
+    return result;
+}
+
+Resource& Resource::operator*=(const double multiple) {
+    amount *= multiple;
+    return *this;
+}
+
+Resource Resource::operator*(const double multiple) const {
+    Resource result;
+    result *= multiple;
+    return result;
 }
 
 #endif

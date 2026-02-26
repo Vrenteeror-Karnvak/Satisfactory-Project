@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
     bool loop_termination = false; // Triggers if the loop runs a set number of times
     bool time_termination = false; // Triggers if the loops runs a set amount of time
     const int max_loops = 10000; // the maximum number of loops the program is allowed to run
-    const chrono::minutes max_time(1); // the max time the program is allowed to run
+    const chrono::minutes max_time(5); // the max time the program is allowed to run
 
     // opens the filestreams
     ifstream recipe_in(exePath / "dat" / "recipes.json");
@@ -100,16 +100,12 @@ int main(int argc, char* argv[]) {
     int count = 0; // the number of times the loop has run
     double total = 1; // this is double so that it can handle values in the quintilions.
 
-    incrementor.at(0) += 1;
-
-    //
     //
     // Every time it runs, replace every recipe for the item with a simplified version of the chain
-    // Optimize the program by placing the list of recipes in a map instead of a vector
-    //
+    // 
 
     // The main function, runs until the incrementor vector has returned back to its starting value
-    while (incrementor != all_zeros) {
+    do {
         // clears the output storage vectors
         output_recipes.clear();
         chain_array.clear();
@@ -209,14 +205,6 @@ int main(int argc, char* argv[]) {
             }
         }
 
-        // updates recipe list for the next loop
-        m = 0; // resets m
-        for (const auto& data : recipe_root) {
-            recipe_input.set_recipe(data.value("Data", empty_array).at(incrementor.at(m)));
-            recipe_map.at(data.value("Category", "")) = recipe_input;
-            m += 1;
-        }
-
         // increments the incrementor vector
         incrementor.at(0) += 1;
         for (int i = 0; i < incrementor.size(); i++) {
@@ -231,6 +219,14 @@ int main(int argc, char* argv[]) {
                     incrementor.at(0) = 0;
                 }
             }
+        }
+        
+        // updates recipe list for the next loop
+        m = 0; // resets m
+        for (const auto& data : recipe_root) {
+            recipe_input.set_recipe(data.value("Data", empty_array).at(incrementor.at(m)));
+            recipe_map.at(data.value("Category", "")) = recipe_input;
+            m += 1;
         }
 
         // outputs the debugging data about the recipe list and resets the counters        
@@ -258,7 +254,7 @@ int main(int argc, char* argv[]) {
             time_termination = true;
             break;
         }
-    }
+    } while (incrementor != all_zeros);
 
     auto end = chrono::steady_clock::now();
     chrono::duration<double> elapsed = end - start;

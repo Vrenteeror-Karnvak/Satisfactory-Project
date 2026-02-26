@@ -5102,5 +5102,47 @@
         ],
         "ProducedIn": "Assembler",
         "ManufactoringDuration": "24.000000"
+    },
+    {
+        "DisplayName": "Uranium Fuel Rod (Burning)",
+        "Ingredients": [
+            {
+                "ItemClass": "Uranium Fuel Rod",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": "1200"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Uranium Waste",
+                "Amount": "50"
+            }
+        ],
+        "ProducedIn": "Nuclear Power Plant",
+        "ManufactoringDuration": "300"
+    },
+    {
+        "DisplayName": "Plutonium Fuel Rod (Burning)",
+        "Ingredients": [
+            {
+                "ItemClass": "Plutonium Fuel Rod",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": "2400"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Plutonium Waste",
+                "Amount": "10"
+            }
+        ],
+        "ProducedIn": "Nuclear Power Plant",
+        "ManufactoringDuration": "600"
     }
 ]

@@ -4,6 +4,7 @@ GXXFLAGS := -g
 initializer := bin/initializer
 recipe_extractor := bin/recipe_extractor
 recipe_fixer := bin/recipe_fixer
+recipe_sorter_sorter := ./bin/recipe_sorter_sorter
 recipe_sorter := bin/recipe_sorter
 recipe_trimmer := bin/recipe_trimmer
 test_file := bin/test_file
@@ -11,11 +12,11 @@ main := bin/main
 test := bin/test
 obsidian := bin/obsidian
 
-TARGETS := $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_sorter) $(recipe_trimmer) $(test_file) $(main) $(test) $(obsidian)
+TARGETS := $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_sorter) $(recipe_sorter_sorter) $(recipe_trimmer) $(test_file) $(main) $(test) $(obsidian)
 
 all: recipes test resource obsidian
 
-recipes: $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_trimmer) $(recipe_sorter)
+recipes: $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_trimmer) $(recipe_sorter) $(recipe_sorter_sorter)
 test: $(test_file)
 resource: $(main) $(test)
 obsidian: $(obsidian)
@@ -27,6 +28,9 @@ $(recipe_extractor): src/Recipe_Extractor.cpp
 	$(GXX) $(GXXFLAGS) $^ -o $@
 
 $(recipe_fixer): src/Recipe_Fixer.cpp
+	$(GXX) $(GXXFLAGS) $^ -o $@
+
+$(recipe_sorter_sorter): src/Recipe_Sorter_Sorter.cpp
 	$(GXX) $(GXXFLAGS) $^ -o $@
 
 $(recipe_sorter): src/Recipe_Sorter.cpp
@@ -57,6 +61,7 @@ run_recipe: recipes
 	./bin/recipe_fixer
 	./bin/recipe_trimmer
 	./bin/recipe_sorter
+	./bin/recipe_sorter_sorter
 
 clean:
 	rm -f $(TARGETS)

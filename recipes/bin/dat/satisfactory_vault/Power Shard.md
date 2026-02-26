@@ -1,0 +1,1 @@
+[[Time Crystal]][[Dark Matter Crystal]][[Quartz Crystal]][[Excited Photonic Matter]]

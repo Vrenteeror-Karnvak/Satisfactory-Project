@@ -5,6 +5,7 @@
 #include <map>
 #include <iostream>
 #include <fstream>
+#include <algorithm>
 
 #include <chrono>
 
@@ -14,12 +15,14 @@
 using namespace std;
 using json = nlohmann::ordered_json;
 
+const double EPSILON = 1e-9;
+
 int main(int argc, char* argv[]) {
     filesystem::path exePath = filesystem::absolute(argv[0]).parent_path();
     bool loop_termination = false; // Triggers if the loop runs a set number of times
     bool time_termination = false; // Triggers if the loops runs a set amount of time
     const int max_loops = 10000; // the maximum number of loops the program is allowed to run
-    const chrono::minutes max_time(1); // the max time the program is allowed to run
+    const chrono::minutes max_time(5); // the max time the program is allowed to run
 
     // opens the filestreams
     ifstream recipe_in(exePath / "dat" / "recipes.json");
@@ -44,6 +47,7 @@ int main(int argc, char* argv[]) {
     test_recipe_in >> test_recipe_root;
     Recipe test_recipe(test_recipe_root.at(0)); // Use to inject a RECIPE into the system
     string test_item = test_recipe_root.at(1).value("ItemClass", ""); // Use to inject an ITEM into the system
+    string current_item; // the item being worked with
 
     // The json file containing the terminal resources
     json terminal_root;
@@ -100,16 +104,12 @@ int main(int argc, char* argv[]) {
     int count = 0; // the number of times the loop has run
     double total = 1; // this is double so that it can handle values in the quintilions.
 
-    incrementor.at(0) += 1;
-
-    //
     //
     // Every time it runs, replace every recipe for the item with a simplified version of the chain
-    // Optimize the program by placing the list of recipes in a map instead of a vector
-    //
+    // 
 
     // The main function, runs until the incrementor vector has returned back to its starting value
-    while (incrementor != all_zeros) {
+    do {
         // clears the output storage vectors
         output_recipes.clear();
         chain_array.clear();
@@ -126,6 +126,8 @@ int main(int argc, char* argv[]) {
         // Use to inject a RECIPE into the system
         // recipe_stack.push(test_recipe);
 
+        current_item = test_recipe.get_product(0).get_name();
+
         // Creates the recipe chain based on the provided recipes
         while (!recipe_stack.empty()) {
             if (recipe_stack.top().is_processed()) {
@@ -140,7 +142,7 @@ int main(int argc, char* argv[]) {
                 }
 
                 if (already_added) {
-                    output_recipes.at(location).combine_recipes(recipe_stack.top());
+                    output_recipes.at(location) += recipe_stack.top();
                 }
                 else {
                     output_recipes.push_back(recipe_stack.top());
@@ -158,8 +160,10 @@ int main(int argc, char* argv[]) {
                     auto terminal_location = terminal_map.find(ingredients.at(i).get_name()); // finds if the item is terminal
                     if (terminal_location != terminal_map.end()) {
                         // if the ingredient was terminal, adds it to the stack and moves on to the next one
+                        /*
                         terminal_recipe.set_terminal_recipe(ingredients.at(i));
                         recipe_stack.push(terminal_recipe);
+                        */
                         continue;
                     }
 
@@ -177,16 +181,34 @@ int main(int argc, char* argv[]) {
                 }
             }
         }
-    
-        // converts the output vector into json
+
+        // Detects what products were created and adds their recipe to the incrementors
+        for (int i = 0; i < output_recipes.size(); i++) {
+            product_name = output_recipes.at(i).get_product(0).get_name();
+            m = incrementor_map[product_name];
+            for (const auto& data : recipe_root) {
+                if (data.value("Category", "") == product_name) {
+                    incrementor_max.at(m) = data.value("Data", empty_array).size();
+                }
+            }
+        }
+        
+        // converts the output vector into uncompressed json
+        /*
         for (int i = 0; i < output_recipes.size(); i++) {
             chain_object = output_recipes.at(i).to_json();
             chain_array.push_back(chain_object);
         }
         output_object = chain_array;
+        */
+
+        // converts the output vector into compressed json
+        Recipe output;
+        output.merge_recipes(output_recipes);
+        output.set_name(current_item);
+        output_object = output.to_json();
         
         // checks if the recipe combination has already been found
-        /* This doesn't work. Can not compare the json objects apparently.*/
         found = false;
         for (int i = 0; i < output_array.size(); i++) {
             if (output_object == output_array.at(i)) {
@@ -196,25 +218,6 @@ int main(int argc, char* argv[]) {
 
         if (!found) {
             output_array.push_back(output_object);
-        }
-
-        // Detects what products were created and adds their recipe to the incrementors
-        for (const auto& recipe : chain_array) {
-            product_name = recipe.value("Product", empty_array).at(0).value("ItemClass", "");
-            m = incrementor_map[product_name];
-            for (const auto& data : recipe_root) {
-                if (data.value("Category", "") == product_name) {
-                    incrementor_max.at(m) = data.value("Data", empty_array).size();
-                }
-            }
-        }
-
-        // updates recipe list for the next loop
-        m = 0; // resets m
-        for (const auto& data : recipe_root) {
-            recipe_input.set_recipe(data.value("Data", empty_array).at(incrementor.at(m)));
-            recipe_map.at(data.value("Category", "")) = recipe_input;
-            m += 1;
         }
 
         // increments the incrementor vector
@@ -232,17 +235,23 @@ int main(int argc, char* argv[]) {
                 }
             }
         }
+        
+        // updates recipe list for the next loop
+        m = 0; // resets m
+        for (const auto& data : recipe_root) {
+            recipe_input.set_recipe(data.value("Data", empty_array).at(incrementor.at(m)));
+            recipe_map.at(data.value("Category", "")) = recipe_input;
+            m += 1;
+        }
 
-        // outputs the debugging data about the recipe list and resets the counters        
+        // outputs the debugging data about the recipe list        
         count += 1;
         /*cout << output_array.size() << " combinations have been found.\n";
         cout << "The program has tested " << count << " combinations of recipes." << endl;*/
 
         total = 1;
         for (int i = 0; i < incrementor_max.size(); i++) {
-            if (incrementor_max.at(i) != 0) {
-                total *= incrementor_max.at(i);
-            }
+            total *= incrementor_max.at(i);
         }
 
         // Use to terminate after a set amount of loops
@@ -258,7 +267,7 @@ int main(int argc, char* argv[]) {
             time_termination = true;
             break;
         }
-    }
+    } while (incrementor != all_zeros);
 
     auto end = chrono::steady_clock::now();
     chrono::duration<double> elapsed = end - start;

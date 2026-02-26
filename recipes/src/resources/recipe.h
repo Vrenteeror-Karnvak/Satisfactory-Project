@@ -6,6 +6,7 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
+#include <algorithm>
 
 #include "resource.h"
 
@@ -27,6 +28,7 @@ class Recipe {
         void add_product(const Resource product);
         void set_processed();
         void combine_recipes(const Recipe other);
+        void merge_recipes(const vector<Recipe> data);
         string get_name() const;
         string get_factory() const;
         double get_machine_speed() const;
@@ -35,11 +37,21 @@ class Recipe {
         vector<Resource> get_products() const;
         Resource get_product(int i) const;
         json to_json() const;
+        json to_compressed_json() const;
         void set_to(const double end_result);
         bool is_processed() const;
         bool same_name(const Recipe& other) const;
+
         bool operator==(const Recipe& other) const;
         bool operator!=(const Recipe& other) const;
+        Recipe& operator+=(const Recipe& other);
+        Recipe operator+(const Recipe& other) const;
+        Recipe& operator-=(const Recipe& other);
+        Recipe operator-(const Recipe& other) const;
+        Recipe& operator*=(const double multiple);
+        Recipe operator*(const double multiple) const;
+
+        inline static const double EPSILON = 1e-9;
 
     private:
         string name; // the name of the recipe
