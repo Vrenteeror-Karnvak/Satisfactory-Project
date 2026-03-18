@@ -1,0 +1,589 @@
+[
+    {
+        "DisplayName": "Excited Photonic Matter",
+        "Ingredients": [
+            {
+                "ItemClass": "Crude Oil",
+                "Amount": "31380000"
+            },
+            {
+                "ItemClass": "Raw Quartz",
+                "Amount": "20837"
+            },
+            {
+                "ItemClass": "FICSMAS Gift",
+                "Amount": "259"
+            },
+            {
+                "ItemClass": "Sulfur",
+                "Amount": "96"
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": "18525600"
+            },
+            {
+                "ItemClass": "Hog Remains",
+                "Amount": "2"
+            },
+            {
+                "ItemClass": "Bauxite",
+                "Amount": "16464"
+            },
+            {
+                "ItemClass": "SAM",
+                "Amount": "21784"
+            },
+            {
+                "ItemClass": "Coal",
+                "Amount": "97917"
+            },
+            {
+                "ItemClass": "Iron Ore",
+                "Amount": "111707"
+            },
+            {
+                "ItemClass": "Copper Ore",
+                "Amount": "105776"
+            },
+            {
+                "ItemClass": "Caterium Ore",
+                "Amount": "21885"
+            },
+            {
+                "ItemClass": "Compacted Coal",
+                "Amount": "143"
+            },
+            {
+                "ItemClass": "Limestone",
+                "Amount": "73944"
+            },
+            {
+                "ItemClass": "Uranium",
+                "Amount": "17250"
+            },
+            {
+                "ItemClass": "Sulfuric Acid",
+                "Amount": "12925000"
+            },
+            {
+                "ItemClass": "Nitrogen Gas",
+                "Amount": "19254000"
+            },
+            {
+                "ItemClass": "Packaged Turbofuel",
+                "Amount": "72"
+            },
+            {
+                "ItemClass": "Biomass",
+                "Amount": "10"
+            },
+            {
+                "ItemClass": "Dark Matter Residue",
+                "Amount": "11518000"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Excited Photonic Matter",
+                "Amount": "10000"
+            },
+            {
+                "ItemClass": "Silica",
+                "Amount": "6865"
+            },
+            {
+                "ItemClass": "FICSMAS Actual Snow",
+                "Amount": "2"
+            },
+            {
+                "ItemClass": "Red FICSMAS Ornament",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "FICSMAS Bow",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "FICSMAS Tree Branch",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Candy Cane",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Blue FICSMAS Ornament",
+                "Amount": "2"
+            },
+            {
+                "ItemClass": "Alien Protein",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Alumina Solution",
+                "Amount": "12000"
+            },
+            {
+                "ItemClass": "Reanimated SAM",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Quartz Crystal",
+                "Amount": "3"
+            },
+            {
+                "ItemClass": "Fuel",
+                "Amount": "4000"
+            },
+            {
+                "ItemClass": "Petroleum Coke",
+                "Amount": "12"
+            },
+            {
+                "ItemClass": "Rubber",
+                "Amount": "2"
+            },
+            {
+                "ItemClass": "Plastic",
+                "Amount": "2"
+            },
+            {
+                "ItemClass": "Fabric",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Snowball",
+                "Amount": "2"
+            },
+            {
+                "ItemClass": "Sparkly Fireworks",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Fancy Fireworks",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Sweet Fireworks",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Iron Ingot",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Alien DNA Capsule",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Black Powder",
+                "Amount": "2"
+            },
+            {
+                "ItemClass": "Copper Ingot",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Aluminum Scrap",
+                "Amount": "18"
+            },
+            {
+                "ItemClass": "Caterium Ingot",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Diamonds",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Turbofuel",
+                "Amount": "10000"
+            },
+            {
+                "ItemClass": "Concrete",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Steel Ingot",
+                "Amount": "3"
+            },
+            {
+                "ItemClass": "Iron FICSMAS Ornament",
+                "Amount": "2"
+            },
+            {
+                "ItemClass": "Smokeless Powder",
+                "Amount": "2"
+            },
+            {
+                "ItemClass": "Copper Sheet",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Copper Powder",
+                "Amount": "5"
+            },
+            {
+                "ItemClass": "Copper FICSMAS Ornament",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Aluminum Ingot",
+                "Amount": "12"
+            },
+            {
+                "ItemClass": "Wire",
+                "Amount": "2"
+            },
+            {
+                "ItemClass": "Quickwire",
+                "Amount": "5"
+            },
+            {
+                "ItemClass": "Time Crystal",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Iron Plate",
+                "Amount": "2"
+            },
+            {
+                "ItemClass": "Steel Pipe",
+                "Amount": "2"
+            },
+            {
+                "ItemClass": "Rifle Ammo",
+                "Amount": "15"
+            },
+            {
+                "ItemClass": "FICSMAS Ornament Bundle",
+                "Amount": "2"
+            },
+            {
+                "ItemClass": "Aluminum Casing",
+                "Amount": "8"
+            },
+            {
+                "ItemClass": "Alclad Aluminum Sheet",
+                "Amount": "12"
+            },
+            {
+                "ItemClass": "Steel Beam",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Ficsite Ingot",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Empty Fluid Tank",
+                "Amount": "12"
+            },
+            {
+                "ItemClass": "Iron Rod",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Cable",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Circuit Board",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "AI Limiter",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Encased Uranium Cell",
+                "Amount": "5"
+            },
+            {
+                "ItemClass": "Dark Matter Crystal",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Gas Filter",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Empty Canister",
+                "Amount": "4"
+            },
+            {
+                "ItemClass": "Nitric Acid",
+                "Amount": "6000"
+            },
+            {
+                "ItemClass": "Nobelisk",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Stator",
+                "Amount": "2"
+            },
+            {
+                "ItemClass": "SAM Fluctuator",
+                "Amount": "2"
+            },
+            {
+                "ItemClass": "Portable Miner",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "FICSMAS Wreath",
+                "Amount": "2"
+            },
+            {
+                "ItemClass": "Turbo Rifle Ammo",
+                "Amount": "1200"
+            },
+            {
+                "ItemClass": "Heat Sink",
+                "Amount": "12"
+            },
+            {
+                "ItemClass": "Battery",
+                "Amount": "24"
+            },
+            {
+                "ItemClass": "Encased Industrial Beam",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Ficsite Trigon",
+                "Amount": "3"
+            },
+            {
+                "ItemClass": "Screws",
+                "Amount": "4"
+            },
+            {
+                "ItemClass": "Iron Rebar",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "High-Speed Connector",
+                "Amount": "5"
+            },
+            {
+                "ItemClass": "Power Shard",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Iodine-Infused Filter",
+                "Amount": "40"
+            },
+            {
+                "ItemClass": "Rocket Fuel",
+                "Amount": "100000"
+            },
+            {
+                "ItemClass": "Nuke Nobelisk",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Gas Nobelisk",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Cluster Nobelisk",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "FICSMAS Wonder Star",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Rotor",
+                "Amount": "4"
+            },
+            {
+                "ItemClass": "Reinforced Iron Plate",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Explosive Rebar",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Stun Rebar",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Shatter Rebar",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Homing Rifle Ammo",
+                "Amount": "150"
+            },
+            {
+                "ItemClass": "Automated Wiring",
+                "Amount": "2"
+            },
+            {
+                "ItemClass": "Electromagnetic Control Rod",
+                "Amount": "4"
+            },
+            {
+                "ItemClass": "Polymer Resin",
+                "Amount": "214"
+            },
+            {
+                "ItemClass": "Ionized Fuel",
+                "Amount": "400000"
+            },
+            {
+                "ItemClass": "Modular Frame",
+                "Amount": "2"
+            },
+            {
+                "ItemClass": "Smart Plating",
+                "Amount": "4"
+            },
+            {
+                "ItemClass": "Crystal Oscillator",
+                "Amount": "2"
+            },
+            {
+                "ItemClass": "Versatile Framework",
+                "Amount": "2"
+            },
+            {
+                "ItemClass": "Heavy Modular Frame",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Superposition Oscillator",
+                "Amount": "4"
+            },
+            {
+                "ItemClass": "Motor",
+                "Amount": "2"
+            },
+            {
+                "ItemClass": "Computer",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Pulse Nobelisk",
+                "Amount": "5"
+            },
+            {
+                "ItemClass": "Uranium Fuel Rod",
+                "Amount": "4"
+            },
+            {
+                "ItemClass": "Magnetic Field Generator",
+                "Amount": "4"
+            },
+            {
+                "ItemClass": "Fused Modular Frame",
+                "Amount": "4"
+            },
+            {
+                "ItemClass": "Alien Power Matrix",
+                "Amount": "4"
+            },
+            {
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": "11630000"
+            },
+            {
+                "ItemClass": "Cooling System",
+                "Amount": "6"
+            },
+            {
+                "ItemClass": "Modular Engine",
+                "Amount": "2"
+            },
+            {
+                "ItemClass": "Radio Control Unit",
+                "Amount": "2"
+            },
+            {
+                "ItemClass": "Adaptive Control Unit",
+                "Amount": "2"
+            },
+            {
+                "ItemClass": "Uranium Waste",
+                "Amount": "200"
+            },
+            {
+                "ItemClass": "Supercomputer",
+                "Amount": "5"
+            },
+            {
+                "ItemClass": "Pressure Conversion Cube",
+                "Amount": "4"
+            },
+            {
+                "ItemClass": "Non-Fissile Uranium",
+                "Amount": "800"
+            },
+            {
+                "ItemClass": "Neural-Quantum Processor",
+                "Amount": "5"
+            },
+            {
+                "ItemClass": "Assembly Director System",
+                "Amount": "5"
+            },
+            {
+                "ItemClass": "Turbo Motor",
+                "Amount": "3"
+            },
+            {
+                "ItemClass": "Nuclear Pasta",
+                "Amount": "4"
+            },
+            {
+                "ItemClass": "Plutonium Pellet",
+                "Amount": "60"
+            },
+            {
+                "ItemClass": "AI Expansion Server",
+                "Amount": "20"
+            },
+            {
+                "ItemClass": "Biochemical Sculptor",
+                "Amount": "60"
+            },
+            {
+                "ItemClass": "Thermal Propulsion Rocket",
+                "Amount": "12"
+            },
+            {
+                "ItemClass": "Singularity Cell",
+                "Amount": "40"
+            },
+            {
+                "ItemClass": "Encased Plutonium Cell",
+                "Amount": "30"
+            },
+            {
+                "ItemClass": "Ballistic Warp Drive",
+                "Amount": "24"
+            },
+            {
+                "ItemClass": "Plutonium Fuel Rod",
+                "Amount": "6"
+            },
+            {
+                "ItemClass": "Plutonium Waste",
+                "Amount": "60"
+            },
+            {
+                "ItemClass": "Ficsonium",
+                "Amount": "120"
+            },
+            {
+                "ItemClass": "Ficsonium Fuel Rod",
+                "Amount": "60"
+            }
+        ]
+    }
+]

@@ -16,14 +16,15 @@ Resource::Resource(const json& data) {
     amount = stod(data.value("Amount", ""));
 }
 
-Resource::Resource(const string title, const double rate) {
+Resource::Resource(const string title, const Fraction rate) {
     name = title;
     amount = rate;
 }
 
 Resource::Resource(const string title) {
     name = title;
-    amount = 0;
+    amount.set_numerator(0);
+    amount.set_denominator(1);
 }
 
 void Resource::set_resource(const json& data) {
@@ -35,15 +36,19 @@ void Resource::set_name(const string title) {
     name = title;
 }
 
-void Resource::set_amount(const double rate) {
-    amount = rate;
+void Resource::set_amount(const int n, const int d) {
+    amount.set_numerator(n);
+    amount.set_denominator(d);
+}
+void Resource::set_amount(const Fraction value) {
+    amount = value;
 }
 
 string Resource::get_name() const {
     return name;
 }
 
-double Resource::get_amount() const {
+Fraction Resource::get_amount() const {
     return amount;
 }
 
@@ -51,12 +56,40 @@ bool Resource::same_name(const Resource& other) const {
     return name == other.get_name();
 }
 
+/**************************************************/
+// Operator Overloads
+/**************************************************/
+
 bool Resource::operator==(const Resource& other) const {
-    return (name == other.get_name() && ((amount - other.get_amount())) < EPSILON);
+    return (name == other.get_name() && amount == other.get_amount());
 }
 
 bool Resource::operator!=(const Resource& other) const {
     return !(*this == other);
+}
+
+bool Resource::operator<(const Resource& other) const {
+    if (!same_name(other)) {
+        throw invalid_argument("Cannot combine different resources.");
+    }
+
+    return (amount < other.get_amount());
+}
+
+bool Resource::operator<=(const Resource& other) const {
+    return (*this < other || *this == other);
+}
+
+bool Resource::operator>(const Resource& other) const {
+    if (!same_name(other)) {
+        throw invalid_argument("Cannot combine different resources.");
+    }
+
+    return (amount > other.get_amount());
+}
+
+bool Resource::operator>=(const Resource& other) const {
+    return (*this > other || *this == other);
 }
 
 Resource& Resource::operator+=(const Resource& other) {
@@ -89,12 +122,12 @@ Resource Resource::operator-(const Resource& other) const {
     return result;
 }
 
-Resource& Resource::operator*=(const double multiple) {
+Resource& Resource::operator*=(const Fraction multiple) {
     amount *= multiple;
     return *this;
 }
 
-Resource Resource::operator*(const double multiple) const {
+Resource Resource::operator*(const Fraction multiple) const {
     Resource result;
     result *= multiple;
     return result;

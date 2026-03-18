@@ -136,6 +136,14 @@ int main(int argc, char* argv[]) {
     resource_data["Amount"] = "0"; // sets amount to 0;
     resourceOut.push_back(resource_data); // adds the  data to the vector
 
+    resource_data["ItemClass"] = "FICSMAS Gift"; // adds the display name
+    resource_data["Amount"] = "0"; // sets amount to 0;
+    resourceOut.push_back(resource_data); // adds the  data to the vector
+
+    resource_data["ItemClass"] = "Alien DNA Capsule"; // adds the display name
+    resource_data["Amount"] = "0"; // sets amount to 0;
+    resourceOut.push_back(resource_data); // adds the  data to the vector
+
     // outputs the collected data
     name_out << nameOut.dump(4);
     resource_out << resourceOut.dump(4);

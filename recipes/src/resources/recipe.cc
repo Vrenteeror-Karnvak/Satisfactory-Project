@@ -105,7 +105,7 @@ void Recipe::combine_recipes(const Recipe other) {
     for (int i = 0; i < other.get_ingredients().size(); i++) {
         found = false;
         for (int j = 0; j < ingredients.size(); j++) {
-            if (ingredients.at(j) == other.get_ingredient(i)) {
+            if (ingredients.at(j).same_name(other.get_ingredient(i))) {
                 ingredients.at(j) += other.get_ingredient(i);
                 found = true;
                 break;
@@ -120,7 +120,7 @@ void Recipe::combine_recipes(const Recipe other) {
     for (int i = 0; i < other.get_products().size(); i++) {
         found = false;
         for (int j = 0; j < products.size(); j++) {
-            if (products.at(j) == other.get_product(i)) {
+            if (products.at(j).same_name(other.get_product(i))) {
                 products.at(j) += other.get_product(i);
                 found = true;
                 break;
@@ -137,19 +137,24 @@ void Recipe::combine_recipes(const Recipe other) {
             if (products.at(i).same_name(ingredients.at(j))) {
                 products.at(i) -= ingredients.at(j);
                 ingredients.erase(find(ingredients.begin(), ingredients.end(), ingredients.at(j)));
+                j--;
             }
         }
     }
 
     // Removes any products that have an amount of 0
     // Also converts and products with a negative amount into ingredients
+    string fraction;
     for (int i = 0; i < products.size(); i++) {
-        if (abs(products.at(i).get_amount()) < EPSILON) {
+        if (products.at(i).get_amount() == 0) {
             products.erase(find(products.begin(), products.end(), products.at(i)));
+            i--;
         }
         else if (products.at(i).get_amount() < 0) {
+            products.at(i) *= -1;
             ingredients.push_back(products.at(i));
             products.erase(find(products.begin(), products.end(), products.at(i)));
+            i--;
         }
     }
 }
@@ -191,16 +196,19 @@ Resource Recipe::get_product(int i) const {
 json Recipe::to_json() const {
     json output = json::object();
     json current = json::object();
+    string fraction;
 
     output["DisplayName"] = name;
     for (int i = 0; i < ingredients.size(); i++) {
         current["ItemClass"] = ingredients.at(i).get_name();
-        current["Amount"] = ingredients.at(i).get_amount();
+        fraction = to_string(ingredients.at(i).get_amount().get_numerator()) + "/" + to_string(ingredients.at(i).get_amount().get_denominator());
+        current["Amount"] = fraction;
         output["Ingredients"].push_back(current);
     }
     for (int i = 0; i < products.size(); i++) {
         current["ItemClass"] = products.at(i).get_name();
-        current["Amount"] = products.at(i).get_amount();
+        fraction = to_string(products.at(i).get_amount().get_numerator()) + "/" + to_string(products.at(i).get_amount().get_denominator());
+        current["Amount"] = fraction;
         output["Product"].push_back(current);
     }
     output["ProducedIn"] = factory;
@@ -215,21 +223,19 @@ json Recipe::to_compressed_json() const {
     output["DisplayName"] = products.at(0).get_name();
     for (int i = 0; i < ingredients.size(); i++) {
         current["ItemClass"] = ingredients.at(i).get_name();
-        current["Amount"] = ingredients.at(i).get_amount();
+        current["Amount"] = to_string(ingredients.at(i).get_amount().get_numerator());
         output["Ingredients"].push_back(current);
     }
     for (int i = 0; i < products.size(); i++) {
         current["ItemClass"] = products.at(i).get_name();
-        current["Amount"] = products.at(i).get_amount();
+        current["Amount"] = to_string(products.at(i).get_amount().get_numerator());;
         output["Product"].push_back(current);
     }
-    output["ProducedIn"] = factory;
-    output["ManufactoringDuration"] = machine_speed;
     return output;
 }
 
-void Recipe::set_to(const double end_result) {
-    double multiple = end_result / products.at(0).get_amount();
+void Recipe::set_to(const Fraction end_result) {
+    Fraction multiple = end_result / products.at(0).get_amount();
 
     for (int i = 0; i < ingredients.size(); i++) {
         ingredients.at(i).set_amount(ingredients.at(i).get_amount() * multiple);
@@ -250,6 +256,10 @@ bool Recipe::same_name(const Recipe& other) const {
             && ingredients.size() == other.get_ingredients().size()
             && products.size() == other.get_products().size());
 }
+
+/**************************************************/
+// Operator Overloads
+/**************************************************/
 
 bool Recipe::operator==(const Recipe& other) const {
     // if name, factory, or machine speed are not equivalent, return false
@@ -324,7 +334,7 @@ Recipe Recipe::operator-(const Recipe& other) const {
 }
 
 
-Recipe& Recipe::operator*=(const double multiple) {
+Recipe& Recipe::operator*=(const Fraction multiple) {
     for (int i = 0; i < ingredients.size(); i++) {
         ingredients.at(i) *= multiple;
     }
@@ -334,7 +344,7 @@ Recipe& Recipe::operator*=(const double multiple) {
     return *this;
 }
 
-Recipe Recipe::operator*(const double multiple) const {
+Recipe Recipe::operator*(const Fraction multiple) const {
     Recipe result = *this;
     result *= multiple;
     return result;
