@@ -9,6 +9,7 @@ recipe_sorter := bin/recipe_sorter
 recipe_trimmer := bin/recipe_trimmer
 test_file := bin/test_file
 main := bin/main
+main_mega := bin/main_mega
 test := bin/test
 obsidian := bin/obsidian
 
@@ -18,7 +19,7 @@ all: recipes test resource obsidian
 
 recipes: $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_trimmer) $(recipe_sorter) $(recipe_sorter_sorter)
 test: $(test_file)
-resource: $(main) $(test)
+resource: $(main) $(main_mega) $(test)
 obsidian: $(obsidian)
 
 $(initializer): src/Initializer.cpp
@@ -43,6 +44,9 @@ $(test_file): src/Test_File.cpp
 	$(GXX) $(GXXFLAGS) $^ -o $@
 
 $(main): src/main/main.cc src/resources/*.cc
+	$(GXX) $(GXXFLAGS) $^ -o $@
+
+$(main_mega): src/main/main_mega.cc src/resources/*.cc
 	$(GXX) $(GXXFLAGS) $^ -o $@
 
 $(test): src/main/test.cc src/resources/*.cc

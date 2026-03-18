@@ -7,8 +7,10 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
+#include <numeric>
 
 #include "resource.h"
+#include "fraction.h"
 
 using namespace std;
 using json = nlohmann::ordered_json;
@@ -38,9 +40,13 @@ class Recipe {
         Resource get_product(int i) const;
         json to_json() const;
         json to_compressed_json() const;
-        void set_to(const double end_result);
+        void set_to(const Fraction end_result);
         bool is_processed() const;
         bool same_name(const Recipe& other) const;
+
+        /**************************************************/
+        // Operator Overloads
+        /**************************************************/
 
         bool operator==(const Recipe& other) const;
         bool operator!=(const Recipe& other) const;
@@ -48,10 +54,8 @@ class Recipe {
         Recipe operator+(const Recipe& other) const;
         Recipe& operator-=(const Recipe& other);
         Recipe operator-(const Recipe& other) const;
-        Recipe& operator*=(const double multiple);
-        Recipe operator*(const double multiple) const;
-
-        inline static const double EPSILON = 1e-9;
+        Recipe& operator*=(const Fraction multiple);
+        Recipe operator*(const Fraction multiple) const;
 
     private:
         string name; // the name of the recipe

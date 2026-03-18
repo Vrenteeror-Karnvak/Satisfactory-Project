@@ -70,5 +70,13 @@
     {
         "ItemClass": "Sulfuric Acid",
         "Amount": "0"
+    },
+    {
+        "ItemClass": "FICSMAS Gift",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Alien DNA Capsule",
+        "Amount": "0"
     }
 ]

@@ -6,16 +6,16 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
+#include <numeric>
 
 #include <chrono>
 
 #include "../resources/recipe.h"
 #include "../resources/resource.h"
+#include "../resources/fraction.h"
 
 using namespace std;
 using json = nlohmann::ordered_json;
-
-const double EPSILON = 1e-9;
 
 int main(int argc, char* argv[]) {
     filesystem::path exePath = filesystem::absolute(argv[0]).parent_path();
