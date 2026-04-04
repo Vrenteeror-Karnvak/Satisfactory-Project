@@ -54,23 +54,21 @@ int main(int argc, char* argv[]) {
             }
             if (data.value("ItemClass", "").find("Dissolved Silica") != string::npos
             || data.value("ItemClass", "").find("Wood") != string::npos
-            || data.value("ItemClass", "").find("Leaves") != string::npos) {
+            || data.value("ItemClass", "").find("Leaves") != string::npos
+            || data.value("ItemClass", "").find("Packaged") != string::npos) {
                 to_delete = true;
             }
         }
 
         for (auto& data : block["Product"]) {
-            if (data.value("ItemClass", "").find("Biomass") != string::npos) {
-                to_delete = true;
-            }
-            if (data.value("ItemClass", "").find("Dissolved Silica") != string::npos) {
+            if (data.value("ItemClass", "").find("Biomass") != string::npos
+            || data.value("ItemClass", "").find("Dissolved Silica") != string::npos
+            || data.value("ItemClass", "").find("Packaged") != string::npos) {
                 to_delete = true;
             }
         }
 
-        if (block.value("DisplayName", "").find("Packaged") != string::npos
-        || block.value("DisplayName", "").find("Unpackage") != string::npos
-        || block.value("DisplayName", "").find("Recycled") != string::npos
+        if (block.value("DisplayName", "").find("Recycled") != string::npos
         || (block.value("DisplayName", "").find("Ficsite Ingot") == string::npos && block.value("DisplayName", "").find("(") != string::npos)) {
             to_delete = true;
         }

@@ -21,8 +21,6 @@ int main(int argc, char* argv[]) {
     filesystem::path exePath = filesystem::absolute(argv[0]).parent_path();
     bool loop_termination = false; // Triggers if the loop runs a set number of times
     bool time_termination = false; // Triggers if the loops runs a set amount of time
-    const int max_loops = 10000; // the maximum number of loops the program is allowed to run
-    const chrono::minutes max_time(5); // the max time the program is allowed to run
 
     // opens the filestreams
     ifstream recipe_in(exePath / "dat" / "recipes.json");
@@ -48,6 +46,12 @@ int main(int argc, char* argv[]) {
     Recipe test_recipe(test_recipe_root.at(0)); // Use to inject a RECIPE into the system
     string test_item = test_recipe_root.at(1).value("ItemClass", ""); // Use to inject an ITEM into the system
     string current_item; // the item being worked with
+
+    // The auto terminate information
+    const int max_loops = stoi(test_recipe_root.at(2).value("max_loops", "")); // the maximum number of loops the program is allowed to run
+    const chrono::minutes max_time(stoi(test_recipe_root.at(2).value("max_time", ""))); // the max time the program is allowed to run
+    const chrono::seconds update_frequency(stoi(test_recipe_root.at(3).value("update_frequency", ""))); // the frequency the program updates its progress
+    int k = 1; // the number of updates
 
     // The json file containing the terminal resources
     json terminal_root;
@@ -87,6 +91,7 @@ int main(int argc, char* argv[]) {
 
     auto start = chrono::steady_clock::now(); // starts the timer
 
+    double total_number = 1;
     // creates the intital vector of recipies as well as the incrementors
     for (const auto& data : recipe_root) {
         // adds the first recipe of all items to recipe_list and creates the incrementors
@@ -95,11 +100,14 @@ int main(int argc, char* argv[]) {
         all_zeros.push_back(0);
 
         incrementor_map.insert({data.value("Category", ""), m});
+        total_number *= data.value("Data", empty_array).size();
 
         recipe_input.set_recipe(data.value("Data", empty_array).at(0));
         recipe_map.insert({data.value("Category", ""), recipe_input});
         m += 1;
     }
+
+    cout << total_number << endl;
 
     int count = 0; // the number of times the loop has run
     double total = 1; // this is double so that it can handle values in the quintilions.
@@ -221,7 +229,31 @@ int main(int argc, char* argv[]) {
         }
 
         // increments the incrementor vector
-        incrementor.at(0) += 1;
+        vector<int> incrementor_values;
+        for (int i = 0; i < output_recipes.size(); i++) {
+            product_name = output_recipes.at(i).get_product(0).get_name();
+            incrementor_values.push_back(incrementor_map[product_name]);
+        }
+        sort(incrementor_values.begin(), incrementor_values.end());
+        bool increment = true;
+        for (int j = 0; j < incrementor_values.size(); j++) {
+            int i = incrementor_values.at(j);
+            if (increment) {
+                incrementor.at(i) += 1;
+                increment = false;
+            }
+            if (incrementor.at(i) >= incrementor_max.at(i)) {
+                incrementor.at(i) = 0;
+                increment = true;
+            }
+        }
+        if (increment) {
+            for (int j = 0; j < incrementor.size(); j++) {
+                incrementor.at(j) = 0;
+            }
+        }
+
+        /*
         for (int i = 0; i < incrementor.size(); i++) {
             // if the incrementor at the current index has reached its max value, reset it to 0 and increment the next index
             if (incrementor.at(i) >= incrementor_max.at(i)) {
@@ -235,6 +267,7 @@ int main(int argc, char* argv[]) {
                 }
             }
         }
+        */
         
         // updates recipe list for the next loop
         m = 0; // resets m
@@ -252,6 +285,19 @@ int main(int argc, char* argv[]) {
         total = 1;
         for (int i = 0; i < incrementor_max.size(); i++) {
             total *= incrementor_max.at(i);
+        }
+
+        if ((chrono::steady_clock::now() - start) >= (update_frequency * k)) {
+            k += 1;
+            
+            auto end = chrono::steady_clock::now();
+            chrono::duration<double> elapsed = end - start;
+
+            cout << output_array.size() << " combinations have been found.\n";
+            cout << "The program has tested " << count << " combinations of recipes." << endl;
+            cout << "The program knows about " << total << " combinations of recipes." << endl;
+            cout << "Execution time: " << elapsed.count() << " seconds." << endl;
+            cout << endl;
         }
 
         // Use to terminate after a set amount of loops

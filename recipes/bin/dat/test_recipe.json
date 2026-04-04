@@ -17,6 +17,15 @@
         "ManufactoringDuration": "4.000000"
     },
     {
-        "ItemClass": "Heavy Modular Frame"
+        "ItemClass": "Iron Rod"
+    },
+    {   
+        "max_loops": "10000",
+        "max_time": "5",
+        "unit_of_time": "Minutes"
+    },
+    {
+        "update_frequency": "30",
+        "unit_of_time": "Seconds"
     }
 ]

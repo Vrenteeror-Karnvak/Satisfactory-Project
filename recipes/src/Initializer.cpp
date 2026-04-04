@@ -33,7 +33,8 @@ int main(int argc, char* argv[]) {
                 if (product["ItemClass"] == "Compacted Coal" || product["ItemClass"] == "Polymer Resin"
                 || product["ItemClass"] == "Dark Matter Residue" || product["ItemClass"] == "Water"
                 || product["ItemClass"] == "Dissolved Silica" || product["ItemClass"] == "Sulfuric Acid"
-                || product["ItemClass"] == "Heavy Oil Residue" || product["ItemClass"] == "Silica")  {
+                || product["ItemClass"] == "Heavy Oil Residue" || product["ItemClass"] == "Silica"
+                || product["ItemClass"] == "Biomass")  {
                     byproduct_found = true;
                 }
             }
@@ -46,6 +47,7 @@ int main(int argc, char* argv[]) {
             Water
             Heavy Oil Residue
             Sulfuric Acid
+            Biomass
             
             Remove the associated recipes entirely:
             Dissolved Silica
