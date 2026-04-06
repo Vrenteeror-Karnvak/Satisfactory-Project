@@ -63,7 +63,9 @@ int main(int argc, char* argv[]) {
         for (auto& data : block["Product"]) {
             if (data.value("ItemClass", "").find("Biomass") != string::npos
             || data.value("ItemClass", "").find("Dissolved Silica") != string::npos
-            || data.value("ItemClass", "").find("Packaged") != string::npos) {
+            || data.value("ItemClass", "").find("Packaged") != string::npos
+            || data.value("ItemClass", "").find("Alien Protein") != string::npos
+            || data.value("ItemClass", "").find("Alien DNA Capsule") != string::npos) {
                 to_delete = true;
             }
         }

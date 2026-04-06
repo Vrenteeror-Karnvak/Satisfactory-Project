@@ -20,7 +20,7 @@ int main(int argc, char* argv[]) {
     filesystem::path exePath = filesystem::absolute(argv[0]).parent_path();
     bool loop_termination = false; // Triggers if the loop runs a set number of times
     bool time_termination = false; // Triggers if the loops runs a set amount of time
-    const int max_loops = 1; // the maximum number of loops the program is allowed to run
+    const int max_loops = 1000; // the maximum number of loops the program is allowed to run
     const chrono::minutes max_time(5); // the max time the program is allowed to run
 
     // opens the filestreams

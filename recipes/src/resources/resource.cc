@@ -13,7 +13,14 @@ Resource::Resource() {
 
 Resource::Resource(const json& data) {
     name = data.value("ItemClass", "");
-    amount = stod(data.value("Amount", ""));
+    if (data.value("Amount", "").find("/") != string::npos) {
+        int pos = data.value("Amount", "").find("/");
+        Fraction temp(stoi(data.value("Amount", "").substr(0, pos)), stoi(data.value("Amount", "").substr(pos + 1)));
+        amount = temp;
+    }
+    else {
+        amount = stoi(data.value("Amount", ""));
+    }
 }
 
 Resource::Resource(const string title, const Fraction rate) {
@@ -70,7 +77,7 @@ bool Resource::operator!=(const Resource& other) const {
 
 bool Resource::operator<(const Resource& other) const {
     if (!same_name(other)) {
-        throw invalid_argument("Cannot combine different resources.");
+        throw invalid_argument("Cannot compare different resources.");
     }
 
     return (amount < other.get_amount());
@@ -82,7 +89,7 @@ bool Resource::operator<=(const Resource& other) const {
 
 bool Resource::operator>(const Resource& other) const {
     if (!same_name(other)) {
-        throw invalid_argument("Cannot combine different resources.");
+        throw invalid_argument("Cannot compare different resources.");
     }
 
     return (amount > other.get_amount());

@@ -42,6 +42,31 @@
         "ManufactoringDuration": "1.000000"
     },
     {
+        "DisplayName": "Alternate: Dark-Ion Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Packaged Rocket Fuel",
+                "Amount": "12"
+            },
+            {
+                "ItemClass": "Dark Matter Crystal",
+                "Amount": "4"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Ionized Fuel",
+                "Amount": "10000"
+            },
+            {
+                "ItemClass": "Compacted Coal",
+                "Amount": "2"
+            }
+        ],
+        "ProducedIn": "Converter",
+        "ManufactoringDuration": "3.000000"
+    },
+    {
         "DisplayName": "Packaged Ionized Fuel",
         "Ingredients": [
             {
@@ -81,6 +106,27 @@
             }
         ],
         "ProducedIn": "Packager",
+        "ManufactoringDuration": "3.000000"
+    },
+    {
+        "DisplayName": "Alternate: Turbo Diamonds",
+        "Ingredients": [
+            {
+                "ItemClass": "Coal",
+                "Amount": "30"
+            },
+            {
+                "ItemClass": "Packaged Turbofuel",
+                "Amount": "2"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Diamonds",
+                "Amount": "3"
+            }
+        ],
+        "ProducedIn": "Particle Accelerator",
         "ManufactoringDuration": "3.000000"
     },
     {
@@ -832,6 +878,35 @@
         "ManufactoringDuration": "2.000000"
     },
     {
+        "DisplayName": "Alternate: Turbo Pressure Motor",
+        "Ingredients": [
+            {
+                "ItemClass": "Motor",
+                "Amount": "4"
+            },
+            {
+                "ItemClass": "Pressure Conversion Cube",
+                "Amount": "1"
+            },
+            {
+                "ItemClass": "Packaged Nitrogen Gas",
+                "Amount": "24"
+            },
+            {
+                "ItemClass": "Stator",
+                "Amount": "8"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Turbo Motor",
+                "Amount": "2"
+            }
+        ],
+        "ProducedIn": "Manufacturer",
+        "ManufactoringDuration": "32.000000"
+    },
+    {
         "DisplayName": "Packaged Nitric Acid",
         "Ingredients": [
             {
@@ -1050,6 +1125,40 @@
         "ManufactoringDuration": "4.000000"
     },
     {
+        "DisplayName": "Hog Protein",
+        "Ingredients": [
+            {
+                "ItemClass": "Hog Remains",
+                "Amount": "1"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Alien Protein",
+                "Amount": "1"
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": "3.000000"
+    },
+    {
+        "DisplayName": "Spitter Protein",
+        "Ingredients": [
+            {
+                "ItemClass": "Spitter Remains",
+                "Amount": "1"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Alien Protein",
+                "Amount": "1"
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": "3.000000"
+    },
+    {
         "DisplayName": "Biomass (Mycelia)",
         "Ingredients": [
             {
@@ -1082,6 +1191,57 @@
         ],
         "ProducedIn": "Constructor",
         "ManufactoringDuration": "8.000000"
+    },
+    {
+        "DisplayName": "Stinger Protein",
+        "Ingredients": [
+            {
+                "ItemClass": "Stinger Remains",
+                "Amount": "1"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Alien Protein",
+                "Amount": "1"
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": "3.000000"
+    },
+    {
+        "DisplayName": "Hatcher Protein",
+        "Ingredients": [
+            {
+                "ItemClass": "Hatcher Remains",
+                "Amount": "1"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Alien Protein",
+                "Amount": "1"
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": "3.000000"
+    },
+    {
+        "DisplayName": "Alien DNA Capsule",
+        "Ingredients": [
+            {
+                "ItemClass": "Alien Protein",
+                "Amount": "1"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Alien DNA Capsule",
+                "Amount": "1"
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": "6.000000"
     },
     {
         "DisplayName": "Biomass (Alien Protein)",
@@ -1153,6 +1313,31 @@
             }
         ],
         "ProducedIn": "Constructor",
+        "ManufactoringDuration": "12.000000"
+    },
+    {
+        "DisplayName": "Turbo Rifle Ammo",
+        "Ingredients": [
+            {
+                "ItemClass": "Rifle Ammo",
+                "Amount": "25"
+            },
+            {
+                "ItemClass": "Aluminum Casing",
+                "Amount": "3"
+            },
+            {
+                "ItemClass": "Packaged Turbofuel",
+                "Amount": "3"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Turbo Rifle Ammo",
+                "Amount": "50"
+            }
+        ],
+        "ProducedIn": "Manufacturer",
         "ManufactoringDuration": "12.000000"
     },
     {

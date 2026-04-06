@@ -1,3496 +1,758 @@
 [
     {
-        "DisplayName": "Excited Photonic Matter",
-        "Product": [
-            {
-                "ItemClass": "Excited Photonic Matter",
-                "Amount": "10000"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Heavy Oil Residue",
-        "Ingredients": [
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "3000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "4000"
-            },
-            {
-                "ItemClass": "Polymer Resin",
-                "Amount": "2"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Polymer Resin",
-        "Ingredients": [
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "6000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Polymer Resin",
-                "Amount": "13"
-            },
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "2000"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Silica",
-        "Ingredients": [
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "3"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Silica",
-                "Amount": "5"
-            }
-        ]
-    },
-    {
-        "DisplayName": "FICSMAS Actual Snow",
-        "Ingredients": [
-            {
-                "ItemClass": "FICSMAS Gift",
-                "Amount": "5"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "FICSMAS Actual Snow",
-                "Amount": "2"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Red FICSMAS Ornament",
-        "Ingredients": [
-            {
-                "ItemClass": "FICSMAS Gift",
-                "Amount": "1"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Red FICSMAS Ornament",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "FICSMAS Bow",
-        "Ingredients": [
-            {
-                "ItemClass": "FICSMAS Gift",
-                "Amount": "2"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "FICSMAS Bow",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "FICSMAS Tree Branch",
-        "Ingredients": [
-            {
-                "ItemClass": "FICSMAS Gift",
-                "Amount": "1"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "FICSMAS Tree Branch",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Candy Cane",
-        "Ingredients": [
-            {
-                "ItemClass": "FICSMAS Gift",
-                "Amount": "3"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Candy Cane",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Blue FICSMAS Ornament",
-        "Ingredients": [
-            {
-                "ItemClass": "FICSMAS Gift",
-                "Amount": "1"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Blue FICSMAS Ornament",
-                "Amount": "2"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Sulfuric Acid",
-        "Ingredients": [
-            {
-                "ItemClass": "Sulfur",
-                "Amount": "5"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "5000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Sulfuric Acid",
-                "Amount": "5000"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Alien Protein",
-        "Ingredients": [
-            {
-                "ItemClass": "Hog Remains",
-                "Amount": "1"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Alien Protein",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Alumina Solution",
-        "Ingredients": [
-            {
-                "ItemClass": "Bauxite",
-                "Amount": "12"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "18000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Alumina Solution",
-                "Amount": "12000"
-            },
-            {
-                "ItemClass": "Silica",
-                "Amount": "5"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Reanimated SAM",
-        "Ingredients": [
-            {
-                "ItemClass": "SAM",
-                "Amount": "4"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Reanimated SAM",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Quartz Crystal",
-        "Ingredients": [
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "5"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Quartz Crystal",
-                "Amount": "3"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Compacted Coal",
-        "Ingredients": [
-            {
-                "ItemClass": "Coal",
-                "Amount": "5"
-            },
-            {
-                "ItemClass": "Sulfur",
-                "Amount": "5"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Compacted Coal",
-                "Amount": "5"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Fuel",
-        "Ingredients": [
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "6000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Fuel",
-                "Amount": "4000"
-            },
-            {
-                "ItemClass": "Polymer Resin",
-                "Amount": "3"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Petroleum Coke",
-        "Ingredients": [
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "4000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Petroleum Coke",
-                "Amount": "12"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Rubber",
-        "Ingredients": [
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "3000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Rubber",
-                "Amount": "2"
-            },
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "2000"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Plastic",
-        "Ingredients": [
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "3000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Plastic",
-                "Amount": "2"
-            },
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "1000"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Fabric",
-        "Ingredients": [
-            {
-                "ItemClass": "Polymer Resin",
-                "Amount": "1"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "1000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Fabric",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Snowball",
-        "Ingredients": [
-            {
-                "ItemClass": "FICSMAS Gift",
-                "Amount": "15"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Snowball",
-                "Amount": "2"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Sparkly Fireworks",
-        "Ingredients": [
-            {
-                "ItemClass": "FICSMAS Gift",
-                "Amount": "8"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Sparkly Fireworks",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Fancy Fireworks",
-        "Ingredients": [
-            {
-                "ItemClass": "FICSMAS Gift",
-                "Amount": "10"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Fancy Fireworks",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Sweet Fireworks",
-        "Ingredients": [
-            {
-                "ItemClass": "FICSMAS Gift",
-                "Amount": "15"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Sweet Fireworks",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Iron Ingot",
+        "DisplayName": "Iron Rod",
         "Ingredients": [
             {
                 "ItemClass": "Iron Ore",
-                "Amount": "1"
+                "Amount": "1/1"
             }
         ],
         "Product": [
             {
-                "ItemClass": "Iron Ingot",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Alien DNA Capsule",
-        "Ingredients": [
-            {
-                "ItemClass": "Hog Remains",
-                "Amount": "1"
+                "ItemClass": "Iron Rod",
+                "Amount": "1/1"
             }
         ],
-        "Product": [
-            {
-                "ItemClass": "Alien DNA Capsule",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Dark Matter Residue",
-        "Ingredients": [
-            {
-                "ItemClass": "SAM",
-                "Amount": "20"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Dark Matter Residue",
-                "Amount": "10000"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Black Powder",
-        "Ingredients": [
-            {
-                "ItemClass": "Coal",
-                "Amount": "1"
-            },
-            {
-                "ItemClass": "Sulfur",
-                "Amount": "1"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Black Powder",
-                "Amount": "2"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Copper Ingot",
-        "Ingredients": [
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "1"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Copper Ingot",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Silica",
-        "Ingredients": [
-            {
-                "ItemClass": "Bauxite",
-                "Amount": "12"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "6"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "12000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Silica",
-                "Amount": "5"
-            },
-            {
-                "ItemClass": "Aluminum Scrap",
-                "Amount": "18"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Caterium Ingot",
-        "Ingredients": [
-            {
-                "ItemClass": "Caterium Ore",
-                "Amount": "3"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Caterium Ingot",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Diamonds",
-        "Ingredients": [
-            {
-                "ItemClass": "Coal",
-                "Amount": "20"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Diamonds",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Polymer Resin",
-        "Ingredients": [
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "18000"
-            },
-            {
-                "ItemClass": "Compacted Coal",
-                "Amount": "8"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Polymer Resin",
-                "Amount": "9"
-            },
-            {
-                "ItemClass": "Turbofuel",
-                "Amount": "10000"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Concrete",
-        "Ingredients": [
-            {
-                "ItemClass": "Limestone",
-                "Amount": "3"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Concrete",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Steel Ingot",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "3"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "3"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Steel Ingot",
-                "Amount": "3"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Iron FICSMAS Ornament",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "6"
-            },
-            {
-                "ItemClass": "FICSMAS Gift",
-                "Amount": "3"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Iron FICSMAS Ornament",
-                "Amount": "2"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Smokeless Powder",
-        "Ingredients": [
-            {
-                "ItemClass": "Coal",
-                "Amount": "1"
-            },
-            {
-                "ItemClass": "Sulfur",
-                "Amount": "1"
-            },
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "1000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Smokeless Powder",
-                "Amount": "2"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Copper Sheet",
-        "Ingredients": [
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "2"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Copper Sheet",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Copper Powder",
-        "Ingredients": [
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "30"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Copper Powder",
-                "Amount": "5"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Copper FICSMAS Ornament",
-        "Ingredients": [
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "2"
-            },
-            {
-                "ItemClass": "FICSMAS Gift",
-                "Amount": "2"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Copper FICSMAS Ornament",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Silica",
-        "Ingredients": [
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "9"
-            },
-            {
-                "ItemClass": "Bauxite",
-                "Amount": "12"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "6"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "12000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Silica",
-                "Amount": "5"
-            },
-            {
-                "ItemClass": "Aluminum Ingot",
-                "Amount": "12"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Wire",
-        "Ingredients": [
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "1"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Wire",
-                "Amount": "2"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Quickwire",
-        "Ingredients": [
-            {
-                "ItemClass": "Caterium Ore",
-                "Amount": "3"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Quickwire",
-                "Amount": "5"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Time Crystal",
-        "Ingredients": [
-            {
-                "ItemClass": "Coal",
-                "Amount": "40"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Time Crystal",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Iron Plate",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "3"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Iron Plate",
-                "Amount": "2"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Steel Pipe",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "3"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "3"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Steel Pipe",
-                "Amount": "2"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Rifle Ammo",
-        "Ingredients": [
-            {
-                "ItemClass": "Coal",
-                "Amount": "1"
-            },
-            {
-                "ItemClass": "Sulfur",
-                "Amount": "1"
-            },
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "1000"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "6"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Rifle Ammo",
-                "Amount": "15"
-            }
-        ]
-    },
-    {
-        "DisplayName": "FICSMAS Ornament Bundle",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "6"
-            },
-            {
-                "ItemClass": "FICSMAS Gift",
-                "Amount": "7"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "4"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "FICSMAS Ornament Bundle",
-                "Amount": "2"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Silica",
-        "Ingredients": [
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "9"
-            },
-            {
-                "ItemClass": "Bauxite",
-                "Amount": "12"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "6"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "12000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Silica",
-                "Amount": "5"
-            },
-            {
-                "ItemClass": "Aluminum Casing",
-                "Amount": "8"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Silica",
-        "Ingredients": [
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "4"
-            },
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "9"
-            },
-            {
-                "ItemClass": "Bauxite",
-                "Amount": "12"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "6"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "12000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Silica",
-                "Amount": "5"
-            },
-            {
-                "ItemClass": "Alclad Aluminum Sheet",
-                "Amount": "12"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Steel Beam",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "4"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "4"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Steel Beam",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Ficsite Ingot",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "24"
-            },
-            {
-                "ItemClass": "SAM",
-                "Amount": "16"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Ficsite Ingot",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Silica",
-        "Ingredients": [
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "9"
-            },
-            {
-                "ItemClass": "Bauxite",
-                "Amount": "12"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "6"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "12000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Silica",
-                "Amount": "5"
-            },
-            {
-                "ItemClass": "Empty Fluid Tank",
-                "Amount": "12"
-            }
-        ]
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
     },
     {
         "DisplayName": "Iron Rod",
         "Ingredients": [
             {
                 "ItemClass": "Iron Ore",
-                "Amount": "1"
+                "Amount": "7/13"
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": "4000/13"
             }
         ],
         "Product": [
             {
                 "ItemClass": "Iron Rod",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Cable",
-        "Ingredients": [
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "1"
+                "Amount": "1/1"
             }
         ],
-        "Product": [
-            {
-                "ItemClass": "Cable",
-                "Amount": "1"
-            }
-        ]
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
     },
     {
-        "DisplayName": "Heavy Oil Residue",
+        "DisplayName": "Iron Rod",
         "Ingredients": [
             {
-                "ItemClass": "Crude Oil",
-                "Amount": "6000"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "4"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "2000"
-            },
-            {
-                "ItemClass": "Circuit Board",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "AI Limiter",
-        "Ingredients": [
-            {
-                "ItemClass": "Caterium Ore",
-                "Amount": "12"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "10"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "AI Limiter",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Encased Uranium Cell",
-        "Ingredients": [
-            {
-                "ItemClass": "Limestone",
-                "Amount": "9"
-            },
-            {
-                "ItemClass": "Uranium",
-                "Amount": "10"
+                "ItemClass": "Iron Ore",
+                "Amount": "1/2"
             },
             {
                 "ItemClass": "Sulfuric Acid",
-                "Amount": "6000"
+                "Amount": "100/1"
             }
         ],
         "Product": [
             {
-                "ItemClass": "Encased Uranium Cell",
-                "Amount": "5"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Dark Matter Crystal",
-        "Ingredients": [
-            {
-                "ItemClass": "Coal",
-                "Amount": "20"
-            },
-            {
-                "ItemClass": "Dark Matter Residue",
-                "Amount": "5000"
+                "ItemClass": "Iron Rod",
+                "Amount": "1/1"
             }
         ],
-        "Product": [
-            {
-                "ItemClass": "Dark Matter Crystal",
-                "Amount": "1"
-            }
-        ]
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
     },
     {
-        "DisplayName": "Gas Filter",
+        "DisplayName": "Iron Rod",
         "Ingredients": [
             {
                 "ItemClass": "Iron Ore",
-                "Amount": "3"
+                "Amount": "1/2"
             },
-            {
-                "ItemClass": "Polymer Resin",
-                "Amount": "2"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "2000"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "4"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Gas Filter",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Heavy Oil Residue",
-        "Ingredients": [
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "3000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "1000"
-            },
-            {
-                "ItemClass": "Empty Canister",
-                "Amount": "4"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Nitric Acid",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "3"
-            },
-            {
-                "ItemClass": "Nitrogen Gas",
-                "Amount": "24000"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "6000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Nitric Acid",
-                "Amount": "6000"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Nobelisk",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "3"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "4"
-            },
-            {
-                "ItemClass": "Sulfur",
-                "Amount": "1"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Nobelisk",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Stator",
-        "Ingredients": [
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "8"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "9"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "9"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Stator",
-                "Amount": "2"
-            }
-        ]
-    },
-    {
-        "DisplayName": "SAM Fluctuator",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "9"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "9"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "5"
-            },
-            {
-                "ItemClass": "SAM",
-                "Amount": "48"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "SAM Fluctuator",
-                "Amount": "2"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Portable Miner",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "12"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "6"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Portable Miner",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "FICSMAS Wreath",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "18"
-            },
-            {
-                "ItemClass": "FICSMAS Gift",
-                "Amount": "36"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "12"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "FICSMAS Wreath",
-                "Amount": "2"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Silica",
-        "Ingredients": [
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "81"
-            },
-            {
-                "ItemClass": "Bauxite",
-                "Amount": "108"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "94"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "108000"
-            },
-            {
-                "ItemClass": "Sulfur",
-                "Amount": "40"
-            },
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "40000"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "240"
-            },
-            {
-                "ItemClass": "Packaged Turbofuel",
-                "Amount": "72"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Silica",
-                "Amount": "45"
-            },
-            {
-                "ItemClass": "Turbo Rifle Ammo",
-                "Amount": "1200"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Silica",
-        "Ingredients": [
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "92"
-            },
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "45"
-            },
-            {
-                "ItemClass": "Bauxite",
-                "Amount": "60"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "30"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "60000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Silica",
-                "Amount": "25"
-            },
-            {
-                "ItemClass": "Heat Sink",
-                "Amount": "12"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Silica",
-        "Ingredients": [
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "27"
-            },
-            {
-                "ItemClass": "Bauxite",
-                "Amount": "84"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "18"
-            },
-            {
-                "ItemClass": "Sulfuric Acid",
-                "Amount": "60000"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "72000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Silica",
-                "Amount": "35"
-            },
-            {
-                "ItemClass": "Battery",
-                "Amount": "24"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Encased Industrial Beam",
-        "Ingredients": [
             {
                 "ItemClass": "Limestone",
-                "Amount": "18"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "12"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "12"
+                "Amount": "4/5"
             }
         ],
         "Product": [
             {
-                "ItemClass": "Encased Industrial Beam",
-                "Amount": "1"
+                "ItemClass": "Iron Rod",
+                "Amount": "1/1"
             }
-        ]
+        ],
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
     },
     {
-        "DisplayName": "Ficsite Trigon",
+        "DisplayName": "Iron Rod",
         "Ingredients": [
             {
                 "ItemClass": "Iron Ore",
-                "Amount": "24"
-            },
-            {
-                "ItemClass": "SAM",
-                "Amount": "16"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Ficsite Trigon",
-                "Amount": "3"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Screws",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "1"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Screws",
-                "Amount": "4"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Iron Rebar",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "1"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Iron Rebar",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Heavy Oil Residue",
-        "Ingredients": [
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "30000"
+                "Amount": "8/15"
             },
             {
                 "ItemClass": "Copper Ore",
-                "Amount": "70"
-            },
-            {
-                "ItemClass": "Caterium Ore",
-                "Amount": "168"
+                "Amount": "2/15"
             }
         ],
         "Product": [
+            {
+                "ItemClass": "Iron Rod",
+                "Amount": "1/1"
+            }
+        ],
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
+    },
+    {
+        "DisplayName": "Iron Rod",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Ore",
+                "Amount": "1/1"
+            },
+            {
+                "ItemClass": "Coal",
+                "Amount": "1/1"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iron Rod",
+                "Amount": "4/1"
+            }
+        ],
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
+    },
+    {
+        "DisplayName": "Iron Rod",
+        "Ingredients": [
             {
                 "ItemClass": "Heavy Oil Residue",
-                "Amount": "10000"
+                "Amount": "250/1"
             },
             {
-                "ItemClass": "High-Speed Connector",
-                "Amount": "5"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Power Shard",
-        "Ingredients": [
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "20"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "120"
+                "ItemClass": "Iron Ore",
+                "Amount": "3/4"
             }
         ],
         "Product": [
             {
-                "ItemClass": "Power Shard",
-                "Amount": "1"
-            },
-            {
-                "ItemClass": "Dark Matter Residue",
-                "Amount": "2000"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Silica",
-        "Ingredients": [
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "45"
-            },
-            {
-                "ItemClass": "Bauxite",
-                "Amount": "60"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "190"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "140000"
-            },
-            {
-                "ItemClass": "Caterium Ore",
-                "Amount": "192"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "120"
-            },
-            {
-                "ItemClass": "Polymer Resin",
-                "Amount": "80"
+                "ItemClass": "Iron Rod",
+                "Amount": "4/1"
             }
         ],
-        "Product": [
-            {
-                "ItemClass": "Silica",
-                "Amount": "25"
-            },
-            {
-                "ItemClass": "Iodine-Infused Filter",
-                "Amount": "40"
-            }
-        ]
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
     },
     {
-        "DisplayName": "Polymer Resin",
+        "DisplayName": "Iron Rod",
         "Ingredients": [
             {
                 "ItemClass": "Iron Ore",
-                "Amount": "5"
-            },
-            {
-                "ItemClass": "Nitrogen Gas",
-                "Amount": "40000"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "10000"
-            },
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "108000"
+                "Amount": "1/2"
             },
             {
                 "ItemClass": "Compacted Coal",
-                "Amount": "38"
+                "Amount": "1/4"
             }
         ],
         "Product": [
             {
-                "ItemClass": "Polymer Resin",
-                "Amount": "54"
-            },
-            {
-                "ItemClass": "Rocket Fuel",
-                "Amount": "100000"
+                "ItemClass": "Iron Rod",
+                "Amount": "4/1"
             }
-        ]
+        ],
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
     },
     {
-        "DisplayName": "Nuke Nobelisk",
+        "DisplayName": "Iron Rod",
         "Ingredients": [
             {
-                "ItemClass": "Caterium Ore",
-                "Amount": "72"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "60"
+                "ItemClass": "Iron Ore",
+                "Amount": "2/3"
             },
             {
                 "ItemClass": "Coal",
-                "Amount": "25"
+                "Amount": "2/3"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iron Rod",
+                "Amount": "4/1"
+            }
+        ],
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
+    },
+    {
+        "DisplayName": "Iron Rod",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Ore",
+                "Amount": "14/39"
             },
             {
-                "ItemClass": "Sulfur",
-                "Amount": "10"
+                "ItemClass": "Water",
+                "Amount": "8000/39"
             },
             {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "5000"
-            },
+                "ItemClass": "Coal",
+                "Amount": "2/3"
+            }
+        ],
+        "Product": [
             {
-                "ItemClass": "Limestone",
-                "Amount": "36"
-            },
+                "ItemClass": "Iron Rod",
+                "Amount": "4/1"
+            }
+        ],
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
+    },
+    {
+        "DisplayName": "Iron Rod",
+        "Ingredients": [
             {
-                "ItemClass": "Uranium",
-                "Amount": "40"
+                "ItemClass": "Iron Ore",
+                "Amount": "1/3"
             },
             {
                 "ItemClass": "Sulfuric Acid",
-                "Amount": "24000"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "15"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Nuke Nobelisk",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Gas Nobelisk",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "3"
+                "Amount": "200/3"
             },
             {
                 "ItemClass": "Coal",
-                "Amount": "4"
-            },
-            {
-                "ItemClass": "Sulfur",
-                "Amount": "1"
-            },
-            {
-                "ItemClass": "Biomass",
-                "Amount": "10"
+                "Amount": "2/3"
             }
         ],
         "Product": [
             {
-                "ItemClass": "Gas Nobelisk",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Cluster Nobelisk",
-        "Ingredients": [
-            {
-                "ItemClass": "Coal",
-                "Amount": "14"
-            },
-            {
-                "ItemClass": "Sulfur",
-                "Amount": "5"
-            },
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "2000"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "9"
+                "ItemClass": "Iron Rod",
+                "Amount": "4/1"
             }
         ],
-        "Product": [
-            {
-                "ItemClass": "Cluster Nobelisk",
-                "Amount": "1"
-            }
-        ]
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
     },
     {
-        "DisplayName": "FICSMAS Wonder Star",
-        "Ingredients": [
-            {
-                "ItemClass": "FICSMAS Gift",
-                "Amount": "150"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "45"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "30"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "FICSMAS Wonder Star",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Rotor",
+        "DisplayName": "Iron Rod",
         "Ingredients": [
             {
                 "ItemClass": "Iron Ore",
-                "Amount": "45"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Rotor",
-                "Amount": "4"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Reinforced Iron Plate",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "12"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Reinforced Iron Plate",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Explosive Rebar",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "5"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "4"
-            },
-            {
-                "ItemClass": "Sulfur",
-                "Amount": "1"
-            },
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "1000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Explosive Rebar",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Stun Rebar",
-        "Ingredients": [
-            {
-                "ItemClass": "Caterium Ore",
-                "Amount": "3"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "1"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Stun Rebar",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Shatter Rebar",
-        "Ingredients": [
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "5"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "2"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Shatter Rebar",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Heavy Oil Residue",
-        "Ingredients": [
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "90000"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "330"
-            },
-            {
-                "ItemClass": "Caterium Ore",
-                "Amount": "504"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "20"
-            },
-            {
-                "ItemClass": "Sulfur",
-                "Amount": "20"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "10000"
-            },
-            {
-                "ItemClass": "Homing Rifle Ammo",
-                "Amount": "150"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Automated Wiring",
-        "Ingredients": [
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "48"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "9"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "9"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Automated Wiring",
-                "Amount": "2"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Electromagnetic Control Rod",
-        "Ingredients": [
-            {
-                "ItemClass": "Caterium Ore",
-                "Amount": "48"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "64"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "27"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "27"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Electromagnetic Control Rod",
-                "Amount": "4"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Dark Matter Residue",
-        "Ingredients": [
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "500"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "3000"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "20"
-            },
-            {
-                "ItemClass": "Nitrogen Gas",
-                "Amount": "160000"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "40000"
-            },
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "432000"
-            },
-            {
-                "ItemClass": "Compacted Coal",
-                "Amount": "102"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Dark Matter Residue",
-                "Amount": "50000"
-            },
-            {
-                "ItemClass": "Polymer Resin",
-                "Amount": "216"
-            },
-            {
-                "ItemClass": "Ionized Fuel",
-                "Amount": "400000"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Modular Frame",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "48"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Modular Frame",
-                "Amount": "2"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Smart Plating",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "93"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Smart Plating",
-                "Amount": "4"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Crystal Oscillator",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "60"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "28"
-            },
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "60"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Crystal Oscillator",
-                "Amount": "2"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Versatile Framework",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "72"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "48"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Versatile Framework",
-                "Amount": "2"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Heavy Modular Frame",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "240"
+                "Amount": "1/3"
             },
             {
                 "ItemClass": "Limestone",
-                "Amount": "90"
+                "Amount": "8/15"
             },
             {
                 "ItemClass": "Coal",
-                "Amount": "90"
+                "Amount": "2/3"
             }
         ],
         "Product": [
             {
-                "ItemClass": "Heavy Modular Frame",
-                "Amount": "1"
+                "ItemClass": "Iron Rod",
+                "Amount": "4/1"
             }
-        ]
+        ],
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
     },
     {
-        "DisplayName": "Silica",
+        "DisplayName": "Iron Rod",
         "Ingredients": [
             {
+                "ItemClass": "Iron Ore",
+                "Amount": "16/45"
+            },
+            {
                 "ItemClass": "Copper Ore",
-                "Amount": "68"
-            },
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "147"
-            },
-            {
-                "ItemClass": "Bauxite",
-                "Amount": "36"
+                "Amount": "4/45"
             },
             {
                 "ItemClass": "Coal",
-                "Amount": "498"
+                "Amount": "2/3"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iron Rod",
+                "Amount": "4/1"
+            }
+        ],
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
+    },
+    {
+        "DisplayName": "Iron Rod",
+        "Ingredients": [
+            {
+                "ItemClass": "Raw Quartz",
+                "Amount": "3/4"
+            },
+            {
+                "ItemClass": "Bauxite",
+                "Amount": "1/1"
+            },
+            {
+                "ItemClass": "Coal",
+                "Amount": "1/2"
             },
             {
                 "ItemClass": "Water",
-                "Amount": "36000"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "120"
-            },
-            {
-                "ItemClass": "Dark Matter Residue",
-                "Amount": "20000"
+                "Amount": "1000/1"
             }
         ],
         "Product": [
             {
                 "ItemClass": "Silica",
-                "Amount": "15"
+                "Amount": "5/12"
             },
             {
-                "ItemClass": "Superposition Oscillator",
-                "Amount": "4"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Motor",
-        "Ingredients": [
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "16"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "63"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "18"
+                "ItemClass": "Iron Rod",
+                "Amount": "7/1"
             }
         ],
-        "Product": [
-            {
-                "ItemClass": "Motor",
-                "Amount": "2"
-            }
-        ]
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
     },
     {
-        "DisplayName": "Heavy Oil Residue",
+        "DisplayName": "Iron Rod",
         "Ingredients": [
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "48000"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "24"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "16000"
-            },
-            {
-                "ItemClass": "Computer",
-                "Amount": "1"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Pulse Nobelisk",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "45"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "14"
-            },
             {
                 "ItemClass": "Raw Quartz",
-                "Amount": "30"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "20"
-            },
-            {
-                "ItemClass": "Sulfur",
-                "Amount": "5"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Pulse Nobelisk",
-                "Amount": "5"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Uranium Fuel Rod",
-        "Ingredients": [
-            {
-                "ItemClass": "Caterium Ore",
-                "Amount": "240"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "320"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "279"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "279"
+                "Amount": "15/28"
             },
             {
                 "ItemClass": "Limestone",
-                "Amount": "576"
+                "Amount": "25/28"
             },
             {
-                "ItemClass": "Uranium",
-                "Amount": "400"
+                "ItemClass": "Bauxite",
+                "Amount": "1/1"
+            },
+            {
+                "ItemClass": "Coal",
+                "Amount": "1/2"
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": "1000/1"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Silica",
+                "Amount": "5/12"
+            },
+            {
+                "ItemClass": "Iron Rod",
+                "Amount": "7/1"
+            }
+        ],
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
+    },
+    {
+        "DisplayName": "Iron Rod",
+        "Ingredients": [
+            {
+                "ItemClass": "Raw Quartz",
+                "Amount": "3/4"
+            },
+            {
+                "ItemClass": "Bauxite",
+                "Amount": "5/6"
+            },
+            {
+                "ItemClass": "Coal",
+                "Amount": "1/2"
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": "1000/3"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iron Rod",
+                "Amount": "7/1"
+            }
+        ],
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
+    },
+    {
+        "DisplayName": "Iron Rod",
+        "Ingredients": [
+            {
+                "ItemClass": "Raw Quartz",
+                "Amount": "15/28"
+            },
+            {
+                "ItemClass": "Limestone",
+                "Amount": "25/28"
+            },
+            {
+                "ItemClass": "Bauxite",
+                "Amount": "5/6"
+            },
+            {
+                "ItemClass": "Coal",
+                "Amount": "1/2"
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": "1000/3"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iron Rod",
+                "Amount": "7/1"
+            }
+        ],
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
+    },
+    {
+        "DisplayName": "Iron Rod",
+        "Ingredients": [
+            {
+                "ItemClass": "Raw Quartz",
+                "Amount": "3/4"
+            },
+            {
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": "100/1"
+            },
+            {
+                "ItemClass": "Bauxite",
+                "Amount": "9/10"
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": "825/1"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Silica",
+                "Amount": "3/8"
+            },
+            {
+                "ItemClass": "Iron Rod",
+                "Amount": "7/1"
+            }
+        ],
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
+    },
+    {
+        "DisplayName": "Iron Rod",
+        "Ingredients": [
+            {
+                "ItemClass": "Raw Quartz",
+                "Amount": "15/28"
+            },
+            {
+                "ItemClass": "Limestone",
+                "Amount": "25/28"
+            },
+            {
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": "100/1"
+            },
+            {
+                "ItemClass": "Bauxite",
+                "Amount": "9/10"
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": "825/1"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Silica",
+                "Amount": "3/8"
+            },
+            {
+                "ItemClass": "Iron Rod",
+                "Amount": "7/1"
+            }
+        ],
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
+    },
+    {
+        "DisplayName": "Iron Rod",
+        "Ingredients": [
+            {
+                "ItemClass": "Raw Quartz",
+                "Amount": "3/4"
+            },
+            {
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": "100/1"
+            },
+            {
+                "ItemClass": "Bauxite",
+                "Amount": "3/4"
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": "225/1"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iron Rod",
+                "Amount": "7/1"
+            }
+        ],
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
+    },
+    {
+        "DisplayName": "Iron Rod",
+        "Ingredients": [
+            {
+                "ItemClass": "Raw Quartz",
+                "Amount": "15/28"
+            },
+            {
+                "ItemClass": "Limestone",
+                "Amount": "25/28"
+            },
+            {
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": "100/1"
+            },
+            {
+                "ItemClass": "Bauxite",
+                "Amount": "3/4"
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": "225/1"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iron Rod",
+                "Amount": "7/1"
+            }
+        ],
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
+    },
+    {
+        "DisplayName": "Iron Rod",
+        "Ingredients": [
+            {
+                "ItemClass": "Raw Quartz",
+                "Amount": "3/4"
+            },
+            {
+                "ItemClass": "Bauxite",
+                "Amount": "3/4"
+            },
+            {
+                "ItemClass": "Coal",
+                "Amount": "1/2"
             },
             {
                 "ItemClass": "Sulfuric Acid",
-                "Amount": "240000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Uranium Fuel Rod",
-                "Amount": "4"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Magnetic Field Generator",
-        "Ingredients": [
-            {
-                "ItemClass": "Caterium Ore",
-                "Amount": "48"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "64"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "387"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "267"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Magnetic Field Generator",
-                "Amount": "4"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Silica",
-        "Ingredients": [
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "225"
-            },
-            {
-                "ItemClass": "Bauxite",
-                "Amount": "300"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "510"
+                "Amount": "250/1"
             },
             {
                 "ItemClass": "Water",
-                "Amount": "300000"
-            },
+                "Amount": "50/1"
+            }
+        ],
+        "Product": [
             {
-                "ItemClass": "Iron Ore",
-                "Amount": "960"
+                "ItemClass": "Iron Rod",
+                "Amount": "7/1"
+            }
+        ],
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
+    },
+    {
+        "DisplayName": "Iron Rod",
+        "Ingredients": [
+            {
+                "ItemClass": "Raw Quartz",
+                "Amount": "15/28"
             },
             {
                 "ItemClass": "Limestone",
-                "Amount": "360"
-            },
-            {
-                "ItemClass": "Nitrogen Gas",
-                "Amount": "100000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Silica",
-                "Amount": "125"
-            },
-            {
-                "ItemClass": "Fused Modular Frame",
-                "Amount": "4"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Silica",
-        "Ingredients": [
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "254"
-            },
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "681"
+                "Amount": "25/28"
             },
             {
                 "ItemClass": "Bauxite",
-                "Amount": "108"
+                "Amount": "3/4"
             },
             {
                 "ItemClass": "Coal",
-                "Amount": "3024"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "108000"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "450"
-            },
-            {
-                "ItemClass": "SAM",
-                "Amount": "480"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Silica",
-                "Amount": "45"
-            },
-            {
-                "ItemClass": "Alien Power Matrix",
-                "Amount": "4"
-            },
-            {
-                "ItemClass": "Dark Matter Residue",
-                "Amount": "60000"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Heavy Oil Residue",
-        "Ingredients": [
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "18000"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "92"
-            },
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "45"
-            },
-            {
-                "ItemClass": "Bauxite",
-                "Amount": "60"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "30"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "90000"
-            },
-            {
-                "ItemClass": "Nitrogen Gas",
-                "Amount": "150000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "12000"
-            },
-            {
-                "ItemClass": "Silica",
-                "Amount": "25"
-            },
-            {
-                "ItemClass": "Cooling System",
-                "Amount": "6"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Heavy Oil Residue",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "219"
-            },
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "45000"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "32"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "36"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "30000"
-            },
-            {
-                "ItemClass": "Modular Engine",
-                "Amount": "2"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Heavy Oil Residue",
-        "Ingredients": [
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "96000"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "62"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "30"
-            },
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "66"
-            },
-            {
-                "ItemClass": "Bauxite",
-                "Amount": "48"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "24"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "48000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "32000"
-            },
-            {
-                "ItemClass": "Silica",
-                "Amount": "20"
-            },
-            {
-                "ItemClass": "Radio Control Unit",
-                "Amount": "2"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Heavy Oil Residue",
-        "Ingredients": [
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "252000"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "376"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "525"
-            },
-            {
-                "ItemClass": "Limestone",
-                "Amount": "180"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "225"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "84000"
-            },
-            {
-                "ItemClass": "Adaptive Control Unit",
-                "Amount": "2"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Uranium Waste",
-        "Ingredients": [
-            {
-                "ItemClass": "Caterium Ore",
-                "Amount": "240"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "320"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "279"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "279"
-            },
-            {
-                "ItemClass": "Limestone",
-                "Amount": "576"
-            },
-            {
-                "ItemClass": "Uranium",
-                "Amount": "400"
+                "Amount": "1/2"
             },
             {
                 "ItemClass": "Sulfuric Acid",
-                "Amount": "240000"
+                "Amount": "250/1"
             },
             {
                 "ItemClass": "Water",
-                "Amount": "4800"
+                "Amount": "50/1"
             }
         ],
         "Product": [
             {
-                "ItemClass": "Uranium Waste",
-                "Amount": "200"
+                "ItemClass": "Iron Rod",
+                "Amount": "7/1"
             }
-        ]
+        ],
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
     },
     {
-        "DisplayName": "Heavy Oil Residue",
+        "DisplayName": "Iron Rod",
         "Ingredients": [
             {
-                "ItemClass": "Crude Oil",
-                "Amount": "1260000"
+                "ItemClass": "Bauxite",
+                "Amount": "4/3"
             },
             {
-                "ItemClass": "Copper Ore",
-                "Amount": "790"
+                "ItemClass": "Coal",
+                "Amount": "2/3"
             },
             {
-                "ItemClass": "Caterium Ore",
-                "Amount": "624"
+                "ItemClass": "Water",
+                "Amount": "4000/3"
             }
         ],
         "Product": [
+            {
+                "ItemClass": "Silica",
+                "Amount": "5/9"
+            },
+            {
+                "ItemClass": "Iron Rod",
+                "Amount": "7/1"
+            }
+        ],
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
+    },
+    {
+        "DisplayName": "Iron Rod",
+        "Ingredients": [
+            {
+                "ItemClass": "Bauxite",
+                "Amount": "10/9"
+            },
+            {
+                "ItemClass": "Coal",
+                "Amount": "2/3"
+            },
+            {
+                "ItemClass": "Water",
+                "Amount": "4000/9"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iron Rod",
+                "Amount": "7/1"
+            }
+        ],
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
+    },
+    {
+        "DisplayName": "Iron Rod",
+        "Ingredients": [
             {
                 "ItemClass": "Heavy Oil Residue",
-                "Amount": "420000"
-            },
-            {
-                "ItemClass": "Supercomputer",
-                "Amount": "5"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Heavy Oil Residue",
-        "Ingredients": [
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "384000"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "248"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "1080"
-            },
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "489"
+                "Amount": "400/3"
             },
             {
                 "ItemClass": "Bauxite",
-                "Amount": "492"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "606"
+                "Amount": "6/5"
             },
             {
                 "ItemClass": "Water",
-                "Amount": "492000"
-            },
-            {
-                "ItemClass": "Limestone",
-                "Amount": "360"
-            },
-            {
-                "ItemClass": "Nitrogen Gas",
-                "Amount": "100000"
+                "Amount": "1100/1"
             }
         ],
         "Product": [
             {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "128000"
-            },
-            {
                 "ItemClass": "Silica",
-                "Amount": "205"
+                "Amount": "1/2"
             },
             {
-                "ItemClass": "Pressure Conversion Cube",
-                "Amount": "4"
+                "ItemClass": "Iron Rod",
+                "Amount": "7/1"
             }
-        ]
+        ],
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
     },
     {
-        "DisplayName": "Non-Fissile Uranium",
+        "DisplayName": "Iron Rod",
         "Ingredients": [
             {
-                "ItemClass": "Iron Ore",
-                "Amount": "957"
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": "400/3"
             },
             {
-                "ItemClass": "Nitrogen Gas",
-                "Amount": "960000"
+                "ItemClass": "Bauxite",
+                "Amount": "1/1"
             },
             {
-                "ItemClass": "Raw Quartz",
-                "Amount": "240"
-            },
+                "ItemClass": "Water",
+                "Amount": "300/1"
+            }
+        ],
+        "Product": [
             {
-                "ItemClass": "Caterium Ore",
-                "Amount": "720"
-            },
+                "ItemClass": "Iron Rod",
+                "Amount": "7/1"
+            }
+        ],
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
+    },
+    {
+        "DisplayName": "Iron Rod",
+        "Ingredients": [
             {
-                "ItemClass": "Copper Ore",
-                "Amount": "960"
+                "ItemClass": "Bauxite",
+                "Amount": "1/1"
             },
             {
                 "ItemClass": "Coal",
-                "Amount": "837"
-            },
-            {
-                "ItemClass": "Limestone",
-                "Amount": "1728"
-            },
-            {
-                "ItemClass": "Uranium",
-                "Amount": "1200"
+                "Amount": "2/3"
             },
             {
                 "ItemClass": "Sulfuric Acid",
-                "Amount": "960000"
+                "Amount": "1000/3"
             },
             {
                 "ItemClass": "Water",
-                "Amount": "14400"
+                "Amount": "200/3"
             }
         ],
         "Product": [
             {
-                "ItemClass": "Non-Fissile Uranium",
-                "Amount": "800"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Heavy Oil Residue",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "600"
-            },
-            {
-                "ItemClass": "SAM",
-                "Amount": "400"
-            },
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "1260000"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "790"
-            },
-            {
-                "ItemClass": "Caterium Ore",
-                "Amount": "624"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "1000"
+                "ItemClass": "Iron Rod",
+                "Amount": "7/1"
             }
         ],
-        "Product": [
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "420000"
-            },
-            {
-                "ItemClass": "Neural-Quantum Processor",
-                "Amount": "5"
-            },
-            {
-                "ItemClass": "Dark Matter Residue",
-                "Amount": "125000"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Heavy Oil Residue",
-        "Ingredients": [
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "2520000"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "2670"
-            },
-            {
-                "ItemClass": "Caterium Ore",
-                "Amount": "624"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "2625"
-            },
-            {
-                "ItemClass": "Limestone",
-                "Amount": "900"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "1125"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "840000"
-            },
-            {
-                "ItemClass": "Assembly Director System",
-                "Amount": "5"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Heavy Oil Residue",
-        "Ingredients": [
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "432000"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "466"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "468"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "240"
-            },
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "288"
-            },
-            {
-                "ItemClass": "Bauxite",
-                "Amount": "264"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "324000"
-            },
-            {
-                "ItemClass": "Nitrogen Gas",
-                "Amount": "300000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "192000"
-            },
-            {
-                "ItemClass": "Silica",
-                "Amount": "110"
-            },
-            {
-                "ItemClass": "Turbo Motor",
-                "Amount": "3"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Heavy Oil Residue",
-        "Ingredients": [
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "384000"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "5048"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "1080"
-            },
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "489"
-            },
-            {
-                "ItemClass": "Bauxite",
-                "Amount": "492"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "606"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "492000"
-            },
-            {
-                "ItemClass": "Limestone",
-                "Amount": "360"
-            },
-            {
-                "ItemClass": "Nitrogen Gas",
-                "Amount": "100000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "128000"
-            },
-            {
-                "ItemClass": "Silica",
-                "Amount": "205"
-            },
-            {
-                "ItemClass": "Nuclear Pasta",
-                "Amount": "4"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Plutonium Pellet",
-        "Ingredients": [
-            {
-                "ItemClass": "Caterium Ore",
-                "Amount": "240"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "320"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "309"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "279"
-            },
-            {
-                "ItemClass": "Limestone",
-                "Amount": "576"
-            },
-            {
-                "ItemClass": "Uranium",
-                "Amount": "400"
-            },
-            {
-                "ItemClass": "Sulfuric Acid",
-                "Amount": "300000"
-            },
-            {
-                "ItemClass": "Nitrogen Gas",
-                "Amount": "240000"
-            },
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "60"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "4800"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Plutonium Pellet",
-                "Amount": "60"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Silica",
-        "Ingredients": [
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "3820"
-            },
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "735"
-            },
-            {
-                "ItemClass": "Bauxite",
-                "Amount": "180"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "7825"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "180000"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "4935"
-            },
-            {
-                "ItemClass": "SAM",
-                "Amount": "1600"
-            },
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "5040000"
-            },
-            {
-                "ItemClass": "Caterium Ore",
-                "Amount": "2736"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Silica",
-                "Amount": "75"
-            },
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "1680000"
-            },
-            {
-                "ItemClass": "Dark Matter Residue",
-                "Amount": "900000"
-            },
-            {
-                "ItemClass": "AI Expansion Server",
-                "Amount": "20"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Heavy Oil Residue",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "17475"
-            },
-            {
-                "ItemClass": "SAM",
-                "Amount": "6400"
-            },
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "7560000"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "8010"
-            },
-            {
-                "ItemClass": "Caterium Ore",
-                "Amount": "1872"
-            },
-            {
-                "ItemClass": "Limestone",
-                "Amount": "2700"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "3375"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "300000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "2520000"
-            },
-            {
-                "ItemClass": "Biochemical Sculptor",
-                "Amount": "60"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Silica",
-        "Ingredients": [
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "2097"
-            },
-            {
-                "ItemClass": "Bauxite",
-                "Amount": "2316"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "3210"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "2736000"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "8037"
-            },
-            {
-                "ItemClass": "Limestone",
-                "Amount": "1080"
-            },
-            {
-                "ItemClass": "Nitrogen Gas",
-                "Amount": "2400000"
-            },
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "2511000"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "2896"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Silica",
-                "Amount": "965"
-            },
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "1290000"
-            },
-            {
-                "ItemClass": "Thermal Propulsion Rocket",
-                "Amount": "12"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Heavy Oil Residue",
-        "Ingredients": [
-            {
-                "ItemClass": "Limestone",
-                "Amount": "2760"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "1680"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "2206"
-            },
-            {
-                "ItemClass": "Dark Matter Residue",
-                "Amount": "400000"
-            },
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "384000"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "5048"
-            },
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "489"
-            },
-            {
-                "ItemClass": "Bauxite",
-                "Amount": "492"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "492000"
-            },
-            {
-                "ItemClass": "Nitrogen Gas",
-                "Amount": "100000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "128000"
-            },
-            {
-                "ItemClass": "Silica",
-                "Amount": "205"
-            },
-            {
-                "ItemClass": "Singularity Cell",
-                "Amount": "40"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Encased Plutonium Cell",
-        "Ingredients": [
-            {
-                "ItemClass": "Limestone",
-                "Amount": "936"
-            },
-            {
-                "ItemClass": "Caterium Ore",
-                "Amount": "240"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "320"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "309"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "279"
-            },
-            {
-                "ItemClass": "Uranium",
-                "Amount": "400"
-            },
-            {
-                "ItemClass": "Sulfuric Acid",
-                "Amount": "300000"
-            },
-            {
-                "ItemClass": "Nitrogen Gas",
-                "Amount": "240000"
-            },
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "60"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "4800"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Encased Plutonium Cell",
-                "Amount": "30"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Silica",
-        "Ingredients": [
-            {
-                "ItemClass": "Coal",
-                "Amount": "38214"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "21752"
-            },
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "7425"
-            },
-            {
-                "ItemClass": "Bauxite",
-                "Amount": "6540"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "7380000"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "22554"
-            },
-            {
-                "ItemClass": "Dark Matter Residue",
-                "Amount": "6240000"
-            },
-            {
-                "ItemClass": "Limestone",
-                "Amount": "10440"
-            },
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "6174000"
-            },
-            {
-                "ItemClass": "Nitrogen Gas",
-                "Amount": "5100000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Silica",
-                "Amount": "2725"
-            },
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "2964000"
-            },
-            {
-                "ItemClass": "Ballistic Warp Drive",
-                "Amount": "24"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Silica",
-        "Ingredients": [
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "2956"
-            },
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "585"
-            },
-            {
-                "ItemClass": "Bauxite",
-                "Amount": "300"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "2499"
-            },
-            {
-                "ItemClass": "Caterium Ore",
-                "Amount": "1872"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "2529"
-            },
-            {
-                "ItemClass": "Limestone",
-                "Amount": "5616"
-            },
-            {
-                "ItemClass": "Uranium",
-                "Amount": "2400"
-            },
-            {
-                "ItemClass": "Sulfuric Acid",
-                "Amount": "1800000"
-            },
-            {
-                "ItemClass": "Nitrogen Gas",
-                "Amount": "1440000"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "328800"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Silica",
-                "Amount": "125"
-            },
-            {
-                "ItemClass": "Plutonium Fuel Rod",
-                "Amount": "6"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Silica",
-        "Ingredients": [
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "2956"
-            },
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "585"
-            },
-            {
-                "ItemClass": "Bauxite",
-                "Amount": "300"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "2499"
-            },
-            {
-                "ItemClass": "Caterium Ore",
-                "Amount": "1872"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "2529"
-            },
-            {
-                "ItemClass": "Limestone",
-                "Amount": "5616"
-            },
-            {
-                "ItemClass": "Uranium",
-                "Amount": "2400"
-            },
-            {
-                "ItemClass": "Sulfuric Acid",
-                "Amount": "1800000"
-            },
-            {
-                "ItemClass": "Nitrogen Gas",
-                "Amount": "1440000"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "343200"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Silica",
-                "Amount": "125"
-            },
-            {
-                "ItemClass": "Plutonium Waste",
-                "Amount": "60"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Heavy Oil Residue",
-        "Ingredients": [
-            {
-                "ItemClass": "Limestone",
-                "Amount": "19512"
-            },
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "10098"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "11616"
-            },
-            {
-                "ItemClass": "Dark Matter Residue",
-                "Amount": "3600000"
-            },
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "1152000"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "21056"
-            },
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "2637"
-            },
-            {
-                "ItemClass": "Bauxite",
-                "Amount": "2076"
-            },
-            {
-                "ItemClass": "Nitrogen Gas",
-                "Amount": "3180000"
-            },
-            {
-                "ItemClass": "Caterium Ore",
-                "Amount": "3744"
-            },
-            {
-                "ItemClass": "Uranium",
-                "Amount": "4800"
-            },
-            {
-                "ItemClass": "Sulfuric Acid",
-                "Amount": "3600000"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "2162400"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "384000"
-            },
-            {
-                "ItemClass": "Silica",
-                "Amount": "865"
-            },
-            {
-                "ItemClass": "Ficsonium",
-                "Amount": "120"
-            }
-        ]
-    },
-    {
-        "DisplayName": "Heavy Oil Residue",
-        "Ingredients": [
-            {
-                "ItemClass": "Iron Ore",
-                "Amount": "30108"
-            },
-            {
-                "ItemClass": "SAM",
-                "Amount": "12800"
-            },
-            {
-                "ItemClass": "Caterium Ore",
-                "Amount": "5184"
-            },
-            {
-                "ItemClass": "Copper Ore",
-                "Amount": "22976"
-            },
-            {
-                "ItemClass": "Coal",
-                "Amount": "12426"
-            },
-            {
-                "ItemClass": "Limestone",
-                "Amount": "19512"
-            },
-            {
-                "ItemClass": "Crude Oil",
-                "Amount": "1152000"
-            },
-            {
-                "ItemClass": "Raw Quartz",
-                "Amount": "2637"
-            },
-            {
-                "ItemClass": "Bauxite",
-                "Amount": "2076"
-            },
-            {
-                "ItemClass": "Nitrogen Gas",
-                "Amount": "3180000"
-            },
-            {
-                "ItemClass": "Uranium",
-                "Amount": "4800"
-            },
-            {
-                "ItemClass": "Sulfuric Acid",
-                "Amount": "3600000"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "2162400"
-            },
-            {
-                "ItemClass": "Dark Matter Residue",
-                "Amount": "2400000"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Heavy Oil Residue",
-                "Amount": "384000"
-            },
-            {
-                "ItemClass": "Silica",
-                "Amount": "865"
-            },
-            {
-                "ItemClass": "Ficsonium Fuel Rod",
-                "Amount": "60"
-            }
-        ]
+        "ProducedIn": "N/A",
+        "ManufactoringDuration": 0.0
     }
 ]

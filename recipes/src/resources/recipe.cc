@@ -13,9 +13,9 @@ Recipe::Recipe() {
 }
 
 Recipe::Recipe(const json& data) {
-    name = data.value("DisplayName", "");
-    factory = data.value("ProducedIn", "");
-    machine_speed = stod(data.value("ManufactoringDuration", ""));
+    name = data.value("DisplayName", "Unknown");
+    factory = data.value("ProducedIn", "N/A");
+    machine_speed = stod(data.value("ManufactoringDuration", "0.0"));
     
     ingredients.clear();
     for (auto& ingredient : data["Ingredients"]) {
@@ -31,9 +31,9 @@ Recipe::Recipe(const json& data) {
 }
 
 void Recipe::set_recipe(const json& data) {
-    name = data.value("DisplayName", "");
-    factory = data.value("ProducedIn", "");
-    machine_speed = stod(data.value("ManufactoringDuration", ""));
+    name = data.value("DisplayName", "Unknown");
+    factory = data.value("ProducedIn", "N/A");
+    machine_speed = stod(data.value("ManufactoringDuration", "0.0"));
     
     ingredients.clear();
     for (auto& ingredient : data["Ingredients"]) {
@@ -136,33 +136,68 @@ void Recipe::combine_recipes(const Recipe other) {
         for (int j = 0; j < ingredients.size(); j++) {
             if (products.at(i).same_name(ingredients.at(j))) {
                 products.at(i) -= ingredients.at(j);
-                ingredients.erase(find(ingredients.begin(), ingredients.end(), ingredients.at(j)));
-                j--;
             }
         }
     }
-
-    // Removes any products that have an amount of 0
-    // Also converts and products with a negative amount into ingredients
-    string fraction;
-    for (int i = 0; i < products.size(); i++) {
-        if (products.at(i).get_amount() == 0) {
-            products.erase(find(products.begin(), products.end(), products.at(i)));
-            i--;
+    
+    // Remove ingredients that were cancelled out by products (rebuild to avoid index shifting)
+    vector<Resource> cleaned_ingredients;
+    for (int i = 0; i < ingredients.size(); i++) {
+        bool cancelled = false;
+        for (int j = 0; j < products.size(); j++) {
+            if (ingredients.at(i).same_name(products.at(j))) {
+                cancelled = true;
+                break;
+            }
         }
-        else if (products.at(i).get_amount() < 0) {
-            products.at(i) *= -1;
-            ingredients.push_back(products.at(i));
-            products.erase(find(products.begin(), products.end(), products.at(i)));
-            i--;
+        if (!cancelled) {
+            cleaned_ingredients.push_back(ingredients.at(i));
         }
     }
+    ingredients = cleaned_ingredients;
+
+    // Removes any products that have an amount of 0
+    // Also converts products with a negative amount into ingredients
+    // Rebuild the vector to preserve original indices of byproducts
+    vector<Resource> cleaned_products;
+    for (int i = 0; i < products.size(); i++) {
+        if (products.at(i).get_amount() == 0) {
+            // Skip zero-amount products
+            continue;
+        }
+        else if (products.at(i).get_amount() < 0) {
+            // Convert negative products to ingredients
+            products.at(i) *= -1;
+            ingredients.push_back(products.at(i));
+        }
+        else {
+            // Keep positive-amount products in their original order
+            cleaned_products.push_back(products.at(i));
+        }
+    }
+    products = cleaned_products;
 }
 
 void Recipe::merge_recipes(const vector<Recipe> data) {
     for (int i = 0; i < data.size(); i++) {
         this->combine_recipes(data.at(i));
     }
+}
+
+void Recipe::set_primary_product(const string& primary_name) {
+    // Find the product matching primary_name and move it to index 0
+    for (int i = 0; i < products.size(); i++) {
+        if (products.at(i).get_name() == primary_name) {
+            // If not already at index 0, swap it to the front
+            if (i != 0) {
+                Resource temp = products.at(0);
+                products.at(0) = products.at(i);
+                products.at(i) = temp;
+            }
+            return;
+        }
+    }
+    // If primary product not found, do nothing (it was already removed or doesn't exist)
 }
 
 string Recipe::get_name() const {
@@ -197,8 +232,11 @@ json Recipe::to_json() const {
     json output = json::object();
     json current = json::object();
     string fraction;
+    json empty_array = json::array();
 
     output["DisplayName"] = name;
+    output["Ingredients"] = empty_array;
+    output["Product"] = empty_array;
     for (int i = 0; i < ingredients.size(); i++) {
         current["ItemClass"] = ingredients.at(i).get_name();
         fraction = to_string(ingredients.at(i).get_amount().get_numerator()) + "/" + to_string(ingredients.at(i).get_amount().get_denominator());
@@ -212,15 +250,18 @@ json Recipe::to_json() const {
         output["Product"].push_back(current);
     }
     output["ProducedIn"] = factory;
-    output["ManufactoringDuration"] = machine_speed;
+    output["ManufactoringDuration"] = to_string(machine_speed);
     return output;
 }
 
 json Recipe::to_compressed_json() const {
     json output = json::object();
     json current = json::object();
+    json empty_array = json::array();
 
-    output["DisplayName"] = products.at(0).get_name();
+    output["DisplayName"] = name;
+    output["Ingredients"] = empty_array;
+    output["Product"] = empty_array;
     for (int i = 0; i < ingredients.size(); i++) {
         current["ItemClass"] = ingredients.at(i).get_name();
         current["Amount"] = to_string(ingredients.at(i).get_amount().get_numerator());

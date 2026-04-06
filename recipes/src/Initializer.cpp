@@ -33,8 +33,7 @@ int main(int argc, char* argv[]) {
                 if (product["ItemClass"] == "Compacted Coal" || product["ItemClass"] == "Polymer Resin"
                 || product["ItemClass"] == "Dark Matter Residue" || product["ItemClass"] == "Water"
                 || product["ItemClass"] == "Dissolved Silica" || product["ItemClass"] == "Sulfuric Acid"
-                || product["ItemClass"] == "Heavy Oil Residue" || product["ItemClass"] == "Silica"
-                || product["ItemClass"] == "Biomass")  {
+                || product["ItemClass"] == "Heavy Oil Residue" || product["ItemClass"] == "Silica")  {
                     byproduct_found = true;
                 }
             }
