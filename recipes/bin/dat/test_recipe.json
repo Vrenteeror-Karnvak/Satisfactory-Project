@@ -17,11 +17,11 @@
         "ManufactoringDuration": "4.000000"
     },
     {
-        "ItemClass": "Iron Rod"
+        "ItemClass": "Aluminum Ingot"
     },
     {   
         "max_loops": "10000",
-        "max_time": "5",
+        "max_time": "1",
         "unit_of_time": "Minutes"
     },
     {

@@ -140,7 +140,7 @@ int main(int argc, char* argv[]) {
     resource_data["Amount"] = "0"; // sets amount to 0;
     resourceOut.push_back(resource_data); // adds the  data to the vector
 
-    resource_data["ItemClass"] = "Alien DNA Capsule"; // adds the display name
+    resource_data["ItemClass"] = "Biomass"; // adds the display name
     resource_data["Amount"] = "0"; // sets amount to 0;
     resourceOut.push_back(resource_data); // adds the  data to the vector
 

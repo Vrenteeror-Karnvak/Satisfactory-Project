@@ -16,6 +16,8 @@ int main(int argc, char* argv[]) {
     // opens all of the input and output file streams
     ifstream recipe_in(exePath / "int/recipes_sorted.json");
     ofstream recipe_out(exePath / "dat/recipes.json");
+    ofstream item_out(exePath / "int/item_list.txt");
+    ofstream item_analysis(exePath / "int/item_analysis.txt");
     
     if (!recipe_in.is_open()) {
         cerr << "Failed to open recipe input file.\n";
@@ -24,6 +26,15 @@ int main(int argc, char* argv[]) {
     if (!recipe_out.is_open()) {
         cerr << "Failed to open recipe output file.\n";
     }
+
+    if (!item_out.is_open()) {
+        cerr << "Failed to open item output file.\n";
+    }
+
+    if (!item_analysis.is_open()) {
+        cerr << "Failed to open item analysis file.\n";
+    }
+
 
     // pulls the resouce file for refining
     json root;
@@ -57,8 +68,18 @@ int main(int argc, char* argv[]) {
             }
         }
 
-        // Clears the list
-        ingredients.clear();
+        // Outputs used to analyse and filter the item list
+        // This will be what determines the items that get turned into a chain
+        
+        if ((product.find("fuel") != string::npos || product.find("Fuel") != string::npos) && product.find("Ficsonium Fuel Rod") == string::npos
+        || product.find("Heavy Oil Residue") != string::npos || product.find("Petroleum Coke") != string::npos || product.find("Copper Powder") != string::npos
+        || product.find("Matter") != string::npos || product.find("Acid") != string::npos) { }
+        else if (product.find("matter") != string::npos || product.find("Matter") != string::npos) {
+            item_analysis << product << endl;
+        }
+        else {
+            item_out << product << endl;
+        }
     }
 
     for (auto& [product, ingredients] : recipe_form) {
@@ -109,6 +130,8 @@ int main(int argc, char* argv[]) {
     // closes all the opened files
     recipe_in.close();
     recipe_out.close();
+    item_out.close();
+    item_analysis.close();
 
     return 0;
 }

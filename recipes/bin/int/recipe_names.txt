@@ -3,7 +3,6 @@ Iron Rod
 Iron Ingot
 Alternate: Nitro Rocket Fuel
 Rocket Fuel
-Alternate: Dark-Ion Fuel
 Dark Matter Residue
 Excited Photonic Matter
 Dark Matter Crystal
@@ -11,7 +10,6 @@ Superposition Oscillator
 Neural-Quantum Processor
 AI Expansion Server
 Ionized Fuel
-Alternate: Turbo Diamonds
 SAM Fluctuator
 Ficsite Trigon
 Ficsite Ingot (Iron)
@@ -91,7 +89,6 @@ Alternate: Coated Iron Canister
 Alternate: Coated Cable
 Alternate: Bolted Frame
 Alternate: Adhered Iron Plate
-Alternate: Turbo Pressure Motor
 Encased Plutonium Cell
 Pressure Conversion Cube
 Nitric Acid
@@ -186,12 +183,7 @@ Singularity Cell
 Ballistic Warp Drive
 Iodine-Infused Filter
 Quickwire
-Hog Protein
-Spitter Protein
 Black Powder
-Stinger Protein
-Hatcher Protein
-Alien DNA Capsule
 Iron Rebar
 Alien Power Matrix
 Homing Rifle Ammo
@@ -202,7 +194,6 @@ Alternate: Polyester Fabric
 Synthetic Power Shard
 Pulse Nobelisk
 Shatter Rebar
-Turbo Rifle Ammo
 Turbo Rifle Ammo
 Nuke Nobelisk
 Rifle Ammo

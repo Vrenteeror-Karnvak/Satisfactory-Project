@@ -31,6 +31,7 @@ class Recipe {
         void set_processed();
         void combine_recipes(const Recipe other);
         void merge_recipes(const vector<Recipe> data);
+        void set_primary_product(const string& primary_name);
         string get_name() const;
         string get_factory() const;
         double get_machine_speed() const;
