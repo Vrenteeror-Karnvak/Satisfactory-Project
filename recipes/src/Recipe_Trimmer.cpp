@@ -14,19 +14,8 @@ int main(int argc, char* argv[]) {
     ifstream recipe_in(exePath / "int/recipes_fixed.json");
     ofstream recipe_out(exePath / "int/recipes_trimmed.json");
     ofstream removed_recipes_out(exePath / "int/recipes_removed.json");
+    ofstream consumable_recipe(exePath/ "int/consumable_recipes.json");
     ofstream recipe_names(exePath / "int/recipe_names.txt");
-
-    if (!recipe_in.is_open()) {
-        cerr << "Failed to open recipe input file.\n";
-    }
-
-    if (!recipe_out.is_open()) {
-        cerr << "Failed to open recipe output file.\n";
-    }
-
-    if (!recipe_names.is_open()) {
-        cerr << "Failed to open recipe name output file.\n";
-    }
 
     // pulls the resouce file for refining
     json recipe;
@@ -34,6 +23,7 @@ int main(int argc, char* argv[]) {
 
     json recipe_data = json::object();
     json removed_recipes = json::array();
+    json consumable_items = json::array();
     json dataOut = json::array();
     
     // Used to add the conversion from fuel rods to waste
@@ -44,10 +34,12 @@ int main(int argc, char* argv[]) {
     vector<string> Class_Name;
     vector<string> Display_Name;
 
-    bool to_delete = false;
+    bool to_delete = false; // Is the recipe to be removed?
+    bool consumable = false; // Does the recipe make a consumable?
 
     for (const auto& block : recipe) {
         to_delete = false;
+        consumable = false;
         for (auto& data : block["Ingredients"]) {
             if (data.value("ItemClass", "").find("Bio") != string::npos && block.value("DisplayName", "").find("Gas Nobelisk") == string::npos) {
                 to_delete = true;
@@ -76,9 +68,28 @@ int main(int argc, char* argv[]) {
         }
 
         if (!to_delete) {
+            for (auto& data : block["Product"]) {
+                if (data.value("ItemClass", "").find("Ammo") != string::npos
+                || data.value("ItemClass", "").find("Rebar") != string::npos
+                || data.value("ItemClass", "").find("Nobelisk") != string::npos
+                || data.value("ItemClass", "").find("Empty") != string::npos
+                || data.value("ItemClass", "").find("Filter") != string::npos
+                || data.value("ItemClass", "").find("Fabric") != string::npos
+                || data.value("ItemClass", "").find("Alien Power Matrix") != string::npos) {
+                    to_delete = true;
+                    consumable = true;
+                }
+            }
+        }
+
+        if (!to_delete) {
             recipe_data = block;
             dataOut.push_back(recipe_data);
             recipe_names << block.value("DisplayName", "") << endl;
+        }
+        else if (consumable) {
+            recipe_data = block;
+            consumable_items.push_back(recipe_data);
         }
         else {
             recipe_data = block;
@@ -116,10 +127,13 @@ int main(int argc, char* argv[]) {
 
     // puts the new recipes in the output file
     removed_recipes_out << removed_recipes.dump(4);
+    consumable_recipe << consumable_items.dump(4);
     recipe_out << dataOut.dump(4);
 
     // closes all the opened files
     recipe_in.close();
     recipe_out.close();
+    removed_recipes_out.close();
+    consumable_recipe.close();
     recipe_names.close();
 }

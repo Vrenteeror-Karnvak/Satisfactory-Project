@@ -77,7 +77,7 @@ bool Resource::operator!=(const Resource& other) const {
 
 bool Resource::operator<(const Resource& other) const {
     if (!same_name(other)) {
-        throw invalid_argument("Cannot compare different resources.");
+        throw invalid_argument("Cannot combine different resources.\n" + name + " != " + other.get_name() + ".");
     }
 
     return (amount < other.get_amount());
@@ -89,7 +89,7 @@ bool Resource::operator<=(const Resource& other) const {
 
 bool Resource::operator>(const Resource& other) const {
     if (!same_name(other)) {
-        throw invalid_argument("Cannot compare different resources.");
+        throw invalid_argument("Cannot combine different resources.\n" + name + " != " + other.get_name() + ".");
     }
 
     return (amount > other.get_amount());
@@ -101,7 +101,7 @@ bool Resource::operator>=(const Resource& other) const {
 
 Resource& Resource::operator+=(const Resource& other) {
     if (!same_name(other)) {
-        throw invalid_argument("Cannot combine different resources.");
+        throw invalid_argument("Cannot combine different resources.\n" + name + " != " + other.get_name() + ".");
     }
 
     amount += other.get_amount();
@@ -116,7 +116,7 @@ Resource Resource::operator+(const Resource& other) const {
 
 Resource& Resource::operator-=(const Resource& other) {
     if (!same_name(other)) {
-        throw invalid_argument("Cannot combine different resources.");
+        throw invalid_argument("Cannot combine different resources.\n" + name + " != " + other.get_name() + ".");
     }
 
     amount -= other.get_amount();

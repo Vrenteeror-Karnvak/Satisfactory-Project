@@ -91,12 +91,6 @@ int main(int argc, char* argv[]) {
             continue;
         }
 
-        if (product == "Empty Canister") {
-            json temp = recipe_group.at(0);
-            recipe_group.clear();
-            recipe_group.push_back(temp);
-        }
-
         recipe_object["Category"] = product;
         recipe_object["Data"] = recipe_group;
 

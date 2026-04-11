@@ -22,7 +22,11 @@ bool check_duplicate_incrementor_values(const vector<int>& incrementor_values, c
 int main(int argc, char* argv[]) {
     filesystem::path exePath = filesystem::absolute(argv[0]).parent_path();
     bool loop_termination = false; // Triggers if the loop runs a set number of times
+    bool total_loop_termination = false; // Triggers if the loop runs a set number of times, doesn't clear
+    int loop_termination_count = 0; // Counts how many times loop_termination was triggered
     bool time_termination = false; // Triggers if the loops runs a set amount of time
+    bool total_time_termination = false; // Triggers if the loops runs a set amount of time, doesn't clear
+    int time_termination_count = 0; // Counts how many times time_termination was triggered
     bool duplicate_found = false; // Triggers if a duplicate item is found in the incrementor
 
     // opens the filestreams
@@ -52,10 +56,11 @@ int main(int argc, char* argv[]) {
     string test_item = test_recipe_root.at(1).value("ItemClass", ""); // Use to inject an ITEM into the system
 
     // The auto terminate information
-    const int max_loops = stoi(test_recipe_root.at(2).value("max_loops", "")); // the maximum number of loops the program is allowed to run
-    const chrono::minutes max_time(stoi(test_recipe_root.at(2).value("max_time", ""))); // the max time the program is allowed to run
-    const chrono::seconds update_frequency(stoi(test_recipe_root.at(3).value("update_frequency", ""))); // the frequency the program updates its progress
+    const int max_loops = stoi(test_recipe_root.at(2).value("max_loops", "0")); // the maximum number of loops the program is allowed to run
+    const chrono::minutes max_time(stoi(test_recipe_root.at(2).value("max_time", "0"))); // the max time the program is allowed to run
+    const chrono::seconds update_frequency(stoi(test_recipe_root.at(3).value("update_frequency", "0"))); // the frequency the program updates its progress
     int u = 1; // the number of updates
+    int num_to_test = stoi(test_recipe_root.at(4).value("number_items_to_test", "0")) - 1; // the number of items to test before terminating the loop in order to avoid super complex items
 
     // The json file containing the terminal resources
     json terminal_root;
@@ -115,12 +120,15 @@ int main(int argc, char* argv[]) {
 
     //
     // Something doesn't seem to be clearing properly. Needs to be fixed.
-    // Aluminum ingots are getting stuck in an infinite loop, find out why.
-    //      The incrementor seems to be what's having the problem. Something about the new recipe chains has broken it.
     //
     
     for (int k = 0; k < recipe_root.size(); k++) {
         auto start = chrono::steady_clock::now(); // starts the timer
+
+        // Clears termination flags and debug variables
+        loop_termination = false;
+        time_termination = false;
+        u = 1;
 
         // clears the output storage vectors
         output_array.clear();
@@ -226,9 +234,22 @@ int main(int argc, char* argv[]) {
 
             // converts the output vector into compressed json
             Recipe output;
+            int lm = 1; // the least common multiple of the denominators
+            string incrementor_ID = ""; // The ID that identifies what recipes were used to make the chain
             output.merge_recipes(output_recipes);
             output.set_primary_product(test_item);
+            for (int i = 0; i < incrementor.size(); i++) {
+                incrementor_ID.append(to_string(incrementor.at(i)));
+            }
+            // output.set_name(incrementor_ID);
             output.set_name(test_item);
+            for (int i = 0; i < output.get_ingredients().size(); i++) {
+                lm = lcm(lm, output.get_ingredient(i).get_amount().get_denominator());
+            }
+            for (int i = 0; i < output.get_products().size(); i++) {
+                lm = lcm(lm, output.get_product(i).get_amount().get_denominator());
+            }
+            output *= lm;
             output_object = output.to_compressed_json();
             
             // checks if the recipe combination has already been found
@@ -305,15 +326,15 @@ int main(int argc, char* argv[]) {
             }
 
             // Use to terminate after a set amount of loops
-            /*
             if (count >= max_loops) {
+                total_loop_termination = true;
                 loop_termination = true;
                 break;
             }
-            */
 
             // Use to terminate after a set amount of time
             if (chrono::steady_clock::now() - start >= max_time) {
+                total_time_termination = true;
                 time_termination = true;
                 break;
             }
@@ -334,17 +355,30 @@ int main(int argc, char* argv[]) {
         status_log << total << " combinations have been found." << endl;
         status_log << "The program has tested " << count << " combinations of recipes." << endl;
         status_log << "Execution time: " << elapsed.count() << " seconds." << endl;
+        if (loop_termination) {
+            status_log << "The program exceeded " << max_loops << " loops. The item is too complex." << endl;
+            loop_termination_count++;
+        }
+        else if (time_termination) {
+            status_log << "The program exceeded " << max_time.count() << " minutes. The item is too complex." << endl;
+            time_termination_count++;
+        }
         status_log << endl;
 
         if (elapsed >= update_frequency) {
-            cout << test_item << " has been proccessed." << endl;
             cout << total << " combinations have been found." << endl;
             cout << "The program has tested " << count << " combinations of recipes." << endl;
             cout << "Execution time: " << elapsed.count() << " seconds." << endl;
+            if (loop_termination) {
+                cout << "The program exceeded " << max_loops << " loops. The item is too complex." << endl;
+            }
+            else if (time_termination) {
+                cout << "The program exceeded " << max_time.count() << " minutes. The item is too complex." << endl;
+            }
             cout << endl;
         }
 
-        if (k == 60) {
+        if (k == num_to_test) {
             break;
         }
     }
@@ -355,6 +389,10 @@ int main(int argc, char* argv[]) {
     cout << "The program has tested " << true_count << " combinations of recipes across all items." << endl;
     cout << "Execution time: " << total_elapsed.count() << " seconds." << endl;
 
+    status_log << true_total << " combinations have been found across all items." << endl;
+    status_log << "The program has tested " << true_count << " combinations of recipes across all items." << endl;
+    status_log << "Execution time: " << total_elapsed.count() << " seconds." << endl;
+
     // outputs the results to the file
     results << recipe_root.dump(4);
     
@@ -364,11 +402,11 @@ int main(int argc, char* argv[]) {
     results.close();
     status_log.close();
 
-    if (loop_termination) {
-        cout << "The program exceeded " << max_loops << " loops. The item is too complex." << endl;
+    if (total_loop_termination) {
+        cout << loop_termination_count << " items exceeded " << max_loops << " loops." << endl;
     }
-    else if (time_termination) {
-        cout << "The program exceeded " << max_time.count() << " minutes. The item is too complex." << endl;
+    else if (total_time_termination) {
+        cout << time_termination_count << " items exceeded " << max_time.count() << " minutes." << endl;
     }
     else if (duplicate_found) {
         cout << "A duplicate was found in the incrementor. Program terminated while processing " << test_item << "." << endl;

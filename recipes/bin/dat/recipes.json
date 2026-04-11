@@ -17,6 +17,71 @@
         ]
     },
     {
+        "Category": "Reanimated SAM",
+        "Data": [
+            {
+                "DisplayName": "Reanimated SAM",
+                "Ingredients": [
+                    {
+                        "ItemClass": "SAM",
+                        "Amount": "4"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Reanimated SAM",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Constructor",
+                "ManufactoringDuration": "2.000000"
+            }
+        ]
+    },
+    {
+        "Category": "Silica",
+        "Data": [
+            {
+                "DisplayName": "Silica",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Raw Quartz",
+                        "Amount": "3"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Silica",
+                        "Amount": "5"
+                    }
+                ],
+                "ProducedIn": "Constructor",
+                "ManufactoringDuration": "8.000000"
+            },
+            {
+                "DisplayName": "Alternate: Cheap Silica",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Raw Quartz",
+                        "Amount": "3"
+                    },
+                    {
+                        "ItemClass": "Limestone",
+                        "Amount": "5"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Silica",
+                        "Amount": "7"
+                    }
+                ],
+                "ProducedIn": "Assembler",
+                "ManufactoringDuration": "8.000000"
+            }
+        ]
+    },
+    {
         "Category": "Heavy Oil Residue",
         "Data": [
             {
@@ -65,49 +130,6 @@
                 ],
                 "ProducedIn": "Refinery",
                 "ManufactoringDuration": "6.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Silica",
-        "Data": [
-            {
-                "DisplayName": "Silica",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Raw Quartz",
-                        "Amount": "3"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Silica",
-                        "Amount": "5"
-                    }
-                ],
-                "ProducedIn": "Constructor",
-                "ManufactoringDuration": "8.000000"
-            },
-            {
-                "DisplayName": "Alternate: Cheap Silica",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Raw Quartz",
-                        "Amount": "3"
-                    },
-                    {
-                        "ItemClass": "Limestone",
-                        "Amount": "5"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Silica",
-                        "Amount": "7"
-                    }
-                ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "8.000000"
             }
         ]
     },
@@ -244,28 +266,28 @@
         ]
     },
     {
-        "Category": "Sulfuric Acid",
+        "Category": "Compacted Coal",
         "Data": [
             {
-                "DisplayName": "Sulfuric Acid",
+                "DisplayName": "Alternate: Compacted Coal",
                 "Ingredients": [
                     {
-                        "ItemClass": "Sulfur",
+                        "ItemClass": "Coal",
                         "Amount": "5"
                     },
                     {
-                        "ItemClass": "Water",
-                        "Amount": "5000"
+                        "ItemClass": "Sulfur",
+                        "Amount": "5"
                     }
                 ],
                 "Product": [
                     {
-                        "ItemClass": "Sulfuric Acid",
-                        "Amount": "5000"
+                        "ItemClass": "Compacted Coal",
+                        "Amount": "5"
                     }
                 ],
-                "ProducedIn": "Refinery",
-                "ManufactoringDuration": "6.000000"
+                "ProducedIn": "Assembler",
+                "ManufactoringDuration": "12.000000"
             }
         ]
     },
@@ -321,24 +343,28 @@
         ]
     },
     {
-        "Category": "Reanimated SAM",
+        "Category": "Sulfuric Acid",
         "Data": [
             {
-                "DisplayName": "Reanimated SAM",
+                "DisplayName": "Sulfuric Acid",
                 "Ingredients": [
                     {
-                        "ItemClass": "SAM",
-                        "Amount": "4"
+                        "ItemClass": "Sulfur",
+                        "Amount": "5"
+                    },
+                    {
+                        "ItemClass": "Water",
+                        "Amount": "5000"
                     }
                 ],
                 "Product": [
                     {
-                        "ItemClass": "Reanimated SAM",
-                        "Amount": "1"
+                        "ItemClass": "Sulfuric Acid",
+                        "Amount": "5000"
                     }
                 ],
-                "ProducedIn": "Constructor",
-                "ManufactoringDuration": "2.000000"
+                "ProducedIn": "Refinery",
+                "ManufactoringDuration": "6.000000"
             }
         ]
     },
@@ -407,28 +433,24 @@
         ]
     },
     {
-        "Category": "Compacted Coal",
+        "Category": "Dark Matter Residue",
         "Data": [
             {
-                "DisplayName": "Alternate: Compacted Coal",
+                "DisplayName": "Dark Matter Residue",
                 "Ingredients": [
                     {
-                        "ItemClass": "Coal",
-                        "Amount": "5"
-                    },
-                    {
-                        "ItemClass": "Sulfur",
+                        "ItemClass": "Reanimated SAM",
                         "Amount": "5"
                     }
                 ],
                 "Product": [
                     {
-                        "ItemClass": "Compacted Coal",
-                        "Amount": "5"
+                        "ItemClass": "Dark Matter Residue",
+                        "Amount": "10000"
                     }
                 ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "12.000000"
+                "ProducedIn": "Converter",
+                "ManufactoringDuration": "6.000000"
             }
         ]
     },
@@ -613,32 +635,6 @@
         ]
     },
     {
-        "Category": "Fabric",
-        "Data": [
-            {
-                "DisplayName": "Alternate: Polyester Fabric",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Polymer Resin",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Water",
-                        "Amount": "1000"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Fabric",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Refinery",
-                "ManufactoringDuration": "2.000000"
-            }
-        ]
-    },
-    {
         "Category": "Snowball",
         "Data": [
             {
@@ -661,32 +657,6 @@
         ]
     },
     {
-        "Category": "Sparkly Fireworks",
-        "Data": [
-            {
-                "DisplayName": "Sparkly Fireworks",
-                "Ingredients": [
-                    {
-                        "ItemClass": "FICSMAS Tree Branch",
-                        "Amount": "3"
-                    },
-                    {
-                        "ItemClass": "FICSMAS Actual Snow",
-                        "Amount": "2"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Sparkly Fireworks",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "24.000000"
-            }
-        ]
-    },
-    {
         "Category": "Fancy Fireworks",
         "Data": [
             {
@@ -704,6 +674,32 @@
                 "Product": [
                     {
                         "ItemClass": "Fancy Fireworks",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Assembler",
+                "ManufactoringDuration": "24.000000"
+            }
+        ]
+    },
+    {
+        "Category": "Sparkly Fireworks",
+        "Data": [
+            {
+                "DisplayName": "Sparkly Fireworks",
+                "Ingredients": [
+                    {
+                        "ItemClass": "FICSMAS Tree Branch",
+                        "Amount": "3"
+                    },
+                    {
+                        "ItemClass": "FICSMAS Actual Snow",
+                        "Amount": "2"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Sparkly Fireworks",
                         "Amount": "1"
                     }
                 ],
@@ -735,6 +731,53 @@
                 ],
                 "ProducedIn": "Assembler",
                 "ManufactoringDuration": "24.000000"
+            }
+        ]
+    },
+    {
+        "Category": "Black Powder",
+        "Data": [
+            {
+                "DisplayName": "Black Powder",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Coal",
+                        "Amount": "1"
+                    },
+                    {
+                        "ItemClass": "Sulfur",
+                        "Amount": "1"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Black Powder",
+                        "Amount": "2"
+                    }
+                ],
+                "ProducedIn": "Assembler",
+                "ManufactoringDuration": "4.000000"
+            },
+            {
+                "DisplayName": "Alternate: Fine Black Powder",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Sulfur",
+                        "Amount": "1"
+                    },
+                    {
+                        "ItemClass": "Compacted Coal",
+                        "Amount": "2"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Black Powder",
+                        "Amount": "6"
+                    }
+                ],
+                "ProducedIn": "Assembler",
+                "ManufactoringDuration": "8.000000"
             }
         ]
     },
@@ -841,75 +884,6 @@
                 ],
                 "ProducedIn": "Foundry",
                 "ManufactoringDuration": "12.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Dark Matter Residue",
-        "Data": [
-            {
-                "DisplayName": "Dark Matter Residue",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Reanimated SAM",
-                        "Amount": "5"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Dark Matter Residue",
-                        "Amount": "10000"
-                    }
-                ],
-                "ProducedIn": "Converter",
-                "ManufactoringDuration": "6.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Black Powder",
-        "Data": [
-            {
-                "DisplayName": "Black Powder",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Coal",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Sulfur",
-                        "Amount": "1"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Black Powder",
-                        "Amount": "2"
-                    }
-                ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "4.000000"
-            },
-            {
-                "DisplayName": "Alternate: Fine Black Powder",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Sulfur",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Compacted Coal",
-                        "Amount": "2"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Black Powder",
-                        "Amount": "6"
-                    }
-                ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "8.000000"
             }
         ]
     },
@@ -1193,6 +1167,82 @@
         ]
     },
     {
+        "Category": "Turbofuel",
+        "Data": [
+            {
+                "DisplayName": "Turbofuel",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Fuel",
+                        "Amount": "6000"
+                    },
+                    {
+                        "ItemClass": "Compacted Coal",
+                        "Amount": "4"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Turbofuel",
+                        "Amount": "5000"
+                    }
+                ],
+                "ProducedIn": "Refinery",
+                "ManufactoringDuration": "16.000000"
+            },
+            {
+                "DisplayName": "Alternate: Turbo Heavy Fuel",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Heavy Oil Residue",
+                        "Amount": "5000"
+                    },
+                    {
+                        "ItemClass": "Compacted Coal",
+                        "Amount": "4"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Turbofuel",
+                        "Amount": "4000"
+                    }
+                ],
+                "ProducedIn": "Refinery",
+                "ManufactoringDuration": "8.000000"
+            },
+            {
+                "DisplayName": "Alternate: Turbo Blend Fuel",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Fuel",
+                        "Amount": "2000"
+                    },
+                    {
+                        "ItemClass": "Heavy Oil Residue",
+                        "Amount": "4000"
+                    },
+                    {
+                        "ItemClass": "Sulfur",
+                        "Amount": "3"
+                    },
+                    {
+                        "ItemClass": "Petroleum Coke",
+                        "Amount": "3"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Turbofuel",
+                        "Amount": "6000"
+                    }
+                ],
+                "ProducedIn": "Blender",
+                "ManufactoringDuration": "8.000000"
+            }
+        ]
+    },
+    {
         "Category": "Diamonds",
         "Data": [
             {
@@ -1291,82 +1341,6 @@
         ]
     },
     {
-        "Category": "Turbofuel",
-        "Data": [
-            {
-                "DisplayName": "Turbofuel",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Fuel",
-                        "Amount": "6000"
-                    },
-                    {
-                        "ItemClass": "Compacted Coal",
-                        "Amount": "4"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Turbofuel",
-                        "Amount": "5000"
-                    }
-                ],
-                "ProducedIn": "Refinery",
-                "ManufactoringDuration": "16.000000"
-            },
-            {
-                "DisplayName": "Alternate: Turbo Heavy Fuel",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Heavy Oil Residue",
-                        "Amount": "5000"
-                    },
-                    {
-                        "ItemClass": "Compacted Coal",
-                        "Amount": "4"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Turbofuel",
-                        "Amount": "4000"
-                    }
-                ],
-                "ProducedIn": "Refinery",
-                "ManufactoringDuration": "8.000000"
-            },
-            {
-                "DisplayName": "Alternate: Turbo Blend Fuel",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Fuel",
-                        "Amount": "2000"
-                    },
-                    {
-                        "ItemClass": "Heavy Oil Residue",
-                        "Amount": "4000"
-                    },
-                    {
-                        "ItemClass": "Sulfur",
-                        "Amount": "3"
-                    },
-                    {
-                        "ItemClass": "Petroleum Coke",
-                        "Amount": "3"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Turbofuel",
-                        "Amount": "6000"
-                    }
-                ],
-                "ProducedIn": "Blender",
-                "ManufactoringDuration": "8.000000"
-            }
-        ]
-    },
-    {
         "Category": "Concrete",
         "Data": [
             {
@@ -1452,24 +1426,28 @@
         ]
     },
     {
-        "Category": "Empty Canister",
+        "Category": "Smokeless Powder",
         "Data": [
             {
-                "DisplayName": "Empty Canister",
+                "DisplayName": "Smokeless Powder",
                 "Ingredients": [
                     {
-                        "ItemClass": "Plastic",
+                        "ItemClass": "Black Powder",
                         "Amount": "2"
+                    },
+                    {
+                        "ItemClass": "Heavy Oil Residue",
+                        "Amount": "1000"
                     }
                 ],
                 "Product": [
                     {
-                        "ItemClass": "Empty Canister",
-                        "Amount": "4"
+                        "ItemClass": "Smokeless Powder",
+                        "Amount": "2"
                     }
                 ],
-                "ProducedIn": "Constructor",
-                "ManufactoringDuration": "4.000000"
+                "ProducedIn": "Refinery",
+                "ManufactoringDuration": "6.000000"
             }
         ]
     },
@@ -1585,32 +1563,6 @@
                 ],
                 "ProducedIn": "Foundry",
                 "ManufactoringDuration": "12.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Smokeless Powder",
-        "Data": [
-            {
-                "DisplayName": "Smokeless Powder",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Black Powder",
-                        "Amount": "2"
-                    },
-                    {
-                        "ItemClass": "Heavy Oil Residue",
-                        "Amount": "1000"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Smokeless Powder",
-                        "Amount": "2"
-                    }
-                ],
-                "ProducedIn": "Refinery",
-                "ManufactoringDuration": "6.000000"
             }
         ]
     },
@@ -2015,32 +1967,6 @@
         ]
     },
     {
-        "Category": "Rifle Ammo",
-        "Data": [
-            {
-                "DisplayName": "Rifle Ammo",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Copper Sheet",
-                        "Amount": "3"
-                    },
-                    {
-                        "ItemClass": "Smokeless Powder",
-                        "Amount": "2"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Rifle Ammo",
-                        "Amount": "15"
-                    }
-                ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "12.000000"
-            }
-        ]
-    },
-    {
         "Category": "FICSMAS Ornament Bundle",
         "Data": [
             {
@@ -2260,28 +2186,6 @@
                 ],
                 "ProducedIn": "Converter",
                 "ManufactoringDuration": "4.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Empty Fluid Tank",
-        "Data": [
-            {
-                "DisplayName": "Empty Fluid Tank",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Aluminum Ingot",
-                        "Amount": "1"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Empty Fluid Tank",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Constructor",
-                "ManufactoringDuration": "1.000000"
             }
         ]
     },
@@ -2690,36 +2594,6 @@
         ]
     },
     {
-        "Category": "Gas Filter",
-        "Data": [
-            {
-                "DisplayName": "Gas Filter",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Fabric",
-                        "Amount": "2"
-                    },
-                    {
-                        "ItemClass": "Coal",
-                        "Amount": "4"
-                    },
-                    {
-                        "ItemClass": "Iron Plate",
-                        "Amount": "2"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Gas Filter",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Manufacturer",
-                "ManufactoringDuration": "8.000000"
-            }
-        ]
-    },
-    {
         "Category": "Nitric Acid",
         "Data": [
             {
@@ -2745,32 +2619,6 @@
                     }
                 ],
                 "ProducedIn": "Blender",
-                "ManufactoringDuration": "6.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Nobelisk",
-        "Data": [
-            {
-                "DisplayName": "Nobelisk",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Black Powder",
-                        "Amount": "2"
-                    },
-                    {
-                        "ItemClass": "Steel Pipe",
-                        "Amount": "2"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Nobelisk",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Assembler",
                 "ManufactoringDuration": "6.000000"
             }
         ]
@@ -2901,36 +2749,6 @@
                 ],
                 "ProducedIn": "Assembler",
                 "ManufactoringDuration": "60.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Turbo Rifle Ammo",
-        "Data": [
-            {
-                "DisplayName": "Turbo Rifle Ammo",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Rifle Ammo",
-                        "Amount": "25"
-                    },
-                    {
-                        "ItemClass": "Aluminum Casing",
-                        "Amount": "3"
-                    },
-                    {
-                        "ItemClass": "Turbofuel",
-                        "Amount": "3000"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Turbo Rifle Ammo",
-                        "Amount": "50"
-                    }
-                ],
-                "ProducedIn": "Blender",
-                "ManufactoringDuration": "12.000000"
             }
         ]
     },
@@ -3170,28 +2988,6 @@
         ]
     },
     {
-        "Category": "Iron Rebar",
-        "Data": [
-            {
-                "DisplayName": "Iron Rebar",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Iron Rod",
-                        "Amount": "1"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Iron Rebar",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Constructor",
-                "ManufactoringDuration": "4.000000"
-            }
-        ]
-    },
-    {
         "Category": "High-Speed Connector",
         "Data": [
             {
@@ -3285,36 +3081,6 @@
         ]
     },
     {
-        "Category": "Iodine-Infused Filter",
-        "Data": [
-            {
-                "DisplayName": "Iodine-Infused Filter",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Gas Filter",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Quickwire",
-                        "Amount": "8"
-                    },
-                    {
-                        "ItemClass": "Aluminum Casing",
-                        "Amount": "1"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Iodine-Infused Filter",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Manufacturer",
-                "ManufactoringDuration": "16.000000"
-            }
-        ]
-    },
-    {
         "Category": "Rocket Fuel",
         "Data": [
             {
@@ -3374,92 +3140,6 @@
                 ],
                 "ProducedIn": "Blender",
                 "ManufactoringDuration": "2.400000"
-            }
-        ]
-    },
-    {
-        "Category": "Nuke Nobelisk",
-        "Data": [
-            {
-                "DisplayName": "Nuke Nobelisk",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Nobelisk",
-                        "Amount": "5"
-                    },
-                    {
-                        "ItemClass": "Encased Uranium Cell",
-                        "Amount": "20"
-                    },
-                    {
-                        "ItemClass": "Smokeless Powder",
-                        "Amount": "10"
-                    },
-                    {
-                        "ItemClass": "AI Limiter",
-                        "Amount": "6"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Nuke Nobelisk",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Manufacturer",
-                "ManufactoringDuration": "120.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Gas Nobelisk",
-        "Data": [
-            {
-                "DisplayName": "Gas Nobelisk",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Nobelisk",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Biomass",
-                        "Amount": "10"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Gas Nobelisk",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "12.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Cluster Nobelisk",
-        "Data": [
-            {
-                "DisplayName": "Cluster Nobelisk",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Nobelisk",
-                        "Amount": "3"
-                    },
-                    {
-                        "ItemClass": "Smokeless Powder",
-                        "Amount": "4"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Cluster Nobelisk",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "24.000000"
             }
         ]
     },
@@ -3643,114 +3323,6 @@
                 ],
                 "ProducedIn": "Assembler",
                 "ManufactoringDuration": "12.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Explosive Rebar",
-        "Data": [
-            {
-                "DisplayName": "Explosive Rebar",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Iron Rebar",
-                        "Amount": "2"
-                    },
-                    {
-                        "ItemClass": "Smokeless Powder",
-                        "Amount": "2"
-                    },
-                    {
-                        "ItemClass": "Steel Pipe",
-                        "Amount": "2"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Explosive Rebar",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Manufacturer",
-                "ManufactoringDuration": "12.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Stun Rebar",
-        "Data": [
-            {
-                "DisplayName": "Stun Rebar",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Iron Rebar",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Quickwire",
-                        "Amount": "5"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Stun Rebar",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "6.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Shatter Rebar",
-        "Data": [
-            {
-                "DisplayName": "Shatter Rebar",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Iron Rebar",
-                        "Amount": "2"
-                    },
-                    {
-                        "ItemClass": "Quartz Crystal",
-                        "Amount": "3"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Shatter Rebar",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "12.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Homing Rifle Ammo",
-        "Data": [
-            {
-                "DisplayName": "Homing Rifle Ammo",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Rifle Ammo",
-                        "Amount": "20"
-                    },
-                    {
-                        "ItemClass": "High-Speed Connector",
-                        "Amount": "1"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Homing Rifle Ammo",
-                        "Amount": "10"
-                    }
-                ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "24.000000"
             }
         ]
     },
@@ -4200,6 +3772,82 @@
         ]
     },
     {
+        "Category": "Computer",
+        "Data": [
+            {
+                "DisplayName": "Computer",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Circuit Board",
+                        "Amount": "4"
+                    },
+                    {
+                        "ItemClass": "Cable",
+                        "Amount": "8"
+                    },
+                    {
+                        "ItemClass": "Plastic",
+                        "Amount": "16"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Computer",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Manufacturer",
+                "ManufactoringDuration": "24.000000"
+            },
+            {
+                "DisplayName": "Alternate: Crystal Computer",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Circuit Board",
+                        "Amount": "3"
+                    },
+                    {
+                        "ItemClass": "Crystal Oscillator",
+                        "Amount": "1"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Computer",
+                        "Amount": "2"
+                    }
+                ],
+                "ProducedIn": "Assembler",
+                "ManufactoringDuration": "36.000000"
+            },
+            {
+                "DisplayName": "Alternate: Caterium Computer",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Circuit Board",
+                        "Amount": "4"
+                    },
+                    {
+                        "ItemClass": "Quickwire",
+                        "Amount": "14"
+                    },
+                    {
+                        "ItemClass": "Rubber",
+                        "Amount": "6"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Computer",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Manufacturer",
+                "ManufactoringDuration": "16.000000"
+            }
+        ]
+    },
+    {
         "Category": "Superposition Oscillator",
         "Data": [
             {
@@ -4306,108 +3954,6 @@
                 ],
                 "ProducedIn": "Manufacturer",
                 "ManufactoringDuration": "48.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Computer",
-        "Data": [
-            {
-                "DisplayName": "Computer",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Circuit Board",
-                        "Amount": "4"
-                    },
-                    {
-                        "ItemClass": "Cable",
-                        "Amount": "8"
-                    },
-                    {
-                        "ItemClass": "Plastic",
-                        "Amount": "16"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Computer",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Manufacturer",
-                "ManufactoringDuration": "24.000000"
-            },
-            {
-                "DisplayName": "Alternate: Crystal Computer",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Circuit Board",
-                        "Amount": "3"
-                    },
-                    {
-                        "ItemClass": "Crystal Oscillator",
-                        "Amount": "1"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Computer",
-                        "Amount": "2"
-                    }
-                ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "36.000000"
-            },
-            {
-                "DisplayName": "Alternate: Caterium Computer",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Circuit Board",
-                        "Amount": "4"
-                    },
-                    {
-                        "ItemClass": "Quickwire",
-                        "Amount": "14"
-                    },
-                    {
-                        "ItemClass": "Rubber",
-                        "Amount": "6"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Computer",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Manufacturer",
-                "ManufactoringDuration": "16.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Pulse Nobelisk",
-        "Data": [
-            {
-                "DisplayName": "Pulse Nobelisk",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Nobelisk",
-                        "Amount": "5"
-                    },
-                    {
-                        "ItemClass": "Crystal Oscillator",
-                        "Amount": "1"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Pulse Nobelisk",
-                        "Amount": "5"
-                    }
-                ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "60.000000"
             }
         ]
     },
@@ -4556,133 +4102,6 @@
         ]
     },
     {
-        "Category": "Alien Power Matrix",
-        "Data": [
-            {
-                "DisplayName": "Alien Power Matrix",
-                "Ingredients": [
-                    {
-                        "ItemClass": "SAM Fluctuator",
-                        "Amount": "5"
-                    },
-                    {
-                        "ItemClass": "Power Shard",
-                        "Amount": "3"
-                    },
-                    {
-                        "ItemClass": "Superposition Oscillator",
-                        "Amount": "3"
-                    },
-                    {
-                        "ItemClass": "Excited Photonic Matter",
-                        "Amount": "24000"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Alien Power Matrix",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Dark Matter Residue",
-                        "Amount": "24000"
-                    }
-                ],
-                "ProducedIn": "Quantum Encoder",
-                "ManufactoringDuration": "24.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Cooling System",
-        "Data": [
-            {
-                "DisplayName": "Cooling System",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Heat Sink",
-                        "Amount": "2"
-                    },
-                    {
-                        "ItemClass": "Rubber",
-                        "Amount": "2"
-                    },
-                    {
-                        "ItemClass": "Water",
-                        "Amount": "5000"
-                    },
-                    {
-                        "ItemClass": "Nitrogen Gas",
-                        "Amount": "25000"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Cooling System",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Blender",
-                "ManufactoringDuration": "10.000000"
-            },
-            {
-                "DisplayName": "Alternate: Cooling Device",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Heat Sink",
-                        "Amount": "4"
-                    },
-                    {
-                        "ItemClass": "Motor",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Nitrogen Gas",
-                        "Amount": "24000"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Cooling System",
-                        "Amount": "2"
-                    }
-                ],
-                "ProducedIn": "Blender",
-                "ManufactoringDuration": "24.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Modular Engine",
-        "Data": [
-            {
-                "DisplayName": "Modular Engine",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Motor",
-                        "Amount": "2"
-                    },
-                    {
-                        "ItemClass": "Rubber",
-                        "Amount": "15"
-                    },
-                    {
-                        "ItemClass": "Smart Plating",
-                        "Amount": "2"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Modular Engine",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Manufacturer",
-                "ManufactoringDuration": "60.000000"
-            }
-        ]
-    },
-    {
         "Category": "Radio Control Unit",
         "Data": [
             {
@@ -4801,6 +4220,95 @@
         ]
     },
     {
+        "Category": "Cooling System",
+        "Data": [
+            {
+                "DisplayName": "Cooling System",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Heat Sink",
+                        "Amount": "2"
+                    },
+                    {
+                        "ItemClass": "Rubber",
+                        "Amount": "2"
+                    },
+                    {
+                        "ItemClass": "Water",
+                        "Amount": "5000"
+                    },
+                    {
+                        "ItemClass": "Nitrogen Gas",
+                        "Amount": "25000"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Cooling System",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Blender",
+                "ManufactoringDuration": "10.000000"
+            },
+            {
+                "DisplayName": "Alternate: Cooling Device",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Heat Sink",
+                        "Amount": "4"
+                    },
+                    {
+                        "ItemClass": "Motor",
+                        "Amount": "1"
+                    },
+                    {
+                        "ItemClass": "Nitrogen Gas",
+                        "Amount": "24000"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Cooling System",
+                        "Amount": "2"
+                    }
+                ],
+                "ProducedIn": "Blender",
+                "ManufactoringDuration": "24.000000"
+            }
+        ]
+    },
+    {
+        "Category": "Modular Engine",
+        "Data": [
+            {
+                "DisplayName": "Modular Engine",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Motor",
+                        "Amount": "2"
+                    },
+                    {
+                        "ItemClass": "Rubber",
+                        "Amount": "15"
+                    },
+                    {
+                        "ItemClass": "Smart Plating",
+                        "Amount": "2"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Modular Engine",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Manufacturer",
+                "ManufactoringDuration": "60.000000"
+            }
+        ]
+    },
+    {
         "Category": "Uranium Waste",
         "Data": [
             {
@@ -4823,6 +4331,95 @@
                 ],
                 "ProducedIn": "Nuclear Power Plant",
                 "ManufactoringDuration": "300"
+            }
+        ]
+    },
+    {
+        "Category": "Pressure Conversion Cube",
+        "Data": [
+            {
+                "DisplayName": "Pressure Conversion Cube",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Fused Modular Frame",
+                        "Amount": "1"
+                    },
+                    {
+                        "ItemClass": "Radio Control Unit",
+                        "Amount": "2"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Pressure Conversion Cube",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Assembler",
+                "ManufactoringDuration": "60.000000"
+            }
+        ]
+    },
+    {
+        "Category": "Turbo Motor",
+        "Data": [
+            {
+                "DisplayName": "Turbo Motor",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Cooling System",
+                        "Amount": "4"
+                    },
+                    {
+                        "ItemClass": "Radio Control Unit",
+                        "Amount": "2"
+                    },
+                    {
+                        "ItemClass": "Motor",
+                        "Amount": "4"
+                    },
+                    {
+                        "ItemClass": "Rubber",
+                        "Amount": "24"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Turbo Motor",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Manufacturer",
+                "ManufactoringDuration": "32.000000"
+            },
+            {
+                "DisplayName": "Alternate: Turbo Electric Motor",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Motor",
+                        "Amount": "7"
+                    },
+                    {
+                        "ItemClass": "Radio Control Unit",
+                        "Amount": "9"
+                    },
+                    {
+                        "ItemClass": "Electromagnetic Control Rod",
+                        "Amount": "5"
+                    },
+                    {
+                        "ItemClass": "Rotor",
+                        "Amount": "7"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Turbo Motor",
+                        "Amount": "3"
+                    }
+                ],
+                "ProducedIn": "Manufacturer",
+                "ManufactoringDuration": "64.000000"
             }
         ]
     },
@@ -4911,95 +4508,6 @@
         ]
     },
     {
-        "Category": "Turbo Motor",
-        "Data": [
-            {
-                "DisplayName": "Turbo Motor",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Cooling System",
-                        "Amount": "4"
-                    },
-                    {
-                        "ItemClass": "Radio Control Unit",
-                        "Amount": "2"
-                    },
-                    {
-                        "ItemClass": "Motor",
-                        "Amount": "4"
-                    },
-                    {
-                        "ItemClass": "Rubber",
-                        "Amount": "24"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Turbo Motor",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Manufacturer",
-                "ManufactoringDuration": "32.000000"
-            },
-            {
-                "DisplayName": "Alternate: Turbo Electric Motor",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Motor",
-                        "Amount": "7"
-                    },
-                    {
-                        "ItemClass": "Radio Control Unit",
-                        "Amount": "9"
-                    },
-                    {
-                        "ItemClass": "Electromagnetic Control Rod",
-                        "Amount": "5"
-                    },
-                    {
-                        "ItemClass": "Rotor",
-                        "Amount": "7"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Turbo Motor",
-                        "Amount": "3"
-                    }
-                ],
-                "ProducedIn": "Manufacturer",
-                "ManufactoringDuration": "64.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Pressure Conversion Cube",
-        "Data": [
-            {
-                "DisplayName": "Pressure Conversion Cube",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Fused Modular Frame",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Radio Control Unit",
-                        "Amount": "2"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Pressure Conversion Cube",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "60.000000"
-            }
-        ]
-    },
-    {
         "Category": "Non-Fissile Uranium",
         "Data": [
             {
@@ -5071,6 +4579,66 @@
         ]
     },
     {
+        "Category": "Nuclear Pasta",
+        "Data": [
+            {
+                "DisplayName": "Nuclear Pasta",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Copper Powder",
+                        "Amount": "200"
+                    },
+                    {
+                        "ItemClass": "Pressure Conversion Cube",
+                        "Amount": "1"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Nuclear Pasta",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Particle Accelerator",
+                "ManufactoringDuration": "120.000000"
+            }
+        ]
+    },
+    {
+        "Category": "Thermal Propulsion Rocket",
+        "Data": [
+            {
+                "DisplayName": "Thermal Propulsion Rocket",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Modular Engine",
+                        "Amount": "5"
+                    },
+                    {
+                        "ItemClass": "Turbo Motor",
+                        "Amount": "2"
+                    },
+                    {
+                        "ItemClass": "Cooling System",
+                        "Amount": "6"
+                    },
+                    {
+                        "ItemClass": "Fused Modular Frame",
+                        "Amount": "2"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Thermal Propulsion Rocket",
+                        "Amount": "2"
+                    }
+                ],
+                "ProducedIn": "Manufacturer",
+                "ManufactoringDuration": "120.000000"
+            }
+        ]
+    },
+    {
         "Category": "Neural-Quantum Processor",
         "Data": [
             {
@@ -5135,66 +4703,6 @@
         ]
     },
     {
-        "Category": "Thermal Propulsion Rocket",
-        "Data": [
-            {
-                "DisplayName": "Thermal Propulsion Rocket",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Modular Engine",
-                        "Amount": "5"
-                    },
-                    {
-                        "ItemClass": "Turbo Motor",
-                        "Amount": "2"
-                    },
-                    {
-                        "ItemClass": "Cooling System",
-                        "Amount": "6"
-                    },
-                    {
-                        "ItemClass": "Fused Modular Frame",
-                        "Amount": "2"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Thermal Propulsion Rocket",
-                        "Amount": "2"
-                    }
-                ],
-                "ProducedIn": "Manufacturer",
-                "ManufactoringDuration": "120.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Nuclear Pasta",
-        "Data": [
-            {
-                "DisplayName": "Nuclear Pasta",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Copper Powder",
-                        "Amount": "200"
-                    },
-                    {
-                        "ItemClass": "Pressure Conversion Cube",
-                        "Amount": "1"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Nuclear Pasta",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Particle Accelerator",
-                "ManufactoringDuration": "120.000000"
-            }
-        ]
-    },
-    {
         "Category": "Plutonium Pellet",
         "Data": [
             {
@@ -5216,6 +4724,40 @@
                     }
                 ],
                 "ProducedIn": "Particle Accelerator",
+                "ManufactoringDuration": "60.000000"
+            }
+        ]
+    },
+    {
+        "Category": "Singularity Cell",
+        "Data": [
+            {
+                "DisplayName": "Singularity Cell",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Nuclear Pasta",
+                        "Amount": "1"
+                    },
+                    {
+                        "ItemClass": "Dark Matter Crystal",
+                        "Amount": "20"
+                    },
+                    {
+                        "ItemClass": "Iron Plate",
+                        "Amount": "100"
+                    },
+                    {
+                        "ItemClass": "Concrete",
+                        "Amount": "200"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Singularity Cell",
+                        "Amount": "10"
+                    }
+                ],
+                "ProducedIn": "Manufacturer",
                 "ManufactoringDuration": "60.000000"
             }
         ]
@@ -5285,40 +4827,6 @@
                 ],
                 "ProducedIn": "Blender",
                 "ManufactoringDuration": "120.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Singularity Cell",
-        "Data": [
-            {
-                "DisplayName": "Singularity Cell",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Nuclear Pasta",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Dark Matter Crystal",
-                        "Amount": "20"
-                    },
-                    {
-                        "ItemClass": "Iron Plate",
-                        "Amount": "100"
-                    },
-                    {
-                        "ItemClass": "Concrete",
-                        "Amount": "200"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Singularity Cell",
-                        "Amount": "10"
-                    }
-                ],
-                "ProducedIn": "Manufacturer",
-                "ManufactoringDuration": "60.000000"
             }
         ]
     },
