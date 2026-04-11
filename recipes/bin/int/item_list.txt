@@ -1,5 +1,4 @@
 Aluminum Ingot
-Iodine-Infused Filter
 Iron Plate
 Iron Rod
 Iron Ingot
@@ -12,7 +11,6 @@ Compacted Coal
 Copper Sheet
 Modular Frame
 Screws
-Empty Fluid Tank
 Crystal Oscillator
 Motor
 Supercomputer
@@ -35,7 +33,6 @@ Ficsite Ingot
 Biochemical Sculptor
 Assembly Director System
 Caterium Ingot
-Empty Canister
 Circuit Board
 Plastic
 Encased Industrial Beam
@@ -76,7 +73,6 @@ Black Powder
 Ficsonium
 Singularity Cell
 Ballistic Warp Drive
-Gas Filter
 Smokeless Powder
 FICSMAS Wonder Star
 FICSMAS Ornament Bundle
@@ -89,24 +85,10 @@ Red FICSMAS Ornament
 Blue FICSMAS Ornament
 Copper FICSMAS Ornament
 Iron FICSMAS Ornament
-Explosive Rebar
-Stun Rebar
-Iron Rebar
-Homing Rifle Ammo
-Cluster Nobelisk
-Nobelisk
-Gas Nobelisk
-Nuke Nobelisk
-Pulse Nobelisk
 Sweet Fireworks
 Fancy Fireworks
 Sparkly Fireworks
 Snowball
 Portable Miner
-Shatter Rebar
-Turbo Rifle Ammo
-Rifle Ammo
-Fabric
 Power Shard
 Ficsonium Fuel Rod
-Alien Power Matrix

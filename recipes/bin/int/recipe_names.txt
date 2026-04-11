@@ -42,8 +42,6 @@ Steel Beam
 Steel Pipe
 Steel Ingot
 Versatile Framework
-Alternate: Steel Canister
-Empty Canister
 Alternate: Steamed Copper Sheet
 Alternate: Rubber Concrete
 Alternate: Pure Quartz Crystal
@@ -85,7 +83,6 @@ Smart Plating
 Alternate: Copper Alloy Ingot
 Alternate: Coke Steel Ingot
 Alternate: Coated Iron Plate
-Alternate: Coated Iron Canister
 Alternate: Coated Cable
 Alternate: Bolted Frame
 Alternate: Adhered Iron Plate
@@ -116,7 +113,6 @@ Alternate: Plutonium Fuel Unit
 Alternate: OC Supercomputer
 Heat Sink
 Fused Modular Frame
-Empty Fluid Tank
 Alternate: Instant Scrap
 Alternate: Instant Plutonium Cell
 Alternate: Heat-Fused Frame
@@ -181,25 +177,9 @@ Ficsonium
 Ficsonium Fuel Rod
 Singularity Cell
 Ballistic Warp Drive
-Iodine-Infused Filter
 Quickwire
 Black Powder
-Iron Rebar
-Alien Power Matrix
-Homing Rifle Ammo
-Stun Rebar
-Gas Filter
-Gas Nobelisk
-Alternate: Polyester Fabric
 Synthetic Power Shard
-Pulse Nobelisk
-Shatter Rebar
-Turbo Rifle Ammo
-Nuke Nobelisk
-Rifle Ammo
-Explosive Rebar
-Cluster Nobelisk
-Nobelisk
 Smokeless Powder
 FICSMAS Wreath
 Snowball

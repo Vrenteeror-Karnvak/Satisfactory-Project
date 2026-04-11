@@ -20,12 +20,15 @@
         "ItemClass": "Aluminum Ingot"
     },
     {   
-        "max_loops": "10000",
-        "max_time": "1",
+        "max_loops": "10000000",
+        "max_time": "60",
         "unit_of_time": "Minutes"
     },
     {
-        "update_frequency": "30",
+        "update_frequency": "60",
         "unit_of_time": "Seconds"
+    },
+    {
+        "number_items_to_test": "56"
     }
 ]

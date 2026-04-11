@@ -197,7 +197,7 @@ void Recipe::set_primary_product(const string& primary_name) {
             return;
         }
     }
-    // If primary product not found, do nothing (it was already removed or doesn't exist)
+    // If primary product not found, do nothing
 }
 
 string Recipe::get_name() const {
@@ -336,7 +336,7 @@ bool Recipe::operator!=(const Recipe& other) const {
 
 Recipe& Recipe::operator+=(const Recipe& other) {
     if (!same_name(other)) {
-        throw invalid_argument("Cannot combine different recipes.");
+        throw invalid_argument("Cannot combine different recipes.\n" + name + " != " + other.get_name() + ".");
     }
 
     for (int i = 0; i < ingredients.size(); i++) {
@@ -356,7 +356,7 @@ Recipe Recipe::operator+(const Recipe& other) const {
 
 Recipe& Recipe::operator-=(const Recipe& other) {
     if (!same_name(other)) {
-        throw invalid_argument("Cannot combine different recipes.");
+        throw invalid_argument("Cannot combine different recipes.\n" + name + " != " + other.get_name() + ".");
     }
 
     for (int i = 0; i < ingredients.size(); i++) {
