@@ -31,11 +31,42 @@ int main(int argc, char* argv[]) {
     json water_object = json::object();
 
     string ingredient;
+    int amount;
     vector<string> Class_Name;
     vector<string> Display_Name;
+    vector<string> fluids;
 
     bool to_delete = false; // Is the recipe to be removed?
     bool consumable = false; // Does the recipe make a consumable?
+
+    for (const auto& block : recipe) {
+        if (block.value("DisplayName", "").find("Packaged") != string::npos) {
+            fluids.push_back(block["Ingredients"].at(0).value("ItemClass", ""));
+        }
+    }
+    fluids.push_back("Dissolved Silica");
+    fluids.push_back("Excited Photonic Matter");
+    fluids.push_back("Dark Matter Residue");
+    
+    for (auto& block : recipe) {
+        for (auto& data : block["Ingredients"]) {
+            ingredient = data.value("ItemClass", "");
+            if (find(fluids.begin(), fluids.end(), ingredient) != fluids.end()) {
+                amount = stoi(data.value("Amount", ""));
+                amount /= 1000;
+                data["Amount"] = to_string(amount);
+            }
+        }
+
+        for (auto& data : block["Product"]) {
+            ingredient = data.value("ItemClass", "");
+            if (find(fluids.begin(), fluids.end(), ingredient) != fluids.end()) {
+                amount = stoi(data.value("Amount", ""));
+                amount /= 1000;
+                data["Amount"] = to_string(amount);
+            }
+        }
+    }
 
     for (const auto& block : recipe) {
         to_delete = false;

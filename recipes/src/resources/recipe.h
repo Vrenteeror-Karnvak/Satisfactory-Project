@@ -22,6 +22,7 @@ class Recipe {
         void set_recipe(const json& data);
         void set_terminal_recipe(const Resource product);
         void set_name(const string title);
+        void set_ID(const string id);
         void set_factory(const string building);
         void set_machine_speed(const double rate);
         void set_ingredients(const vector<Resource> ingredient);
@@ -33,6 +34,7 @@ class Recipe {
         void merge_recipes(const vector<Recipe> data);
         void set_primary_product(const string& primary_name);
         string get_name() const;
+        string get_ID() const;
         string get_factory() const;
         double get_machine_speed() const;
         vector<Resource> get_ingredients() const;
@@ -60,6 +62,7 @@ class Recipe {
 
     private:
         string name; // the name of the recipe
+        string ID; // the incrementor values that made the recipe
         string factory; // the name of the machine the recipe is made it
         double machine_speed; // the number of seconds it takes for the machine to operate once
         vector<Resource> ingredients; // the ingredients of the recipe
