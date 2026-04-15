@@ -1,0 +1,12 @@
+dat/combined_recipes.json
+dat/en-US.json
+dat/name_pairs.json
+dat/recipes.json
+dat/results.json
+dat/satisfactory_vault
+dat/terminal_resources.json
+dat/test_recipe.json
+dat/test_results.json
+dat/test_results_mega_compressed.json
+dat/test_results_mega.json
+dat/test_status.log

@@ -1,0 +1,11 @@
+int/byproducts.json
+int/consumable_recipes.json
+int/item_analysis.txt
+int/item_list.txt
+int/original_recipe_names.txt
+int/recipe_names.txt
+int/recipes_fixed.json
+int/recipes_raw.json
+int/recipes_removed.json
+int/recipes_sorted.json
+int/recipes_trimmed.json
