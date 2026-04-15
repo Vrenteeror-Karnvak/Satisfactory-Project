@@ -1,0 +1,64 @@
+Makefile -> recipes
+
+Initializer : dat/recipes.json
+    -> int/byproducts.json
+
+Recipe_Extractor : dat/en-US.json
+    -> dat/name_pairs.json
+    -> dat/terminal_resources.json
+    -> int/recipe_raw.json
+
+Recipe_Fixer : dat/name_pairs.json, int/recipe_raw.json
+    -> int/recipes_fixed.json
+    
+: dat/name_pairs.json
+        -> int/original_recipe_names.txt
+
+Recipe_Trimmer : int/recipes_fixed.json
+    -> int/recipes_trimmed.json
+    -> int/recipes_removed.json
+    -> int/consumable_recipes.json
+    -> int/recipe_names.txt
+
+Recipe_Sorter : dat/name_pairs.json, int/recipes_trimmed.json
+    -> int/recipes_sorted.json
+
+Recipe_Sorter_Sorter : int/recipes_sorted.json
+    -> dat/recipes.json
+    -> int/item_list.txt
+    -> int/item_analysis.txt
+
+
+
+Makefile -> run_recipes
+	recipe_extractor
+	recipe_fixer
+	recipe_trimmer
+	recipe_sorter
+	recipe_sorter_sorter
+
+
+
+Makefile -> resource
+
+resource/* :
+    -> resource/recipe.h
+    -> resource/resource.h
+    -> resource/fraction.h
+
+main/main : dat/recipes.json, dat/test_recipe.json, dat/terminal_resources.json
+    -> dat/test_results.json
+    -> dat/test_status.log
+
+main/mega : dat/recipes.json, dat/test_recipe.json, dat/terminal_resources.json
+    -> dat/test_results_mega.json
+    -> dat/test_results_mega_compressed.json
+
+main/test : dat/recipes.json, dat/test_recipe.json, dat/terminal_resources.json
+    -> dat/test_results.json
+    -> dat/test_status.log
+
+Makefile -> Obsidian
+
+Obsidian : dat/recipes.json
+    -> dat/satisfactory_vault/*
