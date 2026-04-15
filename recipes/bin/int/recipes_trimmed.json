@@ -55,11 +55,11 @@
         "Ingredients": [
             {
                 "ItemClass": "Fuel",
-                "Amount": "4000"
+                "Amount": "4"
             },
             {
                 "ItemClass": "Nitrogen Gas",
-                "Amount": "3000"
+                "Amount": "3"
             },
             {
                 "ItemClass": "Sulfur",
@@ -73,7 +73,7 @@
         "Product": [
             {
                 "ItemClass": "Rocket Fuel",
-                "Amount": "6000"
+                "Amount": "6"
             },
             {
                 "ItemClass": "Compacted Coal",
@@ -88,17 +88,17 @@
         "Ingredients": [
             {
                 "ItemClass": "Turbofuel",
-                "Amount": "6000"
+                "Amount": "6"
             },
             {
                 "ItemClass": "Nitric Acid",
-                "Amount": "1000"
+                "Amount": "1"
             }
         ],
         "Product": [
             {
                 "ItemClass": "Rocket Fuel",
-                "Amount": "10000"
+                "Amount": "10"
             },
             {
                 "ItemClass": "Compacted Coal",
@@ -119,7 +119,7 @@
         "Product": [
             {
                 "ItemClass": "Dark Matter Residue",
-                "Amount": "10000"
+                "Amount": "10"
             }
         ],
         "ProducedIn": "Converter",
@@ -131,7 +131,7 @@
         "Product": [
             {
                 "ItemClass": "Excited Photonic Matter",
-                "Amount": "10000"
+                "Amount": "10"
             }
         ],
         "ProducedIn": "Converter",
@@ -146,7 +146,7 @@
             },
             {
                 "ItemClass": "Dark Matter Residue",
-                "Amount": "5000"
+                "Amount": "5"
             }
         ],
         "Product": [
@@ -175,7 +175,7 @@
             },
             {
                 "ItemClass": "Excited Photonic Matter",
-                "Amount": "25000"
+                "Amount": "25"
             }
         ],
         "Product": [
@@ -185,7 +185,7 @@
             },
             {
                 "ItemClass": "Dark Matter Residue",
-                "Amount": "25000"
+                "Amount": "25"
             }
         ],
         "ProducedIn": "Quantum Encoder",
@@ -208,7 +208,7 @@
             },
             {
                 "ItemClass": "Excited Photonic Matter",
-                "Amount": "25000"
+                "Amount": "25"
             }
         ],
         "Product": [
@@ -218,7 +218,7 @@
             },
             {
                 "ItemClass": "Dark Matter Residue",
-                "Amount": "25000"
+                "Amount": "25"
             }
         ],
         "ProducedIn": "Quantum Encoder",
@@ -241,7 +241,7 @@
             },
             {
                 "ItemClass": "Excited Photonic Matter",
-                "Amount": "25000"
+                "Amount": "25"
             }
         ],
         "Product": [
@@ -251,7 +251,7 @@
             },
             {
                 "ItemClass": "Dark Matter Residue",
-                "Amount": "25000"
+                "Amount": "25"
             }
         ],
         "ProducedIn": "Quantum Encoder",
@@ -262,7 +262,7 @@
         "Ingredients": [
             {
                 "ItemClass": "Rocket Fuel",
-                "Amount": "16000"
+                "Amount": "16"
             },
             {
                 "ItemClass": "Power Shard",
@@ -272,7 +272,7 @@
         "Product": [
             {
                 "ItemClass": "Ionized Fuel",
-                "Amount": "16000"
+                "Amount": "16"
             },
             {
                 "ItemClass": "Compacted Coal",
@@ -409,7 +409,7 @@
             },
             {
                 "ItemClass": "Water",
-                "Amount": "20000"
+                "Amount": "20"
             }
         ],
         "Product": [
@@ -468,7 +468,7 @@
         "Ingredients": [
             {
                 "ItemClass": "Fuel",
-                "Amount": "6000"
+                "Amount": "6"
             },
             {
                 "ItemClass": "Compacted Coal",
@@ -478,7 +478,7 @@
         "Product": [
             {
                 "ItemClass": "Turbofuel",
-                "Amount": "5000"
+                "Amount": "5"
             }
         ],
         "ProducedIn": "Refinery",
@@ -531,13 +531,13 @@
         "Ingredients": [
             {
                 "ItemClass": "Crude Oil",
-                "Amount": "6000"
+                "Amount": "6"
             }
         ],
         "Product": [
             {
                 "ItemClass": "Fuel",
-                "Amount": "4000"
+                "Amount": "4"
             },
             {
                 "ItemClass": "Polymer Resin",
@@ -552,7 +552,7 @@
         "Ingredients": [
             {
                 "ItemClass": "Heavy Oil Residue",
-                "Amount": "4000"
+                "Amount": "4"
             }
         ],
         "Product": [
@@ -569,7 +569,7 @@
         "Ingredients": [
             {
                 "ItemClass": "Crude Oil",
-                "Amount": "3000"
+                "Amount": "3"
             }
         ],
         "Product": [
@@ -579,7 +579,7 @@
             },
             {
                 "ItemClass": "Heavy Oil Residue",
-                "Amount": "1000"
+                "Amount": "1"
             }
         ],
         "ProducedIn": "Refinery",
@@ -590,7 +590,7 @@
         "Ingredients": [
             {
                 "ItemClass": "Crude Oil",
-                "Amount": "3000"
+                "Amount": "3"
             }
         ],
         "Product": [
@@ -600,7 +600,7 @@
             },
             {
                 "ItemClass": "Heavy Oil Residue",
-                "Amount": "2000"
+                "Amount": "2"
             }
         ],
         "ProducedIn": "Refinery",
@@ -611,13 +611,13 @@
         "Ingredients": [
             {
                 "ItemClass": "Heavy Oil Residue",
-                "Amount": "6000"
+                "Amount": "6"
             }
         ],
         "Product": [
             {
                 "ItemClass": "Fuel",
-                "Amount": "4000"
+                "Amount": "4"
             }
         ],
         "ProducedIn": "Refinery",
@@ -632,7 +632,7 @@
             },
             {
                 "ItemClass": "Water",
-                "Amount": "2000"
+                "Amount": "2"
             }
         ],
         "Product": [
@@ -653,7 +653,7 @@
             },
             {
                 "ItemClass": "Water",
-                "Amount": "4000"
+                "Amount": "4"
             }
         ],
         "Product": [
@@ -708,7 +708,7 @@
         "Ingredients": [
             {
                 "ItemClass": "Crude Oil",
-                "Amount": "10000"
+                "Amount": "10"
             }
         ],
         "Product": [
@@ -750,7 +750,7 @@
             },
             {
                 "ItemClass": "Dark Matter Residue",
-                "Amount": "5000"
+                "Amount": "5"
             }
         ],
         "Product": [
@@ -767,7 +767,7 @@
         "Ingredients": [
             {
                 "ItemClass": "Dark Matter Residue",
-                "Amount": "10000"
+                "Amount": "10"
             }
         ],
         "Product": [
@@ -788,7 +788,7 @@
             },
             {
                 "ItemClass": "Water",
-                "Amount": "5000"
+                "Amount": "5"
             }
         ],
         "Product": [
@@ -805,7 +805,7 @@
         "Ingredients": [
             {
                 "ItemClass": "Heavy Oil Residue",
-                "Amount": "5000"
+                "Amount": "5"
             },
             {
                 "ItemClass": "Compacted Coal",
@@ -815,7 +815,7 @@
         "Product": [
             {
                 "ItemClass": "Turbofuel",
-                "Amount": "4000"
+                "Amount": "4"
             }
         ],
         "ProducedIn": "Refinery",
@@ -923,7 +923,7 @@
             },
             {
                 "ItemClass": "Water",
-                "Amount": "3000"
+                "Amount": "3"
             }
         ],
         "Product": [
@@ -965,7 +965,7 @@
             },
             {
                 "ItemClass": "Water",
-                "Amount": "5000"
+                "Amount": "5"
             }
         ],
         "Product": [
@@ -1003,7 +1003,7 @@
             },
             {
                 "ItemClass": "Water",
-                "Amount": "4000"
+                "Amount": "4"
             }
         ],
         "Product": [
@@ -1024,7 +1024,7 @@
             },
             {
                 "ItemClass": "Water",
-                "Amount": "4000"
+                "Amount": "4"
             }
         ],
         "Product": [
@@ -1045,7 +1045,7 @@
             },
             {
                 "ItemClass": "Water",
-                "Amount": "2000"
+                "Amount": "2"
             }
         ],
         "Product": [
@@ -1121,13 +1121,13 @@
             },
             {
                 "ItemClass": "Water",
-                "Amount": "18000"
+                "Amount": "18"
             }
         ],
         "Product": [
             {
                 "ItemClass": "Alumina Solution",
-                "Amount": "12000"
+                "Amount": "12"
             },
             {
                 "ItemClass": "Silica",
@@ -1142,7 +1142,7 @@
         "Ingredients": [
             {
                 "ItemClass": "Alumina Solution",
-                "Amount": "4000"
+                "Amount": "4"
             },
             {
                 "ItemClass": "Coal",
@@ -1156,7 +1156,7 @@
             },
             {
                 "ItemClass": "Water",
-                "Amount": "2000"
+                "Amount": "2"
             }
         ],
         "ProducedIn": "Refinery",
@@ -1230,7 +1230,7 @@
         "Ingredients": [
             {
                 "ItemClass": "Crude Oil",
-                "Amount": "6000"
+                "Amount": "6"
             }
         ],
         "Product": [
@@ -1240,7 +1240,7 @@
             },
             {
                 "ItemClass": "Heavy Oil Residue",
-                "Amount": "2000"
+                "Amount": "2"
             }
         ],
         "ProducedIn": "Refinery",
@@ -1406,13 +1406,13 @@
         "Ingredients": [
             {
                 "ItemClass": "Crude Oil",
-                "Amount": "3000"
+                "Amount": "3"
             }
         ],
         "Product": [
             {
                 "ItemClass": "Heavy Oil Residue",
-                "Amount": "4000"
+                "Amount": "4"
             },
             {
                 "ItemClass": "Polymer Resin",
@@ -1631,7 +1631,7 @@
         "Ingredients": [
             {
                 "ItemClass": "Alumina Solution",
-                "Amount": "12000"
+                "Amount": "12"
             },
             {
                 "ItemClass": "Petroleum Coke",
@@ -1645,7 +1645,7 @@
             },
             {
                 "ItemClass": "Water",
-                "Amount": "7000"
+                "Amount": "7"
             }
         ],
         "ProducedIn": "Refinery",
@@ -1824,7 +1824,7 @@
             },
             {
                 "ItemClass": "Heavy Oil Residue",
-                "Amount": "2000"
+                "Amount": "2"
             }
         ],
         "Product": [
@@ -1925,11 +1925,11 @@
         "Ingredients": [
             {
                 "ItemClass": "Nitrogen Gas",
-                "Amount": "12000"
+                "Amount": "12"
             },
             {
                 "ItemClass": "Water",
-                "Amount": "3000"
+                "Amount": "3"
             },
             {
                 "ItemClass": "Iron Plate",
@@ -1939,7 +1939,7 @@
         "Product": [
             {
                 "ItemClass": "Nitric Acid",
-                "Amount": "3000"
+                "Amount": "3"
             }
         ],
         "ProducedIn": "Blender",
@@ -1958,11 +1958,11 @@
             },
             {
                 "ItemClass": "Nitric Acid",
-                "Amount": "6000"
+                "Amount": "6"
             },
             {
                 "ItemClass": "Sulfuric Acid",
-                "Amount": "6000"
+                "Amount": "6"
             }
         ],
         "Product": [
@@ -1972,7 +1972,7 @@
             },
             {
                 "ItemClass": "Water",
-                "Amount": "6000"
+                "Amount": "6"
             }
         ],
         "ProducedIn": "Blender",
@@ -2071,11 +2071,11 @@
         "Ingredients": [
             {
                 "ItemClass": "Fuel",
-                "Amount": "2000"
+                "Amount": "2"
             },
             {
                 "ItemClass": "Heavy Oil Residue",
-                "Amount": "4000"
+                "Amount": "4"
             },
             {
                 "ItemClass": "Sulfur",
@@ -2089,7 +2089,7 @@
         "Product": [
             {
                 "ItemClass": "Turbofuel",
-                "Amount": "6000"
+                "Amount": "6"
             }
         ],
         "ProducedIn": "Blender",
@@ -2108,7 +2108,7 @@
             },
             {
                 "ItemClass": "Sulfuric Acid",
-                "Amount": "8000"
+                "Amount": "8"
             }
         ],
         "Product": [
@@ -2118,7 +2118,7 @@
             },
             {
                 "ItemClass": "Sulfuric Acid",
-                "Amount": "2000"
+                "Amount": "2"
             }
         ],
         "ProducedIn": "Blender",
@@ -2137,11 +2137,11 @@
             },
             {
                 "ItemClass": "Water",
-                "Amount": "5000"
+                "Amount": "5"
             },
             {
                 "ItemClass": "Nitrogen Gas",
-                "Amount": "25000"
+                "Amount": "25"
             }
         ],
         "Product": [
@@ -2158,11 +2158,11 @@
         "Ingredients": [
             {
                 "ItemClass": "Sulfuric Acid",
-                "Amount": "2500"
+                "Amount": "2"
             },
             {
                 "ItemClass": "Alumina Solution",
-                "Amount": "2000"
+                "Amount": "2"
             },
             {
                 "ItemClass": "Aluminum Casing",
@@ -2176,7 +2176,7 @@
             },
             {
                 "ItemClass": "Water",
-                "Amount": "1500"
+                "Amount": "1"
             }
         ],
         "ProducedIn": "Blender",
@@ -2245,13 +2245,13 @@
             },
             {
                 "ItemClass": "Water",
-                "Amount": "5000"
+                "Amount": "5"
             }
         ],
         "Product": [
             {
                 "ItemClass": "Sulfuric Acid",
-                "Amount": "5000"
+                "Amount": "5"
             }
         ],
         "ProducedIn": "Refinery",
@@ -2408,13 +2408,13 @@
             },
             {
                 "ItemClass": "Water",
-                "Amount": "10000"
+                "Amount": "10"
             }
         ],
         "Product": [
             {
                 "ItemClass": "Alumina Solution",
-                "Amount": "12000"
+                "Amount": "12"
             }
         ],
         "ProducedIn": "Refinery",
@@ -2525,7 +2525,7 @@
             },
             {
                 "ItemClass": "Nitrogen Gas",
-                "Amount": "25000"
+                "Amount": "25"
             }
         ],
         "Product": [
@@ -2550,11 +2550,11 @@
             },
             {
                 "ItemClass": "Sulfuric Acid",
-                "Amount": "5000"
+                "Amount": "5"
             },
             {
                 "ItemClass": "Water",
-                "Amount": "6000"
+                "Amount": "6"
             }
         ],
         "Product": [
@@ -2564,7 +2564,7 @@
             },
             {
                 "ItemClass": "Water",
-                "Amount": "5000"
+                "Amount": "5"
             }
         ],
         "ProducedIn": "Blender",
@@ -2604,11 +2604,11 @@
             },
             {
                 "ItemClass": "Nitric Acid",
-                "Amount": "8000"
+                "Amount": "8"
             },
             {
                 "ItemClass": "Fuel",
-                "Amount": "10000"
+                "Amount": "10"
             }
         ],
         "Product": [
@@ -2633,11 +2633,11 @@
             },
             {
                 "ItemClass": "Nitric Acid",
-                "Amount": "3000"
+                "Amount": "3"
             },
             {
                 "ItemClass": "Sulfuric Acid",
-                "Amount": "5000"
+                "Amount": "5"
             }
         ],
         "Product": [
@@ -2647,7 +2647,7 @@
             },
             {
                 "ItemClass": "Water",
-                "Amount": "8000"
+                "Amount": "8"
             }
         ],
         "ProducedIn": "Blender",
@@ -2679,17 +2679,17 @@
         "Ingredients": [
             {
                 "ItemClass": "Heavy Oil Residue",
-                "Amount": "5000"
+                "Amount": "5"
             },
             {
                 "ItemClass": "Water",
-                "Amount": "10000"
+                "Amount": "10"
             }
         ],
         "Product": [
             {
                 "ItemClass": "Fuel",
-                "Amount": "10000"
+                "Amount": "10"
             }
         ],
         "ProducedIn": "Blender",
@@ -2708,7 +2708,7 @@
             },
             {
                 "ItemClass": "Nitrogen Gas",
-                "Amount": "24000"
+                "Amount": "24"
             }
         ],
         "Product": [
@@ -2956,7 +2956,7 @@
             },
             {
                 "ItemClass": "Sulfuric Acid",
-                "Amount": "1000"
+                "Amount": "1"
             }
         ],
         "Product": [
@@ -3019,7 +3019,7 @@
             },
             {
                 "ItemClass": "Sulfuric Acid",
-                "Amount": "5000"
+                "Amount": "5"
             }
         ],
         "Product": [
@@ -3061,7 +3061,7 @@
             },
             {
                 "ItemClass": "Sulfuric Acid",
-                "Amount": "5000"
+                "Amount": "5"
             }
         ],
         "Product": [
@@ -3890,7 +3890,7 @@
             },
             {
                 "ItemClass": "Dark Matter Residue",
-                "Amount": "20000"
+                "Amount": "20"
             }
         ],
         "Product": [
@@ -3919,7 +3919,7 @@
             },
             {
                 "ItemClass": "Excited Photonic Matter",
-                "Amount": "20000"
+                "Amount": "20"
             }
         ],
         "Product": [
@@ -3929,7 +3929,7 @@
             },
             {
                 "ItemClass": "Dark Matter Residue",
-                "Amount": "20000"
+                "Amount": "20"
             }
         ],
         "ProducedIn": "Quantum Encoder",
@@ -4048,7 +4048,7 @@
             },
             {
                 "ItemClass": "Excited Photonic Matter",
-                "Amount": "12000"
+                "Amount": "12"
             }
         ],
         "Product": [
@@ -4058,7 +4058,7 @@
             },
             {
                 "ItemClass": "Dark Matter Residue",
-                "Amount": "12000"
+                "Amount": "12"
             }
         ],
         "ProducedIn": "Quantum Encoder",
@@ -4073,7 +4073,7 @@
             },
             {
                 "ItemClass": "Heavy Oil Residue",
-                "Amount": "1000"
+                "Amount": "1"
             }
         ],
         "Product": [

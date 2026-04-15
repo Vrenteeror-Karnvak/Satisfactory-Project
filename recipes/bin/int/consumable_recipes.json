@@ -130,7 +130,7 @@
             },
             {
                 "ItemClass": "Excited Photonic Matter",
-                "Amount": "24000"
+                "Amount": "24"
             }
         ],
         "Product": [
@@ -140,7 +140,7 @@
             },
             {
                 "ItemClass": "Dark Matter Residue",
-                "Amount": "24000"
+                "Amount": "24"
             }
         ],
         "ProducedIn": "Quantum Encoder",
@@ -243,7 +243,7 @@
             },
             {
                 "ItemClass": "Water",
-                "Amount": "1000"
+                "Amount": "1"
             }
         ],
         "Product": [
@@ -310,7 +310,7 @@
             },
             {
                 "ItemClass": "Turbofuel",
-                "Amount": "3000"
+                "Amount": "3"
             }
         ],
         "Product": [

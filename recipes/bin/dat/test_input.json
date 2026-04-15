@@ -1,5 +1,6 @@
 [
     {
+        "Category": "Input Recipe",
         "DisplayName": "Iron Rod",
         "Ingredients": [
             {
@@ -17,18 +18,23 @@
         "ManufactoringDuration": "4.000000"
     },
     {
+        "Category": "Input Item",
         "ItemClass": "Aluminum Ingot"
     },
     {   
-        "max_loops": "10000000",
-        "max_time": "60",
-        "unit_of_time": "Minutes"
+        "Category": "Termination Data",
+        "max_loops": "10000",
+        "max_time": "5",
+        "unit_of_time": "Minutes",
+        "number_items_to_test": "71"
     },
     {
+        "Category": "Status Update Data",
         "update_frequency": "60",
         "unit_of_time": "Seconds"
     },
     {
-        "number_items_to_test": "56"
+        "Category": "Filter Data",
+        "max_product": "100"
     }
 ]

@@ -31,8 +31,7 @@ int main(int argc, char* argv[]) {
 
     // opens the filestreams
     ifstream recipe_in(exePath / "dat" / "recipes.json");
-    // ifstream recipe_in(exePath / "dat" / "results.json");
-    ifstream test_recipe_in(exePath / "dat" / "test_recipe.json");
+    ifstream test_recipe_in(exePath / "dat" / "test_input.json");
     ifstream terminal_recipe_in(exePath / "dat" / "terminal_resources.json");
     ofstream results(exePath / "dat" / "test_results.json");
     ofstream status_log(exePath / "dat" / "test_status.log");

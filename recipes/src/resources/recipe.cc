@@ -14,6 +14,7 @@ Recipe::Recipe() {
 
 Recipe::Recipe(const json& data) {
     name = data.value("DisplayName", "Unknown");
+    ID = data.value("ID", "N/A");
     factory = data.value("ProducedIn", "N/A");
     machine_speed = stod(data.value("ManufactoringDuration", "0.0"));
     
@@ -28,10 +29,13 @@ Recipe::Recipe(const json& data) {
         Resource stuff(product);
         products.push_back(stuff);
     }
+
+    processed = false;
 }
 
 void Recipe::set_recipe(const json& data) {
     name = data.value("DisplayName", "Unknown");
+    ID = data.value("ID", "N/A");
     factory = data.value("ProducedIn", "N/A");
     machine_speed = stod(data.value("ManufactoringDuration", "0.0"));
     
@@ -65,6 +69,10 @@ void Recipe::set_terminal_recipe(const Resource product) {
 
 void Recipe::set_name(const string title) {
     name = title;
+}
+
+void Recipe::set_ID(const string id) {
+    ID = id;
 }
 
 void Recipe::set_factory(const string building) {
@@ -204,6 +212,10 @@ string Recipe::get_name() const {
     return name;
 }
 
+string Recipe::get_ID() const {
+    return ID;
+}
+
 string Recipe::get_factory() const {
     return factory;
 }
@@ -235,6 +247,7 @@ json Recipe::to_json() const {
     json empty_array = json::array();
 
     output["DisplayName"] = name;
+    output["ID"] = ID;
     output["Ingredients"] = empty_array;
     output["Product"] = empty_array;
     for (int i = 0; i < ingredients.size(); i++) {
@@ -260,6 +273,7 @@ json Recipe::to_compressed_json() const {
     json empty_array = json::array();
 
     output["DisplayName"] = name;
+    output["ID"] = ID;
     output["Ingredients"] = empty_array;
     output["Product"] = empty_array;
     for (int i = 0; i < ingredients.size(); i++) {
@@ -292,7 +306,8 @@ bool Recipe::is_processed() const {
 }
 
 bool Recipe::same_name(const Recipe& other) const {
-    return (name == other.get_name() && factory == other.get_factory()
+    return (name == other.get_name() && ID == other.get_ID() 
+            && factory == other.get_factory()
             && machine_speed == other.get_machine_speed()
             && ingredients.size() == other.get_ingredients().size()
             && products.size() == other.get_products().size());
@@ -303,8 +318,8 @@ bool Recipe::same_name(const Recipe& other) const {
 /**************************************************/
 
 bool Recipe::operator==(const Recipe& other) const {
-    // if name, factory, or machine speed are not equivalent, return false
-    if (name != other.get_name() || factory != other.get_factory() || machine_speed != other.get_machine_speed()) {
+    // if name, ID, factory, or machine speed are not equivalent, return false
+    if (name != other.get_name() || ID != other.get_ID() || factory != other.get_factory() || machine_speed != other.get_machine_speed()) {
         return false;
     }
 

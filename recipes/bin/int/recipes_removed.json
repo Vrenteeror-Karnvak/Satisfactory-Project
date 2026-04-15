@@ -4,7 +4,7 @@
         "Ingredients": [
             {
                 "ItemClass": "Rocket Fuel",
-                "Amount": "2000"
+                "Amount": "2"
             },
             {
                 "ItemClass": "Empty Fluid Tank",
@@ -31,7 +31,7 @@
         "Product": [
             {
                 "ItemClass": "Rocket Fuel",
-                "Amount": "2000"
+                "Amount": "2"
             },
             {
                 "ItemClass": "Empty Fluid Tank",
@@ -56,7 +56,7 @@
         "Product": [
             {
                 "ItemClass": "Ionized Fuel",
-                "Amount": "10000"
+                "Amount": "10"
             },
             {
                 "ItemClass": "Compacted Coal",
@@ -71,7 +71,7 @@
         "Ingredients": [
             {
                 "ItemClass": "Ionized Fuel",
-                "Amount": "4000"
+                "Amount": "4"
             },
             {
                 "ItemClass": "Empty Fluid Tank",
@@ -98,7 +98,7 @@
         "Product": [
             {
                 "ItemClass": "Ionized Fuel",
-                "Amount": "4000"
+                "Amount": "4"
             },
             {
                 "ItemClass": "Empty Fluid Tank",
@@ -354,7 +354,7 @@
         "Product": [
             {
                 "ItemClass": "Nitrogen Gas",
-                "Amount": "12000"
+                "Amount": "12"
             }
         ],
         "ProducedIn": "Converter",
@@ -375,7 +375,7 @@
         "Product": [
             {
                 "ItemClass": "Nitrogen Gas",
-                "Amount": "12000"
+                "Amount": "12"
             }
         ],
         "ProducedIn": "Converter",
@@ -491,7 +491,7 @@
         "Ingredients": [
             {
                 "ItemClass": "Turbofuel",
-                "Amount": "2000"
+                "Amount": "2"
             },
             {
                 "ItemClass": "Empty Canister",
@@ -518,7 +518,7 @@
         "Product": [
             {
                 "ItemClass": "Turbofuel",
-                "Amount": "2000"
+                "Amount": "2"
             },
             {
                 "ItemClass": "Empty Canister",
@@ -567,7 +567,7 @@
         "Ingredients": [
             {
                 "ItemClass": "Fuel",
-                "Amount": "2000"
+                "Amount": "2"
             },
             {
                 "ItemClass": "Empty Canister",
@@ -592,13 +592,13 @@
             },
             {
                 "ItemClass": "Water",
-                "Amount": "3000"
+                "Amount": "3"
             }
         ],
         "Product": [
             {
                 "ItemClass": "Liquid Biofuel",
-                "Amount": "4000"
+                "Amount": "4"
             }
         ],
         "ProducedIn": "Refinery",
@@ -609,7 +609,7 @@
         "Ingredients": [
             {
                 "ItemClass": "Liquid Biofuel",
-                "Amount": "2000"
+                "Amount": "2"
             },
             {
                 "ItemClass": "Empty Canister",
@@ -630,7 +630,7 @@
         "Ingredients": [
             {
                 "ItemClass": "Crude Oil",
-                "Amount": "2000"
+                "Amount": "2"
             },
             {
                 "ItemClass": "Empty Canister",
@@ -651,7 +651,7 @@
         "Ingredients": [
             {
                 "ItemClass": "Heavy Oil Residue",
-                "Amount": "2000"
+                "Amount": "2"
             },
             {
                 "ItemClass": "Empty Canister",
@@ -672,7 +672,7 @@
         "Ingredients": [
             {
                 "ItemClass": "Water",
-                "Amount": "2000"
+                "Amount": "2"
             },
             {
                 "ItemClass": "Empty Canister",
@@ -699,7 +699,7 @@
         "Product": [
             {
                 "ItemClass": "Liquid Biofuel",
-                "Amount": "2000"
+                "Amount": "2"
             },
             {
                 "ItemClass": "Empty Canister",
@@ -720,7 +720,7 @@
         "Product": [
             {
                 "ItemClass": "Fuel",
-                "Amount": "2000"
+                "Amount": "2"
             },
             {
                 "ItemClass": "Empty Canister",
@@ -741,7 +741,7 @@
         "Product": [
             {
                 "ItemClass": "Crude Oil",
-                "Amount": "2000"
+                "Amount": "2"
             },
             {
                 "ItemClass": "Empty Canister",
@@ -762,7 +762,7 @@
         "Product": [
             {
                 "ItemClass": "Heavy Oil Residue",
-                "Amount": "2000"
+                "Amount": "2"
             },
             {
                 "ItemClass": "Empty Canister",
@@ -783,7 +783,7 @@
         "Product": [
             {
                 "ItemClass": "Water",
-                "Amount": "2000"
+                "Amount": "2"
             },
             {
                 "ItemClass": "Empty Canister",
@@ -802,7 +802,7 @@
             },
             {
                 "ItemClass": "Fuel",
-                "Amount": "6000"
+                "Amount": "6"
             }
         ],
         "Product": [
@@ -819,7 +819,7 @@
         "Ingredients": [
             {
                 "ItemClass": "Alumina Solution",
-                "Amount": "2000"
+                "Amount": "2"
             },
             {
                 "ItemClass": "Empty Canister",
@@ -846,7 +846,7 @@
         "Product": [
             {
                 "ItemClass": "Alumina Solution",
-                "Amount": "2000"
+                "Amount": "2"
             },
             {
                 "ItemClass": "Empty Canister",
@@ -861,7 +861,7 @@
         "Ingredients": [
             {
                 "ItemClass": "Heavy Oil Residue",
-                "Amount": "1000"
+                "Amount": "1"
             },
             {
                 "ItemClass": "Packaged Water",
@@ -911,7 +911,7 @@
         "Ingredients": [
             {
                 "ItemClass": "Nitric Acid",
-                "Amount": "1000"
+                "Amount": "1"
             },
             {
                 "ItemClass": "Empty Fluid Tank",
@@ -938,7 +938,7 @@
         "Product": [
             {
                 "ItemClass": "Nitric Acid",
-                "Amount": "1000"
+                "Amount": "1"
             },
             {
                 "ItemClass": "Empty Fluid Tank",
@@ -953,7 +953,7 @@
         "Ingredients": [
             {
                 "ItemClass": "Sulfuric Acid",
-                "Amount": "2000"
+                "Amount": "2"
             },
             {
                 "ItemClass": "Empty Canister",
@@ -980,7 +980,7 @@
         "Product": [
             {
                 "ItemClass": "Sulfuric Acid",
-                "Amount": "1000"
+                "Amount": "1"
             },
             {
                 "ItemClass": "Empty Canister",
@@ -995,7 +995,7 @@
         "Ingredients": [
             {
                 "ItemClass": "Nitrogen Gas",
-                "Amount": "4000"
+                "Amount": "4"
             },
             {
                 "ItemClass": "Empty Fluid Tank",
@@ -1022,7 +1022,7 @@
         "Product": [
             {
                 "ItemClass": "Nitrogen Gas",
-                "Amount": "4000"
+                "Amount": "4"
             },
             {
                 "ItemClass": "Empty Fluid Tank",
@@ -1037,7 +1037,7 @@
         "Ingredients": [
             {
                 "ItemClass": "Dissolved Silica",
-                "Amount": "12000"
+                "Amount": "12"
             },
             {
                 "ItemClass": "Limestone",
@@ -1045,7 +1045,7 @@
             },
             {
                 "ItemClass": "Water",
-                "Amount": "10000"
+                "Amount": "10"
             }
         ],
         "Product": [
@@ -1055,7 +1055,7 @@
             },
             {
                 "ItemClass": "Water",
-                "Amount": "8000"
+                "Amount": "8"
             }
         ],
         "ProducedIn": "Blender",
@@ -1070,7 +1070,7 @@
             },
             {
                 "ItemClass": "Nitric Acid",
-                "Amount": "2000"
+                "Amount": "2"
             }
         ],
         "Product": [
@@ -1080,7 +1080,7 @@
             },
             {
                 "ItemClass": "Dissolved Silica",
-                "Amount": "12000"
+                "Amount": "12"
             }
         ],
         "ProducedIn": "Refinery",
@@ -1095,7 +1095,7 @@
             },
             {
                 "ItemClass": "Fuel",
-                "Amount": "6000"
+                "Amount": "6"
             }
         ],
         "Product": [
