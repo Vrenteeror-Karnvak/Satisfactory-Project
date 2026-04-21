@@ -12,7 +12,7 @@ Recipe_Fixer : dat/name_pairs.json, int/recipe_raw.json
     -> int/recipes_fixed.json
     
 : dat/name_pairs.json
-        -> int/original_recipe_names.txt
+    -> int/original_recipe_names.txt
 
 Recipe_Trimmer : int/recipes_fixed.json
     -> int/recipes_trimmed.json
