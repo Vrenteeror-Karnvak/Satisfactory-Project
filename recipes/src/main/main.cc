@@ -51,15 +51,15 @@ int main(int argc, char* argv[]) {
     // The json file containing the recipe or item
     json test_recipe_root;
     test_recipe_in >> test_recipe_root;
-    Recipe test_recipe(test_recipe_root.at(0)); // Use to inject a RECIPE into the system
-    string test_item = test_recipe_root.at(1).value("ItemClass", ""); // Use to inject an ITEM into the system
+    string test_item = test_recipe_root.at(0).value("ItemClass", ""); // Use to inject an ITEM into the system
 
     // The auto terminate information
-    const int max_loops = stoi(test_recipe_root.at(2).value("max_loops", "0")); // the maximum number of loops the program is allowed to run
-    const chrono::minutes max_time(stoi(test_recipe_root.at(2).value("max_time", "0"))); // the max time the program is allowed to run
-    const chrono::seconds update_frequency(stoi(test_recipe_root.at(3).value("update_frequency", "0"))); // the frequency the program updates its progress
+    const int max_loops = stoi(test_recipe_root.at(1).value("max_loops", "0")); // the maximum number of loops the program is allowed to run
+    const chrono::minutes max_time(stoi(test_recipe_root.at(1).value("max_time", "0"))); // the max time the program is allowed to run
+    int num_to_test = stoi(test_recipe_root.at(1).value("number_items_to_test", "0")) - 1; // the number of items to test before terminating the loop in order to avoid super complex items
+    const chrono::seconds update_frequency(stoi(test_recipe_root.at(2).value("update_frequency", "0"))); // the frequency the program updates its progress
     int u = 1; // the number of updates
-    int num_to_test = stoi(test_recipe_root.at(4).value("number_items_to_test", "0")) - 1; // the number of items to test before terminating the loop in order to avoid super complex items
+    int max_product = stoi(test_recipe_root.at(3).value("max_product", "0")); // the maximum amount of product a recipe chain is allowed to have
 
     // The json file containing the terminal resources
     json terminal_root;
@@ -83,14 +83,19 @@ int main(int argc, char* argv[]) {
     // The variables used to output the data
     json chain_object = json::object();
     json chain_array = json::array();
-    json output_object = json::object();
-    json output_array = json::array();
-    string product_name;
+    json output_object = json::object(); // the current output object being processed
+    json output_array = json::array(); // the recipes being output into the file
+    json filtered_array = json::array(); // the recipes filtered and therefore not being added to the output file
+    string product_name; // the name of the item being processed
     bool found; // determines if the chain has already been found
 
     // Status tracking variables
     int total = 0; // the number of unique recipe chains found for the current item
     int true_total = 0; // the total number of unique recipe chains found across all items
+    int unfiltered = 0; // the number of recipe chains filtered out for the current item
+    int true_unfiltered = 0; // the number of recipe chains filtered out across all items
+    int filtered = 0; // the number of recipe chains filtered out for the current item
+    int true_filtered = 0; // the number of recipe chains filtered out across all items
     int count = 0; // the number of times the loop has run for the current item
     int true_count = 0; // the total number of times the loop has run across all items
 
@@ -118,7 +123,7 @@ int main(int argc, char* argv[]) {
     }
 
     //
-    // Something doesn't seem to be clearing properly. Needs to be fixed.
+    // Everything looks good for now.
     //
     
     for (int k = 0; k < recipe_root.size(); k++) {
@@ -131,6 +136,7 @@ int main(int argc, char* argv[]) {
 
         // clears the output storage vectors
         output_array.clear();
+        filtered_array.clear();
 
         // Sets the item being processed
         test_item = recipe_root.at(k).value("Category", "");
@@ -147,6 +153,8 @@ int main(int argc, char* argv[]) {
         }
 
         count = 0;
+        unfiltered = 0;
+        filtered = 0;
         total = 0;
 
         // The main function, runs until the incrementor vector has returned back to its starting value
@@ -239,8 +247,11 @@ int main(int argc, char* argv[]) {
             output.set_primary_product(test_item);
             for (int i = 0; i < incrementor.size(); i++) {
                 incrementor_ID.append(to_string(incrementor.at(i)));
+                if ((i + 1) != incrementor.size()) {
+                    incrementor_ID.append("|");
+                }
             }
-            // output.set_name(incrementor_ID);
+            output.set_ID(incrementor_ID);
             output.set_name(test_item);
             for (int i = 0; i < output.get_ingredients().size(); i++) {
                 lm = lcm(lm, output.get_ingredient(i).get_amount().get_denominator());
@@ -250,19 +261,41 @@ int main(int argc, char* argv[]) {
             }
             output *= lm;
             output_object = output.to_compressed_json();
-            
-            // checks if the recipe combination has already been found
-            found = false;
-            for (int i = 0; i < output_array.size(); i++) {
-                if (output_object == output_array.at(i)) {
-                    found = true;
+
+            // Checks if the total output is more than 100 and doesn't add it if it is
+            if (output.get_product(0).get_amount() <= max_product) {
+                // if the recipe is valid, checks if the recipe combination has already been found
+                found = false;
+                for (int i = 0; i < output_array.size(); i++) {
+                    if (output_object == output_array.at(i)) {
+                        found = true;
+                    }
+                }
+
+                if (!found) {
+                    output_array.push_back(output_object);
+                    unfiltered += 1;
+                    true_unfiltered += 1;
+                    total += 1;
+                    true_total += 1;
                 }
             }
+            else {
+                // if the recipe is not valid, still checks if it is unique to keep total accurate
+                found = false;
+                for (int i = 0; i < filtered_array.size(); i++) {
+                    if (output_object == filtered_array.at(i)) {
+                        found = true;
+                    }
+                }
 
-            if (!found) {
-                output_array.push_back(output_object);
-                total += 1;
-                true_total += 1;
+                if (!found) {
+                    filtered_array.push_back(output_object);
+                    filtered += 1;
+                    true_filtered += 1;
+                    total += 1;
+                    true_total += 1;
+                }
             }
 
             // increments the incrementor vector
@@ -319,6 +352,8 @@ int main(int argc, char* argv[]) {
 
                 cout << test_item << " is being proccessed." << endl;
                 cout << total << " combinations have been found." << endl;
+                cout << unfiltered << " recipes had a product amount less than or equal to " << max_product << "." << endl;
+                cout << filtered << " recipes had a product amount greater than " << max_product << "." << endl;
                 cout << "The program has tested " << count << " combinations of recipes." << endl;
                 cout << "Execution time: " << elapsed.count() << " seconds." << endl;
                 cout << endl;
@@ -352,6 +387,8 @@ int main(int argc, char* argv[]) {
         cout << test_item << " has been proccessed." << endl;
         status_log << test_item << " has been proccessed." << endl;
         status_log << total << " combinations have been found." << endl;
+        status_log << unfiltered << " recipes had a product amount less than or equal to " << max_product << "." << endl;
+        status_log << filtered << " recipes had a product amount greater than " << max_product << "." << endl;
         status_log << "The program has tested " << count << " combinations of recipes." << endl;
         status_log << "Execution time: " << elapsed.count() << " seconds." << endl;
         if (loop_termination) {
@@ -366,6 +403,8 @@ int main(int argc, char* argv[]) {
 
         if (elapsed >= update_frequency) {
             cout << total << " combinations have been found." << endl;
+            cout << unfiltered << " recipes had a product amount less than or equal to " << max_product << "." << endl;
+            cout << filtered << " recipes had a product amount greater than " << max_product << "." << endl;
             cout << "The program has tested " << count << " combinations of recipes." << endl;
             cout << "Execution time: " << elapsed.count() << " seconds." << endl;
             if (loop_termination) {
@@ -385,10 +424,14 @@ int main(int argc, char* argv[]) {
     auto true_end = chrono::steady_clock::now();
     chrono::duration<double> total_elapsed = true_end - true_start;
     cout << true_total << " combinations have been found across all items." << endl;
+    cout << true_unfiltered << " recipes had a product amount less than or equal to " << max_product << " across all items." << endl;
+    cout << true_filtered << " recipes had a product amount greater than " << max_product << " across all items." << endl;
     cout << "The program has tested " << true_count << " combinations of recipes across all items." << endl;
     cout << "Execution time: " << total_elapsed.count() << " seconds." << endl;
 
     status_log << true_total << " combinations have been found across all items." << endl;
+    status_log << true_unfiltered << " recipes had a product amount less than or equal to " << max_product << " across all items." << endl;
+    status_log << true_filtered << " recipes had a product amount greater than " << max_product << " across all items." << endl;
     status_log << "The program has tested " << true_count << " combinations of recipes across all items." << endl;
     status_log << "Execution time: " << total_elapsed.count() << " seconds." << endl;
 

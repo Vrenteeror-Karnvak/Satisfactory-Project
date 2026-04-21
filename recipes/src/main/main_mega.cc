@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 #include <stack>
-#include <map>
+#include <unordered_map>
 #include <iostream>
 #include <fstream>
 #include <numeric>
@@ -34,12 +34,12 @@ int main(int argc, char* argv[]) {
     json recipe_root;
     recipe_in >> recipe_root;
     Recipe recipe_input;
-    map<string, Recipe> recipe_map;
+    unordered_map<string, Recipe> recipe_map;
     int vector_size;
     vector<int> incrementor;
     vector<int> incrementor_max;
     vector<int> all_zeros;
-    map<string, int> incrementor_map; // the location of the incrementor for a given product inside of the incrementor vector
+    unordered_map<string, int> incrementor_map; // the location of the incrementor for a given product inside of the incrementor vector
     int m = 0;
 
     // The json file containing the recipe or item
@@ -53,7 +53,7 @@ int main(int argc, char* argv[]) {
     json terminal_root;
     terminal_recipe_in >> terminal_root;
     Resource terminal_resource;
-    map<string, Resource> terminal_map;
+    unordered_map<string, Resource> terminal_map;
 
     // The variables that the stack uses to increment through all nodes
     stack<Recipe> recipe_stack; // the stack of recipes in the chain
