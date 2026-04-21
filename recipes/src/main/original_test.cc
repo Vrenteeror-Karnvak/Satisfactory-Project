@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 #include <stack>
-#include <unordered_map>
+#include <map>
 #include <iostream>
 #include <fstream>
 #include <algorithm>
@@ -17,7 +17,7 @@
 using namespace std;
 using json = nlohmann::ordered_json;
 
-bool check_duplicate_incrementor_values(const vector<int>& incrementor_values, const vector<string>& incrementor_products, const unordered_map<string, int>& incrementor_map, ofstream& status_log);
+bool check_duplicate_incrementor_values(const vector<int>& incrementor_values, const vector<string>& incrementor_products, const map<string, int>& incrementor_map, ofstream& status_log);
 
 int main(int argc, char* argv[]) {
     filesystem::path exePath = filesystem::absolute(argv[0]).parent_path();
@@ -34,18 +34,18 @@ int main(int argc, char* argv[]) {
     ifstream test_recipe_in(exePath / "dat" / "test_input.json");
     ifstream terminal_recipe_in(exePath / "dat" / "terminal_resources.json");
     ofstream results(exePath / "dat" / "test_results.json");
-    ofstream status_log(exePath / "dat" / "test_status.log");
+    ofstream status_log(exePath / "dat" / "original_test_status.log");
 
     // The json file containing all recipes as well as the variables needed to increment through them
     json recipe_root;
     recipe_in >> recipe_root;
     Recipe recipe_input;
-    unordered_map<string, Recipe> recipe_map;
+    map<string, Recipe> recipe_map;
     int vector_size;
     vector<int> incrementor;
     vector<int> incrementor_max;
     vector<int> all_zeros(recipe_root.size(), 0);
-    unordered_map<string, int> incrementor_map; // the location of the incrementor for a given product inside of the incrementor vector
+    map<string, int> incrementor_map; // the location of the incrementor for a given product inside of the incrementor vector
     int m = 0;
 
     // The json file containing the recipe or item
@@ -66,7 +66,7 @@ int main(int argc, char* argv[]) {
     json terminal_root;
     terminal_recipe_in >> terminal_root;
     Resource terminal_resource;
-    unordered_map<string, Resource> terminal_map;
+    map<string, Resource> terminal_map;
 
     // The variables that the stack uses to increment through all nodes
     stack<Recipe> recipe_stack; // the stack of recipes in the chain
@@ -142,11 +142,6 @@ int main(int argc, char* argv[]) {
         // Sets the item being processed
         test_item = recipe_root.at(k).value("Category", "");
 
-        /* This could be removed if the incrementor is able to update the recipe input value on its own.
-        Doing that would mean that all items except the previous test item would already be at recipe 0.
-        I would need to redo the initializer on line 113 if I do that.
-        I just removed some of its setup that is done here as well.*/
-        
         // creates the intital vector of recipies as well as the incrementors
         m = 0; // resets m
         for (const auto& data : recipe_root) {
@@ -169,11 +164,19 @@ int main(int argc, char* argv[]) {
             output_recipes.clear();
             chain_array.clear();
 
-            // Use to inject an item into the system
+            // Use to inject an ITEM into the system
             m = incrementor_map[test_item];
-            recipe_input.set_recipe(recipe_root.at(m).value("Data", empty_array).at(incrementor.at(m)));
+            for (const auto& data : recipe_root) {
+                if (data.value("Category", "") == test_item) {
+                    recipe_input.set_recipe(data.value("Data", empty_array).at(incrementor.at(m)));
+                }
+            }
             recipe_stack.push(recipe_input);
-            
+
+            // Use to inject a RECIPE into the system
+            // recipe_stack.push(test_recipe);
+            // test_item = test_recipe.get_product(0).get_name();
+
             // Creates the recipe chain based on the provided recipes
             while (!recipe_stack.empty()) {
                 if (recipe_stack.top().is_processed()) {
@@ -262,19 +265,38 @@ int main(int argc, char* argv[]) {
 
             // Checks if the total output is more than 100 and doesn't add it if it is
             if (output.get_product(0).get_amount() <= max_product) {
-                // if the recipe is valid, adds it to the output
-                output_array.push_back(output_object);
-                unfiltered += 1;
-                true_unfiltered += 1;
-                total += 1;
-                true_total += 1;
+                // if the recipe is valid, checks if the recipe combination has already been found
+                found = false;
+                for (int i = 0; i < output_array.size(); i++) {
+                    if (output_object == output_array.at(i)) {
+                        found = true;
+                    }
+                }
+
+                if (!found) {
+                    output_array.push_back(output_object);
+                    unfiltered += 1;
+                    true_unfiltered += 1;
+                    total += 1;
+                    true_total += 1;
+                }
             }
             else {
-                // if the recipe is not valid, removes it
-                filtered += 1;
-                true_filtered += 1;
-                total += 1;
-                true_total += 1;
+                // if the recipe is not valid, still checks if it is unique to keep total accurate
+                found = false;
+                for (int i = 0; i < filtered_array.size(); i++) {
+                    if (output_object == filtered_array.at(i)) {
+                        found = true;
+                    }
+                }
+
+                if (!found) {
+                    filtered_array.push_back(output_object);
+                    filtered += 1;
+                    true_filtered += 1;
+                    total += 1;
+                    true_total += 1;
+                }
             }
 
             // increments the incrementor vector
@@ -301,7 +323,7 @@ int main(int argc, char* argv[]) {
                     increment = true;
                 }
             }
-            
+
             // If the last value reached its maximum
             // Set all incrementor values to 0 to end the while loop
             if (increment) {
@@ -439,7 +461,7 @@ int main(int argc, char* argv[]) {
 
 
 
-bool check_duplicate_incrementor_values(const vector<int>& incrementor_values, const vector<string>& incrementor_products, const unordered_map<string, int>& incrementor_map, ofstream& status_log) {
+bool check_duplicate_incrementor_values(const vector<int>& incrementor_values, const vector<string>& incrementor_products, const map<string, int>& incrementor_map, ofstream& status_log) {
     bool duplicate_found = false;
     for (int d = 0; d < incrementor_values.size(); d++) {
         for (int f = d + 1; f < incrementor_values.size(); f++) {
