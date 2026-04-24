@@ -27,6 +27,12 @@ Fraction::Fraction(const int n, const int d) {
     denominator = d;
 }
 
+Fraction::Fraction(const double value) {
+    numerator = value * 1000000;
+    denominator = 1000000;
+    *this *= 1;
+}
+
 /**
  * @brief Set the numerator.
  *

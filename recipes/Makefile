@@ -57,7 +57,7 @@ $(test): src/main/test.cc src/resources/*.cc
 $(unordered_test): src/main/unordered_test.cc src/resources/*.cc
 	$(GXX) $(GXXFLAGS) $^ -o $@
 
-$(original_test): src/main/orignal_test.cc src/resources/*.cc
+$(original_test): src/main/original_test.cc src/resources/*.cc
 	$(GXX) $(GXXFLAGS) $^ -o $@
 
 $(obsidian): src/Obsidian.cpp

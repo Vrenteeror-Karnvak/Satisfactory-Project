@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 #include <stack>
-#include <map>
+#include <unordered_map>
 #include <iostream>
 #include <fstream>
 #include <algorithm>
@@ -17,7 +17,7 @@
 using namespace std;
 using json = nlohmann::ordered_json;
 
-bool check_duplicate_incrementor_values(const vector<int>& incrementor_values, const vector<string>& incrementor_products, const map<string, int>& incrementor_map, ofstream& status_log);
+bool check_duplicate_incrementor_values(const vector<int>& incrementor_values, const vector<string>& incrementor_products, const unordered_map<string, int>& incrementor_map, ofstream& status_log);
 
 int main(int argc, char* argv[]) {
     filesystem::path exePath = filesystem::absolute(argv[0]).parent_path();
@@ -40,32 +40,33 @@ int main(int argc, char* argv[]) {
     json recipe_root;
     recipe_in >> recipe_root;
     Recipe recipe_input;
-    map<string, Recipe> recipe_map;
+    unordered_map<string, Recipe> recipe_map;
     int vector_size;
     vector<int> incrementor;
     vector<int> incrementor_max;
     vector<int> all_zeros(recipe_root.size(), 0);
-    map<string, int> incrementor_map; // the location of the incrementor for a given product inside of the incrementor vector
+    unordered_map<string, int> incrementor_map; // the location of the incrementor for a given product inside of the incrementor vector
     int m = 0;
 
     // The json file containing the recipe or item
     json test_recipe_root;
     test_recipe_in >> test_recipe_root;
-    string test_item = test_recipe_root.at(0).value("ItemClass", ""); // Use to inject an ITEM into the system
+    Recipe test_recipe(test_recipe_root.at(0)); // Use to inject a RECIPE into the system
+    string test_item = test_recipe_root.at(1).value("ItemClass", ""); // Use to inject an ITEM into the system
 
     // The auto terminate information
-    const int max_loops = stoi(test_recipe_root.at(1).value("max_loops", "0")); // the maximum number of loops the program is allowed to run
-    const chrono::minutes max_time(stoi(test_recipe_root.at(1).value("max_time", "0"))); // the max time the program is allowed to run
-    int num_to_test = stoi(test_recipe_root.at(1).value("number_items_to_test", "0")) - 1; // the number of items to test before terminating the loop in order to avoid super complex items
-    const chrono::seconds update_frequency(stoi(test_recipe_root.at(2).value("update_frequency", "0"))); // the frequency the program updates its progress
+    const int max_loops = stoi(test_recipe_root.at(2).value("max_loops", "0")); // the maximum number of loops the program is allowed to run
+    const chrono::minutes max_time(stoi(test_recipe_root.at(2).value("max_time", "0"))); // the max time the program is allowed to run
+    int num_to_test = stoi(test_recipe_root.at(2).value("number_items_to_test", "0")) - 1; // the number of items to test before terminating the loop in order to avoid super complex items
+    const chrono::seconds update_frequency(stoi(test_recipe_root.at(3).value("update_frequency", "0"))); // the frequency the program updates its progress
     int u = 1; // the number of updates
-    int max_product = stoi(test_recipe_root.at(3).value("max_product", "0")); // the maximum amount of product a recipe chain is allowed to have
+    int max_product = stoi(test_recipe_root.at(4).value("max_product", "0")); // the maximum amount of product a recipe chain is allowed to have
 
     // The json file containing the terminal resources
     json terminal_root;
     terminal_recipe_in >> terminal_root;
     Resource terminal_resource;
-    map<string, Resource> terminal_map;
+    unordered_map<string, Resource> terminal_map;
 
     // The variables that the stack uses to increment through all nodes
     stack<Recipe> recipe_stack; // the stack of recipes in the chain
@@ -141,17 +142,6 @@ int main(int argc, char* argv[]) {
         // Sets the item being processed
         test_item = recipe_root.at(k).value("Category", "");
 
-        // creates the intital vector of recipies as well as the incrementors
-        m = 0; // resets m
-        for (const auto& data : recipe_root) {
-            // adds the first recipe of all items to recipe_list and creates the incrementors
-            incrementor_max.at(m) = data.value("Data", empty_array).size();
-
-            recipe_input.set_recipe(data.value("Data", empty_array).at(0));
-            recipe_map[data.value("Category", "")] = recipe_input;
-            m += 1;
-        }
-
         count = 0;
         unfiltered = 0;
         filtered = 0;
@@ -163,19 +153,11 @@ int main(int argc, char* argv[]) {
             output_recipes.clear();
             chain_array.clear();
 
-            // Use to inject an ITEM into the system
+            // Use to inject an item into the system
             m = incrementor_map[test_item];
-            for (const auto& data : recipe_root) {
-                if (data.value("Category", "") == test_item) {
-                    recipe_input.set_recipe(data.value("Data", empty_array).at(incrementor.at(m)));
-                }
-            }
+            recipe_input.set_recipe(recipe_root.at(m).value("Data", empty_array).at(incrementor.at(m)));
             recipe_stack.push(recipe_input);
-
-            // Use to inject a RECIPE into the system
-            // recipe_stack.push(test_recipe);
-            // test_item = test_recipe.get_product(0).get_name();
-
+            
             // Creates the recipe chain based on the provided recipes
             while (!recipe_stack.empty()) {
                 if (recipe_stack.top().is_processed()) {
@@ -264,38 +246,19 @@ int main(int argc, char* argv[]) {
 
             // Checks if the total output is more than 100 and doesn't add it if it is
             if (output.get_product(0).get_amount() <= max_product) {
-                // if the recipe is valid, checks if the recipe combination has already been found
-                found = false;
-                for (int i = 0; i < output_array.size(); i++) {
-                    if (output_object == output_array.at(i)) {
-                        found = true;
-                    }
-                }
-
-                if (!found) {
-                    output_array.push_back(output_object);
-                    unfiltered += 1;
-                    true_unfiltered += 1;
-                    total += 1;
-                    true_total += 1;
-                }
+                // if the recipe is valid, adds it to the output
+                output_array.push_back(output_object);
+                unfiltered += 1;
+                true_unfiltered += 1;
+                total += 1;
+                true_total += 1;
             }
             else {
-                // if the recipe is not valid, still checks if it is unique to keep total accurate
-                found = false;
-                for (int i = 0; i < filtered_array.size(); i++) {
-                    if (output_object == filtered_array.at(i)) {
-                        found = true;
-                    }
-                }
-
-                if (!found) {
-                    filtered_array.push_back(output_object);
-                    filtered += 1;
-                    true_filtered += 1;
-                    total += 1;
-                    true_total += 1;
-                }
+                // if the recipe is not valid, removes it
+                filtered += 1;
+                true_filtered += 1;
+                total += 1;
+                true_total += 1;
             }
 
             // increments the incrementor vector
@@ -321,22 +284,19 @@ int main(int argc, char* argv[]) {
                     incrementor.at(i) = 0;
                     increment = true;
                 }
-            }
 
+                recipe_input.set_recipe(recipe_root.at(i).value("Data", empty_array).at(incrementor.at(i)));
+                recipe_map.at(recipe_root.at(i).value("Category", "")) = recipe_input;
+            }
+            
             // If the last value reached its maximum
             // Set all incrementor values to 0 to end the while loop
             if (increment) {
                 for (int j = 0; j < incrementor.size(); j++) {
                     incrementor.at(j) = 0;
+                    recipe_input.set_recipe(recipe_root.at(j).value("Data", empty_array).at(0));
+                    recipe_map[recipe_root.at(j).value("Category", "")] = recipe_input;
                 }
-            }
-            
-            // updates recipe list for the next loop
-            m = 0; // resets m
-            for (const auto& data : recipe_root) {
-                recipe_input.set_recipe(data.value("Data", empty_array).at(incrementor.at(m)));
-                recipe_map.at(data.value("Category", "")) = recipe_input;
-                m += 1;
             }
 
             // Updates the loop counter     
@@ -380,6 +340,7 @@ int main(int argc, char* argv[]) {
 
         m = incrementor_map.at(test_item);
         recipe_root.at(m)["Data"] = output_array;
+        incrementor_max.at(m) = output_array.size();
 
         auto end = chrono::steady_clock::now();
         chrono::duration<double> elapsed = end - start;
@@ -401,7 +362,7 @@ int main(int argc, char* argv[]) {
         }
         status_log << endl;
 
-        if (elapsed >= update_frequency) {
+        if (elapsed >= update_frequency || loop_termination || time_termination) {
             cout << total << " combinations have been found." << endl;
             cout << unfiltered << " recipes had a product amount less than or equal to " << max_product << "." << endl;
             cout << filtered << " recipes had a product amount greater than " << max_product << "." << endl;
@@ -460,7 +421,7 @@ int main(int argc, char* argv[]) {
 
 
 
-bool check_duplicate_incrementor_values(const vector<int>& incrementor_values, const vector<string>& incrementor_products, const map<string, int>& incrementor_map, ofstream& status_log) {
+bool check_duplicate_incrementor_values(const vector<int>& incrementor_values, const vector<string>& incrementor_products, const unordered_map<string, int>& incrementor_map, ofstream& status_log) {
     bool duplicate_found = false;
     for (int d = 0; d < incrementor_values.size(); d++) {
         for (int f = d + 1; f < incrementor_values.size(); f++) {
