@@ -46,6 +46,7 @@ int main(int argc, char* argv[]) {
     vector<int> incrementor_max;
     vector<int> all_zeros(recipe_root.size(), 0);
     unordered_map<string, int> incrementor_map; // the location of the incrementor for a given product inside of the incrementor vector
+    unordered_map<string, vector<Recipe>> recipes; // holds all the recipes
     int m = 0;
 
     // The json file containing the recipe or item
@@ -84,11 +85,13 @@ int main(int argc, char* argv[]) {
     // The variables used to output the data
     json chain_object = json::object();
     json chain_array = json::array();
-    json output_object = json::object(); // the current output object being processed
+    json output_chain = json::object(); // the current recipe chain being processed
+    json output_object = json::object(); // the json object containing all recipe chains being sent to the file
+    vector<Recipe> output_vector;
     json output_array = json::array(); // the recipes being output into the file
-    json filtered_array = json::array(); // the recipes filtered and therefore not being added to the output file
     string product_name; // the name of the item being processed
-    bool found; // determines if the chain has already been found
+    bool found = false; // determines if the chain has already been found
+    bool first = true; // is this the first item being output in the given array?
 
     // Status tracking variables
     int total = 0; // the number of unique recipe chains found for the current item
@@ -113,19 +116,31 @@ int main(int argc, char* argv[]) {
 
     for (const auto& data : recipe_root) {
         // adds the first recipe of all items to recipe_list and creates the incrementors
+        // also builds the recipe map
         incrementor_max.push_back(data.value("Data", empty_array).size());
         incrementor.push_back(0);
 
+        for (const auto& recipe : data["Data"]) {
+            recipe_input.set_recipe(recipe);
+            output_recipes.push_back(recipe_input);
+        }
+
         incrementor_map.insert({data.value("Category", ""), m});
+        recipes.insert({data.value("Category", ""), output_recipes});
 
         recipe_input.set_recipe(data.value("Data", empty_array).at(0));
         recipe_map.insert({data.value("Category", ""), recipe_input});
+        output_recipes.clear();
         m += 1;
     }
 
     //
-    // Everything looks good for now.
+    // Add a method to know total number of combinations needing to be processed for a given item
+    // Note that it is not accurate if an ingredient was terminated early.
+    // It still would be a good start though.
     //
+
+    results << "[" << endl;
     
     for (int k = 0; k < recipe_root.size(); k++) {
         auto start = chrono::steady_clock::now(); // starts the timer
@@ -136,27 +151,10 @@ int main(int argc, char* argv[]) {
         u = 1;
 
         // clears the output storage vectors
-        output_array.clear();
-        filtered_array.clear();
+        output_vector.clear();
 
         // Sets the item being processed
         test_item = recipe_root.at(k).value("Category", "");
-
-        /* This could be removed if the incrementor is able to update the recipe input value on its own.
-        Doing that would mean that all items except the previous test item would already be at recipe 0.
-        I would need to redo the initializer on line 113 if I do that.
-        I just removed some of its setup that is done here as well.*/
-        
-        // creates the intital vector of recipies as well as the incrementors
-        m = 0; // resets m
-        for (const auto& data : recipe_root) {
-            // adds the first recipe of all items to recipe_list and creates the incrementors
-            incrementor_max.at(m) = data.value("Data", empty_array).size();
-
-            recipe_input.set_recipe(data.value("Data", empty_array).at(0));
-            recipe_map[data.value("Category", "")] = recipe_input;
-            m += 1;
-        }
 
         count = 0;
         unfiltered = 0;
@@ -171,8 +169,7 @@ int main(int argc, char* argv[]) {
 
             // Use to inject an item into the system
             m = incrementor_map[test_item];
-            recipe_input.set_recipe(recipe_root.at(m).value("Data", empty_array).at(incrementor.at(m)));
-            recipe_stack.push(recipe_input);
+            recipe_stack.push(recipes.at(test_item).at(incrementor.at(m)));
             
             // Creates the recipe chain based on the provided recipes
             while (!recipe_stack.empty()) {
@@ -234,12 +231,22 @@ int main(int argc, char* argv[]) {
                 chain_object = output_recipes.at(i).to_json();
                 chain_array.push_back(chain_object);
             }
-            output_object = chain_array;
+            output_chain = chain_array;
+            output_array.push_back(output_chain);
             */
+
+            int speed_lm = 1;
+            Fraction rate;
+            for (int i = 0; i < output_recipes.size(); i++) {
+                rate = (output_recipes.at(i).get_product(0).get_amount() / recipe_map.at(test_item).get_product(0).get_amount());
+                rate *= recipe_map.at(test_item).get_machine_speed();
+                rate /= 60;
+                speed_lm = lcm(speed_lm, rate.get_denominator());
+            }
 
             // converts the output vector into compressed json
             Recipe output;
-            int lm = 1; // the least common multiple of the denominators
+            int item_lm = 1; // the least common multiple of the denominators
             string incrementor_ID = ""; // The ID that identifies what recipes were used to make the chain
             output.merge_recipes(output_recipes);
             output.set_primary_product(test_item);
@@ -252,18 +259,19 @@ int main(int argc, char* argv[]) {
             output.set_ID(incrementor_ID);
             output.set_name(test_item);
             for (int i = 0; i < output.get_ingredients().size(); i++) {
-                lm = lcm(lm, output.get_ingredient(i).get_amount().get_denominator());
+                item_lm = lcm(item_lm, output.get_ingredient(i).get_amount().get_denominator());
             }
             for (int i = 0; i < output.get_products().size(); i++) {
-                lm = lcm(lm, output.get_product(i).get_amount().get_denominator());
+                item_lm = lcm(item_lm, output.get_product(i).get_amount().get_denominator());
             }
-            output *= lm;
-            output_object = output.to_compressed_json();
+            output *= item_lm;
+            output *= speed_lm;
+            // output_chain = output.to_compressed_json();
 
             // Checks if the total output is more than 100 and doesn't add it if it is
             if (output.get_product(0).get_amount() <= max_product) {
                 // if the recipe is valid, adds it to the output
-                output_array.push_back(output_object);
+                output_vector.push_back(output);
                 unfiltered += 1;
                 true_unfiltered += 1;
                 total += 1;
@@ -300,6 +308,9 @@ int main(int argc, char* argv[]) {
                     incrementor.at(i) = 0;
                     increment = true;
                 }
+
+                product_name = recipe_root.at(i).value("Category", "");
+                recipe_map[product_name] = recipes.at(product_name).at(incrementor.at(i));
             }
             
             // If the last value reached its maximum
@@ -307,15 +318,9 @@ int main(int argc, char* argv[]) {
             if (increment) {
                 for (int j = 0; j < incrementor.size(); j++) {
                     incrementor.at(j) = 0;
+                    product_name = recipe_root.at(j).value("Category", "");
+                    recipe_map[product_name] = recipes.at(product_name).at(0);
                 }
-            }
-            
-            // updates recipe list for the next loop
-            m = 0; // resets m
-            for (const auto& data : recipe_root) {
-                recipe_input.set_recipe(data.value("Data", empty_array).at(incrementor.at(m)));
-                recipe_map.at(data.value("Category", "")) = recipe_input;
-                m += 1;
             }
 
             // Updates the loop counter     
@@ -358,10 +363,60 @@ int main(int argc, char* argv[]) {
         }
 
         m = incrementor_map.at(test_item);
-        recipe_root.at(m)["Data"] = output_array;
+        recipes.at(test_item) = output_vector;
+        incrementor_max.at(m) = output_vector.size();
 
         auto end = chrono::steady_clock::now();
         chrono::duration<double> elapsed = end - start;
+
+
+
+        auto pre_output = chrono::steady_clock::now();
+
+        // preps the array to be output
+        output_array.clear();
+        output_vector = recipes.at(test_item);
+        for (int i = 0; i < output_vector.size(); i++) {
+            output_chain = output_vector.at(i).to_compressed_json();
+            output_array.push_back(output_chain);
+        }
+        output_object["Category"] = test_item;
+        output_object["Data"] = output_array;
+        
+        // outputs the array to the file
+        if (!first) {
+            results << "," << endl;
+        }
+        first = false;
+
+        /*
+        string output_string = output_object.dump(4); // output_object dumped into a string for line by line writing
+        string buffer = "    ";
+        for (char c : output_string) {
+            buffer += c;
+            if (c == '\n') buffer += "    ";
+        }
+        results << buffer;
+        buffer.clear();
+        */
+    
+        results << output_object.dump(4);
+
+        // Outputs all at once
+        /*
+        output_array.clear();
+        output_vector = recipes.at(test_item);
+        for (int i = 0; i < output_vector.size(); i++) {
+            output_chain = output_vector.at(i).to_compressed_json();
+            output_array.push_back(output_chain);
+        }
+        recipe_root.at(m)["Data"] = output_array;
+        */
+
+        auto post_output = chrono::steady_clock::now();
+        chrono::duration<double> output_time = post_output - pre_output;
+
+
 
         cout << test_item << " has been proccessed." << endl;
         status_log << test_item << " has been proccessed." << endl;
@@ -370,6 +425,7 @@ int main(int argc, char* argv[]) {
         status_log << filtered << " recipes had a product amount greater than " << max_product << "." << endl;
         status_log << "The program has tested " << count << " combinations of recipes." << endl;
         status_log << "Execution time: " << elapsed.count() << " seconds." << endl;
+        status_log << "Output time: " << output_time.count() << " seconds." << endl;
         if (loop_termination) {
             status_log << "The program exceeded " << max_loops << " loops. The item is too complex." << endl;
             loop_termination_count++;
@@ -380,12 +436,13 @@ int main(int argc, char* argv[]) {
         }
         status_log << endl;
 
-        if (elapsed >= update_frequency) {
+        if (elapsed >= update_frequency || loop_termination || time_termination) {
             cout << total << " combinations have been found." << endl;
             cout << unfiltered << " recipes had a product amount less than or equal to " << max_product << "." << endl;
             cout << filtered << " recipes had a product amount greater than " << max_product << "." << endl;
             cout << "The program has tested " << count << " combinations of recipes." << endl;
             cout << "Execution time: " << elapsed.count() << " seconds." << endl;
+            cout << "Output time: " << output_time.count() << " seconds." << endl;
             if (loop_termination) {
                 cout << "The program exceeded " << max_loops << " loops. The item is too complex." << endl;
             }
@@ -400,6 +457,9 @@ int main(int argc, char* argv[]) {
         }
     }
 
+    results << "]" << endl;
+    // results << recipe_root.dump(4);
+
     auto true_end = chrono::steady_clock::now();
     chrono::duration<double> total_elapsed = true_end - true_start;
     cout << true_total << " combinations have been found across all items." << endl;
@@ -413,9 +473,6 @@ int main(int argc, char* argv[]) {
     status_log << true_filtered << " recipes had a product amount greater than " << max_product << " across all items." << endl;
     status_log << "The program has tested " << true_count << " combinations of recipes across all items." << endl;
     status_log << "Execution time: " << total_elapsed.count() << " seconds." << endl;
-
-    // outputs the results to the file
-    results << recipe_root.dump(4);
     
     recipe_in.close();
     test_recipe_in.close();

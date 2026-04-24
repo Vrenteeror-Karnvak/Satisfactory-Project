@@ -34,6 +34,8 @@ class Fraction {
          */
         Fraction(const int n, const int d = 1);
 
+        Fraction(const double value);
+
         /**
          * @brief Set the numerator.
          *

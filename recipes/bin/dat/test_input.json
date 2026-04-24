@@ -22,10 +22,11 @@
     },
     {   
         "Category": "Termination Data",
-        "max_loops": "10000",
+        "max_loops": "100000",
         "max_time": "5",
         "unit_of_time": "Minutes",
-        "number_items_to_test": "71"
+        "number_items_to_test": "68",
+        "old_number_items_to_test": "68"
     },
     {
         "Category": "Status Update Data",
@@ -34,6 +35,6 @@
     },
     {
         "Category": "Filter Data",
-        "max_product": "100"
+        "max_product": "1000"
     }
 ]

@@ -1,15 +1,12 @@
 Iron Plate
 Iron Rod
 Iron Ingot
-Alternate: Nitro Rocket Fuel
-Rocket Fuel
 Dark Matter Residue
 Excited Photonic Matter
 Dark Matter Crystal
 Superposition Oscillator
 Neural-Quantum Processor
 AI Expansion Server
-Ionized Fuel
 SAM Fluctuator
 Ficsite Trigon
 Ficsite Ingot (Iron)
@@ -19,7 +16,6 @@ Reanimated SAM
 Biochemical Sculptor
 Ficsite Ingot (Aluminum)
 Ficsite Ingot (Caterium)
-Turbofuel
 Alternate: Compacted Coal
 Circuit Board
 Fuel
@@ -36,7 +32,6 @@ Alternate: Cloudy Diamonds
 Alternate: Dark Matter Trap
 Alternate: Dark Matter Crystallization
 Alternate: Wet Concrete
-Alternate: Turbo Heavy Fuel
 Alternate: Steel Rod
 Steel Beam
 Steel Pipe
@@ -94,7 +89,6 @@ Copper Powder
 Plutonium Pellet
 Plutonium Fuel Rod
 Nuclear Pasta
-Alternate: Turbo Blend Fuel
 Encased Uranium Cell
 Cooling System
 Battery
@@ -179,6 +173,7 @@ Singularity Cell
 Ballistic Warp Drive
 Quickwire
 Black Powder
+Alien DNA Capsule
 Synthetic Power Shard
 Smokeless Powder
 FICSMAS Wreath

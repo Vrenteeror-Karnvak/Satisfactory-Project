@@ -1,5 +1,63 @@
 [
     {
+        "DisplayName": "Alternate: Nitro Rocket Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Fuel",
+                "Amount": "4"
+            },
+            {
+                "ItemClass": "Nitrogen Gas",
+                "Amount": "3"
+            },
+            {
+                "ItemClass": "Sulfur",
+                "Amount": "4"
+            },
+            {
+                "ItemClass": "Coal",
+                "Amount": "2"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Rocket Fuel",
+                "Amount": "6"
+            },
+            {
+                "ItemClass": "Compacted Coal",
+                "Amount": "1"
+            }
+        ],
+        "ProducedIn": "Blender",
+        "ManufactoringDuration": "2.400000"
+    },
+    {
+        "DisplayName": "Rocket Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Turbofuel",
+                "Amount": "6"
+            },
+            {
+                "ItemClass": "Nitric Acid",
+                "Amount": "1"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Rocket Fuel",
+                "Amount": "10"
+            },
+            {
+                "ItemClass": "Compacted Coal",
+                "Amount": "1"
+            }
+        ],
+        "ProducedIn": "Blender",
+        "ManufactoringDuration": "6.000000"
+    },
+    {
         "DisplayName": "Packaged Rocket Fuel",
         "Ingredients": [
             {
@@ -65,6 +123,31 @@
         ],
         "ProducedIn": "Converter",
         "ManufactoringDuration": "3.000000"
+    },
+    {
+        "DisplayName": "Ionized Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Rocket Fuel",
+                "Amount": "16"
+            },
+            {
+                "ItemClass": "Power Shard",
+                "Amount": "1"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Ionized Fuel",
+                "Amount": "16"
+            },
+            {
+                "ItemClass": "Compacted Coal",
+                "Amount": "2"
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": "24.000000"
     },
     {
         "DisplayName": "Packaged Ionized Fuel",
@@ -487,6 +570,27 @@
         "ManufactoringDuration": "6.000000"
     },
     {
+        "DisplayName": "Turbofuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Fuel",
+                "Amount": "6"
+            },
+            {
+                "ItemClass": "Compacted Coal",
+                "Amount": "4"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Turbofuel",
+                "Amount": "5"
+            }
+        ],
+        "ProducedIn": "Refinery",
+        "ManufactoringDuration": "16.000000"
+    },
+    {
         "DisplayName": "Packaged Turbofuel",
         "Ingredients": [
             {
@@ -560,6 +664,27 @@
             }
         ],
         "ProducedIn": "Constructor",
+        "ManufactoringDuration": "8.000000"
+    },
+    {
+        "DisplayName": "Alternate: Turbo Heavy Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": "5"
+            },
+            {
+                "ItemClass": "Compacted Coal",
+                "Amount": "4"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Turbofuel",
+                "Amount": "4"
+            }
+        ],
+        "ProducedIn": "Refinery",
         "ManufactoringDuration": "8.000000"
     },
     {
@@ -949,6 +1074,35 @@
         "ManufactoringDuration": "3.000000"
     },
     {
+        "DisplayName": "Alternate: Turbo Blend Fuel",
+        "Ingredients": [
+            {
+                "ItemClass": "Fuel",
+                "Amount": "2"
+            },
+            {
+                "ItemClass": "Heavy Oil Residue",
+                "Amount": "4"
+            },
+            {
+                "ItemClass": "Sulfur",
+                "Amount": "3"
+            },
+            {
+                "ItemClass": "Petroleum Coke",
+                "Amount": "3"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Turbofuel",
+                "Amount": "6"
+            }
+        ],
+        "ProducedIn": "Blender",
+        "ManufactoringDuration": "8.000000"
+    },
+    {
         "DisplayName": "Packaged Sulfuric Acid",
         "Ingredients": [
             {
@@ -1225,23 +1379,6 @@
         ],
         "ProducedIn": "Constructor",
         "ManufactoringDuration": "3.000000"
-    },
-    {
-        "DisplayName": "Alien DNA Capsule",
-        "Ingredients": [
-            {
-                "ItemClass": "Alien Protein",
-                "Amount": "1"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Alien DNA Capsule",
-                "Amount": "1"
-            }
-        ],
-        "ProducedIn": "Constructor",
-        "ManufactoringDuration": "6.000000"
     },
     {
         "DisplayName": "Biomass (Alien Protein)",
