@@ -76,9 +76,9 @@ run_recipe: recipes
 	./bin/recipe_sorter_sorter
 
 run_test: test
-	./bin/test
-	./bin/unordered_test
-	./bin/original_test
+	./bin/test > ./tests/test.dat
+	./bin/unordered_test > ./tests/unordered_test.dat
+	./bin/original_test > ./tests/original_test.dat
 
 clean:
 	rm -f $(TARGETS)
