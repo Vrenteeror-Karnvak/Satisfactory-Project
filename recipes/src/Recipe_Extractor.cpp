@@ -22,6 +22,7 @@ int main(int argc, char* argv[]) {
     ifstream fin(exePath / "dat/en-US.json");
     ofstream name_out(exePath / "dat/name_pairs.json");
     ofstream resource_out(exePath / "dat/terminal_resources.json");
+    ofstream space_elevator_out(exePath / "dat/space_elevator_items.json");
     ofstream recipe_out(exePath / "int/recipes_raw.json");
 
     if (!fin.is_open()) {
@@ -47,18 +48,21 @@ int main(int argc, char* argv[]) {
     json root;
     fin >> root;
 
-    json name_data = json::object();
-    json resource_data = json::object();
-    json recipe_data = json::object();
-    json nameOut = json::array();
-    json resourceOut = json::array();
-    json recipeOut = json::array();
+    json name_data = json::object(); // used for collected the tag and names of all items
+    json resource_data = json::object(); // used for collecting which items are terminal
+    json space_elevator_data = json::object(); // used for collecting which items are used in the space elevator
+    json recipe_data = json::object(); // used to collect the recipe data for all recipes
+    json nameOut = json::array(); // the tag and names of all items
+    json resourceOut = json::array(); // the terminal resources
+    json spaceElevatorOut = json::array(); // items used in the space elevator
+    json recipeOut = json::array(); // all the available recipes
 
     string ingredients;
     vector<string> Class_Name;
     vector<string> Display_Name;
 
     for (const auto& block : root) {
+        // Collects the resource tag and name pairs
         // if the value of "NativeClass" is correct for the item, equipment, and building description section, this is true
         if (block.value("NativeClass", "") == "/Script/CoreUObject.Class'/Script/FactoryGame.FGItemDescriptor'"
         || block.value("NativeClass", "") == "/Script/CoreUObject.Class'/Script/FactoryGame.FGResourceDescriptor'"
@@ -81,6 +85,7 @@ int main(int argc, char* argv[]) {
             }
         }
 
+        // Collects the terminal resources
         if (block.value("NativeClass", "") == "/Script/CoreUObject.Class'/Script/FactoryGame.FGResourceDescriptor'") {
             for (const auto& data : block["Classes"]) {
                 resource_data["ItemClass"] = data.value("mDisplayName", ""); // adds the display name
@@ -89,6 +94,18 @@ int main(int argc, char* argv[]) {
             }
         }
 
+        // Collects which items are used in the space elevator
+        if (block.value("NativeClass", "") == "/Script/CoreUObject.Class'/Script/FactoryGame.FGItemDescriptor'") {
+            for (const auto& data : block["Classes"]) {
+                if (data.value("ClassName", "").find("SpaceElevatorPart") != string::npos) {
+                    space_elevator_data["ItemClass"] = data.value("mDisplayName", ""); // adds the display name
+                    space_elevator_data["Amount"] = "0"; // sets amount to 0;
+                    spaceElevatorOut.push_back(space_elevator_data); // adds the collected data to the vector
+                }
+            }
+        }
+
+        // Collects the recipes themselves
         // if the value of "NativeClass" is correct for the recipe section, this is true
         if (block.value("NativeClass", "") == "/Script/CoreUObject.Class'/Script/FactoryGame.FGRecipe'") {
             // iterates over all objects to pull the needed data
@@ -147,11 +164,14 @@ int main(int argc, char* argv[]) {
     // outputs the collected data
     name_out << nameOut.dump(4);
     resource_out << resourceOut.dump(4);
+    space_elevator_out << spaceElevatorOut.dump(4);
     recipe_out << recipeOut.dump(4);
 
     // closes all the opened files
     fin.close();
     name_out.close();
+    resource_out.close();
+    space_elevator_out.close();
     recipe_out.close();
 
     return 0;

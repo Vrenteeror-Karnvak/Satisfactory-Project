@@ -17,71 +17,6 @@
         ]
     },
     {
-        "Category": "Reanimated SAM",
-        "Data": [
-            {
-                "DisplayName": "Reanimated SAM",
-                "Ingredients": [
-                    {
-                        "ItemClass": "SAM",
-                        "Amount": "4"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Reanimated SAM",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Constructor",
-                "ManufactoringDuration": "2.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Silica",
-        "Data": [
-            {
-                "DisplayName": "Silica",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Raw Quartz",
-                        "Amount": "3"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Silica",
-                        "Amount": "5"
-                    }
-                ],
-                "ProducedIn": "Constructor",
-                "ManufactoringDuration": "8.000000"
-            },
-            {
-                "DisplayName": "Alternate: Cheap Silica",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Raw Quartz",
-                        "Amount": "3"
-                    },
-                    {
-                        "ItemClass": "Limestone",
-                        "Amount": "5"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Silica",
-                        "Amount": "7"
-                    }
-                ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "8.000000"
-            }
-        ]
-    },
-    {
         "Category": "Alien DNA Capsule",
         "Data": [
             {
@@ -100,6 +35,28 @@
                 ],
                 "ProducedIn": "Constructor",
                 "ManufactoringDuration": "6.000000"
+            }
+        ]
+    },
+    {
+        "Category": "Reanimated SAM",
+        "Data": [
+            {
+                "DisplayName": "Reanimated SAM",
+                "Ingredients": [
+                    {
+                        "ItemClass": "SAM",
+                        "Amount": "4"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Reanimated SAM",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Constructor",
+                "ManufactoringDuration": "2.000000"
             }
         ]
     },
@@ -152,6 +109,49 @@
                 ],
                 "ProducedIn": "Refinery",
                 "ManufactoringDuration": "6.000000"
+            }
+        ]
+    },
+    {
+        "Category": "Silica",
+        "Data": [
+            {
+                "DisplayName": "Silica",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Raw Quartz",
+                        "Amount": "3"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Silica",
+                        "Amount": "5"
+                    }
+                ],
+                "ProducedIn": "Constructor",
+                "ManufactoringDuration": "8.000000"
+            },
+            {
+                "DisplayName": "Alternate: Cheap Silica",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Raw Quartz",
+                        "Amount": "3"
+                    },
+                    {
+                        "ItemClass": "Limestone",
+                        "Amount": "5"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Silica",
+                        "Amount": "7"
+                    }
+                ],
+                "ProducedIn": "Assembler",
+                "ManufactoringDuration": "8.000000"
             }
         ]
     },
@@ -1513,6 +1513,49 @@
         ]
     },
     {
+        "Category": "Quickwire",
+        "Data": [
+            {
+                "DisplayName": "Quickwire",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Caterium Ingot",
+                        "Amount": "1"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Quickwire",
+                        "Amount": "5"
+                    }
+                ],
+                "ProducedIn": "Constructor",
+                "ManufactoringDuration": "5.000000"
+            },
+            {
+                "DisplayName": "Alternate: Fused Quickwire",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Caterium Ingot",
+                        "Amount": "1"
+                    },
+                    {
+                        "ItemClass": "Copper Ingot",
+                        "Amount": "5"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Quickwire",
+                        "Amount": "12"
+                    }
+                ],
+                "ProducedIn": "Assembler",
+                "ManufactoringDuration": "8.000000"
+            }
+        ]
+    },
+    {
         "Category": "Copper Sheet",
         "Data": [
             {
@@ -1651,49 +1694,6 @@
                 ],
                 "ProducedIn": "Constructor",
                 "ManufactoringDuration": "24.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Quickwire",
-        "Data": [
-            {
-                "DisplayName": "Quickwire",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Caterium Ingot",
-                        "Amount": "1"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Quickwire",
-                        "Amount": "5"
-                    }
-                ],
-                "ProducedIn": "Constructor",
-                "ManufactoringDuration": "5.000000"
-            },
-            {
-                "DisplayName": "Alternate: Fused Quickwire",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Caterium Ingot",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Copper Ingot",
-                        "Amount": "5"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Quickwire",
-                        "Amount": "12"
-                    }
-                ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "8.000000"
             }
         ]
     },
@@ -1913,87 +1913,112 @@
         ]
     },
     {
-        "Category": "Cable",
+        "Category": "Encased Uranium Cell",
         "Data": [
             {
-                "DisplayName": "Cable",
+                "DisplayName": "Encased Uranium Cell",
                 "Ingredients": [
                     {
-                        "ItemClass": "Wire",
-                        "Amount": "2"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Cable",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Constructor",
-                "ManufactoringDuration": "2.000000"
-            },
-            {
-                "DisplayName": "Alternate: Coated Cable",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Wire",
-                        "Amount": "5"
+                        "ItemClass": "Uranium",
+                        "Amount": "10"
                     },
                     {
-                        "ItemClass": "Heavy Oil Residue",
-                        "Amount": "2"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Cable",
-                        "Amount": "9"
-                    }
-                ],
-                "ProducedIn": "Refinery",
-                "ManufactoringDuration": "8.000000"
-            },
-            {
-                "DisplayName": "Alternate: Quickwire Cable",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Quickwire",
+                        "ItemClass": "Concrete",
                         "Amount": "3"
                     },
                     {
-                        "ItemClass": "Rubber",
+                        "ItemClass": "Sulfuric Acid",
+                        "Amount": "8"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Encased Uranium Cell",
+                        "Amount": "5"
+                    },
+                    {
+                        "ItemClass": "Sulfuric Acid",
                         "Amount": "2"
                     }
                 ],
-                "Product": [
-                    {
-                        "ItemClass": "Cable",
-                        "Amount": "11"
-                    }
-                ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "24.000000"
+                "ProducedIn": "Blender",
+                "ManufactoringDuration": "12.000000"
             },
             {
-                "DisplayName": "Alternate: Insulated Cable",
+                "DisplayName": "Alternate: Infused Uranium Cell",
                 "Ingredients": [
                     {
-                        "ItemClass": "Wire",
-                        "Amount": "9"
+                        "ItemClass": "Uranium",
+                        "Amount": "5"
                     },
                     {
-                        "ItemClass": "Rubber",
-                        "Amount": "6"
+                        "ItemClass": "Silica",
+                        "Amount": "3"
+                    },
+                    {
+                        "ItemClass": "Sulfur",
+                        "Amount": "5"
+                    },
+                    {
+                        "ItemClass": "Quickwire",
+                        "Amount": "15"
                     }
                 ],
                 "Product": [
                     {
-                        "ItemClass": "Cable",
+                        "ItemClass": "Encased Uranium Cell",
+                        "Amount": "4"
+                    }
+                ],
+                "ProducedIn": "Manufacturer",
+                "ManufactoringDuration": "12.000000"
+            }
+        ]
+    },
+    {
+        "Category": "AI Limiter",
+        "Data": [
+            {
+                "DisplayName": "AI Limiter",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Copper Sheet",
+                        "Amount": "5"
+                    },
+                    {
+                        "ItemClass": "Quickwire",
                         "Amount": "20"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "AI Limiter",
+                        "Amount": "1"
                     }
                 ],
                 "ProducedIn": "Assembler",
                 "ManufactoringDuration": "12.000000"
+            },
+            {
+                "DisplayName": "Alternate: Plastic AI Limiter",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Quickwire",
+                        "Amount": "30"
+                    },
+                    {
+                        "ItemClass": "Plastic",
+                        "Amount": "7"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "AI Limiter",
+                        "Amount": "2"
+                    }
+                ],
+                "ProducedIn": "Assembler",
+                "ManufactoringDuration": "15.000000"
             }
         ]
     },
@@ -2087,111 +2112,86 @@
         ]
     },
     {
-        "Category": "AI Limiter",
+        "Category": "Cable",
         "Data": [
             {
-                "DisplayName": "AI Limiter",
+                "DisplayName": "Cable",
                 "Ingredients": [
                     {
-                        "ItemClass": "Copper Sheet",
-                        "Amount": "5"
-                    },
-                    {
-                        "ItemClass": "Quickwire",
-                        "Amount": "20"
+                        "ItemClass": "Wire",
+                        "Amount": "2"
                     }
                 ],
                 "Product": [
                     {
-                        "ItemClass": "AI Limiter",
+                        "ItemClass": "Cable",
                         "Amount": "1"
                     }
                 ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "12.000000"
+                "ProducedIn": "Constructor",
+                "ManufactoringDuration": "2.000000"
             },
             {
-                "DisplayName": "Alternate: Plastic AI Limiter",
+                "DisplayName": "Alternate: Coated Cable",
                 "Ingredients": [
                     {
-                        "ItemClass": "Quickwire",
-                        "Amount": "30"
+                        "ItemClass": "Wire",
+                        "Amount": "5"
                     },
                     {
-                        "ItemClass": "Plastic",
-                        "Amount": "7"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "AI Limiter",
+                        "ItemClass": "Heavy Oil Residue",
                         "Amount": "2"
                     }
                 ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "15.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Encased Uranium Cell",
-        "Data": [
+                "Product": [
+                    {
+                        "ItemClass": "Cable",
+                        "Amount": "9"
+                    }
+                ],
+                "ProducedIn": "Refinery",
+                "ManufactoringDuration": "8.000000"
+            },
             {
-                "DisplayName": "Encased Uranium Cell",
+                "DisplayName": "Alternate: Quickwire Cable",
                 "Ingredients": [
                     {
-                        "ItemClass": "Uranium",
-                        "Amount": "10"
-                    },
-                    {
-                        "ItemClass": "Concrete",
+                        "ItemClass": "Quickwire",
                         "Amount": "3"
                     },
                     {
-                        "ItemClass": "Sulfuric Acid",
-                        "Amount": "8"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Encased Uranium Cell",
-                        "Amount": "5"
-                    },
-                    {
-                        "ItemClass": "Sulfuric Acid",
+                        "ItemClass": "Rubber",
                         "Amount": "2"
                     }
                 ],
-                "ProducedIn": "Blender",
-                "ManufactoringDuration": "12.000000"
+                "Product": [
+                    {
+                        "ItemClass": "Cable",
+                        "Amount": "11"
+                    }
+                ],
+                "ProducedIn": "Assembler",
+                "ManufactoringDuration": "24.000000"
             },
             {
-                "DisplayName": "Alternate: Infused Uranium Cell",
+                "DisplayName": "Alternate: Insulated Cable",
                 "Ingredients": [
                     {
-                        "ItemClass": "Uranium",
-                        "Amount": "5"
+                        "ItemClass": "Wire",
+                        "Amount": "9"
                     },
                     {
-                        "ItemClass": "Silica",
-                        "Amount": "3"
-                    },
-                    {
-                        "ItemClass": "Sulfur",
-                        "Amount": "5"
-                    },
-                    {
-                        "ItemClass": "Quickwire",
-                        "Amount": "15"
+                        "ItemClass": "Rubber",
+                        "Amount": "6"
                     }
                 ],
                 "Product": [
                     {
-                        "ItemClass": "Encased Uranium Cell",
-                        "Amount": "4"
+                        "ItemClass": "Cable",
+                        "Amount": "20"
                     }
                 ],
-                "ProducedIn": "Manufacturer",
+                "ProducedIn": "Assembler",
                 "ManufactoringDuration": "12.000000"
             }
         ]
@@ -3027,57 +3027,6 @@
         ]
     },
     {
-        "Category": "Automated Wiring",
-        "Data": [
-            {
-                "DisplayName": "Automated Wiring",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Stator",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Cable",
-                        "Amount": "20"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Automated Wiring",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "24.000000"
-            },
-            {
-                "DisplayName": "Alternate: Automated Speed Wiring",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Stator",
-                        "Amount": "2"
-                    },
-                    {
-                        "ItemClass": "Wire",
-                        "Amount": "40"
-                    },
-                    {
-                        "ItemClass": "High-Speed Connector",
-                        "Amount": "1"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Automated Wiring",
-                        "Amount": "4"
-                    }
-                ],
-                "ProducedIn": "Manufacturer",
-                "ManufactoringDuration": "32.000000"
-            }
-        ]
-    },
-    {
         "Category": "Electromagnetic Control Rod",
         "Data": [
             {
@@ -3308,53 +3257,57 @@
         ]
     },
     {
-        "Category": "Smart Plating",
+        "Category": "Crystal Oscillator",
         "Data": [
             {
-                "DisplayName": "Smart Plating",
+                "DisplayName": "Crystal Oscillator",
                 "Ingredients": [
                     {
-                        "ItemClass": "Reinforced Iron Plate",
-                        "Amount": "1"
+                        "ItemClass": "Quartz Crystal",
+                        "Amount": "36"
                     },
                     {
-                        "ItemClass": "Rotor",
-                        "Amount": "1"
+                        "ItemClass": "Cable",
+                        "Amount": "28"
+                    },
+                    {
+                        "ItemClass": "Reinforced Iron Plate",
+                        "Amount": "5"
                     }
                 ],
                 "Product": [
                     {
-                        "ItemClass": "Smart Plating",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "30.000000"
-            },
-            {
-                "DisplayName": "Alternate: Plastic Smart Plating",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Reinforced Iron Plate",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Rotor",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Plastic",
-                        "Amount": "3"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Smart Plating",
+                        "ItemClass": "Crystal Oscillator",
                         "Amount": "2"
                     }
                 ],
                 "ProducedIn": "Manufacturer",
-                "ManufactoringDuration": "24.000000"
+                "ManufactoringDuration": "120.000000"
+            },
+            {
+                "DisplayName": "Alternate: Insulated Crystal Oscillator",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Quartz Crystal",
+                        "Amount": "10"
+                    },
+                    {
+                        "ItemClass": "Rubber",
+                        "Amount": "7"
+                    },
+                    {
+                        "ItemClass": "AI Limiter",
+                        "Amount": "1"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Crystal Oscillator",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Manufacturer",
+                "ManufactoringDuration": "32.000000"
             }
         ]
     },
@@ -3423,204 +3376,6 @@
                 ],
                 "ProducedIn": "Assembler",
                 "ManufactoringDuration": "60.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Crystal Oscillator",
-        "Data": [
-            {
-                "DisplayName": "Crystal Oscillator",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Quartz Crystal",
-                        "Amount": "36"
-                    },
-                    {
-                        "ItemClass": "Cable",
-                        "Amount": "28"
-                    },
-                    {
-                        "ItemClass": "Reinforced Iron Plate",
-                        "Amount": "5"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Crystal Oscillator",
-                        "Amount": "2"
-                    }
-                ],
-                "ProducedIn": "Manufacturer",
-                "ManufactoringDuration": "120.000000"
-            },
-            {
-                "DisplayName": "Alternate: Insulated Crystal Oscillator",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Quartz Crystal",
-                        "Amount": "10"
-                    },
-                    {
-                        "ItemClass": "Rubber",
-                        "Amount": "7"
-                    },
-                    {
-                        "ItemClass": "AI Limiter",
-                        "Amount": "1"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Crystal Oscillator",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Manufacturer",
-                "ManufactoringDuration": "32.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Heavy Modular Frame",
-        "Data": [
-            {
-                "DisplayName": "Heavy Modular Frame",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Modular Frame",
-                        "Amount": "5"
-                    },
-                    {
-                        "ItemClass": "Steel Pipe",
-                        "Amount": "20"
-                    },
-                    {
-                        "ItemClass": "Encased Industrial Beam",
-                        "Amount": "5"
-                    },
-                    {
-                        "ItemClass": "Screws",
-                        "Amount": "120"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Heavy Modular Frame",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Manufacturer",
-                "ManufactoringDuration": "30.000000"
-            },
-            {
-                "DisplayName": "Alternate: Heavy Flexible Frame",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Modular Frame",
-                        "Amount": "5"
-                    },
-                    {
-                        "ItemClass": "Encased Industrial Beam",
-                        "Amount": "3"
-                    },
-                    {
-                        "ItemClass": "Rubber",
-                        "Amount": "20"
-                    },
-                    {
-                        "ItemClass": "Screws",
-                        "Amount": "104"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Heavy Modular Frame",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Manufacturer",
-                "ManufactoringDuration": "16.000000"
-            },
-            {
-                "DisplayName": "Alternate: Heavy Encased Frame",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Modular Frame",
-                        "Amount": "8"
-                    },
-                    {
-                        "ItemClass": "Encased Industrial Beam",
-                        "Amount": "10"
-                    },
-                    {
-                        "ItemClass": "Steel Pipe",
-                        "Amount": "36"
-                    },
-                    {
-                        "ItemClass": "Concrete",
-                        "Amount": "22"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Heavy Modular Frame",
-                        "Amount": "3"
-                    }
-                ],
-                "ProducedIn": "Manufacturer",
-                "ManufactoringDuration": "64.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Versatile Framework",
-        "Data": [
-            {
-                "DisplayName": "Versatile Framework",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Modular Frame",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Steel Beam",
-                        "Amount": "12"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Versatile Framework",
-                        "Amount": "2"
-                    }
-                ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "24.000000"
-            },
-            {
-                "DisplayName": "Alternate: Flexible Framework",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Modular Frame",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Steel Beam",
-                        "Amount": "6"
-                    },
-                    {
-                        "ItemClass": "Rubber",
-                        "Amount": "8"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Versatile Framework",
-                        "Amount": "2"
-                    }
-                ],
-                "ProducedIn": "Manufacturer",
-                "ManufactoringDuration": "16.000000"
             }
         ]
     },
@@ -3870,87 +3625,94 @@
         ]
     },
     {
-        "Category": "Fused Modular Frame",
+        "Category": "Heavy Modular Frame",
         "Data": [
             {
-                "DisplayName": "Fused Modular Frame",
+                "DisplayName": "Heavy Modular Frame",
                 "Ingredients": [
                     {
-                        "ItemClass": "Heavy Modular Frame",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Aluminum Casing",
-                        "Amount": "50"
-                    },
-                    {
-                        "ItemClass": "Nitrogen Gas",
-                        "Amount": "25"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Fused Modular Frame",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Blender",
-                "ManufactoringDuration": "40.000000"
-            },
-            {
-                "DisplayName": "Alternate: Heat-Fused Frame",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Heavy Modular Frame",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Aluminum Ingot",
-                        "Amount": "50"
-                    },
-                    {
-                        "ItemClass": "Nitric Acid",
-                        "Amount": "8"
-                    },
-                    {
-                        "ItemClass": "Fuel",
-                        "Amount": "10"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Fused Modular Frame",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Blender",
-                "ManufactoringDuration": "20.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Magnetic Field Generator",
-        "Data": [
-            {
-                "DisplayName": "Magnetic Field Generator",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Versatile Framework",
+                        "ItemClass": "Modular Frame",
                         "Amount": "5"
                     },
                     {
-                        "ItemClass": "Electromagnetic Control Rod",
-                        "Amount": "2"
+                        "ItemClass": "Steel Pipe",
+                        "Amount": "20"
+                    },
+                    {
+                        "ItemClass": "Encased Industrial Beam",
+                        "Amount": "5"
+                    },
+                    {
+                        "ItemClass": "Screws",
+                        "Amount": "120"
                     }
                 ],
                 "Product": [
                     {
-                        "ItemClass": "Magnetic Field Generator",
-                        "Amount": "2"
+                        "ItemClass": "Heavy Modular Frame",
+                        "Amount": "1"
                     }
                 ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "120.000000"
+                "ProducedIn": "Manufacturer",
+                "ManufactoringDuration": "30.000000"
+            },
+            {
+                "DisplayName": "Alternate: Heavy Flexible Frame",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Modular Frame",
+                        "Amount": "5"
+                    },
+                    {
+                        "ItemClass": "Encased Industrial Beam",
+                        "Amount": "3"
+                    },
+                    {
+                        "ItemClass": "Rubber",
+                        "Amount": "20"
+                    },
+                    {
+                        "ItemClass": "Screws",
+                        "Amount": "104"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Heavy Modular Frame",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Manufacturer",
+                "ManufactoringDuration": "16.000000"
+            },
+            {
+                "DisplayName": "Alternate: Heavy Encased Frame",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Modular Frame",
+                        "Amount": "8"
+                    },
+                    {
+                        "ItemClass": "Encased Industrial Beam",
+                        "Amount": "10"
+                    },
+                    {
+                        "ItemClass": "Steel Pipe",
+                        "Amount": "36"
+                    },
+                    {
+                        "ItemClass": "Concrete",
+                        "Amount": "22"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Heavy Modular Frame",
+                        "Amount": "3"
+                    }
+                ],
+                "ProducedIn": "Manufacturer",
+                "ManufactoringDuration": "64.000000"
             }
         ]
     },
@@ -4039,40 +3801,6 @@
         ]
     },
     {
-        "Category": "Adaptive Control Unit",
-        "Data": [
-            {
-                "DisplayName": "Adaptive Control Unit",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Automated Wiring",
-                        "Amount": "5"
-                    },
-                    {
-                        "ItemClass": "Circuit Board",
-                        "Amount": "5"
-                    },
-                    {
-                        "ItemClass": "Heavy Modular Frame",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Computer",
-                        "Amount": "2"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Adaptive Control Unit",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Manufacturer",
-                "ManufactoringDuration": "60.000000"
-            }
-        ]
-    },
-    {
         "Category": "Cooling System",
         "Data": [
             {
@@ -4132,36 +3860,6 @@
         ]
     },
     {
-        "Category": "Modular Engine",
-        "Data": [
-            {
-                "DisplayName": "Modular Engine",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Motor",
-                        "Amount": "2"
-                    },
-                    {
-                        "ItemClass": "Rubber",
-                        "Amount": "15"
-                    },
-                    {
-                        "ItemClass": "Smart Plating",
-                        "Amount": "2"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Modular Engine",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Manufacturer",
-                "ManufactoringDuration": "60.000000"
-            }
-        ]
-    },
-    {
         "Category": "Uranium Waste",
         "Data": [
             {
@@ -4188,28 +3886,61 @@
         ]
     },
     {
-        "Category": "Pressure Conversion Cube",
+        "Category": "Fused Modular Frame",
         "Data": [
             {
-                "DisplayName": "Pressure Conversion Cube",
+                "DisplayName": "Fused Modular Frame",
                 "Ingredients": [
                     {
-                        "ItemClass": "Fused Modular Frame",
+                        "ItemClass": "Heavy Modular Frame",
                         "Amount": "1"
                     },
                     {
-                        "ItemClass": "Radio Control Unit",
-                        "Amount": "2"
+                        "ItemClass": "Aluminum Casing",
+                        "Amount": "50"
+                    },
+                    {
+                        "ItemClass": "Nitrogen Gas",
+                        "Amount": "25"
                     }
                 ],
                 "Product": [
                     {
-                        "ItemClass": "Pressure Conversion Cube",
+                        "ItemClass": "Fused Modular Frame",
                         "Amount": "1"
                     }
                 ],
-                "ProducedIn": "Assembler",
-                "ManufactoringDuration": "60.000000"
+                "ProducedIn": "Blender",
+                "ManufactoringDuration": "40.000000"
+            },
+            {
+                "DisplayName": "Alternate: Heat-Fused Frame",
+                "Ingredients": [
+                    {
+                        "ItemClass": "Heavy Modular Frame",
+                        "Amount": "1"
+                    },
+                    {
+                        "ItemClass": "Aluminum Ingot",
+                        "Amount": "50"
+                    },
+                    {
+                        "ItemClass": "Nitric Acid",
+                        "Amount": "8"
+                    },
+                    {
+                        "ItemClass": "Fuel",
+                        "Amount": "10"
+                    }
+                ],
+                "Product": [
+                    {
+                        "ItemClass": "Fused Modular Frame",
+                        "Amount": "1"
+                    }
+                ],
+                "ProducedIn": "Blender",
+                "ManufactoringDuration": "20.000000"
             }
         ]
     },
@@ -4432,88 +4163,28 @@
         ]
     },
     {
-        "Category": "Nuclear Pasta",
+        "Category": "Pressure Conversion Cube",
         "Data": [
             {
-                "DisplayName": "Nuclear Pasta",
+                "DisplayName": "Pressure Conversion Cube",
                 "Ingredients": [
                     {
-                        "ItemClass": "Copper Powder",
-                        "Amount": "200"
+                        "ItemClass": "Fused Modular Frame",
+                        "Amount": "1"
                     },
+                    {
+                        "ItemClass": "Radio Control Unit",
+                        "Amount": "2"
+                    }
+                ],
+                "Product": [
                     {
                         "ItemClass": "Pressure Conversion Cube",
                         "Amount": "1"
                     }
                 ],
-                "Product": [
-                    {
-                        "ItemClass": "Nuclear Pasta",
-                        "Amount": "1"
-                    }
-                ],
-                "ProducedIn": "Particle Accelerator",
-                "ManufactoringDuration": "120.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Thermal Propulsion Rocket",
-        "Data": [
-            {
-                "DisplayName": "Thermal Propulsion Rocket",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Modular Engine",
-                        "Amount": "5"
-                    },
-                    {
-                        "ItemClass": "Turbo Motor",
-                        "Amount": "2"
-                    },
-                    {
-                        "ItemClass": "Cooling System",
-                        "Amount": "6"
-                    },
-                    {
-                        "ItemClass": "Fused Modular Frame",
-                        "Amount": "2"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Thermal Propulsion Rocket",
-                        "Amount": "2"
-                    }
-                ],
-                "ProducedIn": "Manufacturer",
-                "ManufactoringDuration": "120.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Assembly Director System",
-        "Data": [
-            {
-                "DisplayName": "Assembly Director System",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Adaptive Control Unit",
-                        "Amount": "2"
-                    },
-                    {
-                        "ItemClass": "Supercomputer",
-                        "Amount": "1"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Assembly Director System",
-                        "Amount": "1"
-                    }
-                ],
                 "ProducedIn": "Assembler",
-                "ManufactoringDuration": "80.000000"
+                "ManufactoringDuration": "60.000000"
             }
         ]
     },
@@ -4582,104 +4253,28 @@
         ]
     },
     {
-        "Category": "Singularity Cell",
+        "Category": "Nuclear Pasta",
         "Data": [
             {
-                "DisplayName": "Singularity Cell",
+                "DisplayName": "Nuclear Pasta",
                 "Ingredients": [
+                    {
+                        "ItemClass": "Copper Powder",
+                        "Amount": "200"
+                    },
+                    {
+                        "ItemClass": "Pressure Conversion Cube",
+                        "Amount": "1"
+                    }
+                ],
+                "Product": [
                     {
                         "ItemClass": "Nuclear Pasta",
                         "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Dark Matter Crystal",
-                        "Amount": "20"
-                    },
-                    {
-                        "ItemClass": "Iron Plate",
-                        "Amount": "100"
-                    },
-                    {
-                        "ItemClass": "Concrete",
-                        "Amount": "200"
                     }
                 ],
-                "Product": [
-                    {
-                        "ItemClass": "Singularity Cell",
-                        "Amount": "10"
-                    }
-                ],
-                "ProducedIn": "Manufacturer",
-                "ManufactoringDuration": "60.000000"
-            }
-        ]
-    },
-    {
-        "Category": "Biochemical Sculptor",
-        "Data": [
-            {
-                "DisplayName": "Biochemical Sculptor",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Assembly Director System",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Ficsite Trigon",
-                        "Amount": "80"
-                    },
-                    {
-                        "ItemClass": "Water",
-                        "Amount": "20"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "Biochemical Sculptor",
-                        "Amount": "4"
-                    }
-                ],
-                "ProducedIn": "Blender",
+                "ProducedIn": "Particle Accelerator",
                 "ManufactoringDuration": "120.000000"
-            }
-        ]
-    },
-    {
-        "Category": "AI Expansion Server",
-        "Data": [
-            {
-                "DisplayName": "AI Expansion Server",
-                "Ingredients": [
-                    {
-                        "ItemClass": "Magnetic Field Generator",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Neural-Quantum Processor",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Superposition Oscillator",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Excited Photonic Matter",
-                        "Amount": "25"
-                    }
-                ],
-                "Product": [
-                    {
-                        "ItemClass": "AI Expansion Server",
-                        "Amount": "1"
-                    },
-                    {
-                        "ItemClass": "Dark Matter Residue",
-                        "Amount": "25"
-                    }
-                ],
-                "ProducedIn": "Quantum Encoder",
-                "ManufactoringDuration": "15.000000"
             }
         ]
     },
@@ -4731,32 +4326,32 @@
         ]
     },
     {
-        "Category": "Ballistic Warp Drive",
+        "Category": "Singularity Cell",
         "Data": [
             {
-                "DisplayName": "Ballistic Warp Drive",
+                "DisplayName": "Singularity Cell",
                 "Ingredients": [
                     {
-                        "ItemClass": "Thermal Propulsion Rocket",
+                        "ItemClass": "Nuclear Pasta",
                         "Amount": "1"
                     },
                     {
-                        "ItemClass": "Singularity Cell",
-                        "Amount": "5"
-                    },
-                    {
-                        "ItemClass": "Superposition Oscillator",
-                        "Amount": "2"
-                    },
-                    {
                         "ItemClass": "Dark Matter Crystal",
-                        "Amount": "40"
+                        "Amount": "20"
+                    },
+                    {
+                        "ItemClass": "Iron Plate",
+                        "Amount": "100"
+                    },
+                    {
+                        "ItemClass": "Concrete",
+                        "Amount": "200"
                     }
                 ],
                 "Product": [
                     {
-                        "ItemClass": "Ballistic Warp Drive",
-                        "Amount": "1"
+                        "ItemClass": "Singularity Cell",
+                        "Amount": "10"
                     }
                 ],
                 "ProducedIn": "Manufacturer",

@@ -33,6 +33,7 @@ int main(int argc, char* argv[]) {
     ifstream recipe_in(exePath / "dat" / "recipes.json");
     ifstream test_recipe_in(exePath / "dat" / "test_input.json");
     ifstream terminal_recipe_in(exePath / "dat" / "terminal_resources.json");
+    ifstream filters_in(exePath / "dat" / "item_filters.json");
     ofstream results(exePath / "dat" / "test_results.json");
     ofstream status_log(exePath / "dat" / "test_status.log");
 
@@ -258,6 +259,7 @@ int main(int argc, char* argv[]) {
             }
             output.set_ID(incrementor_ID);
             output.set_name(test_item);
+            output *= speed_lm;
             for (int i = 0; i < output.get_ingredients().size(); i++) {
                 item_lm = lcm(item_lm, output.get_ingredient(i).get_amount().get_denominator());
             }
@@ -265,7 +267,6 @@ int main(int argc, char* argv[]) {
                 item_lm = lcm(item_lm, output.get_product(i).get_amount().get_denominator());
             }
             output *= item_lm;
-            output *= speed_lm;
             // output_chain = output.to_compressed_json();
 
             // Checks if the total output is more than 100 and doesn't add it if it is
@@ -389,6 +390,8 @@ int main(int argc, char* argv[]) {
         }
         first = false;
 
+        results << output_object.dump(4);
+
         /*
         string output_string = output_object.dump(4); // output_object dumped into a string for line by line writing
         string buffer = "    ";
@@ -399,8 +402,6 @@ int main(int argc, char* argv[]) {
         results << buffer;
         buffer.clear();
         */
-    
-        results << output_object.dump(4);
 
         // Outputs all at once
         /*

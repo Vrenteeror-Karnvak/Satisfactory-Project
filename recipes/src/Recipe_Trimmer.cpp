@@ -12,6 +12,7 @@ int main(int argc, char* argv[]) {
 
     // opens all of the input and output file streams
     ifstream recipe_in(exePath / "int/recipes_fixed.json");
+    ifstream space_elevator_in(exePath / "dat/space_elevator_items.json");
     ofstream recipe_out(exePath / "int/recipes_trimmed.json");
     ofstream removed_recipes_out(exePath / "int/recipes_removed.json");
     ofstream consumable_recipe(exePath/ "int/consumable_recipes.json");
@@ -20,6 +21,16 @@ int main(int argc, char* argv[]) {
     // pulls the resouce file for refining
     json recipe;
     recipe_in >> recipe;
+
+    // pulls the space elevator part list
+    json space_elevator_parts;
+    space_elevator_in >> space_elevator_parts;
+    vector<string> space_elevator;
+    for (const auto& data : space_elevator_parts) {
+        if (data.value("ItemClass", "") != "Nuclear Pasta") {
+            space_elevator.push_back(data.value("ItemClass", ""));
+        }
+    }
 
     json recipe_data = json::object();
     json removed_recipes = json::array();
@@ -91,6 +102,11 @@ int main(int argc, char* argv[]) {
             || data.value("ItemClass", "").find("fuel") != string::npos
             || (data.value("ItemClass", "").find("Fuel") != string::npos && data.value("ItemClass", "") != "Fuel")
                 && data.value("ItemClass", "").find("Fuel Rod") == string::npos) {
+                to_delete = true;
+            }
+
+            ingredient = data.value("ItemClass", "");
+            if (find(space_elevator.begin(), space_elevator.end(), ingredient) != space_elevator.end()) {
                 to_delete = true;
             }
         }

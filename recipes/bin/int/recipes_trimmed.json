@@ -167,39 +167,6 @@
         "ManufactoringDuration": "20.000000"
     },
     {
-        "DisplayName": "AI Expansion Server",
-        "Ingredients": [
-            {
-                "ItemClass": "Magnetic Field Generator",
-                "Amount": "1"
-            },
-            {
-                "ItemClass": "Neural-Quantum Processor",
-                "Amount": "1"
-            },
-            {
-                "ItemClass": "Superposition Oscillator",
-                "Amount": "1"
-            },
-            {
-                "ItemClass": "Excited Photonic Matter",
-                "Amount": "25"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "AI Expansion Server",
-                "Amount": "1"
-            },
-            {
-                "ItemClass": "Dark Matter Residue",
-                "Amount": "25"
-            }
-        ],
-        "ProducedIn": "Quantum Encoder",
-        "ManufactoringDuration": "15.000000"
-    },
-    {
         "DisplayName": "SAM Fluctuator",
         "Ingredients": [
             {
@@ -312,31 +279,6 @@
         ],
         "ProducedIn": "Constructor",
         "ManufactoringDuration": "2.000000"
-    },
-    {
-        "DisplayName": "Biochemical Sculptor",
-        "Ingredients": [
-            {
-                "ItemClass": "Assembly Director System",
-                "Amount": "1"
-            },
-            {
-                "ItemClass": "Ficsite Trigon",
-                "Amount": "80"
-            },
-            {
-                "ItemClass": "Water",
-                "Amount": "20"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Biochemical Sculptor",
-                "Amount": "4"
-            }
-        ],
-        "ProducedIn": "Blender",
-        "ManufactoringDuration": "120.000000"
     },
     {
         "DisplayName": "Ficsite Ingot (Aluminum)",
@@ -769,27 +711,6 @@
         "ManufactoringDuration": "4.000000"
     },
     {
-        "DisplayName": "Versatile Framework",
-        "Ingredients": [
-            {
-                "ItemClass": "Modular Frame",
-                "Amount": "1"
-            },
-            {
-                "ItemClass": "Steel Beam",
-                "Amount": "12"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Versatile Framework",
-                "Amount": "2"
-            }
-        ],
-        "ProducedIn": "Assembler",
-        "ManufactoringDuration": "24.000000"
-    },
-    {
         "DisplayName": "Alternate: Steamed Copper Sheet",
         "Ingredients": [
             {
@@ -1122,56 +1043,6 @@
         "ManufactoringDuration": "6.000000"
     },
     {
-        "DisplayName": "Alternate: Plastic Smart Plating",
-        "Ingredients": [
-            {
-                "ItemClass": "Reinforced Iron Plate",
-                "Amount": "1"
-            },
-            {
-                "ItemClass": "Rotor",
-                "Amount": "1"
-            },
-            {
-                "ItemClass": "Plastic",
-                "Amount": "3"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Smart Plating",
-                "Amount": "2"
-            }
-        ],
-        "ProducedIn": "Manufacturer",
-        "ManufactoringDuration": "24.000000"
-    },
-    {
-        "DisplayName": "Alternate: Automated Speed Wiring",
-        "Ingredients": [
-            {
-                "ItemClass": "Stator",
-                "Amount": "2"
-            },
-            {
-                "ItemClass": "Wire",
-                "Amount": "40"
-            },
-            {
-                "ItemClass": "High-Speed Connector",
-                "Amount": "1"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Automated Wiring",
-                "Amount": "4"
-            }
-        ],
-        "ProducedIn": "Manufacturer",
-        "ManufactoringDuration": "32.000000"
-    },
-    {
         "DisplayName": "Encased Industrial Beam",
         "Ingredients": [
             {
@@ -1233,27 +1104,6 @@
         ],
         "ProducedIn": "Assembler",
         "ManufactoringDuration": "12.000000"
-    },
-    {
-        "DisplayName": "Automated Wiring",
-        "Ingredients": [
-            {
-                "ItemClass": "Stator",
-                "Amount": "1"
-            },
-            {
-                "ItemClass": "Cable",
-                "Amount": "20"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Automated Wiring",
-                "Amount": "1"
-            }
-        ],
-        "ProducedIn": "Assembler",
-        "ManufactoringDuration": "24.000000"
     },
     {
         "DisplayName": "AI Limiter",
@@ -1381,60 +1231,6 @@
         "ManufactoringDuration": "30.000000"
     },
     {
-        "DisplayName": "Modular Engine",
-        "Ingredients": [
-            {
-                "ItemClass": "Motor",
-                "Amount": "2"
-            },
-            {
-                "ItemClass": "Rubber",
-                "Amount": "15"
-            },
-            {
-                "ItemClass": "Smart Plating",
-                "Amount": "2"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Modular Engine",
-                "Amount": "1"
-            }
-        ],
-        "ProducedIn": "Manufacturer",
-        "ManufactoringDuration": "60.000000"
-    },
-    {
-        "DisplayName": "Adaptive Control Unit",
-        "Ingredients": [
-            {
-                "ItemClass": "Automated Wiring",
-                "Amount": "5"
-            },
-            {
-                "ItemClass": "Circuit Board",
-                "Amount": "5"
-            },
-            {
-                "ItemClass": "Heavy Modular Frame",
-                "Amount": "1"
-            },
-            {
-                "ItemClass": "Computer",
-                "Amount": "2"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Adaptive Control Unit",
-                "Amount": "1"
-            }
-        ],
-        "ProducedIn": "Manufacturer",
-        "ManufactoringDuration": "60.000000"
-    },
-    {
         "DisplayName": "Alternate: Fused Wire",
         "Ingredients": [
             {
@@ -1454,31 +1250,6 @@
         ],
         "ProducedIn": "Assembler",
         "ManufactoringDuration": "20.000000"
-    },
-    {
-        "DisplayName": "Alternate: Flexible Framework",
-        "Ingredients": [
-            {
-                "ItemClass": "Modular Frame",
-                "Amount": "1"
-            },
-            {
-                "ItemClass": "Steel Beam",
-                "Amount": "6"
-            },
-            {
-                "ItemClass": "Rubber",
-                "Amount": "8"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Versatile Framework",
-                "Amount": "2"
-            }
-        ],
-        "ProducedIn": "Manufacturer",
-        "ManufactoringDuration": "16.000000"
     },
     {
         "DisplayName": "Alternate: Electrode Circuit Board",
@@ -1605,27 +1376,6 @@
         ],
         "ProducedIn": "Constructor",
         "ManufactoringDuration": "6.000000"
-    },
-    {
-        "DisplayName": "Smart Plating",
-        "Ingredients": [
-            {
-                "ItemClass": "Reinforced Iron Plate",
-                "Amount": "1"
-            },
-            {
-                "ItemClass": "Rotor",
-                "Amount": "1"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Smart Plating",
-                "Amount": "1"
-            }
-        ],
-        "ProducedIn": "Assembler",
-        "ManufactoringDuration": "30.000000"
     },
     {
         "DisplayName": "Alternate: Copper Alloy Ingot",
@@ -2104,27 +1854,6 @@
         "ManufactoringDuration": "6.000000"
     },
     {
-        "DisplayName": "Assembly Director System",
-        "Ingredients": [
-            {
-                "ItemClass": "Adaptive Control Unit",
-                "Amount": "2"
-            },
-            {
-                "ItemClass": "Supercomputer",
-                "Amount": "1"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Assembly Director System",
-                "Amount": "1"
-            }
-        ],
-        "ProducedIn": "Assembler",
-        "ManufactoringDuration": "80.000000"
-    },
-    {
         "DisplayName": "High-Speed Connector",
         "Ingredients": [
             {
@@ -2223,27 +1952,6 @@
         ],
         "ProducedIn": "Manufacturer",
         "ManufactoringDuration": "150.000000"
-    },
-    {
-        "DisplayName": "Magnetic Field Generator",
-        "Ingredients": [
-            {
-                "ItemClass": "Versatile Framework",
-                "Amount": "5"
-            },
-            {
-                "ItemClass": "Electromagnetic Control Rod",
-                "Amount": "2"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Magnetic Field Generator",
-                "Amount": "2"
-            }
-        ],
-        "ProducedIn": "Assembler",
-        "ManufactoringDuration": "120.000000"
     },
     {
         "DisplayName": "Alternate: Sloppy Alumina",
@@ -3058,35 +2766,6 @@
         "ManufactoringDuration": "32.000000"
     },
     {
-        "DisplayName": "Thermal Propulsion Rocket",
-        "Ingredients": [
-            {
-                "ItemClass": "Modular Engine",
-                "Amount": "5"
-            },
-            {
-                "ItemClass": "Turbo Motor",
-                "Amount": "2"
-            },
-            {
-                "ItemClass": "Cooling System",
-                "Amount": "6"
-            },
-            {
-                "ItemClass": "Fused Modular Frame",
-                "Amount": "2"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Thermal Propulsion Rocket",
-                "Amount": "2"
-            }
-        ],
-        "ProducedIn": "Manufacturer",
-        "ManufactoringDuration": "120.000000"
-    },
-    {
         "DisplayName": "Alternate: Quickwire Stator",
         "Ingredients": [
             {
@@ -3805,35 +3484,6 @@
             {
                 "ItemClass": "Singularity Cell",
                 "Amount": "10"
-            }
-        ],
-        "ProducedIn": "Manufacturer",
-        "ManufactoringDuration": "60.000000"
-    },
-    {
-        "DisplayName": "Ballistic Warp Drive",
-        "Ingredients": [
-            {
-                "ItemClass": "Thermal Propulsion Rocket",
-                "Amount": "1"
-            },
-            {
-                "ItemClass": "Singularity Cell",
-                "Amount": "5"
-            },
-            {
-                "ItemClass": "Superposition Oscillator",
-                "Amount": "2"
-            },
-            {
-                "ItemClass": "Dark Matter Crystal",
-                "Amount": "40"
-            }
-        ],
-        "Product": [
-            {
-                "ItemClass": "Ballistic Warp Drive",
-                "Amount": "1"
             }
         ],
         "ProducedIn": "Manufacturer",
