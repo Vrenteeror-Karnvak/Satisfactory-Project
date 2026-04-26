@@ -11,16 +11,16 @@ test_file := bin/test_file
 main := bin/main
 main_mega := bin/main_mega
 test := bin/test
-unordered_test := bin/unordered_test
-original_test := bin/original_test
+backup_test := bin/backup_test
+filter_creation := bin/filter_creation
 obsidian := bin/obsidian
 
-TARGETS := $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_sorter) $(recipe_sorter_sorter) $(recipe_trimmer) $(test_file) $(main) $(main_mega) $(test) $(unordered_test) $(original_test) $(obsidian)
+TARGETS := $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_sorter) $(recipe_sorter_sorter) $(recipe_trimmer) $(test_file) $(main) $(main_mega) $(test) $(backup_test) $(filter_creation) $(obsidian)
 
 all: recipes test resource obsidian
 
 recipes: $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_trimmer) $(recipe_sorter) $(recipe_sorter_sorter) $(test_file)
-test: $(test) $(unordered_test) $(original_test)
+test: $(test) $(backup_test) $(filter_creation)
 resource: $(main) $(main_mega) $(test)
 obsidian: $(obsidian)
 
@@ -54,10 +54,10 @@ $(main_mega): src/main/main_mega.cc src/resources/*.cc
 $(test): src/main/test.cc src/resources/*.cc
 	$(GXX) $(GXXFLAGS) $^ -o $@
 
-$(unordered_test): src/main/unordered_test.cc src/resources/*.cc
+$(backup_test): src/main/backup_test.cc src/resources/*.cc
 	$(GXX) $(GXXFLAGS) $^ -o $@
 
-$(original_test): src/main/original_test.cc src/resources/*.cc
+$(filter_creation): src/main/filter_creation.cc src/resources/*.cc
 	$(GXX) $(GXXFLAGS) $^ -o $@
 
 $(obsidian): src/Obsidian.cpp
@@ -66,9 +66,9 @@ $(obsidian): src/Obsidian.cpp
 clear_obs:
 	rm -f bin/dat/satisfactory_vault/*
 
-.PHONY: run_recipe
+.PHONY: run_recipes
 
-run_recipe: recipes
+run_recipes: recipes
 	./bin/recipe_extractor
 	./bin/recipe_fixer
 	./bin/recipe_trimmer
@@ -77,8 +77,8 @@ run_recipe: recipes
 
 run_test: test
 	./bin/test > ./tests/test.dat
-	./bin/unordered_test > ./tests/unordered_test.dat
-	./bin/original_test > ./tests/original_test.dat
+	./bin/backup_test > ./tests/backup_test.dat
+	./bin/filter_creation > ./tests/filter_creation.dat
 
 clean:
 	rm -f $(TARGETS)

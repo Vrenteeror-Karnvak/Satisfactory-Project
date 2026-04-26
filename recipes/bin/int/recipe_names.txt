@@ -6,14 +6,12 @@ Excited Photonic Matter
 Dark Matter Crystal
 Superposition Oscillator
 Neural-Quantum Processor
-AI Expansion Server
 SAM Fluctuator
 Ficsite Trigon
 Ficsite Ingot (Iron)
 Time Crystal
 Diamonds
 Reanimated SAM
-Biochemical Sculptor
 Ficsite Ingot (Aluminum)
 Ficsite Ingot (Caterium)
 Alternate: Compacted Coal
@@ -36,7 +34,6 @@ Alternate: Steel Rod
 Steel Beam
 Steel Pipe
 Steel Ingot
-Versatile Framework
 Alternate: Steamed Copper Sheet
 Alternate: Rubber Concrete
 Alternate: Pure Quartz Crystal
@@ -53,28 +50,21 @@ Aluminum Ingot
 Silica
 Crystal Oscillator
 Alternate: Polymer Resin
-Alternate: Plastic Smart Plating
-Alternate: Automated Speed Wiring
 Encased Industrial Beam
 Motor
 Stator
-Automated Wiring
 AI Limiter
 Alternate: Heavy Oil Residue
 Alternate: Heavy Flexible Frame
 Computer
 Heavy Modular Frame
-Modular Engine
-Adaptive Control Unit
 Alternate: Fused Wire
-Alternate: Flexible Framework
 Alternate: Electrode Circuit Board
 Alternate: Electrode Aluminum Scrap
 Alternate: Copper Rotor
 Modular Frame
 Rotor
 Copper Sheet
-Smart Plating
 Alternate: Copper Alloy Ingot
 Alternate: Coke Steel Ingot
 Alternate: Coated Iron Plate
@@ -95,12 +85,10 @@ Battery
 Supercomputer
 Radio Control Unit
 Sulfuric Acid
-Assembly Director System
 High-Speed Connector
 Alternate: Super-State Computer
 Electromagnetic Control Rod
 Uranium Fuel Rod
-Magnetic Field Generator
 Alternate: Sloppy Alumina
 Alternate: Radio Control System
 Alternate: Plutonium Fuel Unit
@@ -137,7 +125,6 @@ Alternate: Infused Uranium Cell
 Caterium Ingot
 Alternate: Turbo Electric Motor
 Turbo Motor
-Thermal Propulsion Rocket
 Alternate: Quickwire Stator
 Alternate: Cheap Silica
 Alternate: Steel Screws
@@ -170,7 +157,6 @@ Alternate: Insulated Cable
 Ficsonium
 Ficsonium Fuel Rod
 Singularity Cell
-Ballistic Warp Drive
 Quickwire
 Black Powder
 Alien DNA Capsule

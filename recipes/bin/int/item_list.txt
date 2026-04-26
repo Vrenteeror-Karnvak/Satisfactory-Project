@@ -23,15 +23,11 @@ Diamonds
 Alclad Aluminum Sheet
 Superposition Oscillator
 Neural-Quantum Processor
-AI Expansion Server
-Magnetic Field Generator
 SAM Fluctuator
 Steel Pipe
 Fused Modular Frame
 Radio Control Unit
 Ficsite Ingot
-Biochemical Sculptor
-Assembly Director System
 Caterium Ingot
 Circuit Board
 Plastic
@@ -41,7 +37,6 @@ Steel Beam
 Polymer Resin
 Quartz Crystal
 Steel Ingot
-Versatile Framework
 Copper Ingot
 Aluminum Scrap
 Aluminum Casing
@@ -49,14 +44,10 @@ Alumina Solution
 Silica
 Computer
 Heavy Modular Frame
-Smart Plating
 High-Speed Connector
-Automated Wiring
 Stator
 AI Limiter
 Quickwire
-Modular Engine
-Adaptive Control Unit
 Pressure Conversion Cube
 Encased Plutonium Cell
 Plutonium Pellet
@@ -68,11 +59,9 @@ Plutonium Waste
 Nuclear Pasta
 Encased Uranium Cell
 Battery
-Thermal Propulsion Rocket
 Black Powder
 Ficsonium
 Singularity Cell
-Ballistic Warp Drive
 Alien DNA Capsule
 Smokeless Powder
 FICSMAS Wonder Star

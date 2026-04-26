@@ -25,7 +25,7 @@
         "max_loops": "100000",
         "max_time": "5",
         "unit_of_time": "Minutes",
-        "number_items_to_test": "68",
+        "number_items_to_test": "80",
         "old_number_items_to_test": "68"
     },
     {
@@ -35,6 +35,7 @@
     },
     {
         "Category": "Filter Data",
-        "max_product": "1000"
+        "max_product": "1000",
+        "remake_filters": "1"
     }
 ]

@@ -1,0 +1,382 @@
+[
+    {
+        "ItemClass": "Aluminum Ingot",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Iron Plate",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Iron Rod",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Iron Ingot",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Cable",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Reinforced Iron Plate",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Wire",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Concrete",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Rotor",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Compacted Coal",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Fuel",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Copper Sheet",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Modular Frame",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Screws",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Nitric Acid",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Crystal Oscillator",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Motor",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Dark Matter Crystal",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Supercomputer",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Cooling System",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Ficsite Trigon",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Turbo Motor",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Time Crystal",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Dark Matter Residue",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Reanimated SAM",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Excited Photonic Matter",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Diamonds",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Alclad Aluminum Sheet",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Superposition Oscillator",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Neural-Quantum Processor",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "SAM Fluctuator",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Steel Pipe",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Fused Modular Frame",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Radio Control Unit",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Ficsite Ingot",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Caterium Ingot",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Circuit Board",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Plastic",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Encased Industrial Beam",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Rubber",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Steel Beam",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Polymer Resin",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Heavy Oil Residue",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Petroleum Coke",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Quartz Crystal",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Steel Ingot",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Copper Ingot",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Aluminum Scrap",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Aluminum Casing",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Alumina Solution",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Silica",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Computer",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Heavy Modular Frame",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "High-Speed Connector",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Stator",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "AI Limiter",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Quickwire",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Pressure Conversion Cube",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Encased Plutonium Cell",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Plutonium Pellet",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Non-Fissile Uranium",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Uranium Waste",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Sulfuric Acid",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Copper Powder",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Heat Sink",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Electromagnetic Control Rod",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Plutonium Waste",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Nuclear Pasta",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Encased Uranium Cell",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Battery",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Black Powder",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Ficsonium",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Singularity Cell",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Alien DNA Capsule",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Smokeless Powder",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "FICSMAS Wonder Star",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "FICSMAS Ornament Bundle",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "FICSMAS Tree Branch",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "FICSMAS Wreath",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Candy Cane",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "FICSMAS Actual Snow",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "FICSMAS Bow",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Red FICSMAS Ornament",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Blue FICSMAS Ornament",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Copper FICSMAS Ornament",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Iron FICSMAS Ornament",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Sweet Fireworks",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Fancy Fireworks",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Sparkly Fireworks",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Snowball",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Portable Miner",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Power Shard",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Plutonium Fuel Rod",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Uranium Fuel Rod",
+        "Amount": 0
+    },
+    {
+        "ItemClass": "Ficsonium Fuel Rod",
+        "Amount": 0
+    }
+]
