@@ -160,3 +160,61 @@ Recipe_Sorter_Sorter (int/recipes_sorted.json)
  */
 Initializer (dat/recipes.json)
     -> int/byproducts.json
+
+/**
+ * @brief Examines recipe chains
+ * 
+ * @param dat/recipes.json - formatted recipe list
+ * 
+ * @param dat/test_input.json - Recipe and Item input followed by options and filters
+ *          [
+ *              Recipe Object,                          //pulled from dat/recipes.json
+ *              {
+ *                  Category: Input Item,
+ *                  ItemClass                           //Display Name
+ *              },
+ *              {
+ *                  Category: Termination Data
+ *                  max_loops,
+ *                  max_time,
+ *                  unit_of_time,
+ *                  number_items_to_test,               //?
+ *                  old_number_items_to_test            //?
+ *              },
+ *              {
+ *                  Category: Status Update Data,
+ *                  update_frequency,
+ *                  unit_of_time
+ *              },
+ *              {
+ *                  Category: Filter Data,
+ *                  max_product,                        //Excludes recipe chains that produce more than this
+ *                  remake_filters                      //?
+ *              }
+ *          ]
+ * 
+ * @param dat/terminal_resources.json - [{Display Name}] of items with no ingredients
+ * 
+ * @return dat/test_results.json - Recipe chains
+ *          [{
+ *              Category,               //primary product
+ *              Data: [{                //recipes in chain
+ *                  DisplayName,        //recipe name
+ *                  ID,                 //?
+ *                  Ingredients: [{
+ *                      ItemClass,      //display form
+ *                      Amount          //calculated whole number amount form
+ *                  }, ...],
+ *                  Product: [{
+ *                      ItemClass,      //display form
+ *                      Amount          //calculated whole number amount form
+ *                  }, ...]
+ *              }, ...]
+ *          }, ...]
+ * 
+ * @return dat/test_status.log
+ * 
+ */
+main (dat/recipes.json, dat/test_recipe.json, dat/terminal_resources.json)
+    -> dat/test_results.json
+    -> dat/test_status.log
