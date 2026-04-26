@@ -1,12 +1,51 @@
-dat/combined_recipes.json
-dat/en-US.json
-dat/name_pairs.json
-dat/recipes.json
-dat/results.json
-dat/satisfactory_vault
-dat/terminal_resources.json
-dat/test_recipe.json
-dat/test_results.json
-dat/test_results_mega_compressed.json
-dat/test_results_mega.json
-dat/test_status.log
+Recipe Pipeline
+
+    dat/en-US.json      //complete information about every recipe
+    ...                 //mix of internal class forms and display forms
+
+    dat/name_pairs.json     //maps internals to display
+    [{
+        ClassName,      //internal class form
+        mDisplayName    //display form
+    }, ...]
+
+    dat/terminal_resources.json     //list of terminal resources
+    [{
+        ItemClass,      //display form
+        Amount          //amount form
+    }, ...]
+
+    dat/recipes.json    //formatted recipe list
+    [{
+        Category,                           //display name, primary product
+        Data: [
+            {
+                DisplayName,                //display form
+                Ingredients: [
+                    ItemClass,              //display form
+                    Amount                  //amount form
+                ],
+                Product: [
+                    {
+                        ItemClass,          //display form
+                        Amount              //amount form
+                    }
+                ],
+                ProducedIn,                 //display form
+                ManufactoringDuration       //amount form
+            }, ...]
+    }, ...]
+
+Obsidian
+    dat/satisfactory_vault      //obsidian vault representation of node graph of dat/recipes.json
+    ...
+
+Other
+    dat/combined_recipes.json
+    dat/results.json
+
+    dat/test_recipe.json
+    dat/test_results.json
+    dat/test_results_mega_compressed.json
+    dat/test_results_mega.json
+    dat/test_status.log
