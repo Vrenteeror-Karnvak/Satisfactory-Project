@@ -200,7 +200,7 @@ Initializer (dat/recipes.json)
  *              Category,               //primary product
  *              Data: [{                //recipes in chain
  *                  DisplayName,        //recipe name
- *                  ID,                 //?
+ *                  ID,                 //selected alternate recipes used to create recipe chain
  *                  Ingredients: [{
  *                      ItemClass,      //display form
  *                      Amount          //calculated whole number amount form
