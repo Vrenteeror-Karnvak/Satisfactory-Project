@@ -63,6 +63,7 @@ int main(int argc, char* argv[]) {
     const chrono::seconds update_frequency(stoi(test_recipe_root.at(3).value("update_frequency", "0"))); // the frequency the program updates its progress
     int u = 1; // the number of updates
     int max_product = stoi(test_recipe_root.at(4).value("max_product", "0")); // the maximum amount of product a recipe chain is allowed to have
+    int number_of_machines = 0;
 
     // The json file containing the terminal resources
     json terminal_root;
@@ -239,8 +240,9 @@ int main(int argc, char* argv[]) {
             int speed_lm = 1;
             Fraction rate;
             for (int i = 0; i < output_recipes.size(); i++) {
-                rate = (output_recipes.at(i).get_product(0).get_amount() / recipe_map.at(test_item).get_product(0).get_amount());
-                rate *= recipe_map.at(test_item).get_machine_speed();
+                product_name = output_recipes.at(i).get_product(0).get_name();
+                rate = (output_recipes.at(i).get_product(0).get_amount() / recipe_map.at(product_name).get_product(0).get_amount());
+                rate *= recipe_map.at(product_name).get_machine_speed();
                 rate /= 60;
                 speed_lm = lcm(speed_lm, rate.get_denominator());
             }
@@ -260,6 +262,7 @@ int main(int argc, char* argv[]) {
             output.set_ID(incrementor_ID);
             output.set_name(test_item);
             output *= speed_lm;
+            output.set_machine_speed(60.0);
             for (int i = 0; i < output.get_ingredients().size(); i++) {
                 item_lm = lcm(item_lm, output.get_ingredient(i).get_amount().get_denominator());
             }
@@ -269,8 +272,12 @@ int main(int argc, char* argv[]) {
             output *= item_lm;
             // output_chain = output.to_compressed_json();
 
+            rate = (output.get_product(0).get_amount() / recipe_map.at(product_name).get_product(0).get_amount());
+            rate /= 60;
+            rate *= recipe_map.at(test_item).get_machine_speed();
+            number_of_machines = rate.get_numerator();
             // Checks if the total output is more than 100 and doesn't add it if it is
-            if (output.get_product(0).get_amount() <= max_product) {
+            if (number_of_machines > 0 && number_of_machines <= max_product) {
                 // if the recipe is valid, adds it to the output
                 output_vector.push_back(output);
                 unfiltered += 1;
@@ -295,7 +302,7 @@ int main(int argc, char* argv[]) {
                 incrementor_products.push_back(product_name);
             }
             sort(incrementor_values.begin(), incrementor_values.end());
-            duplicate_found = check_duplicate_incrementor_values(incrementor_values, incrementor_products, incrementor_map, status_log);
+            // duplicate_found = check_duplicate_incrementor_values(incrementor_values, incrementor_products, incrementor_map, status_log);
             bool increment = true; // Determines if the value should be incremented
             for (int j = 0; j < incrementor_values.size(); j++) {
                 int i = incrementor_values.at(j);
