@@ -70,7 +70,7 @@ int main(int argc, char* argv[]) {
     
     // The filter information
     int max_product = stoi(test_recipe_root.at(4).value("max_product", "0")); // the maximum amount of product a recipe chain is allowed to have
-    bool remake_filters = stoi(test_recipe_root.at(4).value("remake_filters", "0")); // whether or not to remake the filter (1 is yes, 0 is no)
+    bool remake_filters = test_recipe_root.at(4).value("remake_filters", false); // whether or not to remake the filter
     bool filter_made = false; // has the filter for the item already been made
     unordered_map<string, int> filter_map;
     for (const auto& data : filter_json) {
@@ -157,7 +157,6 @@ int main(int argc, char* argv[]) {
         if (!remake_filters) {
             filter_made = true;
         }
-        u = 1;
 
         // clears the output storage vectors
         output_vector.clear();
@@ -303,7 +302,7 @@ int main(int argc, char* argv[]) {
                 incrementor_products.push_back(product_name);
             }
             sort(incrementor_values.begin(), incrementor_values.end());
-            duplicate_found = check_duplicate_incrementor_values(incrementor_values, incrementor_products, incrementor_map, status_log);
+            // duplicate_found = check_duplicate_incrementor_values(incrementor_values, incrementor_products, incrementor_map, status_log);
             bool increment = true; // Determines if the value should be incremented
             for (int j = 0; j < incrementor_values.size(); j++) {
                 int i = incrementor_values.at(j);
@@ -382,6 +381,9 @@ int main(int argc, char* argv[]) {
             // *******************************************
             // Insert filter output here
             // *******************************************
+            if (k < 35 || output_vector.size() <= 10) {
+                filter_map.at(test_item) = 1000000;
+            }
             filter_made = true;
             k--;
             status_log << test_item << " filter been created." << endl;
