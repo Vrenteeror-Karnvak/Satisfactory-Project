@@ -22,10 +22,10 @@
     },
     {   
         "Category": "Termination Data",
-        "max_loops": "100000",
+        "max_loops": "1000000",
         "max_time": "5",
         "unit_of_time": "Minutes",
-        "number_items_to_test": "68",
+        "number_items_to_test": "75",
         "old_number_items_to_test": "68"
     },
     {
@@ -35,7 +35,8 @@
     },
     {
         "Category": "Filter Data",
-        "max_product": "100",
+        "max_product": 1000,
+        "tiers_per_log": 3,
         "remake_filters": true
     }
 ]
