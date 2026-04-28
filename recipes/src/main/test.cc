@@ -1,4 +1,5 @@
 #include "../lib/json.hpp"
+#include <cmath>
 #include <string>
 #include <vector>
 #include <stack>
@@ -62,7 +63,8 @@ int main(int argc, char* argv[]) {
     int num_to_test = stoi(test_recipe_root.at(2).value("number_items_to_test", "0")) - 1; // the number of items to test before terminating the loop in order to avoid super complex items
     const chrono::seconds update_frequency(stoi(test_recipe_root.at(3).value("update_frequency", "0"))); // the frequency the program updates its progress
     int u = 1; // the number of updates
-    int max_product = stoi(test_recipe_root.at(4).value("max_product", "0")); // the maximum amount of product a recipe chain is allowed to have
+    int max_product = test_recipe_root.at(4).value("max_product", 1000); // the maximum amount of product a recipe chain is allowed to have
+    int tiers_per_log = test_recipe_root.at(4).value("tiers_per_log", 3); // the number of tiers before before decreasing log(max_product) by 1
     int number_of_machines = 0;
 
     // The json file containing the terminal resources
@@ -92,6 +94,7 @@ int main(int argc, char* argv[]) {
     vector<Recipe> output_vector;
     json output_array = json::array(); // the recipes being output into the file
     string product_name; // the name of the item being processed
+    int output_root;
     bool found = false; // determines if the chain has already been found
     bool first = true; // is this the first item being output in the given array?
 
@@ -109,6 +112,14 @@ int main(int argc, char* argv[]) {
     json empty_array = json::array();
 
     auto true_start = chrono::steady_clock::now();
+
+    // creates a map of the filters
+    json filter_json;
+    filters_in >> filter_json;
+    unordered_map<string, int> filter_map;
+    for (const auto& data : filter_json) {
+        filter_map.insert({data.value("ItemClass", "N/A"), data.value("Depth", 0)});
+    }
 
     // creates a vector of all terminal resources
     for (const auto& terminal : terminal_root) {
@@ -277,7 +288,11 @@ int main(int argc, char* argv[]) {
             rate *= recipe_map.at(test_item).get_machine_speed();
             number_of_machines = rate.get_numerator();
             // Checks if the total output is more than 100 and doesn't add it if it is
-            if (number_of_machines > 0 && number_of_machines <= max_product) {
+            int root = floor((filter_map.at(test_item)) / (tiers_per_log * 1.0));
+            if (root > (log10(max_product/10))) {
+                root = log10(max_product/10);
+            }
+            if (number_of_machines > 0 && number_of_machines <= (max_product/(pow(10, root)))) {
                 // if the recipe is valid, adds it to the output
                 output_vector.push_back(output);
                 unfiltered += 1;
@@ -342,10 +357,15 @@ int main(int argc, char* argv[]) {
                 auto end = chrono::steady_clock::now();
                 chrono::duration<double> elapsed = end - start;
 
+                output_root = floor((filter_map.at(test_item)) / (tiers_per_log * 1.0));
+                if (output_root > (log10(max_product/10))) {
+                    output_root = log10(max_product/10);
+                }
+
                 cout << test_item << " is being proccessed." << endl;
                 cout << total << " combinations have been found." << endl;
-                cout << unfiltered << " recipes had a product amount less than or equal to " << max_product << "." << endl;
-                cout << filtered << " recipes had a product amount greater than " << max_product << "." << endl;
+                cout << unfiltered << " recipes required less than " << max_product/(pow(10, output_root)) << " machines to run." << endl;
+                cout << filtered << " recipes required more than " << max_product/(pow(10, output_root)) << " machines to run." << endl;
                 cout << "The program has tested " << count << " combinations of recipes." << endl;
                 cout << "Execution time: " << elapsed.count() << " seconds." << endl;
                 cout << endl;
@@ -424,13 +444,18 @@ int main(int argc, char* argv[]) {
         auto post_output = chrono::steady_clock::now();
         chrono::duration<double> output_time = post_output - pre_output;
 
-
+        output_root = floor((filter_map.at(test_item)) / (tiers_per_log * 1.0));
+        if (output_root > (log10(max_product/10))) {
+            output_root = log10(max_product/10);
+        }
 
         cout << test_item << " has been proccessed." << endl;
         status_log << test_item << " has been proccessed." << endl;
+        status_log << "Item tier = " << filter_map.at(test_item) << endl;
+        status_log << "Max machines = " << max_product << "/(pow(10, " << output_root << ")) = " << max_product/(pow(10, output_root)) << endl;
         status_log << total << " combinations have been found." << endl;
-        status_log << unfiltered << " recipes had a product amount less than or equal to " << max_product << "." << endl;
-        status_log << filtered << " recipes had a product amount greater than " << max_product << "." << endl;
+        status_log << unfiltered << " recipes required less than " << max_product/(pow(10, output_root)) << " machines to run." << endl;
+        status_log << filtered << " recipes required more than " << max_product/(pow(10, output_root)) << " machines to run." << endl;
         status_log << "The program has tested " << count << " combinations of recipes." << endl;
         status_log << "Execution time: " << elapsed.count() << " seconds." << endl;
         status_log << "Output time: " << output_time.count() << " seconds." << endl;
@@ -446,8 +471,8 @@ int main(int argc, char* argv[]) {
 
         if (elapsed >= update_frequency || loop_termination || time_termination) {
             cout << total << " combinations have been found." << endl;
-            cout << unfiltered << " recipes had a product amount less than or equal to " << max_product << "." << endl;
-            cout << filtered << " recipes had a product amount greater than " << max_product << "." << endl;
+            cout << unfiltered << " recipes required less than " << max_product/(pow(10, output_root)) << " machines to run." << endl;
+            cout << filtered << " recipes required more than " << max_product/(pow(10, output_root)) << " machines to run." << endl;
             cout << "The program has tested " << count << " combinations of recipes." << endl;
             cout << "Execution time: " << elapsed.count() << " seconds." << endl;
             cout << "Output time: " << output_time.count() << " seconds." << endl;

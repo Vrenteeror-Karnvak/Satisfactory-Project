@@ -14,20 +14,6 @@ int main(int argc, char* argv[]) {
     ifstream resource_name(exePath / "dat/name_pairs.json");
     ifstream recipe_in(exePath / "int/recipes_trimmed.json");
     ofstream recipe_out(exePath / "int/recipes_sorted.json");
-    ofstream filter_out(exePath / "dat/item_filters.json");
-
-
-    if (!resource_name.is_open()) {
-        cerr << "Failed to open resource name input file.\n";
-    }
-    
-    if (!recipe_in.is_open()) {
-        cerr << "Failed to open recipe input file.\n";
-    }
-
-    if (!recipe_out.is_open()) {
-        cerr << "Failed to open recipe output file.\n";
-    }
 
     // pulls the resouce file for refining
     json recipe;
@@ -41,8 +27,6 @@ int main(int argc, char* argv[]) {
     json recipe_data = json::object();
     json recipe_group = json::array();
     json recipe_object = json::object();
-    json filter_object = json::object();
-    json filter_array = json::array();
     json dataOut = json::array();
 
     // an empty json array to make the .value() function work
@@ -97,10 +81,6 @@ int main(int argc, char* argv[]) {
         recipe_object["Category"] = product;
         recipe_object["Data"] = recipe_group;
 
-        filter_object["ItemClass"] = product;
-        filter_object["Amount"] = 0;
-        filter_array.push_back(filter_object);
-
         if (recipe_group.size() == 1) {
             // if there is only a single recipe in the vector, adds it to a seperate category
             dataOut.push_back(recipe_object);
@@ -117,7 +97,6 @@ int main(int argc, char* argv[]) {
 
     // puts the sorted recipes in the output file
     recipe_out << dataOut.dump(4);
-    filter_out << filter_array.dump(4);
     
     // outputs the collected data
     cout << original_count << " turns into " << new_count << endl;
@@ -128,7 +107,6 @@ int main(int argc, char* argv[]) {
     resource_name.close();
     recipe_in.close();
     recipe_out.close();
-    filter_out.close();
 
     return 0;
 }

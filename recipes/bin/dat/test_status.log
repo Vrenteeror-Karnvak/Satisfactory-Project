@@ -1,551 +1,721 @@
 Excited Photonic Matter has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 1 combinations have been found.
-1 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+1 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 1 combinations of recipes.
-Execution time: 0.000238021 seconds.
-Output time: 0.000102267 seconds.
+Execution time: 0.000121439 seconds.
+Output time: 4.0362e-05 seconds.
 
 Alien DNA Capsule has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 1 combinations have been found.
-1 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+1 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 1 combinations of recipes.
-Execution time: 0.00012397 seconds.
-Output time: 0.000744698 seconds.
+Execution time: 0.000132631 seconds.
+Output time: 0.000594973 seconds.
 
 Reanimated SAM has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 1 combinations have been found.
-1 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+1 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 1 combinations of recipes.
-Execution time: 0.000253006 seconds.
-Output time: 0.000569989 seconds.
+Execution time: 0.000150524 seconds.
+Output time: 0.000363485 seconds.
 
 Heavy Oil Residue has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 1 combinations have been found.
-1 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+1 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 1 combinations of recipes.
-Execution time: 0.00012503 seconds.
-Output time: 0.000723354 seconds.
+Execution time: 0.000161432 seconds.
+Output time: 0.000358176 seconds.
 
 Polymer Resin has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 1 combinations have been found.
-1 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+1 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 1 combinations of recipes.
-Execution time: 0.000214227 seconds.
-Output time: 0.00062552 seconds.
+Execution time: 0.000210548 seconds.
+Output time: 0.000486938 seconds.
 
 Silica has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 2 combinations have been found.
-2 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+2 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 2 combinations of recipes.
-Execution time: 0.000300799 seconds.
-Output time: 0.00115448 seconds.
+Execution time: 0.000234026 seconds.
+Output time: 0.000498893 seconds.
 
 FICSMAS Actual Snow has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 1 combinations have been found.
-1 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+1 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 1 combinations of recipes.
-Execution time: 0.0001142 seconds.
-Output time: 0.000696973 seconds.
+Execution time: 0.000184433 seconds.
+Output time: 0.000410099 seconds.
 
 Red FICSMAS Ornament has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 1 combinations have been found.
-1 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+1 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 1 combinations of recipes.
-Execution time: 0.000201551 seconds.
-Output time: 0.000931067 seconds.
+Execution time: 0.000134606 seconds.
+Output time: 0.000414177 seconds.
 
 FICSMAS Bow has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 1 combinations have been found.
-1 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+1 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 1 combinations of recipes.
-Execution time: 0.000179375 seconds.
-Output time: 0.000695014 seconds.
+Execution time: 0.000111347 seconds.
+Output time: 0.000491029 seconds.
 
 FICSMAS Tree Branch has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 1 combinations have been found.
-1 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+1 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 1 combinations of recipes.
-Execution time: 0.000202051 seconds.
-Output time: 0.000779452 seconds.
+Execution time: 0.000119739 seconds.
+Output time: 0.000483043 seconds.
 
 Candy Cane has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 1 combinations have been found.
-1 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+1 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 1 combinations of recipes.
-Execution time: 0.000143153 seconds.
-Output time: 0.0004581 seconds.
+Execution time: 0.000101839 seconds.
+Output time: 0.00049146 seconds.
 
 Blue FICSMAS Ornament has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 1 combinations have been found.
-1 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+1 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 1 combinations of recipes.
-Execution time: 0.000141948 seconds.
-Output time: 0.000446915 seconds.
+Execution time: 0.000196905 seconds.
+Output time: 0.000371374 seconds.
 
 Compacted Coal has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 1 combinations have been found.
-1 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+1 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 1 combinations of recipes.
-Execution time: 8.4037e-05 seconds.
-Output time: 0.000416746 seconds.
+Execution time: 0.000192884 seconds.
+Output time: 0.000423495 seconds.
 
 Alumina Solution has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 2 combinations have been found.
-2 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+2 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 2 combinations of recipes.
-Execution time: 0.000105846 seconds.
-Output time: 0.000518993 seconds.
+Execution time: 0.000202953 seconds.
+Output time: 0.00062986 seconds.
 
 Quartz Crystal has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 3 combinations have been found.
-3 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+3 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 3 combinations of recipes.
-Execution time: 0.000395785 seconds.
-Output time: 0.000950131 seconds.
+Execution time: 0.000248947 seconds.
+Output time: 0.000593885 seconds.
 
 Sulfuric Acid has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 1 combinations have been found.
-1 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+1 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 1 combinations of recipes.
-Execution time: 0.000262454 seconds.
-Output time: 0.000826846 seconds.
+Execution time: 0.00011538 seconds.
+Output time: 0.000450112 seconds.
 
 Dark Matter Residue has been proccessed.
+Item tier = 1
+Max machines = 1000/(pow(10, 1)) = 100
 1 combinations have been found.
-1 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+1 recipes required less than 100 machines to run.
+0 recipes required more than 100 machines to run.
 The program has tested 1 combinations of recipes.
-Execution time: 0.000112837 seconds.
-Output time: 0.000513504 seconds.
+Execution time: 0.000222492 seconds.
+Output time: 0.000792448 seconds.
 
 Fuel has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 3 combinations have been found.
-3 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+3 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 3 combinations of recipes.
-Execution time: 0.000231032 seconds.
-Output time: 0.00089856 seconds.
+Execution time: 0.000128457 seconds.
+Output time: 0.000674108 seconds.
 
 Petroleum Coke has been proccessed.
+Item tier = 1
+Max machines = 1000/(pow(10, 1)) = 100
 1 combinations have been found.
-1 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+1 recipes required less than 100 machines to run.
+0 recipes required more than 100 machines to run.
 The program has tested 1 combinations of recipes.
-Execution time: 0.000133748 seconds.
-Output time: 0.000635143 seconds.
+Execution time: 0.000131824 seconds.
+Output time: 0.000531705 seconds.
 
 Rubber has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 2 combinations have been found.
-2 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+2 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 2 combinations of recipes.
-Execution time: 0.000130014 seconds.
-Output time: 0.000557894 seconds.
+Execution time: 0.000213621 seconds.
+Output time: 0.000700627 seconds.
 
 Plastic has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 2 combinations have been found.
-2 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+2 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 2 combinations of recipes.
-Execution time: 0.000127994 seconds.
-Output time: 0.000522729 seconds.
+Execution time: 0.000288594 seconds.
+Output time: 0.000617887 seconds.
 
 Snowball has been proccessed.
+Item tier = 1
+Max machines = 1000/(pow(10, 1)) = 100
 1 combinations have been found.
-1 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+1 recipes required less than 100 machines to run.
+0 recipes required more than 100 machines to run.
 The program has tested 1 combinations of recipes.
-Execution time: 0.000171437 seconds.
-Output time: 0.000410564 seconds.
+Execution time: 0.000131256 seconds.
+Output time: 0.000457723 seconds.
 
 Fancy Fireworks has been proccessed.
+Item tier = 1
+Max machines = 1000/(pow(10, 1)) = 100
 1 combinations have been found.
-1 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+1 recipes required less than 100 machines to run.
+0 recipes required more than 100 machines to run.
 The program has tested 1 combinations of recipes.
-Execution time: 0.000173388 seconds.
-Output time: 0.000693348 seconds.
+Execution time: 0.000276698 seconds.
+Output time: 0.000370296 seconds.
 
 Sparkly Fireworks has been proccessed.
+Item tier = 1
+Max machines = 1000/(pow(10, 1)) = 100
 1 combinations have been found.
-1 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+1 recipes required less than 100 machines to run.
+0 recipes required more than 100 machines to run.
 The program has tested 1 combinations of recipes.
-Execution time: 0.000157847 seconds.
-Output time: 0.000593175 seconds.
+Execution time: 0.000188375 seconds.
+Output time: 0.000449872 seconds.
 
 Sweet Fireworks has been proccessed.
+Item tier = 1
+Max machines = 1000/(pow(10, 1)) = 100
 1 combinations have been found.
-1 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+1 recipes required less than 100 machines to run.
+0 recipes required more than 100 machines to run.
 The program has tested 1 combinations of recipes.
-Execution time: 0.000133339 seconds.
-Output time: 0.000544622 seconds.
+Execution time: 0.000242104 seconds.
+Output time: 0.000460284 seconds.
 
 Black Powder has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 2 combinations have been found.
-2 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+2 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 2 combinations of recipes.
-Execution time: 0.000330146 seconds.
-Output time: 0.000686655 seconds.
+Execution time: 0.000179961 seconds.
+Output time: 0.000414431 seconds.
 
 Iron Ingot has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 5 combinations have been found.
-5 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+5 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 5 combinations of recipes.
-Execution time: 0.000139958 seconds.
-Output time: 0.000630093 seconds.
+Execution time: 0.000257218 seconds.
+Output time: 0.000611067 seconds.
 
 Caterium Ingot has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 4 combinations have been found.
-4 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+4 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 4 combinations of recipes.
-Execution time: 0.000196691 seconds.
-Output time: 0.00063794 seconds.
+Execution time: 0.000233167 seconds.
+Output time: 0.000573475 seconds.
 
 Copper Ingot has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 5 combinations have been found.
-5 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+5 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 5 combinations of recipes.
-Execution time: 0.000263003 seconds.
-Output time: 0.000675306 seconds.
+Execution time: 0.000307377 seconds.
+Output time: 0.000875483 seconds.
 
 Aluminum Scrap has been proccessed.
+Item tier = 1
+Max machines = 1000/(pow(10, 1)) = 100
 5 combinations have been found.
-5 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+5 recipes required less than 100 machines to run.
+0 recipes required more than 100 machines to run.
 The program has tested 5 combinations of recipes.
-Execution time: 0.000238837 seconds.
-Output time: 0.000775653 seconds.
+Execution time: 0.000385022 seconds.
+Output time: 0.000889015 seconds.
 
 Diamonds has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 7 combinations have been found.
-7 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+7 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 7 combinations of recipes.
-Execution time: 0.000168534 seconds.
-Output time: 0.00095277 seconds.
+Execution time: 0.000341044 seconds.
+Output time: 0.000788296 seconds.
 
 Concrete has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 6 combinations have been found.
-6 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+6 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 6 combinations of recipes.
-Execution time: 0.000180698 seconds.
-Output time: 0.000745812 seconds.
+Execution time: 0.000156775 seconds.
+Output time: 0.000562921 seconds.
 
 Smokeless Powder has been proccessed.
+Item tier = 1
+Max machines = 1000/(pow(10, 1)) = 100
 2 combinations have been found.
-2 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+2 recipes required less than 100 machines to run.
+0 recipes required more than 100 machines to run.
 The program has tested 2 combinations of recipes.
-Execution time: 0.000308938 seconds.
-Output time: 0.000999265 seconds.
+Execution time: 0.00032428 seconds.
+Output time: 0.000753875 seconds.
 
 Steel Ingot has been proccessed.
+Item tier = 0
+Max machines = 1000/(pow(10, 0)) = 1000
 8 combinations have been found.
-8 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+8 recipes required less than 1000 machines to run.
+0 recipes required more than 1000 machines to run.
 The program has tested 8 combinations of recipes.
-Execution time: 0.000261755 seconds.
-Output time: 0.000881693 seconds.
+Execution time: 0.000209072 seconds.
+Output time: 0.000542523 seconds.
 
 Iron FICSMAS Ornament has been proccessed.
+Item tier = 1
+Max machines = 1000/(pow(10, 1)) = 100
 5 combinations have been found.
-5 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+5 recipes required less than 100 machines to run.
+0 recipes required more than 100 machines to run.
 The program has tested 5 combinations of recipes.
-Execution time: 0.000333667 seconds.
-Output time: 0.000575068 seconds.
+Execution time: 0.000381665 seconds.
+Output time: 0.000515238 seconds.
 
 Quickwire has been proccessed.
+Item tier = 1
+Max machines = 1000/(pow(10, 1)) = 100
 24 combinations have been found.
-22 recipes had a product amount less than or equal to 100.
-2 recipes had a product amount greater than 100.
+22 recipes required less than 100 machines to run.
+2 recipes required more than 100 machines to run.
 The program has tested 24 combinations of recipes.
-Execution time: 0.00090001 seconds.
-Output time: 0.00178692 seconds.
+Execution time: 0.000591219 seconds.
+Output time: 0.00147478 seconds.
 
 Copper Sheet has been proccessed.
+Item tier = 1
+Max machines = 1000/(pow(10, 1)) = 100
 10 combinations have been found.
-10 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+10 recipes required less than 100 machines to run.
+0 recipes required more than 100 machines to run.
 The program has tested 10 combinations of recipes.
-Execution time: 0.000291125 seconds.
-Output time: 0.000938089 seconds.
+Execution time: 0.000520848 seconds.
+Output time: 0.00113927 seconds.
 
 Copper Powder has been proccessed.
+Item tier = 1
+Max machines = 1000/(pow(10, 1)) = 100
 5 combinations have been found.
-5 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+5 recipes required less than 100 machines to run.
+0 recipes required more than 100 machines to run.
 The program has tested 5 combinations of recipes.
-Execution time: 0.000319276 seconds.
-Output time: 0.000999815 seconds.
+Execution time: 0.000171719 seconds.
+Output time: 0.0006269 seconds.
 
 Wire has been proccessed.
+Item tier = 1
+Max machines = 1000/(pow(10, 1)) = 100
 34 combinations have been found.
-27 recipes had a product amount less than or equal to 100.
-7 recipes had a product amount greater than 100.
+27 recipes required less than 100 machines to run.
+7 recipes required more than 100 machines to run.
 The program has tested 34 combinations of recipes.
-Execution time: 0.00118874 seconds.
-Output time: 0.00186396 seconds.
+Execution time: 0.00142883 seconds.
+Output time: 0.00153569 seconds.
 
 Copper FICSMAS Ornament has been proccessed.
+Item tier = 1
+Max machines = 1000/(pow(10, 1)) = 100
 5 combinations have been found.
-5 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+5 recipes required less than 100 machines to run.
+0 recipes required more than 100 machines to run.
 The program has tested 5 combinations of recipes.
-Execution time: 0.000264928 seconds.
-Output time: 0.000801961 seconds.
+Execution time: 0.000417568 seconds.
+Output time: 0.00115694 seconds.
 
 Aluminum Ingot has been proccessed.
+Item tier = 2
+Max machines = 1000/(pow(10, 1)) = 100
 15 combinations have been found.
-13 recipes had a product amount less than or equal to 100.
-2 recipes had a product amount greater than 100.
+13 recipes required less than 100 machines to run.
+2 recipes required more than 100 machines to run.
 The program has tested 15 combinations of recipes.
-Execution time: 0.00096456 seconds.
-Output time: 0.00163673 seconds.
+Execution time: 0.000869857 seconds.
+Output time: 0.0014663 seconds.
 
 Time Crystal has been proccessed.
+Item tier = 1
+Max machines = 1000/(pow(10, 1)) = 100
 7 combinations have been found.
-7 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+7 recipes required less than 100 machines to run.
+0 recipes required more than 100 machines to run.
 The program has tested 7 combinations of recipes.
-Execution time: 0.000401569 seconds.
-Output time: 0.000825914 seconds.
+Execution time: 0.000350452 seconds.
+Output time: 0.000758021 seconds.
 
 Steel Pipe has been proccessed.
+Item tier = 1
+Max machines = 1000/(pow(10, 1)) = 100
 61 combinations have been found.
-46 recipes had a product amount less than or equal to 100.
-15 recipes had a product amount greater than 100.
+46 recipes required less than 100 machines to run.
+15 recipes required more than 100 machines to run.
 The program has tested 61 combinations of recipes.
-Execution time: 0.00164184 seconds.
-Output time: 0.00252769 seconds.
+Execution time: 0.00515839 seconds.
+Output time: 0.00753009 seconds.
 
 Iron Plate has been proccessed.
+Item tier = 1
+Max machines = 1000/(pow(10, 1)) = 100
 55 combinations have been found.
-41 recipes had a product amount less than or equal to 100.
-14 recipes had a product amount greater than 100.
+41 recipes required less than 100 machines to run.
+14 recipes required more than 100 machines to run.
 The program has tested 55 combinations of recipes.
-Execution time: 0.00134987 seconds.
-Output time: 0.00267559 seconds.
+Execution time: 0.00154179 seconds.
+Output time: 0.00476178 seconds.
 
 Encased Uranium Cell has been proccessed.
+Item tier = 1
+Max machines = 1000/(pow(10, 1)) = 100
 50 combinations have been found.
-16 recipes had a product amount less than or equal to 100.
-34 recipes had a product amount greater than 100.
+16 recipes required less than 100 machines to run.
+34 recipes required more than 100 machines to run.
 The program has tested 50 combinations of recipes.
-Execution time: 0.00242112 seconds.
-Output time: 0.00213512 seconds.
+Execution time: 0.00487544 seconds.
+Output time: 0.00413095 seconds.
 
 AI Limiter has been proccessed.
+Item tier = 2
+Max machines = 1000/(pow(10, 1)) = 100
 264 combinations have been found.
-122 recipes had a product amount less than or equal to 100.
-142 recipes had a product amount greater than 100.
+122 recipes required less than 100 machines to run.
+142 recipes required more than 100 machines to run.
 The program has tested 264 combinations of recipes.
-Execution time: 0.00730674 seconds.
-Output time: 0.00757806 seconds.
+Execution time: 0.00886478 seconds.
+Output time: 0.00729579 seconds.
 
 Circuit Board has been proccessed.
+Item tier = 2
+Max machines = 1000/(pow(10, 1)) = 100
 86 combinations have been found.
-49 recipes had a product amount less than or equal to 100.
-37 recipes had a product amount greater than 100.
+49 recipes required less than 100 machines to run.
+37 recipes required more than 100 machines to run.
 The program has tested 86 combinations of recipes.
-Execution time: 0.00546106 seconds.
-Output time: 0.00336847 seconds.
+Execution time: 0.00224041 seconds.
+Output time: 0.00312275 seconds.
 
 Cable has been proccessed.
+Item tier = 2
+Max machines = 1000/(pow(10, 1)) = 100
 152 combinations have been found.
-97 recipes had a product amount less than or equal to 100.
-55 recipes had a product amount greater than 100.
+97 recipes required less than 100 machines to run.
+55 recipes required more than 100 machines to run.
 The program has tested 152 combinations of recipes.
-Execution time: 0.0044349 seconds.
-Output time: 0.00512413 seconds.
+Execution time: 0.00843228 seconds.
+Output time: 0.00527596 seconds.
 
 FICSMAS Ornament Bundle has been proccessed.
+Item tier = 2
+Max machines = 1000/(pow(10, 1)) = 100
 25 combinations have been found.
-17 recipes had a product amount less than or equal to 100.
-8 recipes had a product amount greater than 100.
+17 recipes required less than 100 machines to run.
+8 recipes required more than 100 machines to run.
 The program has tested 25 combinations of recipes.
-Execution time: 0.00146601 seconds.
-Output time: 0.0027611 seconds.
+Execution time: 0.000843367 seconds.
+Output time: 0.00217224 seconds.
 
 Aluminum Casing has been proccessed.
+Item tier = 3
+Max machines = 1000/(pow(10, 1)) = 100
 78 combinations have been found.
-71 recipes had a product amount less than or equal to 100.
-7 recipes had a product amount greater than 100.
+71 recipes required less than 100 machines to run.
+7 recipes required more than 100 machines to run.
 The program has tested 78 combinations of recipes.
-Execution time: 0.00295873 seconds.
-Output time: 0.00457006 seconds.
+Execution time: 0.00330911 seconds.
+Output time: 0.00473676 seconds.
 
 Alclad Aluminum Sheet has been proccessed.
+Item tier = 3
+Max machines = 1000/(pow(10, 1)) = 100
 65 combinations have been found.
-35 recipes had a product amount less than or equal to 100.
-30 recipes had a product amount greater than 100.
+35 recipes required less than 100 machines to run.
+30 recipes required more than 100 machines to run.
 The program has tested 65 combinations of recipes.
-Execution time: 0.00285456 seconds.
-Output time: 0.00277171 seconds.
+Execution time: 0.00290853 seconds.
+Output time: 0.00318494 seconds.
 
 Steel Beam has been proccessed.
+Item tier = 1
+Max machines = 1000/(pow(10, 1)) = 100
 69 combinations have been found.
-54 recipes had a product amount less than or equal to 100.
-15 recipes had a product amount greater than 100.
+54 recipes required less than 100 machines to run.
+15 recipes required more than 100 machines to run.
 The program has tested 69 combinations of recipes.
-Execution time: 0.00163874 seconds.
-Output time: 0.00268957 seconds.
+Execution time: 0.00193358 seconds.
+Output time: 0.00516996 seconds.
 
 Ficsite Ingot has been proccessed.
+Item tier = 1
+Max machines = 1000/(pow(10, 1)) = 100
 22 combinations have been found.
-22 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+22 recipes required less than 100 machines to run.
+0 recipes required more than 100 machines to run.
 The program has tested 22 combinations of recipes.
-Execution time: 0.0008333 seconds.
-Output time: 0.00194556 seconds.
+Execution time: 0.00233011 seconds.
+Output time: 0.00423094 seconds.
 
 Iron Rod has been proccessed.
+Item tier = 1
+Max machines = 1000/(pow(10, 1)) = 100
 26 combinations have been found.
-20 recipes had a product amount less than or equal to 100.
-6 recipes had a product amount greater than 100.
+20 recipes required less than 100 machines to run.
+6 recipes required more than 100 machines to run.
 The program has tested 26 combinations of recipes.
-Execution time: 0.000968178 seconds.
-Output time: 0.00186545 seconds.
+Execution time: 0.000776249 seconds.
+Output time: 0.00238981 seconds.
 
 Dark Matter Crystal has been proccessed.
+Item tier = 2
+Max machines = 1000/(pow(10, 1)) = 100
 15 combinations have been found.
-15 recipes had a product amount less than or equal to 100.
-0 recipes had a product amount greater than 100.
+15 recipes required less than 100 machines to run.
+0 recipes required more than 100 machines to run.
 The program has tested 15 combinations of recipes.
-Execution time: 0.000418949 seconds.
-Output time: 0.00113531 seconds.
+Execution time: 0.000639836 seconds.
+Output time: 0.00173916 seconds.
 
 Stator has been proccessed.
+Item tier = 2
+Max machines = 1000/(pow(10, 1)) = 100
 2254 combinations have been found.
-304 recipes had a product amount less than or equal to 100.
-1950 recipes had a product amount greater than 100.
+304 recipes required less than 100 machines to run.
+1950 recipes required more than 100 machines to run.
 The program has tested 2254 combinations of recipes.
-Execution time: 0.0722727 seconds.
-Output time: 0.0152442 seconds.
+Execution time: 0.0769068 seconds.
+Output time: 0.0131887 seconds.
 
 SAM Fluctuator has been proccessed.
+Item tier = 2
+Max machines = 1000/(pow(10, 1)) = 100
 1242 combinations have been found.
-246 recipes had a product amount less than or equal to 100.
-996 recipes had a product amount greater than 100.
+246 recipes required less than 100 machines to run.
+996 recipes required more than 100 machines to run.
 The program has tested 1242 combinations of recipes.
-Execution time: 0.0513576 seconds.
-Output time: 0.0164412 seconds.
+Execution time: 0.0504588 seconds.
+Output time: 0.0151312 seconds.
 
 Nitric Acid has been proccessed.
+Item tier = 2
+Max machines = 1000/(pow(10, 1)) = 100
 41 combinations have been found.
-27 recipes had a product amount less than or equal to 100.
-14 recipes had a product amount greater than 100.
+27 recipes required less than 100 machines to run.
+14 recipes required more than 100 machines to run.
 The program has tested 41 combinations of recipes.
-Execution time: 0.000900017 seconds.
-Output time: 0.00422478 seconds.
+Execution time: 0.000929094 seconds.
+Output time: 0.00366871 seconds.
 
 Portable Miner has been proccessed.
+Item tier = 2
+Max machines = 1000/(pow(10, 1)) = 100
 1886 combinations have been found.
-65 recipes had a product amount less than or equal to 100.
-1821 recipes had a product amount greater than 100.
+65 recipes required less than 100 machines to run.
+1821 recipes required more than 100 machines to run.
 The program has tested 1886 combinations of recipes.
-Execution time: 0.0631566 seconds.
-Output time: 0.00439236 seconds.
+Execution time: 0.057427 seconds.
+Output time: 0.00319243 seconds.
 
 High-Speed Connector has been proccessed.
-100000 combinations have been found.
-4830 recipes had a product amount less than or equal to 100.
-95170 recipes had a product amount greater than 100.
-The program has tested 100000 combinations of recipes.
-Execution time: 5.5188 seconds.
-Output time: 0.312114 seconds.
-The program exceeded 100000 loops. The item is too complex.
+Item tier = 3
+Max machines = 1000/(pow(10, 1)) = 100
+106722 combinations have been found.
+5418 recipes required less than 100 machines to run.
+101304 recipes required more than 100 machines to run.
+The program has tested 106722 combinations of recipes.
+Execution time: 4.86873 seconds.
+Output time: 0.266655 seconds.
 
 FICSMAS Wreath has been proccessed.
+Item tier = 3
+Max machines = 1000/(pow(10, 1)) = 100
 17 combinations have been found.
-13 recipes had a product amount less than or equal to 100.
-4 recipes had a product amount greater than 100.
+13 recipes required less than 100 machines to run.
+4 recipes required more than 100 machines to run.
 The program has tested 17 combinations of recipes.
-Execution time: 0.0058599 seconds.
-Output time: 0.0733366 seconds.
+Execution time: 0.00180248 seconds.
+Output time: 0.051253 seconds.
 
 Heat Sink has been proccessed.
+Item tier = 4
+Max machines = 1000/(pow(10, 2)) = 10
 492 combinations have been found.
-240 recipes had a product amount less than or equal to 100.
-252 recipes had a product amount greater than 100.
+14 recipes required less than 10 machines to run.
+478 recipes required more than 10 machines to run.
 The program has tested 492 combinations of recipes.
-Execution time: 0.0242812 seconds.
-Output time: 0.0137833 seconds.
+Execution time: 0.0192653 seconds.
+Output time: 0.00256017 seconds.
 
 Battery has been proccessed.
+Item tier = 4
+Max machines = 1000/(pow(10, 2)) = 10
 2032 combinations have been found.
-336 recipes had a product amount less than or equal to 100.
-1696 recipes had a product amount greater than 100.
+4 recipes required less than 10 machines to run.
+2028 recipes required more than 10 machines to run.
 The program has tested 2032 combinations of recipes.
-Execution time: 0.117318 seconds.
-Output time: 0.0256261 seconds.
+Execution time: 0.104001 seconds.
+Output time: 0.00161445 seconds.
 
 Encased Industrial Beam has been proccessed.
+Item tier = 2
+Max machines = 1000/(pow(10, 1)) = 100
 600 combinations have been found.
-230 recipes had a product amount less than or equal to 100.
-370 recipes had a product amount greater than 100.
+230 recipes required less than 100 machines to run.
+370 recipes required more than 100 machines to run.
 The program has tested 600 combinations of recipes.
-Execution time: 0.0244054 seconds.
-Output time: 0.0196815 seconds.
+Execution time: 0.0204416 seconds.
+Output time: 0.0136761 seconds.
 
 Ficsite Trigon has been proccessed.
+Item tier = 2
+Max machines = 1000/(pow(10, 1)) = 100
 22 combinations have been found.
-21 recipes had a product amount less than or equal to 100.
-1 recipes had a product amount greater than 100.
+21 recipes required less than 100 machines to run.
+1 recipes required more than 100 machines to run.
 The program has tested 22 combinations of recipes.
-Execution time: 0.00103827 seconds.
-Output time: 0.00538832 seconds.
+Execution time: 0.00092741 seconds.
+Output time: 0.00586992 seconds.
 
 Screws has been proccessed.
+Item tier = 2
+Max machines = 1000/(pow(10, 1)) = 100
 79 combinations have been found.
-37 recipes had a product amount less than or equal to 100.
-42 recipes had a product amount greater than 100.
+37 recipes required less than 100 machines to run.
+42 recipes required more than 100 machines to run.
 The program has tested 79 combinations of recipes.
-Execution time: 0.00714549 seconds.
-Output time: 0.00345061 seconds.
+Execution time: 0.00160343 seconds.
+Output time: 0.00305529 seconds.
 
 Power Shard has been proccessed.
+Item tier = 3
+Max machines = 1000/(pow(10, 1)) = 100
 315 combinations have been found.
-142 recipes had a product amount less than or equal to 100.
-173 recipes had a product amount greater than 100.
+142 recipes required less than 100 machines to run.
+173 recipes required more than 100 machines to run.
 The program has tested 315 combinations of recipes.
-Execution time: 0.0250134 seconds.
-Output time: 0.0109052 seconds.
+Execution time: 0.0173276 seconds.
+Output time: 0.00741935 seconds.
 
 Electromagnetic Control Rod has been proccessed.
-100000 combinations have been found.
-9052 recipes had a product amount less than or equal to 100.
-90948 recipes had a product amount greater than 100.
-The program has tested 100000 combinations of recipes.
-Execution time: 4.81245 seconds.
-Output time: 0.698115 seconds.
-The program exceeded 100000 loops. The item is too complex.
+Item tier = 3
+Max machines = 1000/(pow(10, 1)) = 100
+1000000 combinations have been found.
+51262 recipes required less than 100 machines to run.
+948738 recipes required more than 100 machines to run.
+The program has tested 1000000 combinations of recipes.
+Execution time: 45.8518 seconds.
+Output time: 3.15557 seconds.
+The program exceeded 1000000 loops. The item is too complex.
 
-210130 combinations have been found across all items.
-16319 recipes had a product amount less than or equal to 100 across all items.
-193811 recipes had a product amount greater than 100 across all items.
-The program has tested 210130 combinations of recipes across all items.
-Execution time: 12.3331 seconds.
+FICSMAS Wonder Star has been proccessed.
+Item tier = 4
+Max machines = 1000/(pow(10, 2)) = 10
+13 combinations have been found.
+1 recipes required less than 10 machines to run.
+12 recipes required more than 10 machines to run.
+The program has tested 13 combinations of recipes.
+Execution time: 0.0210035 seconds.
+Output time: 0.587817 seconds.
+
+Rotor has been proccessed.
+Item tier = 3
+Max machines = 1000/(pow(10, 1)) = 100
+2352 combinations have been found.
+624 recipes required less than 100 machines to run.
+1728 recipes required more than 100 machines to run.
+The program has tested 2352 combinations of recipes.
+Execution time: 0.0813752 seconds.
+Output time: 0.0320884 seconds.
+
+Reinforced Iron Plate has been proccessed.
+Item tier = 3
+Max machines = 1000/(pow(10, 1)) = 100
+4223 combinations have been found.
+896 recipes required less than 100 machines to run.
+3327 recipes required more than 100 machines to run.
+The program has tested 4223 combinations of recipes.
+Execution time: 0.161513 seconds.
+Output time: 0.0485014 seconds.
+
+Crystal Oscillator has been proccessed.
+Item tier = 4
+Max machines = 1000/(pow(10, 2)) = 10
+261468 combinations have been found.
+0 recipes required less than 10 machines to run.
+261468 recipes required more than 10 machines to run.
+The program has tested 261468 combinations of recipes.
+Execution time: 13.1764 seconds.
+Output time: 0.00810139 seconds.
+

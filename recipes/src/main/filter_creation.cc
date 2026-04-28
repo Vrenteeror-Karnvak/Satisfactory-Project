@@ -74,7 +74,7 @@ int main(int argc, char* argv[]) {
     bool filter_made = false; // has the filter for the item already been made
     unordered_map<string, int> filter_map;
     for (const auto& data : filter_json) {
-        filter_map.insert({data.value("ItemClass", "N/A"), stoi(data.value("Amount", "0"))});
+        filter_map.insert({data.value("ItemClass", "N/A"), stoi(data.value("Depth", "0"))});
     }
 
     // The json file containing the terminal resources
