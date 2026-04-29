@@ -1,1 +1,0 @@
-[[Uranium Waste]][[Silica]][[Nitric Acid]][[Sulfuric Acid]][[Sulfuric Acid]][[Alumina Solution]][[Aluminum Casing]]

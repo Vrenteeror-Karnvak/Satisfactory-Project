@@ -1,1 +1,0 @@
-[[FICSMAS Wreath]][[Candy Cane]]

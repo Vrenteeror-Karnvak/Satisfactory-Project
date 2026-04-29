@@ -1,0 +1,41 @@
+[
+    {
+        "DisplayName": "Iron Rod",
+        "Ingredients": [
+            {
+                "ItemClass": "Iron Ingot",
+                "Amount": "1"
+            }
+        ],
+        "Product": [
+            {
+                "ItemClass": "Iron Rod",
+                "Amount": "1"
+            }
+        ],
+        "ProducedIn": "Constructor",
+        "ManufactoringDuration": "4.000000"
+    },
+    {
+        "Category": "Input Item",
+        "ItemClass": "Aluminum Ingot"
+    },
+    {   
+        "Category": "Termination Data",
+        "max_loops": "100000",
+        "max_time": "5",
+        "unit_of_time": "Minutes",
+        "number_items_to_test": "68",
+        "old_number_items_to_test": "68"
+    },
+    {
+        "Category": "Status Update Data",
+        "update_frequency": "60",
+        "unit_of_time": "Seconds"
+    },
+    {
+        "Category": "Filter Data",
+        "max_product": "100",
+        "remake_filters": true
+    }
+]

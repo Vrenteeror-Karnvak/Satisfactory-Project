@@ -1,1 +1,0 @@
-[[FICSMAS Actual Snow]]

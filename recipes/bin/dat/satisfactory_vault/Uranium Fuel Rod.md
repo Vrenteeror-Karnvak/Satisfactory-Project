@@ -1,1 +1,0 @@
-[[Encased Uranium Cell]][[Encased Industrial Beam]][[Electromagnetic Control Rod]]

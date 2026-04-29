@@ -110,9 +110,9 @@ void Recipe::set_processed() {
 void Recipe::combine_recipes(const Recipe other) {
     bool found = false;
     // combines the ingredients
-    for (int i = 0; i < other.get_ingredients().size(); i++) {
+    for (size_t i = 0; i < other.get_ingredients().size(); i++) {
         found = false;
-        for (int j = 0; j < ingredients.size(); j++) {
+        for (size_t j = 0; j < ingredients.size(); j++) {
             if (ingredients.at(j).same_name(other.get_ingredient(i))) {
                 ingredients.at(j) += other.get_ingredient(i);
                 found = true;
@@ -125,9 +125,9 @@ void Recipe::combine_recipes(const Recipe other) {
     }
 
     // combines the products
-    for (int i = 0; i < other.get_products().size(); i++) {
+    for (size_t i = 0; i < other.get_products().size(); i++) {
         found = false;
-        for (int j = 0; j < products.size(); j++) {
+        for (size_t j = 0; j < products.size(); j++) {
             if (products.at(j).same_name(other.get_product(i))) {
                 products.at(j) += other.get_product(i);
                 found = true;
@@ -140,8 +140,8 @@ void Recipe::combine_recipes(const Recipe other) {
     }
 
     // Removes any similarities between the products and ingredients
-    for (int i = 0; i < products.size(); i++) {
-        for (int j = 0; j < ingredients.size(); j++) {
+    for (size_t i = 0; i < products.size(); i++) {
+        for (size_t j = 0; j < ingredients.size(); j++) {
             if (products.at(i).same_name(ingredients.at(j))) {
                 products.at(i) -= ingredients.at(j);
             }
@@ -150,9 +150,9 @@ void Recipe::combine_recipes(const Recipe other) {
     
     // Remove ingredients that were cancelled out by products (rebuild to avoid index shifting)
     vector<Resource> cleaned_ingredients;
-    for (int i = 0; i < ingredients.size(); i++) {
+    for (size_t i = 0; i < ingredients.size(); i++) {
         bool cancelled = false;
-        for (int j = 0; j < products.size(); j++) {
+        for (size_t j = 0; j < products.size(); j++) {
             if (ingredients.at(i).same_name(products.at(j))) {
                 cancelled = true;
                 break;
@@ -168,7 +168,7 @@ void Recipe::combine_recipes(const Recipe other) {
     // Also converts products with a negative amount into ingredients
     // Rebuild the vector to preserve original indices of byproducts
     vector<Resource> cleaned_products;
-    for (int i = 0; i < products.size(); i++) {
+    for (size_t i = 0; i < products.size(); i++) {
         if (products.at(i).get_amount() == 0) {
             // Skip zero-amount products
             continue;
@@ -187,14 +187,14 @@ void Recipe::combine_recipes(const Recipe other) {
 }
 
 void Recipe::merge_recipes(const vector<Recipe> data) {
-    for (int i = 0; i < data.size(); i++) {
+    for (size_t i = 0; i < data.size(); i++) {
         this->combine_recipes(data.at(i));
     }
 }
 
 void Recipe::set_primary_product(const string& primary_name) {
     // Find the product matching primary_name and move it to index 0
-    for (int i = 0; i < products.size(); i++) {
+    for (size_t i = 0; i < products.size(); i++) {
         if (products.at(i).get_name() == primary_name) {
             // If not already at index 0, swap it to the front
             if (i != 0) {
@@ -250,13 +250,13 @@ json Recipe::to_json() const {
     output["ID"] = ID;
     output["Ingredients"] = empty_array;
     output["Product"] = empty_array;
-    for (int i = 0; i < ingredients.size(); i++) {
+    for (size_t i = 0; i < ingredients.size(); i++) {
         current["ItemClass"] = ingredients.at(i).get_name();
         fraction = to_string(ingredients.at(i).get_amount().get_numerator()) + "/" + to_string(ingredients.at(i).get_amount().get_denominator());
         current["Amount"] = fraction;
         output["Ingredients"].push_back(current);
     }
-    for (int i = 0; i < products.size(); i++) {
+    for (size_t i = 0; i < products.size(); i++) {
         current["ItemClass"] = products.at(i).get_name();
         fraction = to_string(products.at(i).get_amount().get_numerator()) + "/" + to_string(products.at(i).get_amount().get_denominator());
         current["Amount"] = fraction;
@@ -276,12 +276,12 @@ json Recipe::to_compressed_json() const {
     output["ID"] = ID;
     output["Ingredients"] = empty_array;
     output["Product"] = empty_array;
-    for (int i = 0; i < ingredients.size(); i++) {
+    for (size_t i = 0; i < ingredients.size(); i++) {
         current["ItemClass"] = ingredients.at(i).get_name();
         current["Amount"] = to_string(ingredients.at(i).get_amount().get_numerator());
         output["Ingredients"].push_back(current);
     }
-    for (int i = 0; i < products.size(); i++) {
+    for (size_t i = 0; i < products.size(); i++) {
         current["ItemClass"] = products.at(i).get_name();
         current["Amount"] = to_string(products.at(i).get_amount().get_numerator());;
         output["Product"].push_back(current);
@@ -292,11 +292,11 @@ json Recipe::to_compressed_json() const {
 void Recipe::set_to(const Fraction end_result) {
     Fraction multiple = end_result / products.at(0).get_amount();
 
-    for (int i = 0; i < ingredients.size(); i++) {
+    for (size_t i = 0; i < ingredients.size(); i++) {
         ingredients.at(i).set_amount(ingredients.at(i).get_amount() * multiple);
     }
 
-    for (int i = 0; i < products.size(); i++) {
+    for (size_t i = 0; i < products.size(); i++) {
         products.at(i).set_amount(products.at(i).get_amount() * multiple);
     }
 }
@@ -329,12 +329,12 @@ bool Recipe::operator==(const Recipe& other) const {
     }
 
     // if any of the ingredients or products do not match, return false;
-    for (int i = 0; i < ingredients.size(); i++) {
+    for (size_t i = 0; i < ingredients.size(); i++) {
         if (ingredients.at(i) != other.get_ingredient(i)) {
             return false;
         }
     }
-    for (int i = 0; i < products.size(); i++) {
+    for (size_t i = 0; i < products.size(); i++) {
         if (products.at(i) != other.get_product(i)) {
             return false;
         }
@@ -354,10 +354,10 @@ Recipe& Recipe::operator+=(const Recipe& other) {
         throw invalid_argument("Cannot combine different recipes.\n" + name + " != " + other.get_name() + ".");
     }
 
-    for (int i = 0; i < ingredients.size(); i++) {
+    for (size_t i = 0; i < ingredients.size(); i++) {
         ingredients.at(i) += other.get_ingredient(i);
     }
-    for (int i = 0; i < products.size(); i++) {
+    for (size_t i = 0; i < products.size(); i++) {
         products.at(i) += other.get_product(i);
     }
     return *this;
@@ -374,10 +374,10 @@ Recipe& Recipe::operator-=(const Recipe& other) {
         throw invalid_argument("Cannot combine different recipes.\n" + name + " != " + other.get_name() + ".");
     }
 
-    for (int i = 0; i < ingredients.size(); i++) {
+    for (size_t i = 0; i < ingredients.size(); i++) {
         ingredients.at(i) -= other.get_ingredient(i);
     }
-    for (int i = 0; i < products.size(); i++) {
+    for (size_t i = 0; i < products.size(); i++) {
         products.at(i) -= other.get_product(i);
     }
     return *this;
@@ -391,10 +391,10 @@ Recipe Recipe::operator-(const Recipe& other) const {
 
 
 Recipe& Recipe::operator*=(const Fraction multiple) {
-    for (int i = 0; i < ingredients.size(); i++) {
+    for (size_t i = 0; i < ingredients.size(); i++) {
         ingredients.at(i) *= multiple;
     }
-    for (int i = 0; i < products.size(); i++) {
+    for (size_t i = 0; i < products.size(); i++) {
         products.at(i) *= multiple;
     }
     return *this;

@@ -100,8 +100,8 @@ int main(int argc, char* argv[]) {
             || data.value("ItemClass", "").find("Packaged") != string::npos
             || data.value("ItemClass", "").find("Alien Protein") != string::npos
             || data.value("ItemClass", "").find("fuel") != string::npos
-            || (data.value("ItemClass", "").find("Fuel") != string::npos && data.value("ItemClass", "") != "Fuel")
-                && data.value("ItemClass", "").find("Fuel Rod") == string::npos) {
+            || ((data.value("ItemClass", "").find("Fuel") != string::npos && data.value("ItemClass", "") != "Fuel")
+                && data.value("ItemClass", "").find("Fuel Rod") == string::npos)) {
                 to_delete = true;
             }
 

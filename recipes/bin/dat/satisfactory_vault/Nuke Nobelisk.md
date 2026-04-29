@@ -1,1 +1,0 @@
-[[Nobelisk]][[Encased Uranium Cell]][[Smokeless Powder]][[AI Limiter]]

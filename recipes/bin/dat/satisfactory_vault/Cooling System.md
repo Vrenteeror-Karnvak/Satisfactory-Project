@@ -1,1 +1,0 @@
-[[Heat Sink]][[Rubber]][[Water]][[Nitrogen Gas]]

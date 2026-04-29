@@ -37,7 +37,7 @@ int main(int argc, char* argv[]) {
     vector<string> names;
 
     // counters for data collection
-    int original_count = 0;
+    int original_count = recipe.size();
     int new_count = 0;
     int single_count = 0;
     int multi_count = 0;
@@ -48,11 +48,11 @@ int main(int argc, char* argv[]) {
     }
 
     // counts how many recipes were at the start to ensure none are lost.
-    for (const auto& block : recipe) {
-        original_count += 1;
-    }
+    // for (const auto& block : recipe) {
+    //     original_count += 1;
+    // }
 
-    for (int i = 0; i < names.size(); i++) {
+    for (size_t i = 0; i < names.size(); i++) {
         product = names.at(i);
 
         for (const auto& block : recipe) {

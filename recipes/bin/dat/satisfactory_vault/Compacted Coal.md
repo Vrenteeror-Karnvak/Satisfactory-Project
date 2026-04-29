@@ -1,1 +1,0 @@
-[[Coal]][[Sulfur]][[Turbofuel]][[Nitric Acid]][[Rocket Fuel]][[Power Shard]]
