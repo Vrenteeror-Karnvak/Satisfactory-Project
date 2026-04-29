@@ -70,7 +70,7 @@ int main(int argc, char* argv[]) {
         // Outputs used to analyse and filter the item list
         // This will be what determines the items that get turned into a chain
         
-        if ((product.find("fuel") != string::npos || product.find("Fuel") != string::npos) && product.find("Ficsonium Fuel Rod") == string::npos
+        if (((product.find("fuel") != string::npos || product.find("Fuel") != string::npos) && product.find("Ficsonium Fuel Rod") == string::npos)
         || product.find("Heavy Oil Residue") != string::npos || product.find("Petroleum Coke") != string::npos || product.find("Copper Powder") != string::npos
         || product.find("Matter") != string::npos || product.find("Acid") != string::npos) { }
         else if (product.find("matter") != string::npos || product.find("Matter") != string::npos) {
@@ -116,7 +116,7 @@ int main(int argc, char* argv[]) {
         }
     }
 
-    for (int i = 0; i < sorted.size(); i++) {
+    for (size_t i = 0; i < sorted.size(); i++) {
         for (const auto& category : root) {
             if (category.value("Category", "") == sorted.at(i)) {
                 dataOut.push_back(category);

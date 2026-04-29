@@ -18,29 +18,29 @@ using namespace std;
 using json = nlohmann::ordered_json;
 
 class Incrementor {
-    vector<int> selected_alternate;
-    vector<int> alternate_count;
-    unordered_map<string,int> name_to_index;
+    vector<size_t> selected_alternate;
+    vector<size_t> alternate_count;
+    unordered_map<string,size_t> name_to_index;
     public:
-        void push_back(string name, int alternate, int alternate_count) {
-            name_to_index.insert(name,selected_alternate.size());
+        void push_back(string name, size_t alternate, size_t alternate_count) {
+            name_to_index.insert({name,selected_alternate.size()});
             selected_alternate.push_back(alternate);
             this->alternate_count.push_back(alternate_count);
         }
-        int get_index(string name) const {
-            return name_to_index[name];
+        size_t get_index(string name) const {
+            return name_to_index.at(name);
         }
-        const int& alternate(int index) {
+        size_t& alternate(size_t index) {
             return selected_alternate[index];
         }
-        const int& alternate_max(int index) {
+        size_t& alternate_max(size_t index) {
             return alternate_count[index];
         }
         size_t size() const {
             return selected_alternate.size();
         }
         bool all_zeros() const {
-            for (int i = 0; i<selected_alternate.size(); i++) {
+            for (size_t i = 0; i<selected_alternate.size(); i++) {
                 if (selected_alternate[i]!=0) {
                     return false;
                 }
@@ -49,7 +49,7 @@ class Incrementor {
         }
 };
 
-bool check_duplicate_incrementor_values(const vector<int>& incrementor_values, const vector<string>& incrementor_products, const Incrementor& incrementor, ofstream& status_log);
+bool check_duplicate_incrementor_values(const vector<size_t>& incrementor_values, const vector<string>& incrementor_products, const Incrementor& incrementor, ofstream& status_log);
 
 int main(int argc, char* argv[]) {
 
@@ -76,9 +76,8 @@ int main(int argc, char* argv[]) {
     recipe_in.close();
     Recipe recipe_input;
     unordered_map<string, Recipe> recipe_map;   //recipe name -> recipe object
-    int vector_size;
     Incrementor incrementor;    //used for handling selection of alternate recipes
-    int m = 0; //?
+    size_t m = 0; //?
 
     // The json file containing the recipe or item
     json test_recipe_root;
@@ -90,7 +89,7 @@ int main(int argc, char* argv[]) {
     // The auto terminate information
     const int max_loops = stoi(test_recipe_root.at(2).value("max_loops", "0")); // the maximum number of loops the program is allowed to run
     const chrono::minutes max_time(stoi(test_recipe_root.at(2).value("max_time", "0"))); // the max time the program is allowed to run
-    int num_to_test = stoi(test_recipe_root.at(2).value("number_items_to_test", "0")) - 1; // the number of items to test before terminating the loop in order to avoid super complex items
+    size_t num_to_test = static_cast<size_t>(stoi(test_recipe_root.at(2).value("number_items_to_test", "0")) - 1); // the number of items to test before terminating the loop in order to avoid super complex items
     const chrono::seconds update_frequency(stoi(test_recipe_root.at(3).value("update_frequency", "0"))); // the frequency the program updates its progress
     int u = 1; // the number of updates
     int max_product = stoi(test_recipe_root.at(4).value("max_product", "0")); // the maximum amount of product a recipe chain is allowed to have
@@ -112,7 +111,7 @@ int main(int argc, char* argv[]) {
 
     // The variables that the stack uses to record the data
     vector<Recipe> output_recipes; // the vector of all recipes used by the chain
-    int location = 0; // the location of the identical recipe in the vector
+    size_t location = 0; // the location of the identical recipe in the vector
     bool already_added = false; // marks if a recipe is already in the vector
 
     // The variables used to output the data
@@ -148,7 +147,7 @@ int main(int argc, char* argv[]) {
     for (const auto& data : recipe_root) {
         // adds the first recipe of all items to recipe_list and creates the incrementors
         string category = data.value("Category", "");
-        int selected_recipe = 0,
+        size_t selected_recipe = 0,
             recipe_count = data.value("Data", empty_array).size();
 
         incrementor.push_back(category, selected_recipe, recipe_count);
@@ -160,7 +159,7 @@ int main(int argc, char* argv[]) {
 
 
 
-    for (int k = 0; k < recipe_root.size(); k++) {
+    for (size_t k = 0; k < recipe_root.size(); k++) {
         auto start = chrono::steady_clock::now(); // starts the timer
 
         // Clears termination flags and debug variables
@@ -196,7 +195,7 @@ int main(int argc, char* argv[]) {
                 if (recipe_stack.top().is_processed()) {
                     already_added = false;
                     // if the current recipe has already been processed, remove it from the stack
-                    for (int i = 0; i < output_recipes.size(); i++) {
+                    for (size_t i = 0; i < output_recipes.size(); i++) {
                         if (output_recipes.at(i).same_name(recipe_stack.top())) {
                             already_added = true;
                             location = i;
@@ -217,7 +216,7 @@ int main(int argc, char* argv[]) {
                     // if the current recipe has not been processed, process it
                     recipe_stack.top().set_processed(); // sets the processed flag to true
                     ingredients = recipe_stack.top().get_ingredients(); // gets the ingredients of the current recipe
-                    for (int i = 0; i < ingredients.size(); i++) { // increments through all the ingredients
+                    for (size_t i = 0; i < ingredients.size(); i++) { // increments through all the ingredients
                         is_terminal = false;
 
                         auto terminal_location = terminal_map.find(ingredients.at(i).get_name()); // finds if the item is terminal
@@ -247,7 +246,7 @@ int main(int argc, char* argv[]) {
             
             // converts the output vector into uncompressed json
             /*
-            for (int i = 0; i < output_recipes.size(); i++) {
+            for (size_t i = 0; i < output_recipes.size(); i++) {
                 chain_object = output_recipes.at(i).to_json();
                 chain_array.push_back(chain_object);
             }
@@ -260,7 +259,7 @@ int main(int argc, char* argv[]) {
             string incrementor_ID = ""; // The ID that identifies what recipes were used to make the chain
             output.merge_recipes(output_recipes);
             output.set_primary_product(test_item);
-            for (int i = 0; i < incrementor.size(); i++) {
+            for (size_t i = 0; i < incrementor.size(); i++) {
                 incrementor_ID.append(to_string(incrementor.alternate(i)));
                 if ((i + 1) != incrementor.size()) {
                     incrementor_ID.append("|");
@@ -268,10 +267,10 @@ int main(int argc, char* argv[]) {
             }
             output.set_ID(incrementor_ID);
             output.set_name(test_item);
-            for (int i = 0; i < output.get_ingredients().size(); i++) {
+            for (size_t i = 0; i < output.get_ingredients().size(); i++) {
                 lm = lcm(lm, output.get_ingredient(i).get_amount().get_denominator());
             }
-            for (int i = 0; i < output.get_products().size(); i++) {
+            for (size_t i = 0; i < output.get_products().size(); i++) {
                 lm = lcm(lm, output.get_product(i).get_amount().get_denominator());
             }
             output *= lm;
@@ -295,9 +294,9 @@ int main(int argc, char* argv[]) {
             }
 
             // increments the incrementor vector
-            vector<int> incrementor_values;
+            vector<size_t> incrementor_values;
             vector<string> incrementor_products;
-            for (int i = 0; i < output_recipes.size(); i++) {
+            for (size_t i = 0; i < output_recipes.size(); i++) {
                 product_name = output_recipes.at(i).get_product(0).get_name();
                 incrementor_values.push_back(incrementor.get_index(product_name));
                 incrementor_products.push_back(product_name);
@@ -305,7 +304,7 @@ int main(int argc, char* argv[]) {
             sort(incrementor_values.begin(), incrementor_values.end());
             duplicate_found = check_duplicate_incrementor_values(incrementor_values, incrementor_products, incrementor, status_log);
             bool increment = true; // Determines if the value should be incremented
-            for (int j = 0; j < incrementor_values.size(); j++) {
+            for (size_t j = 0; j < incrementor_values.size(); j++) {
                 int index = incrementor_values.at(j);
                 // if the value needs to be incremented, add one to it
                 if (increment) {
@@ -318,14 +317,14 @@ int main(int argc, char* argv[]) {
                     increment = true; //carry the addition
                 }
 
-                recipe_input.set_recipe(recipe_root.at(index).value("Data", empty_array).at(incrementor.at(index)));
+                recipe_input.set_recipe(recipe_root.at(index).value("Data", empty_array).at(incrementor.alternate(index)));
                 recipe_map.at(recipe_root.at(index).value("Category", "")) = recipe_input;
             }
             
             // If the last value reached its maximum
             // Set all incrementor values to 0 to end the while loop
             if (increment) {
-                for (int j = 0; j < incrementor.size(); j++) {
+                for (size_t j = 0; j < incrementor.size(); j++) {
                     incrementor.alternate(j) = 0;
                     recipe_input.set_recipe(recipe_root.at(j).value("Data", empty_array).at(0));
                     recipe_map[recipe_root.at(j).value("Category", "")] = recipe_input;
@@ -451,10 +450,10 @@ int main(int argc, char* argv[]) {
 
 
 
-bool check_duplicate_incrementor_values(const vector<int>& incrementor_values, const vector<string>& incrementor_products, const Incrementor& incrementor, ofstream& status_log) {
+bool check_duplicate_incrementor_values(const vector<size_t>& incrementor_values, const vector<string>& incrementor_products, const Incrementor& incrementor, ofstream& status_log) {
     bool duplicate_found = false;
-    for (int d = 0; d < incrementor_values.size(); d++) {
-        for (int f = d + 1; f < incrementor_values.size(); f++) {
+    for (size_t d = 0; d < incrementor_values.size(); d++) {
+        for (size_t f = d + 1; f < incrementor_values.size(); f++) {
             if (incrementor_values.at(d) == incrementor_values.at(f)) {
                 duplicate_found = true;
                 break;
@@ -470,14 +469,14 @@ bool check_duplicate_incrementor_values(const vector<int>& incrementor_values, c
         cerr << "ERROR: duplicate incrementor index detected; This should not occur." << endl;
         cerr << "   output_recipes.size() = " << incrementor_values.size() << endl;
         cerr << "   incrementor_values = [";
-        for (int j = 0; j < incrementor_values.size(); j++) {
+        for (size_t j = 0; j < incrementor_values.size(); j++) {
             cerr << incrementor_values.at(j);
             if (j + 1 < incrementor_values.size()) {
                 cerr << ", ";
             }
         }
         cerr << "]" << endl;
-        for (int j = 0; j < incrementor_products.size(); j++) {
+        for (size_t j = 0; j < incrementor_products.size(); j++) {
             cerr << "   Recipe " << j << ": product(0) = '" << incrementor_products.at(j) << "' index = " << incrementor.get_index(incrementor_products.at(j)) << endl;
         }
 
@@ -485,14 +484,14 @@ bool check_duplicate_incrementor_values(const vector<int>& incrementor_values, c
         status_log << "ERROR: duplicate incrementor index detected; This should not occur." << endl;
         status_log << "   output_recipes.size() = " << incrementor_values.size() << endl;
         status_log << "   incrementor_values = [";
-        for (int j = 0; j < incrementor_values.size(); j++) {
+        for (size_t j = 0; j < incrementor_values.size(); j++) {
             status_log << incrementor_values.at(j);
             if (j + 1 < incrementor_values.size()) {
                 status_log << ", ";
             }
         }
         status_log << "]" << endl;
-        for (int j = 0; j < incrementor_products.size(); j++) {
+        for (size_t j = 0; j < incrementor_products.size(); j++) {
             status_log << "   Recipe " << j << ": product(0) = '" << incrementor_products.at(j) << "' index = " << incrementor.get_index(incrementor_products.at(j)) << endl;
         }
         status_log << endl;

@@ -35,12 +35,11 @@ int main(int argc, char* argv[]) {
     recipe_in >> recipe_root;
     Recipe recipe_input;
     unordered_map<string, Recipe> recipe_map;
-    int vector_size;
-    vector<int> incrementor;
-    vector<int> incrementor_max;
-    vector<int> all_zeros;
-    unordered_map<string, int> incrementor_map; // the location of the incrementor for a given product inside of the incrementor vector
-    int m = 0;
+    vector<size_t> incrementor;
+    vector<size_t> incrementor_max;
+    vector<size_t> all_zeros;
+    unordered_map<string, size_t> incrementor_map; // the location of the incrementor for a given product inside of the incrementor vector
+    size_t m = 0;
 
     // The json file containing the recipe or item
     json test_recipe_root;
@@ -61,11 +60,10 @@ int main(int argc, char* argv[]) {
     Resource ingredient; // the current ingredient being added
     Recipe new_recipe; // the recipe being added to the stack for non terminal resources
     Recipe terminal_recipe; // the recipe being added to the stack for terminal resources
-    bool is_terminal = false; // marks if a resource is terminal
 
     // The variables that the stack uses to record the data
     vector<Recipe> output_recipes; // the vector of all recipes used by the chain
-    int location = 0; // the location of the identical recipe in the vector
+    size_t location = 0; // the location of the identical recipe in the vector
     bool already_added = false; // marks if a recipe is already in the vector
 
     // The variables used to output the compressed version of the data
@@ -117,7 +115,7 @@ int main(int argc, char* argv[]) {
     // The main function, runs until the incrementor vector has returned back to its starting value
     do {
         compressed_output_vector.clear();
-        for (int l = 0; l < item_list.size(); l++) {
+        for (size_t l = 0; l < item_list.size(); l++) {
             // clears the output storage vectors
             output_recipes.clear();
             chain_array.clear();
@@ -141,7 +139,7 @@ int main(int argc, char* argv[]) {
                 if (recipe_stack.top().is_processed()) {
                     already_added = false;
                     // if the current recipe has already been processed, remove it from the stack
-                    for (int i = 0; i < output_recipes.size(); i++) {
+                    for (size_t i = 0; i < output_recipes.size(); i++) {
                         if (output_recipes.at(i).same_name(recipe_stack.top())) {
                             already_added = true;
                             location = i;
@@ -162,8 +160,7 @@ int main(int argc, char* argv[]) {
                     // if the current recipe has not been processed, process it
                     recipe_stack.top().set_processed(); // sets the processed flag to true
                     ingredients = recipe_stack.top().get_ingredients(); // gets the ingredients of the current recipe
-                    for (int i = 0; i < ingredients.size(); i++) { // increments through all the ingredients
-                        is_terminal = false;
+                    for (size_t i = 0; i < ingredients.size(); i++) { // increments through all the ingredients
 
                         auto terminal_location = terminal_map.find(ingredients.at(i).get_name()); // finds if the item is terminal
                         if (terminal_location != terminal_map.end()) {
@@ -193,10 +190,10 @@ int main(int argc, char* argv[]) {
             int lm = 1; // the least common multiple of the denominators
             output.merge_recipes(output_recipes);
             output.set_name(test_item);
-            for (int i = 0; i < output.get_ingredients().size(); i++) {
+            for (size_t i = 0; i < output.get_ingredients().size(); i++) {
                 lm = lcm(lm, output.get_ingredient(i).get_amount().get_denominator());
             }
-            for (int i = 0; i < output.get_products().size(); i++) {
+            for (size_t i = 0; i < output.get_products().size(); i++) {
                 lm = lcm(lm, output.get_product(i).get_amount().get_denominator());
             }
             output *= lm;
@@ -205,7 +202,7 @@ int main(int argc, char* argv[]) {
             
             // checks if the recipe combination has already been found
             found = false;
-            for (int i = 0; i < output_array.size(); i++) {
+            for (size_t i = 0; i < output_array.size(); i++) {
                 if (output_object == output_array.at(i)) {
                     found = true;
                 }
@@ -220,14 +217,14 @@ int main(int argc, char* argv[]) {
         int lm = 1; // the least common multiple of the denominators
         string incrementor_ID = ""; // The ID that identifies what recipes were used to make the chain
         compressed_output.merge_recipes(compressed_output_vector);
-        for (int i = 0; i < incrementor.size(); i++) {
+        for (size_t i = 0; i < incrementor.size(); i++) {
             incrementor_ID.append(to_string(incrementor.at(i)));
         }
         compressed_output.set_name(incrementor_ID);
-        for (int i = 0; i < compressed_output.get_ingredients().size(); i++) {
+        for (size_t i = 0; i < compressed_output.get_ingredients().size(); i++) {
             lm = lcm(lm, compressed_output.get_ingredient(i).get_amount().get_denominator());
         }
-        for (int i = 0; i < compressed_output.get_products().size(); i++) {
+        for (size_t i = 0; i < compressed_output.get_products().size(); i++) {
             lm = lcm(lm, compressed_output.get_product(i).get_amount().get_denominator());
         }
         compressed_output *= lm;
@@ -236,7 +233,7 @@ int main(int argc, char* argv[]) {
 
         // increments the incrementor vector
         incrementor.at(0) += 1;
-        for (int i = 0; i < incrementor.size(); i++) {
+        for (size_t i = 0; i < incrementor.size(); i++) {
             // if the incrementor at the current index has reached its max value, reset it to 0 and increment the next index
             if (incrementor.at(i) >= incrementor_max.at(i)) {
                 incrementor.at(i) = 0;
@@ -257,7 +254,7 @@ int main(int argc, char* argv[]) {
         count += 1;
 
         total = 1;
-        for (int i = 0; i < incrementor_max.size(); i++) {
+        for (size_t i = 0; i < incrementor_max.size(); i++) {
             if (incrementor_max.at(i) != 0) {
                 total *= incrementor_max.at(i);
             }

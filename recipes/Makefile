@@ -1,5 +1,5 @@
 GXX := g++
-GXXFLAGS := -g
+GXXFLAGS := -Wall -std=c++17
 
 initializer := bin/initializer
 recipe_extractor := bin/recipe_extractor
@@ -18,6 +18,9 @@ obsidian := bin/obsidian
 TARGETS := $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_sorter) $(recipe_sorter_sorter) $(recipe_trimmer) $(test_file) $(main) $(main_mega) $(test) $(backup_test) $(filter_creation) $(obsidian)
 
 all: recipes test resource obsidian
+
+debug: GXXFLAGS += -g
+debug: all
 
 recipes: $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_trimmer) $(recipe_sorter) $(recipe_sorter_sorter) $(test_file)
 test: $(test) $(backup_test) $(filter_creation)
@@ -66,9 +69,12 @@ $(obsidian): src/Obsidian.cpp
 clear_obs:
 	rm -f bin/dat/satisfactory_vault/*
 
-.PHONY: run_recipes
+bin/dat/en-US.json:
+	@echo "\e[31m\
+	dat/en-US.json not found\nExamine Steam/steamapps/common/Satisfactory/CommunityResources/Languages/Translations\
+	\e[0m"
 
-run_recipes: recipes
+run_recipes: recipes bin/dat/en-US.json
 	./bin/recipe_extractor
 	./bin/recipe_fixer
 	./bin/recipe_trimmer
@@ -76,9 +82,14 @@ run_recipes: recipes
 	./bin/recipe_sorter_sorter
 
 run_test: test
-	./bin/test > ./tests/test.dat
-	./bin/backup_test > ./tests/backup_test.dat
-	./bin/filter_creation > ./tests/filter_creation.dat
+	./bin/test > ./bin/tests/test.dat
+#	./bin/backup_test > ./bin/tests/backup_test.dat
+	./bin/filter_creation > ./bin/tests/filter_creation.dat
 
 clean:
 	rm -f $(TARGETS)
+
+uninstall: clean
+	rm -rf bin/*
+	mkdir bin/dat bin/int bin/tests
+	cp debug/dat/test_input.json bin/dat/

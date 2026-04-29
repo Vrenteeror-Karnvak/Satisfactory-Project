@@ -1,1 +1,0 @@
-[[Nobelisk]][[Crystal Oscillator]]

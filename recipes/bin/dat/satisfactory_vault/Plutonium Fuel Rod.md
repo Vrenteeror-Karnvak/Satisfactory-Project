@@ -1,1 +1,0 @@
-[[Encased Plutonium Cell]][[Steel Beam]][[Electromagnetic Control Rod]][[Heat Sink]]

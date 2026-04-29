@@ -1,1 +1,0 @@
-[[Ficsonium]][[Electromagnetic Control Rod]][[Ficsite Trigon]][[Excited Photonic Matter]]

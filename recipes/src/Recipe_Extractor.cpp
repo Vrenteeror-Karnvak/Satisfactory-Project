@@ -27,12 +27,12 @@ int main(int argc, char* argv[]) {
 
     if (!fin.is_open()) {
         cerr << "Failed to open input file.\n";
-        return 0;
+        return 1;
     }
 
     if (!name_out.is_open()) {
         cerr << "Failed to open name output file.\n";
-        return 0;
+        return 1;
     }
 
     if (!resource_out.is_open()) {
@@ -41,7 +41,7 @@ int main(int argc, char* argv[]) {
 
     if (!recipe_out.is_open()) {
         cerr << "Failed to open recipe output file.\n";
-        return 0;
+        return 1;
     }
 
     // pulls the full file for processing

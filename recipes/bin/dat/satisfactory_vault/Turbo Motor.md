@@ -1,1 +1,0 @@
-[[Cooling System]][[Radio Control Unit]][[Motor]][[Rubber]]
