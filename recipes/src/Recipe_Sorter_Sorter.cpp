@@ -18,7 +18,7 @@ int main(int argc, char* argv[]) {
     ofstream recipe_out(exePath / "dat/recipes.json");
     ofstream item_out(exePath / "int/item_list.txt");
     ofstream item_analysis(exePath / "int/item_analysis.txt");
-    ofstream filter_out(exePath / "dat" / "item_filters.json");
+    ofstream filter_out(exePath / "dat" / "item_tiers.json");
     
     json filter_array = json::array();
     json filter_object = json::object();

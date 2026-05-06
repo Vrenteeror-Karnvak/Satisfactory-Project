@@ -35,8 +35,8 @@
     },
     {
         "Category": "Filter Data",
-        "max_product": 1000,
+        "max_product": 10000,
         "tiers_per_log": 3,
-        "remake_filters": true
+        "remake_filters": false
     }
 ]

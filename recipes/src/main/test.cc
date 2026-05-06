@@ -62,6 +62,8 @@ int main(int argc, char* argv[]) {
     size_t num_to_test = static_cast<size_t>(stoi(test_recipe_root.at(2).value("number_items_to_test", "0")) - 1); // the number of items to test before terminating the loop in order to avoid super complex items
     const chrono::seconds update_frequency(stoi(test_recipe_root.at(3).value("update_frequency", "0"))); // the frequency the program updates its progress
     int u = 1; // the number of updates
+
+    // The filter information
     int max_product = test_recipe_root.at(4).value("max_product", 1000); // the maximum amount of product a recipe chain is allowed to have
     int tiers_per_log = test_recipe_root.at(4).value("tiers_per_log", 3); // the number of tiers before before decreasing log(max_product) by 1
     int number_of_machines = 0;
@@ -229,6 +231,7 @@ int main(int argc, char* argv[]) {
                             // if now recipe was found, outputs the fact as there may be missing data somewhere
                             // the program otherwise continues as if the resource was terminal
                             cout << "No recipe found for " << ingredients.at(i).get_name() << "." << endl;
+                            status_log << "No recipe found for " << ingredients.at(i).get_name() << "." << endl;
                         }
                     }
                 }
@@ -283,7 +286,7 @@ int main(int argc, char* argv[]) {
             rate /= 60;
             rate *= recipe_map.at(test_item).get_machine_speed();
             number_of_machines = rate.get_numerator();
-            // Checks if the total output is more than 100 and doesn't add it if it is
+            // Checks if the total number of machines is more than the maximum and doesn't add it if it is
             int root = floor((filter_map.at(test_item)) / (tiers_per_log * 1.0));
             if (root > (log10(max_product/10))) {
                 root = log10(max_product/10);

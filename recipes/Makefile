@@ -23,8 +23,8 @@ debug: GXXFLAGS += -g
 debug: all
 
 recipes: $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_trimmer) $(recipe_sorter) $(recipe_sorter_sorter) $(test_file)
-test: $(test) $(backup_test) $(filter_creation)
-resource: $(main) $(main_mega) $(test)
+test: ensure_critical_files $(test) $(backup_test) $(filter_creation)
+resource: ensure_critical_files $(main) $(main_mega) $(test)
 obsidian: $(obsidian)
 
 $(initializer): src/Initializer.cpp
@@ -74,6 +74,10 @@ bin/dat/en-US.json:
 	dat/en-US.json not found\nExamine Steam/steamapps/common/Satisfactory/CommunityResources/Languages/Translations\
 	\e[0m"
 
+ensure_critical_files:
+	@if [ ! -f bin/dat/test_input.json ]; then cp debug/dat/test_input.json bin/dat/; fi
+	@if [ ! -f bin/dat/item_filters.json ]; then cp debug/dat/item_filters.json bin/dat/; fi
+
 run_recipes: recipes bin/dat/en-US.json
 	./bin/recipe_extractor
 	./bin/recipe_fixer
@@ -81,7 +85,7 @@ run_recipes: recipes bin/dat/en-US.json
 	./bin/recipe_sorter
 	./bin/recipe_sorter_sorter
 
-run_test: test
+run_test: test ensure_critical_files
 	./bin/test > ./bin/tests/test.dat
 #	./bin/backup_test > ./bin/tests/backup_test.dat
 	./bin/filter_creation > ./bin/tests/filter_creation.dat
@@ -90,6 +94,7 @@ clean:
 	rm -f $(TARGETS)
 
 uninstall: clean
+	@if [ -f bin/dat/test_input.json ]; then cp bin/dat/test_input.json debug/dat/; fi
+	@if [ -f bin/dat/item_filters.json ]; then cp bin/dat/item_filters.json debug/dat/; fi
 	rm -rf bin/*
 	mkdir bin/dat bin/int bin/tests
-	cp debug/dat/test_input.json bin/dat/

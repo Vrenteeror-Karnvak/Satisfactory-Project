@@ -17,7 +17,7 @@
 using namespace std;
 using json = nlohmann::ordered_json;
 
-bool check_duplicate_incrementor_values(const vector<size_t>& incrementor_values, const vector<string>& incrementor_products, const unordered_map<string, size_t>& incrementor_map, ofstream& status_log);
+int percentile(vector<int> v, double p);
 
 int main(int argc, char* argv[]) {
     filesystem::path exePath = filesystem::absolute(argv[0]).parent_path();
@@ -33,14 +33,13 @@ int main(int argc, char* argv[]) {
     ifstream recipe_in(exePath / "dat" / "recipes.json");
     ifstream test_recipe_in(exePath / "dat" / "test_input.json");
     ifstream terminal_recipe_in(exePath / "dat" / "terminal_resources.json");
-    ofstream status_log(exePath / "dat" / "test_status.log");
+    ofstream status_log(exePath / "dat" / "filter_creation_status.log");
 
     // Inputs the filter data and reopens the file as an output
     ifstream filter_in(exePath / "dat" / "item_filters.json");
     json filter_json;
     filter_in >> filter_json;
     filter_in.close();
-    ofstream filter_out(exePath / "dat" / "item_filters.json");
 
     // The json file containing all recipes as well as the variables needed to increment through them
     json recipe_root;
@@ -68,12 +67,16 @@ int main(int argc, char* argv[]) {
     int u = 1; // the number of updates
     
     // The filter information
-    int max_product = stoi(test_recipe_root.at(4).value("max_product", "0")); // the maximum amount of product a recipe chain is allowed to have
+    int max_product = test_recipe_root.at(4).value("max_product", 1000); // the maximum amount of product a recipe chain is allowed to have period
+    int filter_value = 0; // the value of the filter
+    int number_of_machines = 0;
+    vector<int> number_machines_info;
     bool remake_filters = test_recipe_root.at(4).value("remake_filters", false); // whether or not to remake the filter
-    bool filter_made = false; // has the filter for the item already been made
+    bool filter_made = false; // has the filter for the item already been made?
+    bool filter_tested = false; // has the filter been tested?
     unordered_map<string, int> filter_map;
     for (const auto& data : filter_json) {
-        filter_map.insert({data.value("ItemClass", "N/A"), stoi(data.value("Depth", "0"))});
+        filter_map.insert({data.value("ItemClass", "N/A"), data.value("Depth", 0)});
     }
 
     // The json file containing the terminal resources
@@ -150,18 +153,22 @@ int main(int argc, char* argv[]) {
         // Clears termination flags and debug variables
         loop_termination = false;
         time_termination = false;
-        if (!remake_filters) {
-            filter_made = true;
-        }
 
         // clears the output storage vectors
         output_vector.clear();
 
         // Sets the item being processed
         test_item = recipe_root.at(k).value("Category", "");
+        filter_value = filter_map.at(test_item);
 
-        if (filter_map.at(test_item) == 0) {
+        if (!remake_filters && !filter_made) {
+            filter_made = true;
+            filter_tested = true;
+            status_log << test_item << " filter has already been made." << endl;
+        }
+        if (filter_value == 0) {
             filter_made = false;
+            filter_tested = false;
         }
 
         count = 0;
@@ -264,9 +271,17 @@ int main(int argc, char* argv[]) {
             output *= item_lm;
             output *= speed_lm;
 
+            rate = (output.get_product(0).get_amount() / recipe_map.at(test_item).get_product(0).get_amount());
+            rate /= 60;
+            rate *= recipe_map.at(test_item).get_machine_speed();
+            number_of_machines = rate.get_numerator();
+            if (number_of_machines < 0 || number_of_machines > max_product) {
+                number_of_machines = 2147483647;
+            }
+
             if (filter_made) {
-                // Checks if the total output is more than the maximum and doesn't add it if it is
-                if (output.get_product(0).get_amount() <= max_product) {
+                // Checks if the total number of machines is more than the maximum and doesn't add it if it is
+                if (number_of_machines <= filter_value) {
                     // if the recipe is valid, adds it to the output
                     output_vector.push_back(output);
                     unfiltered += 1;
@@ -283,9 +298,13 @@ int main(int argc, char* argv[]) {
                 }
             }
             else {
-                // *******************************************
-                // Insert filter creator here
-                // *******************************************
+                if (number_of_machines != 2147483647) {
+                    // *******************************************
+                    // Insert filter creator here
+                    // *******************************************
+                    // Adds the recipe to the info list if it is considered valid.
+                    number_machines_info.push_back(number_of_machines);
+                }
             }
 
             // increments the incrementor vector
@@ -297,7 +316,6 @@ int main(int argc, char* argv[]) {
                 incrementor_products.push_back(product_name);
             }
             sort(incrementor_values.begin(), incrementor_values.end());
-            // duplicate_found = check_duplicate_incrementor_values(incrementor_values, incrementor_products, incrementor_map, status_log);
             bool increment = true; // Determines if the value should be incremented
             for (size_t j = 0; j < incrementor_values.size(); j++) {
                 size_t i = incrementor_values.at(j);
@@ -339,8 +357,8 @@ int main(int argc, char* argv[]) {
 
                 cout << test_item << " is being proccessed." << endl;
                 cout << total << " combinations have been found." << endl;
-                cout << unfiltered << " recipes had a product amount less than or equal to " << max_product << "." << endl;
-                cout << filtered << " recipes had a product amount greater than " << max_product << "." << endl;
+                cout << unfiltered << " recipes had a product amount less than or equal to " << filter_value << "." << endl;
+                cout << filtered << " recipes had a product amount greater than " << filter_value << "." << endl;
                 cout << "The program has tested " << count << " combinations of recipes." << endl;
                 cout << "Execution time: " << elapsed.count() << " seconds." << endl;
                 cout << endl;
@@ -365,6 +383,84 @@ int main(int argc, char* argv[]) {
             break;
         }
 
+        int value;
+        if (!filter_made) {
+            // *******************************************
+            // Insert filter output here
+            // *******************************************
+            // checks if the maximum is less than 10. Skips the creation process if it is.
+            if (percentile(number_machines_info, 1.0) <= 10) {
+                filter_map.at(test_item) = 10;
+                status_log << test_item << " has a maximum of less than 10. Skipping." << endl;
+                cout << test_item << " has a maximum of less than 10. Skipping." << endl;
+                filter_made = true;
+                filter_tested = true;
+                k--;
+                continue;
+            }
+
+            // outputs the filter data into the terminal
+            cout << "The 05th percentile value is: " << percentile(number_machines_info, 0.05) << "." << endl;
+            cout << "The 10th percentile value is: " << percentile(number_machines_info, 0.10) << "." << endl;
+            cout << "The 25th percentile value is: " << percentile(number_machines_info, 0.25) << "." << endl;
+            cout << "The 35th percentile value is: " << percentile(number_machines_info, 0.35) << "." << endl;
+            cout << "The 50th percentile value is: " << percentile(number_machines_info, 0.50) << "." << endl;
+            cout << "The 75th percentile value is: " << percentile(number_machines_info, 0.75) << "." << endl;
+            cout << "The 100th percentile value is: " << percentile(number_machines_info, 1.0) << "." << endl;
+
+            // collects the new filter value
+            cout << "Please enter filter value: ";
+            cin >> value;
+            filter_map.at(test_item) = value;
+            status_log << test_item << " filter has been created." << endl;
+            cout << test_item << " filter has been created." << endl;
+            filter_made = true;
+            k--;
+            continue;
+        }
+        else if (!filter_tested) {
+            // outputs the data and asks if the filter is good.
+            string response;
+            cout << unfiltered << " recipes had a product amount less than or equal to " << filter_value << "." << endl;
+            cout << filtered << " recipes had a product amount greater than " << filter_value << "." << endl;
+            cout << "The program has tested " << count << " combinations of recipes." << endl;
+            cout << "Is this filter good (y/n): ";
+            cin >> response;
+            // if it is not, allows to user to set a new value or restart the process for the given item
+            if (response == "n") {
+                cout << "Please enter new filter value (or type \"0\" to restart): ";
+                cin >> value;
+                if (value == 0) {
+                    filter_made = false;
+                }
+                else {
+                    filter_map.at(test_item) = value;
+                }
+                k--;
+                continue;
+            }
+            else {
+                cout << "Would you like to continue (y/n): ";
+                cin >> response;
+                if (response == "n") {
+                    status_log << test_item << " filter has been tested." << endl;
+                    status_log << "Ending program early." << endl;
+                    product_name = test_item;
+                    duplicate_found = true;
+                    break;
+                }
+            }
+            status_log << test_item << " filter has been tested." << endl;
+            cout << test_item << " filter has been tested." << endl;
+            filter_tested = true;
+            k--;
+            continue;
+        }
+        else {
+            filter_made = false;
+            filter_tested = false;
+        }
+
         m = incrementor_map.at(test_item);
         recipes.at(test_item) = output_vector;
         incrementor_max.at(m) = output_vector.size();
@@ -372,28 +468,11 @@ int main(int argc, char* argv[]) {
         auto end = chrono::steady_clock::now();
         chrono::duration<double> elapsed = end - start;
 
-        if (!filter_made) {
-            // *******************************************
-            // Insert filter output here
-            // *******************************************
-            if (k < 35 || output_vector.size() <= 10) {
-                filter_map.at(test_item) = 1000000;
-            }
-            filter_made = true;
-            k--;
-            status_log << test_item << " filter been created." << endl;
-            status_log << "Filter creation time: " << elapsed.count() << " seconds." << endl;
-            continue;
-        }
-        else {
-            filter_made = false;
-        }
-
         cout << test_item << " has been proccessed." << endl;
         status_log << test_item << " has been proccessed." << endl;
         status_log << total << " combinations have been found." << endl;
-        status_log << unfiltered << " recipes had a product amount less than or equal to " << max_product << "." << endl;
-        status_log << filtered << " recipes had a product amount greater than " << max_product << "." << endl;
+        status_log << unfiltered << " recipes had a product amount less than or equal to " << filter_value << "." << endl;
+        status_log << filtered << " recipes had a product amount greater than " << filter_value << "." << endl;
         status_log << "The program has tested " << count << " combinations of recipes." << endl;
         status_log << "Execution time: " << elapsed.count() << " seconds." << endl;
         if (loop_termination) {
@@ -408,8 +487,8 @@ int main(int argc, char* argv[]) {
 
         if (elapsed >= update_frequency || loop_termination || time_termination) {
             cout << total << " combinations have been found." << endl;
-            cout << unfiltered << " recipes had a product amount less than or equal to " << max_product << "." << endl;
-            cout << filtered << " recipes had a product amount greater than " << max_product << "." << endl;
+            cout << unfiltered << " recipes had a product amount less than or equal to " << filter_value << "." << endl;
+            cout << filtered << " recipes had a product amount greater than " << filter_value << "." << endl;
             cout << "The program has tested " << count << " combinations of recipes." << endl;
             cout << "Execution time: " << elapsed.count() << " seconds." << endl;
             if (loop_termination) {
@@ -429,21 +508,29 @@ int main(int argc, char* argv[]) {
     auto true_end = chrono::steady_clock::now();
     chrono::duration<double> total_elapsed = true_end - true_start;
     cout << true_total << " combinations have been found across all items." << endl;
-    cout << true_unfiltered << " recipes had a product amount less than or equal to " << max_product << " across all items." << endl;
-    cout << true_filtered << " recipes had a product amount greater than " << max_product << " across all items." << endl;
+    cout << true_unfiltered << " recipes had a product amount less than or equal to " << filter_value << " across all items." << endl;
+    cout << true_filtered << " recipes had a product amount greater than " << filter_value << " across all items." << endl;
     cout << "The program has tested " << true_count << " combinations of recipes across all items." << endl;
     cout << "Execution time: " << total_elapsed.count() << " seconds." << endl;
 
     status_log << true_total << " combinations have been found across all items." << endl;
-    status_log << true_unfiltered << " recipes had a product amount less than or equal to " << max_product << " across all items." << endl;
-    status_log << true_filtered << " recipes had a product amount greater than " << max_product << " across all items." << endl;
+    status_log << true_unfiltered << " recipes had a product amount less than or equal to " << filter_value << " across all items." << endl;
+    status_log << true_filtered << " recipes had a product amount greater than " << filter_value << " across all items." << endl;
     status_log << "The program has tested " << true_count << " combinations of recipes across all items." << endl;
     status_log << "Execution time: " << total_elapsed.count() << " seconds." << endl;
     
+    for (auto& item : filter_json) {
+        test_item = item.value("ItemClass", "N/A");
+        item["Depth"] = filter_map.at(test_item);
+    }
+
+    ofstream filter_out(exePath / "dat" / "item_filters.json");
+    filter_out << filter_json.dump(4);
+    filter_out.close();
+
     recipe_in.close();
     test_recipe_in.close();
     terminal_recipe_in.close();
-    filter_out.close();
     status_log.close();
 
     if (total_loop_termination) {
@@ -453,61 +540,19 @@ int main(int argc, char* argv[]) {
         cout << time_termination_count << " items exceeded " << max_time.count() << " minutes." << endl;
     }
     else if (duplicate_found) {
-        cout << "A duplicate was found in the incrementor. Program terminated while processing " << test_item << "." << endl;
+        cout << "The program was ended early. Program terminated after processing " << product_name << "." << endl;
     }
     else {
         cout << "Everything is in working order here." << endl;
     }
 }
 
-
-
-bool check_duplicate_incrementor_values(const vector<size_t>& incrementor_values, const vector<string>& incrementor_products, const unordered_map<string, size_t>& incrementor_map, ofstream& status_log) {
-    bool duplicate_found = false;
-    for (size_t d = 0; d < incrementor_values.size(); d++) {
-        for (size_t f = d + 1; f < incrementor_values.size(); f++) {
-            if (incrementor_values.at(d) == incrementor_values.at(f)) {
-                duplicate_found = true;
-                break;
-            }
-        }
-        if (duplicate_found) {
-            break;
-        }
+int percentile(vector<int> v, double p) {
+    if (v.size() == 0) {
+        return 0;
     }
-
-    if (duplicate_found) {
-        // outputs the error into the terminal
-        cerr << "ERROR: duplicate incrementor index detected; This should not occur." << endl;
-        cerr << "   output_recipes.size() = " << incrementor_values.size() << endl;
-        cerr << "   incrementor_values = [";
-        for (size_t j = 0; j < incrementor_values.size(); j++) {
-            cerr << incrementor_values.at(j);
-            if (j + 1 < incrementor_values.size()) {
-                cerr << ", ";
-            }
-        }
-        cerr << "]" << endl;
-        for (size_t j = 0; j < incrementor_products.size(); j++) {
-            cerr << "   Recipe " << j << ": product(0) = '" << incrementor_products.at(j) << "' index = " << incrementor_map.at(incrementor_products.at(j)) << endl;
-        }
-
-        // outputs the error into the log file
-        status_log << "ERROR: duplicate incrementor index detected; This should not occur." << endl;
-        status_log << "   output_recipes.size() = " << incrementor_values.size() << endl;
-        status_log << "   incrementor_values = [";
-        for (size_t j = 0; j < incrementor_values.size(); j++) {
-            status_log << incrementor_values.at(j);
-            if (j + 1 < incrementor_values.size()) {
-                status_log << ", ";
-            }
-        }
-        status_log << "]" << endl;
-        for (size_t j = 0; j < incrementor_products.size(); j++) {
-            status_log << "   Recipe " << j << ": product(0) = '" << incrementor_products.at(j) << "' index = " << incrementor_map.at(incrementor_products.at(j)) << endl;
-        }
-        status_log << endl;
-    }
-
-    return duplicate_found;
+    
+    size_t k = static_cast<size_t>(p * (v.size() - 1));
+    nth_element(v.begin(), v.begin() + k, v.end());
+    return v[k];
 }
