@@ -83,13 +83,12 @@ int main(int argc, char* argv[]) {
         to_delete = false;
         consumable = false;
         for (auto& data : block["Ingredients"]) {
-            if (data.value("ItemClass", "").find("Bio") != string::npos && block.value("DisplayName", "").find("Gas Nobelisk") == string::npos) {
-                to_delete = true;
-            }
-            if (data.value("ItemClass", "").find("Dissolved Silica") != string::npos
+            if ((data.value("ItemClass", "").find("Bio") != string::npos && block.value("DisplayName", "").find("Gas Nobelisk") == string::npos)
+            || data.value("ItemClass", "").find("Dissolved Silica") != string::npos
             || data.value("ItemClass", "").find("Wood") != string::npos
             || data.value("ItemClass", "").find("Leaves") != string::npos
-            || data.value("ItemClass", "").find("Packaged") != string::npos) {
+            || data.value("ItemClass", "").find("Packaged") != string::npos
+            || data.value("ItemClass", "").find("Alien Protein") != string::npos) {
                 to_delete = true;
             }
         }
@@ -100,8 +99,8 @@ int main(int argc, char* argv[]) {
             || data.value("ItemClass", "").find("Packaged") != string::npos
             || data.value("ItemClass", "").find("Alien Protein") != string::npos
             || data.value("ItemClass", "").find("fuel") != string::npos
-            || ((data.value("ItemClass", "").find("Fuel") != string::npos && data.value("ItemClass", "") != "Fuel")
-                && data.value("ItemClass", "").find("Fuel Rod") == string::npos)) {
+            || ((data.value("ItemClass", "").find("Fuel") != string::npos && data.value("ItemClass", "") != "Fuel") && data.value("ItemClass", "").find("Fuel Rod") == string::npos)
+            || data.value("ItemClass", "") == "Black Powder" || data.value("ItemClass", "") == "Smokeless Powder") {
                 to_delete = true;
             }
 

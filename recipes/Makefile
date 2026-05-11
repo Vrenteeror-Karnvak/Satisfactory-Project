@@ -13,9 +13,10 @@ main_mega := bin/main_mega
 test := bin/test
 backup_test := bin/backup_test
 filter_creation := bin/filter_creation
+equivalent_remover := bin/equivalent_remover
 obsidian := bin/obsidian
 
-TARGETS := $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_sorter) $(recipe_sorter_sorter) $(recipe_trimmer) $(test_file) $(main) $(main_mega) $(test) $(backup_test) $(filter_creation) $(obsidian)
+TARGETS := $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_sorter) $(recipe_sorter_sorter) $(recipe_trimmer) $(test_file) $(main) $(main_mega) $(test) $(backup_test) $(filter_creation) $(equivalent_remover) $(obsidian)
 
 all: recipes test resource obsidian
 
@@ -23,7 +24,7 @@ debug: GXXFLAGS += -g
 debug: all
 
 recipes: $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_trimmer) $(recipe_sorter) $(recipe_sorter_sorter) $(test_file)
-test: ensure_critical_files $(test) $(backup_test) $(filter_creation)
+test: ensure_critical_files $(test) $(backup_test) $(filter_creation) $(equivalent_remover)
 resource: ensure_critical_files $(main) $(main_mega) $(test)
 obsidian: $(obsidian)
 
@@ -61,6 +62,9 @@ $(backup_test): src/main/backup_test.cc src/resources/*.cc
 	$(GXX) $(GXXFLAGS) $^ -o $@
 
 $(filter_creation): src/main/filter_creation.cc src/resources/*.cc
+	$(GXX) $(GXXFLAGS) $^ -o $@
+
+$(equivalent_remover): src/main/equivalent_remover.cc src/resources/*.cc
 	$(GXX) $(GXXFLAGS) $^ -o $@
 
 $(obsidian): src/Obsidian.cpp

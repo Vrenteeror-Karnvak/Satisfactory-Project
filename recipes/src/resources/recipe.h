@@ -37,8 +37,10 @@ class Recipe {
         string get_ID() const;
         string get_factory() const;
         double get_machine_speed() const;
+        vector<Resource>& modify_ingredients();
         vector<Resource> get_ingredients() const;
         Resource get_ingredient(int i) const;
+        vector<Resource>& modify_products();
         vector<Resource> get_products() const;
         Resource get_product(int i) const;
         json to_json() const;

@@ -224,12 +224,20 @@ double Recipe::get_machine_speed() const {
     return machine_speed;
 }
 
+vector<Resource>& Recipe::modify_ingredients() {
+    return ingredients;
+}
+
 vector<Resource> Recipe::get_ingredients() const {
     return ingredients;
 }
 
 Resource Recipe::get_ingredient(int i) const {
     return ingredients.at(i);
+}
+
+vector<Resource>& Recipe::modify_products() {
+    return products;
 }
 
 vector<Resource> Recipe::get_products() const {
