@@ -15,6 +15,7 @@ int main(int argc, char* argv[]) {
 
     // opens all of the input and output file streams
     ifstream recipe_in(exePath / "int/recipes_sorted.json");
+    ifstream terminal_in(exePath / "dat" / "terminal_resources.json");
     ofstream recipe_out(exePath / "dat/recipes.json");
     ofstream item_out(exePath / "int/item_list.txt");
     ofstream item_analysis(exePath / "int/item_analysis.txt");
@@ -27,6 +28,15 @@ int main(int argc, char* argv[]) {
     // pulls the resouce file for refining
     json root;
     recipe_in >> root;
+    recipe_in.close();
+
+    json terminal_root;
+    terminal_in >> terminal_root;
+    terminal_in.close();
+    unordered_set<string> terminal_resources;
+    terminal_resources.insert("Heavy Modular Frame");
+    terminal_resources.insert("Pressure Conversion Cube");
+    terminal_resources.insert("Battery");
 
     // all of the objects needed to hold the data while processing it.
     json recipe_object = json::object();
@@ -46,6 +56,7 @@ int main(int argc, char* argv[]) {
     unordered_map<string, unordered_set<string>> vanilla_algorithm_form; // the form that the kahn algorith wants using only default recipes
     unordered_map<string, int> layer; // how many dependent recipes are left to add to the queue.
     unordered_map<string, int> vanilla_layer; // how many dependent recipes are left to add to the queue using only default recipes
+    unordered_map<string, int> usage_count; // how many times is an item used in a recipe
     bool first = true; // is it the first recipe in the section?
 
     // The queue used during sorting and the output vector
@@ -83,10 +94,20 @@ int main(int argc, char* argv[]) {
 
     for (auto& [product, ingredients] : recipe_form) {
         layer[product] = ingredients.size();
+        usage_count.insert({product, 0});
         for (auto& ingredient : ingredients) {
             algorithm_form[ingredient].insert(product);
             if (!layer.count(ingredient)) {
                 layer[ingredient] = 0;
+            }
+
+            usage_count.insert({ingredient, 0});
+            usage_count[ingredient] += 1;
+
+            if (terminal_resources.find(ingredient) != terminal_resources.end()) {
+                if (product.find("Uranium") == string::npos && product.find("Plutonium") == string::npos && product.find("Ficsonium") == string::npos) {
+                    terminal_resources.insert(product);
+                }
             }
         }
     }
@@ -172,11 +193,40 @@ int main(int argc, char* argv[]) {
         }
     }
 
+    /*
+    for (auto& [item, count] : usage_count) {
+        if (item.find("Ore") != string::npos || item.find("SAM") != string::npos || item.find("Coal") != string::npos
+        || item.find("Uranium") != string::npos || item.find("Plutonium") != string::npos || item.find("Ficsonium") != string::npos) { }
+        else if (terminal_resources.find(item) != terminal_resources.end()) { }
+        else if (count == 2) {
+            item_analysis << item << " --> ";
+            if (algorithm_form.count(item)) {
+                for (auto& items : algorithm_form.at(item)) {
+                    item_analysis << items << ", ";
+                }
+            }
+            else {
+                item_analysis << "nothing";
+            }
+            item_analysis << endl;
+        }
+    }
+    */
+    
+    json resource_data = json::object();
+    for (auto& item : terminal_resources) {
+        resource_data["ItemClass"] = item; // adds the display name
+        resource_data["Amount"] = "0"; // sets amount to 0;
+        terminal_root.push_back(resource_data);
+    }
+    ofstream terminal_out(exePath / "dat" / "terminal_resources.json");
+    terminal_out << terminal_root.dump(4);
+    terminal_out.close();
+
     recipe_out << dataOut.dump(4);
     filter_out << filter_array.dump(4);
 
     // closes all the opened files
-    recipe_in.close();
     recipe_out.close();
     item_out.close();
     item_analysis.close();

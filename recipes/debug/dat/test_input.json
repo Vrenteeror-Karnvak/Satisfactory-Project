@@ -22,22 +22,24 @@
     },
     {   
         "Category": "Termination Data",
-        "max_loops": "100000000",
-        "max_time": "5",
+        "max_loops": "2147483647",
+        "max_time": "60",
         "unit_of_time": "Minutes",
-        "number_items_to_test": "65",
+        "number_items_to_test": "60",
         "old_number_items_to_test": "68"
     },
     {
         "Category": "Status Update Data",
-        "update_frequency": "60",
+        "update_frequency": "180",
         "unit_of_time": "Seconds"
     },
     {
         "Category": "Filter Data",
-        "max_product": 10000,
+        "max_product": 1000,
+        "max_filter": 100,
         "tiers_per_log": 100,
         "max_combinations": 100,
+        "absolute_max_combinations": 100,
         "remake_filters": false
     }
 ]

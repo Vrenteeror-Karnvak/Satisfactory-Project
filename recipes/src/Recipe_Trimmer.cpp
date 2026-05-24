@@ -111,7 +111,8 @@ int main(int argc, char* argv[]) {
         }
 
         if (block.value("DisplayName", "").find("Recycled") != string::npos
-        || (block.value("DisplayName", "").find("Ficsite Ingot") == string::npos && block.value("DisplayName", "").find("(") != string::npos)) {
+        || (block.value("DisplayName", "").find("Ficsite Ingot") == string::npos && block.value("DisplayName", "").find("(") != string::npos)
+        || block.value("DisplayName", "") == "Steel Screws") {
             to_delete = true;
         }
 

@@ -53,7 +53,7 @@ int main(int argc, char* argv[]) {
     json space_elevator_data = json::object(); // used for collecting which items are used in the space elevator
     json recipe_data = json::object(); // used to collect the recipe data for all recipes
     json nameOut = json::array(); // the tag and names of all items
-    json resourceOut = json::array(); // the terminal resources
+    json terminalOut = json::array(); // the terminal resources
     json spaceElevatorOut = json::array(); // items used in the space elevator
     json recipeOut = json::array(); // all the available recipes
 
@@ -90,7 +90,7 @@ int main(int argc, char* argv[]) {
             for (const auto& data : block["Classes"]) {
                 resource_data["ItemClass"] = data.value("mDisplayName", ""); // adds the display name
                 resource_data["Amount"] = "0"; // sets amount to 0;
-                resourceOut.push_back(resource_data); // adds the collected data to the vector
+                terminalOut.push_back(resource_data); // adds the collected data to the vector
             }
         }
 
@@ -135,35 +135,39 @@ int main(int argc, char* argv[]) {
     
     resource_data["ItemClass"] = "Polymer Resin"; // adds the display name
     resource_data["Amount"] = "0"; // sets amount to 0;
-    resourceOut.push_back(resource_data); // adds the  data to the vector
+    terminalOut.push_back(resource_data); // adds the  data to the vector
 
     resource_data["ItemClass"] = "Compacted Coal"; // adds the display name
     resource_data["Amount"] = "0"; // sets amount to 0;
-    resourceOut.push_back(resource_data); // adds the  data to the vector
+    terminalOut.push_back(resource_data); // adds the  data to the vector
 
     resource_data["ItemClass"] = "Dark Matter Residue"; // adds the display name
     resource_data["Amount"] = "0"; // sets amount to 0;
-    resourceOut.push_back(resource_data); // adds the  data to the vector
+    terminalOut.push_back(resource_data); // adds the  data to the vector
 
     resource_data["ItemClass"] = "Heavy Oil Residue"; // adds the display name
     resource_data["Amount"] = "0"; // sets amount to 0;
-    resourceOut.push_back(resource_data); // adds the  data to the vector
+    terminalOut.push_back(resource_data); // adds the  data to the vector
 
     resource_data["ItemClass"] = "Sulfuric Acid"; // adds the display name
     resource_data["Amount"] = "0"; // sets amount to 0;
-    resourceOut.push_back(resource_data); // adds the  data to the vector
+    terminalOut.push_back(resource_data); // adds the  data to the vector
 
     resource_data["ItemClass"] = "FICSMAS Gift"; // adds the display name
     resource_data["Amount"] = "0"; // sets amount to 0;
-    resourceOut.push_back(resource_data); // adds the  data to the vector
+    terminalOut.push_back(resource_data); // adds the  data to the vector
 
     resource_data["ItemClass"] = "Biomass"; // adds the display name
     resource_data["Amount"] = "0"; // sets amount to 0;
-    resourceOut.push_back(resource_data); // adds the  data to the vector
+    terminalOut.push_back(resource_data); // adds the  data to the vector
+
+    resource_data["ItemClass"] = "Excited Photonic Matter"; // adds the display name
+    resource_data["Amount"] = "0"; // sets amount to 0;
+    terminalOut.push_back(resource_data); // adds the  data to the vector
 
     // outputs the collected data
     name_out << nameOut.dump(4);
-    resource_out << resourceOut.dump(4);
+    resource_out << terminalOut.dump(4);
     space_elevator_out << spaceElevatorOut.dump(4);
     recipe_out << recipeOut.dump(4);
 

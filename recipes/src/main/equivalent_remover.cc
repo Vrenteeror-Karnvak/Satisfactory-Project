@@ -543,13 +543,14 @@ int main(int argc, char* argv[]) {
     auto true_end = chrono::steady_clock::now();
     chrono::duration<double> total_elapsed = true_end - true_start;
     cout << true_total << " combinations have been found across all items." << endl;
-    cout << true_unfiltered << " recipes had a product amount less than or equal to " << max_product << " across all items." << endl;
+    cout << true_unfiltered << " recipes were output." << endl;
     cout << true_machine_filtered << " recipes were filtered due to number of machines." << endl;
     cout << true_dominance_filtered << " recipes were filtered during the dominance filtering." << endl;
     cout << "The program has tested " << true_count << " combinations of recipes across all items." << endl;
     cout << "Execution time: " << total_elapsed.count() << " seconds." << endl;
 
     status_log << true_total << " combinations have been found across all items." << endl;
+    status_log << true_unfiltered << " recipes were output." << endl;
     status_log << true_machine_filtered << " recipes were filtered due to number of machines." << endl;
     status_log << true_dominance_filtered << " recipes were filtered during the dominance filtering." << endl;
     status_log << "The program has tested " << true_count << " combinations of recipes across all items." << endl;

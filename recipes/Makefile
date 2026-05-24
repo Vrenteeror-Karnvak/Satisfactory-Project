@@ -95,10 +95,12 @@ run_test: test ensure_critical_files
 	./bin/filter_creation > ./bin/tests/filter_creation.dat
 
 clean:
+	@if [ -f bin/dat/test_input.json ]; then cp bin/dat/test_input.json debug/dat/; fi
+	@if [ -f bin/dat/item_filters.json ]; then cp bin/dat/item_filters.json debug/dat/; fi
 	rm -f $(TARGETS)
 
 uninstall: clean
-	@if [ -f bin/dat/test_input.json ]; then cp bin/dat/test_input.json debug/dat/; fi
-	@if [ -f bin/dat/item_filters.json ]; then cp bin/dat/item_filters.json debug/dat/; fi
 	rm -rf bin/*
 	mkdir bin/dat bin/int bin/tests
+	@if [ -f debug/dat/test_input.json ]; then cp debug/dat/test_input.json bin/dat/; fi
+	@if [ -f debug/dat/item_filters.json ]; then cp debug/dat/item_filters.json bin/dat/; fi
