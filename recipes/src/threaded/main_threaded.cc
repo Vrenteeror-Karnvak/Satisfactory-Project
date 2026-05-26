@@ -1,6 +1,7 @@
 #include "../lib/json.hpp"
 
 #include <cstddef>
+#include <stdexcept>
 #include <climits>
 #include <cmath>
 #include <numeric>
@@ -37,14 +38,14 @@ using json = nlohmann::ordered_json;
     if (!stream.is_open()) {\
         cerr << ANSI_RED << "File failed to open:" << endl << '\t' << file << ANSI_RESET << endl;\
         stream.close();\
-        return 1;\
+        throw runtime_error("File not found");\
     }
 
 #define ofstream(stream, file) ofstream stream(file);\
     if (!stream.is_open()) {\
         cerr << ANSI_RED << "File failed to open:" << endl << '\t' << file << ANSI_RESET << endl;\
         stream.close();\
-        return 1;\
+        throw runtime_error("File not found");\
     }
 
 
@@ -55,7 +56,6 @@ int main(int argc, char* argv[]) {
     ifstream(recipe_in,             exePath / "dat" / "recipes.json");
     ifstream(test_recipe_in,        exePath / "dat" / "test_input.json");
     ifstream(terminal_recipe_in,    exePath / "dat" / "terminal_resources.json");
-    ifstream(filters_in,            exePath / "dat" / "100_combination_filter.json");
     ofstream(results,               exePath / "dat" / "test_results.json");
     ofstream(status_log,            exePath / "dat" / "test_status.log");
 
@@ -73,9 +73,6 @@ int main(int argc, char* argv[]) {
         terminal_recipe_in >> terminal_root;
         terminal_recipe_in.close();
 
-    json filters_root;
-        filters_in >> filters_root;
-        filters_in.close();
 
 
     auto processing_start = chrono::steady_clock::now();
@@ -114,20 +111,38 @@ int main(int argc, char* argv[]) {
     }
 
 
-    // Process filters
+    // Attempt to open filters
+    bool filters_exist = true;
     unordered_map<string, int> filter_map;
-    for (const auto& data : filters_root) {
-        if (remake_filters) {
-            filter_map.insert({data.value("ItemClass", "N/A"), 0});
+    json filters_root;
+    try {
+        ifstream(filters_in,            exePath / "dat" / "100_combination_filter.json");
+
+        //JSON input
+        filters_in >> filters_root;
+        filters_in.close();
+
+        // Process filters
+        for (const auto& data : filters_root) {
+            if (remake_filters) {
+                filter_map.insert({data.value("ItemClass", "N/A"), 0});
+            }
+            else {
+                filter_map.insert({data.value("ItemClass", "N/A"), data.value("Depth", 0)});
+            }
         }
-        else {
-            filter_map.insert({data.value("ItemClass", "N/A"), data.value("Depth", 0)});
+    } catch (const runtime_error& e) {
+        if (strcmp(e.what(), "File not found") == 0) {
+            filters_exist = false;
+        } else {
+            throw e;
         }
     }
 
 
     // Process recipes
     // Build incrementor
+    // Builds filters if they don't exist
     Incrementor incrementor;                                    // controls stepping through combinations of alternate recipes
     unordered_map<string, Recipe> recipe_map;                   // holds Recipe objects
     unordered_map<string, vector<Recipe>> recipes_by_category;  // holds all the recipes
@@ -149,6 +164,10 @@ int main(int argc, char* argv[]) {
             category,
             Recipe(data.value("Data", empty_array).at(0))
         });
+        
+        if (!filters_exist) {
+            filter_map.insert({category, 0});
+        }
     }
 
 
@@ -390,8 +409,8 @@ int main(int argc, char* argv[]) {
                 number_of_machines > 0 && 
                 number_of_machines <= MAX_PRODUCT && 
                 (
-                    filter_map.find(test_item) == filter_map.end() ||
-                    number_of_machines <= filter_map.at(test_item)
+                    number_of_machines <= filter_map.at(test_item) ||
+                    filter_map.at(test_item) != 0
                 )
             ) {
                 // If the recipe is valid, add it to the output
