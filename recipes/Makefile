@@ -16,7 +16,7 @@ filter_creation := bin/filter_creation
 equivalent_remover := bin/equivalent_remover
 obsidian := bin/obsidian
 
-TARGETS := $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_sorter) $(recipe_sorter_sorter) $(recipe_trimmer) $(test_file) $(main) $(main_mega) $(test) $(backup_test) $(filter_creation) $(equivalent_remover) $(obsidian)
+TARGETS := $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_sorter) $(recipe_sorter_sorter) $(recipe_trimmer) $(test_file) $(main) $(main_mega) $(test) $(backup_test) $(main_threaded) $(filter_creation) $(equivalent_remover) $(obsidian)
 
 all: recipes test resource obsidian
 
@@ -61,6 +61,9 @@ $(test): src/main/test.cc src/resources/*.cc
 $(backup_test): src/main/backup_test.cc src/resources/*.cc
 	$(GXX) $(GXXFLAGS) $^ -o $@
 
+$(main_threaded): src/threaded/main_threaded.cc src/resources/*.cc
+	$(GXX) $(GXXFLAGS) $^ -o $@
+
 $(filter_creation): src/main/filter_creation.cc src/resources/*.cc
 	$(GXX) $(GXXFLAGS) $^ -o $@
 
@@ -94,6 +97,9 @@ run_test: test ensure_critical_files
 #	./bin/backup_test > ./bin/tests/backup_test.dat
 	./bin/filter_creation > ./bin/tests/filter_creation.dat
 
+run_threaded: main_threaded ensure_critical_files
+	./bin/main_threaded
+	
 clean:
 	@if [ -f bin/dat/test_input.json ]; then cp bin/dat/test_input.json debug/dat/; fi
 	@if [ -f bin/dat/item_filters.json ]; then cp bin/dat/item_filters.json debug/dat/; fi
