@@ -10,6 +10,7 @@ recipe_trimmer := bin/recipe_trimmer
 test_file := bin/test_file
 main := bin/main
 main_mega := bin/main_mega
+main_threaded := bin/main_threaded
 test := bin/test
 backup_test := bin/backup_test
 filter_creation := bin/filter_creation
@@ -24,7 +25,7 @@ debug: GXXFLAGS += -g
 debug: all
 
 recipes: $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_trimmer) $(recipe_sorter) $(recipe_sorter_sorter) $(test_file)
-test: ensure_critical_files $(test) $(backup_test) $(filter_creation) $(equivalent_remover)
+test: ensure_critical_files $(test) $(backup_test) $(filter_creation) $(equivalent_remover) $(main_threaded)
 resource: ensure_critical_files $(main) $(main_mega) $(test)
 obsidian: $(obsidian)
 
@@ -97,7 +98,7 @@ run_test: test ensure_critical_files
 #	./bin/backup_test > ./bin/tests/backup_test.dat
 	./bin/filter_creation > ./bin/tests/filter_creation.dat
 
-run_threaded: main_threaded ensure_critical_files
+run_threaded: $(main_threaded) ensure_critical_files
 	./bin/main_threaded
 	
 clean:
