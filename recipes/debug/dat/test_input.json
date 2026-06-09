@@ -25,7 +25,7 @@
         "max_loops": "2147483647",
         "max_time": "60",
         "unit_of_time": "Minutes",
-        "number_items_to_test": "60",
+        "number_items_to_test": "75",
         "old_number_items_to_test": "68"
     },
     {

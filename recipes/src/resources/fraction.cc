@@ -204,6 +204,7 @@ Fraction& Fraction::operator+=(const Fraction& other) {
     gd = gcd(numerator, denominator);
     numerator /= gd;
     denominator /= gd;
+    Stats::fraction_reductions++;
 
     return *this;
 }
@@ -246,6 +247,7 @@ Fraction& Fraction::operator-=(const Fraction& other) {
     gd = gcd(numerator, denominator);
     numerator /= gd;
     denominator /= gd;
+    Stats::fraction_reductions++;
 
     return *this;
 }
@@ -277,6 +279,7 @@ Fraction& Fraction::operator*=(const Fraction& other) {
     gd = gcd(numerator, denominator);
     numerator /= gd;
     denominator /= gd;
+    Stats::fraction_reductions++;
 
     return *this;
 }
@@ -308,6 +311,7 @@ Fraction& Fraction::operator/=(const Fraction& other) {
     gd = gcd(numerator, denominator);
     numerator /= gd;
     denominator /= gd;
+    Stats::fraction_reductions++;
 
     return *this;
 }

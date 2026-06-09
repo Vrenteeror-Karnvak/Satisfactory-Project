@@ -8,6 +8,8 @@
 #include <fstream>
 #include <numeric>
 
+#include "stats.h"
+
 using namespace std;
 using json = nlohmann::ordered_json;
 

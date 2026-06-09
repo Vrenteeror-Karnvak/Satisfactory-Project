@@ -60,6 +60,7 @@ Fraction Resource::get_amount() const {
 }
 
 bool Resource::same_name(const Resource& other) const {
+    Stats::resource_same_name_calls++;
     return name == other.get_name();
 }
 

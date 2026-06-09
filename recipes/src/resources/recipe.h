@@ -12,6 +12,8 @@
 #include "resource.h"
 #include "fraction.h"
 
+#include "stats.h"
+
 using namespace std;
 using json = nlohmann::ordered_json;
 
@@ -30,8 +32,8 @@ class Recipe {
         void set_products(const vector<Resource> product);
         void add_product(const Resource product);
         void set_processed();
-        void combine_recipes(const Recipe other);
-        void merge_recipes(const vector<Recipe> data);
+        void combine_recipes(const Recipe& other);
+        void merge_recipes(const vector<Recipe>& data);
         void set_primary_product(const string& primary_name);
         string get_name() const;
         string get_ID() const;

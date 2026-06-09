@@ -20,50 +20,24 @@
 using namespace std;
 using json = nlohmann::ordered_json;
 
-/**
- * @brief Creates and compresses a recipe chain. Places the compressed chain into sorting_map.
- *
- * @param sorting_map       All created recipe chains for a given item
- * @param filter_map        A map of all the filter values
- * @param recipe_map        A map of all current recipes
- * @param terminal_map      A map of all terminal resources
- * @param incrementor       The vector of all incrementor values
- * @param test_item         The current item being processed
- * @param max_product       The absolute maximum number of machines a recipe can need
- * @return An uncompressed version of the recipe chain. A vector of the recipes in the chain.
- */
-vector<Recipe> build_chain(map<DominanceKey, vector<Recipe>>& sorting_map, const unordered_map<string, Recipe> recipe_map, const unordered_map<string, int> filter_map, const unordered_map<string, Resource>& terminal_map, const vector<size_t>& incrementor, const string test_item, const int max_product);
-
-// Status tracking variables
-int total = 0; // the number of unique recipe chains found for the current item
-int true_total = 0; // the total number of unique recipe chains found across all items
-int unfiltered = 0; // the number of recipe chains filtered out for the current item
-int true_unfiltered = 0; // the number of recipe chains filtered out across all items
-int machine_filtered = 0; // the number of recipe chains filtered out for the current item due to the number of machines
-int dominance_filtered = 0; // the number of recipe chains filtered out during the dominance filtering
-int true_machine_filtered = 0; // the number of recipe chains filtered out due to the number of machines across all items
-int true_dominance_filtered = 0; // the number of recipe chains filtered out during the dominance filtering across all items
-int expected_count = 0; // the number of times the loop has run for the current item
-
-
-/*
-Expected Output:
-110061 combinations were processed.
-1024 recipes were output.
-108985 recipes were filtered due to number of machines.
-52 recipes were filtered during the dominance filtering.
-*/
+bool check_duplicate_incrementor_values(const vector<size_t>& incrementor_values, const vector<string>& incrementor_products, const unordered_map<string, size_t>& incrementor_map, ofstream& status_log);
 
 int main(int argc, char* argv[]) {
     filesystem::path exePath = filesystem::absolute(argv[0]).parent_path();
-    bool issue_occured = false; // Triggers if a duplicate item is found in the incrementor
+    bool loop_termination = false; // Triggers if the loop runs a set number of times
+    bool total_loop_termination = false; // Triggers if the loop runs a set number of times, doesn't clear
+    int loop_termination_count = 0; // Counts how many times loop_termination was triggered
+    bool time_termination = false; // Triggers if the loops runs a set amount of time
+    bool total_time_termination = false; // Triggers if the loops runs a set amount of time, doesn't clear
+    int time_termination_count = 0; // Counts how many times time_termination was triggered
+    bool duplicate_found = false; // Triggers if a duplicate item is found in the incrementor
 
     // opens the filestreams
     ifstream recipe_in(exePath / "dat" / "recipes.json");
     ifstream test_recipe_in(exePath / "dat" / "test_input.json");
     ifstream terminal_recipe_in(exePath / "dat" / "terminal_resources.json");
-    ofstream results(exePath / "dat" / "100_test_results.json");
-    ofstream status_log(exePath / "dat" / "backup_test_status.log");
+    ofstream results(exePath / "dat" / "test_results.json");
+    ofstream status_log(exePath / "dat" / "test_status.log");
 
     // The json file containing all recipes as well as the variables needed to increment through them
     json recipe_root;
@@ -84,8 +58,11 @@ int main(int argc, char* argv[]) {
     string test_item = test_recipe_root.at(1).value("ItemClass", ""); // Use to inject an ITEM into the system
 
     // The auto terminate information
+    const int max_loops = stoi(test_recipe_root.at(2).value("max_loops", "0")); // the maximum number of loops the program is allowed to run
+    const chrono::minutes max_time(stoi(test_recipe_root.at(2).value("max_time", "0"))); // the max time the program is allowed to run
     size_t num_to_test = static_cast<size_t>(stoi(test_recipe_root.at(2).value("number_items_to_test", "0")) - 1); // the number of items to test before terminating the loop in order to avoid super complex items
     const chrono::seconds update_frequency(stoi(test_recipe_root.at(3).value("update_frequency", "0"))); // the frequency the program updates its progress
+    int u = 1; // the number of updates
 
     // The filter information
     int max_product = test_recipe_root.at(4).value("max_product", 1000); // the maximum amount of product a recipe chain is allowed to have
@@ -96,7 +73,9 @@ int main(int argc, char* argv[]) {
     bool remake_filters = test_recipe_root.at(4).value("remake_filters", false); // whether or not to remake the filter
     bool filter_made = false; // has the filter for the item already been made?
     bool redo_filter = false; // does the filter need to be redone to futher reduce the output?
+    int number_of_machines = 0;
     map<DominanceKey, vector<Recipe>> sorting_map; // the map containing the sorted outputs ready for dominance filtering
+    DominanceKey key; // the key to each section of sorting_map
 
     // The json file containing the terminal resources
     json terminal_root;
@@ -105,20 +84,37 @@ int main(int argc, char* argv[]) {
     unordered_map<string, Resource> terminal_map;
 
     // The variables that the stack uses to increment through all nodes
+    stack<Recipe> recipe_stack; // the stack of recipes in the chain
+    vector<Resource> ingredients; // the ingredients being added
     Resource ingredient; // the current ingredient being added
     Recipe new_recipe; // the recipe being added to the stack for non terminal resources
     Recipe terminal_recipe; // the recipe being added to the stack for terminal resources
 
     // The variables that the stack uses to record the data
     vector<Recipe> output_recipes; // the vector of all recipes used by the chain
+    size_t location = 0; // the location of the identical recipe in the vector
+    bool already_added = false; // marks if a recipe is already in the vector
 
     // The variables used to output the data
     json chain_object = json::object();
+    json chain_array = json::array();
     json output_chain = json::object(); // the current recipe chain being processed
     json output_object = json::object(); // the json object containing all recipe chains being sent to the file
     vector<Recipe> output_vector;
     json output_array = json::array(); // the recipes being output into the file
+    string product_name; // the name of the item being processed
     bool first = true; // is this the first item being output in the given array?
+
+    // Status tracking variables
+    int total = 0; // the number of unique recipe chains found for the current item
+    int true_total = 0; // the total number of unique recipe chains found across all items
+    int unfiltered = 0; // the number of recipe chains filtered out for the current item
+    int true_unfiltered = 0; // the number of recipe chains filtered out across all items
+    int machine_filtered = 0; // the number of recipe chains filtered out for the current item due to the number of machines
+    int dominance_filtered = 0; // the number of recipe chains filtered out during the dominance filtering
+    int true_machine_filtered = 0; // the number of recipe chains filtered out due to the number of machines across all items
+    int true_dominance_filtered = 0; // the number of recipe chains filtered out during the dominance filtering across all items
+    int count = 0; // the number of times the loop has run for the current item
 
     // an empty json array to make the .value() function work
     json empty_array = json::array();
@@ -167,15 +163,20 @@ int main(int argc, char* argv[]) {
     }
 
     //
-    // Nothing right now
+    // Add a method to know total number of combinations needing to be processed for a given item
+    // Note that it is not accurate if an ingredient was terminated early.
+    // It still would be a good start though.
     //
 
     results << "[" << endl;
-
-    chrono::duration<double> increment_elapsed;
     
     for (size_t k = 0; k < recipe_root.size(); k++) {
         auto start = chrono::steady_clock::now(); // starts the timer
+
+        // Clears termination flags and debug variables
+        loop_termination = false;
+        time_termination = false;
+        u = 1;
 
         // clears the output storage vectors
         output_vector.clear();
@@ -193,7 +194,7 @@ int main(int argc, char* argv[]) {
             redo_filter = false;
         }
 
-        expected_count = 0;
+        count = 0;
         unfiltered = 0;
         machine_filtered = 0;
         dominance_filtered = 0;
@@ -210,29 +211,164 @@ int main(int argc, char* argv[]) {
                     temp_count *= recipes.at(temp_item).size();
                 }
             }
-            expected_count += temp_count;
+            count += temp_count;
         }
 
         status_log << test_item << " about to be processed." << endl;
-        status_log << "Estimated to need to process " << expected_count << " combinations to complete." << endl;
+        status_log << "Estimated to need to process " << count << " combinations to complete." << endl;
 
         // The main function, runs until the incrementor vector has returned back to its starting value
         do {
-            /* Threading stuff done here */
-            // Function takes an average of 250 micro seconds to complete
-            // Incrementor takes an average of 7 micro seconds to complete
-            output_recipes = build_chain(sorting_map, recipe_map, filter_map, terminal_map, incrementor, test_item, max_product);
+            // clears the output storage vectors
+            output_recipes.clear();
+            chain_array.clear();
+
+            // Use to inject an item into the system
+            m = incrementor_map[test_item];
+            recipe_stack.push(recipes.at(test_item).at(incrementor.at(m)));
+            
+            // Creates the recipe chain based on the provided recipes
+            while (!recipe_stack.empty()) {
+                if (recipe_stack.top().is_processed()) {
+                    already_added = false;
+                    // if the current recipe has already been processed, remove it from the stack
+                    for (size_t i = 0; i < output_recipes.size(); i++) {
+                        if (output_recipes.at(i).same_name(recipe_stack.top())) {
+                            already_added = true;
+                            location = i;
+                            break;
+                        }
+                    }
+
+                    if (already_added) {
+                        output_recipes.at(location) += recipe_stack.top();
+                    }
+                    else {
+                        output_recipes.push_back(recipe_stack.top());
+                    }
+                    recipe_stack.pop();
+                    continue;
+                }
+                else {
+                    // if the current recipe has not been processed, process it
+                    recipe_stack.top().set_processed(); // sets the processed flag to true
+                    ingredients = recipe_stack.top().get_ingredients(); // gets the ingredients of the current recipe
+                    for (size_t i = 0; i < ingredients.size(); i++) { // increments through all the ingredients
+
+                        auto terminal_location = terminal_map.find(ingredients.at(i).get_name()); // finds if the item is terminal
+                        if (terminal_location != terminal_map.end()) {
+                            // if the ingredient was terminal, adds it to the stack and moves on to the next one
+                            /*
+                            terminal_recipe.set_terminal_recipe(ingredients.at(i));
+                            recipe_stack.push(terminal_recipe);
+                            */
+                            continue;
+                        }
+
+                        auto recipe_location = recipe_map.find(ingredients.at(i).get_name()); // finds the recipe in the map
+                        if (recipe_location != recipe_map.end()) {
+                            new_recipe = recipe_location->second; // sets new_recipe to the recipe found
+                            new_recipe.set_to(ingredients.at(i).get_amount()); // raises the recipe product to match the ingredient it is for
+                            recipe_stack.push(new_recipe); // adds the new recipe to the stack
+                        }
+                        else {
+                            // if now recipe was found, outputs the fact as there may be missing data somewhere
+                            // the program otherwise continues as if the resource was terminal
+                            cout << "No recipe found for " << ingredients.at(i).get_name() << "." << endl;
+                            status_log << "No recipe found for " << ingredients.at(i).get_name() << "." << endl;
+                        }
+                    }
+                }
+            }
+            
+            // converts the output vector into uncompressed json
+            /*
+            for (size_t i = 0; i < output_recipes.size(); i++) {
+                chain_object = output_recipes.at(i).to_json();
+                chain_array.push_back(chain_object);
+            }
+            output_chain = chain_array;
+            output_array.push_back(output_chain);
+            */
+
+            int speed_lm = 1;
+            Fraction rate;
+            for (size_t i = 0; i < output_recipes.size(); i++) {
+                product_name = output_recipes.at(i).get_product(0).get_name();
+                rate = (output_recipes.at(i).get_product(0).get_amount() / recipe_map.at(product_name).get_product(0).get_amount());
+                rate *= recipe_map.at(product_name).get_machine_speed();
+                rate /= 60;
+                speed_lm = lcm(speed_lm, rate.get_denominator());
+            }
+
+            // converts the output vector into compressed json
+            Recipe output;
+            int item_lm = 1; // the least common multiple of the denominators
+            string incrementor_ID = ""; // The ID that identifies what recipes were used to make the chain
+            output.merge_recipes(output_recipes);
+            output.set_primary_product(test_item);
+            for (size_t i = 0; i < incrementor.size(); i++) {
+                incrementor_ID.append(to_string(incrementor.at(i)));
+                if ((i + 1) != incrementor.size()) {
+                    incrementor_ID.append("|");
+                }
+            }
+            output.set_ID(incrementor_ID);
+            output.set_name(test_item);
+            output *= speed_lm;
+            for (size_t i = 0; i < output.get_ingredients().size(); i++) {
+                item_lm = lcm(item_lm, output.get_ingredient(i).get_amount().get_denominator());
+            }
+            for (size_t i = 0; i < output.get_products().size(); i++) {
+                item_lm = lcm(item_lm, output.get_product(i).get_amount().get_denominator());
+            }
+            output *= item_lm;
+            // output_chain = output.to_compressed_json();
+
+            rate = (output.get_product(0).get_amount() / recipe_map.at(product_name).get_product(0).get_amount());
+            rate /= 60;
+            rate *= recipe_map.at(test_item).get_machine_speed();
+            number_of_machines = rate.get_numerator();
+            if (number_of_machines < 0 || number_of_machines > 10000) {
+                number_of_machines = 2147483647;
+            }
+            output.set_machine_speed(number_of_machines);
+
+            // Checks if the total number of machines is more than the maximum and doesn't add it if it is
+            if (number_of_machines > 0 && number_of_machines <= max_product && (number_of_machines <= filter_map.at(test_item) || filter_map.at(test_item) == 0)) {
+                // if the recipe is valid, adds it to the output
+                sort(output.modify_ingredients().begin(), output.modify_ingredients().end(), [](const Resource& a, const Resource& b) { return a.get_name() < b.get_name(); });
+                key.ingredient_names.clear();
+                key.product_amount = output.get_product(0).get_amount();
+                for (size_t i = 0; i < output.get_ingredients().size(); i++) {
+                    key.ingredient_names.push_back(output.get_ingredient(i).get_name());
+                }
+                sorting_map[key].push_back(output);
+                output_vector.push_back(output);
+
+                unfiltered += 1;
+                true_unfiltered += 1;
+                total += 1;
+                true_total += 1;
+            }
+            else {
+                // if the recipe is not valid, removes it
+                machine_filtered += 1;
+                true_machine_filtered += 1;
+                total += 1;
+                true_total += 1;
+            }
 
             // increments the incrementor vector
             vector<size_t> incrementor_values;
             vector<string> incrementor_products;
-            string product_name;
             for (size_t i = 0; i < output_recipes.size(); i++) {
                 product_name = output_recipes.at(i).get_product(0).get_name();
                 incrementor_values.push_back(incrementor_map[product_name]);
                 incrementor_products.push_back(product_name);
             }
             sort(incrementor_values.begin(), incrementor_values.end());
+            // duplicate_found = check_duplicate_incrementor_values(incrementor_values, incrementor_products, incrementor_map, status_log);
             bool increment = true; // Determines if the value should be incremented
             for (size_t j = 0; j < incrementor_values.size(); j++) {
                 size_t i = incrementor_values.at(j);
@@ -249,21 +385,52 @@ int main(int argc, char* argv[]) {
 
                 product_name = recipe_root.at(i).value("Category", "");
                 recipe_map[product_name] = recipes.at(product_name).at(incrementor.at(i));
-
-                if (!increment) {
-                    break;
-                }
             }
             
             // If the last value reached its maximum
             // Set all incrementor values to 0 to end the while loop
             if (increment) {
                 for (size_t j = 0; j < incrementor.size(); j++) {
+                    incrementor.at(j) = 0;
                     product_name = recipe_root.at(j).value("Category", "");
                     recipe_map[product_name] = recipes.at(product_name).at(0);
                 }
             }
-        } while (!issue_occured && incrementor != all_zeros);
+
+            // Provides updates on the current status of the program
+            if ((chrono::steady_clock::now() - start) >= (update_frequency * u)) {
+                u += 1;
+                
+                auto end = chrono::steady_clock::now();
+                chrono::duration<double> elapsed = end - start;
+
+                cout << test_item << " is being proccessed." << endl;
+                cout << total << " combinations have been processed." << endl;
+                cout << unfiltered << " recipes were output." << endl;
+                cout << machine_filtered << " recipes were filtered due to number of machines." << endl;
+                cout << dominance_filtered << " recipes were filtered during the dominance filtering." << endl;
+                cout << "Execution time: " << elapsed.count() << " seconds." << endl;
+                cout << endl;
+            }
+
+            // Use to terminate after a set amount of loops
+            if (count >= max_loops) {
+                total_loop_termination = true;
+                loop_termination = true;
+                break;
+            }
+
+            // Use to terminate after a set amount of time
+            if (chrono::steady_clock::now() - start >= max_time) {
+                total_time_termination = true;
+                time_termination = true;
+                break;
+            }
+        } while (!duplicate_found && incrementor != all_zeros);
+
+        if (duplicate_found) {
+            break;
+        }
 
         if ((chrono::steady_clock::now() - start) >= update_frequency) {  
             auto creation_end = chrono::steady_clock::now();
@@ -301,6 +468,11 @@ int main(int argc, char* argv[]) {
             cout << test_item << " filter has been created." << endl;
             status_log << test_item << " filter has been created." << endl;
 
+            if (time_termination || loop_termination) {
+                cout << "Item too complex, filter may be incomplete." << endl;
+                status_log << "Item too complex, filter may be incomplete." << endl;
+            }
+
             filter_made = true;
             true_unfiltered -= unfiltered;
             true_machine_filtered -= machine_filtered;
@@ -309,6 +481,20 @@ int main(int argc, char* argv[]) {
             continue;
         }
         else {
+            /*
+            if (output_vector.size() > max_output) {
+                filtered += (output_vector.size() - 100);
+                true_filtered += (output_vector.size() - 100);
+                unfiltered += 100;
+                true_unfiltered += 100;
+                output_vector.resize(max_output);
+            }
+            else {
+                unfiltered += output_vector.size();
+                true_unfiltered += output_vector.size();
+            }
+            */
+
             filter_made = false;
         }
 
@@ -421,6 +607,28 @@ int main(int argc, char* argv[]) {
 
         results << output_object.dump(4);
 
+        /*
+        string output_string = output_object.dump(4); // output_object dumped into a string for line by line writing
+        string buffer = "    ";
+        for (char c : output_string) {
+            buffer += c;
+            if (c == '\n') buffer += "    ";
+        }
+        results << buffer;
+        buffer.clear();
+        */
+
+        // Outputs all at once
+        /*
+        output_array.clear();
+        output_vector = recipes.at(test_item);
+        for (size_t i = 0; i < output_vector.size(); i++) {
+            output_chain = output_vector.at(i).to_compressed_json();
+            output_array.push_back(output_chain);
+        }
+        recipe_root.at(m)["Data"] = output_array;
+        */
+
         string filter_item;
         for (auto& item : filter_json) {
             filter_item = item.value("ItemClass", "N/A");
@@ -435,9 +643,9 @@ int main(int argc, char* argv[]) {
         chrono::duration<double> output_time = post_output - pre_output;
 
         cout << test_item << " has been proccessed." << endl;
-        if (expected_count != total) {
-            cout << "Estimated total doesn't equal calculated total. " << expected_count << " != " << total << endl;
-            status_log << "Estimated total doesn't equal calculated total. " << expected_count << " != " << total << endl;
+        if (count != total) {
+            cout << "Estimated total doesn't equal calculated total. " << count << " != " << total << endl;
+            status_log << "Estimated total doesn't equal calculated total. " << count << " != " << total << endl;
         }
         status_log << test_item << " has been proccessed." << endl;
         status_log << total << " combinations have been processed." << endl;
@@ -448,15 +656,29 @@ int main(int argc, char* argv[]) {
         status_log << "Dominance filtering took " << dominance_elapsed.count() << " seconds to complete while making the filter." << endl;
         status_log << "Execution time: " << elapsed.count() << " seconds." << endl;
         status_log << "Output time: " << output_time.count() << " seconds." << endl;
+        if (loop_termination) {
+            status_log << "The program exceeded " << max_loops << " loops. The item is too complex." << endl;
+            loop_termination_count++;
+        }
+        else if (time_termination) {
+            status_log << "The program exceeded " << max_time.count() << " minutes. The item is too complex." << endl;
+            time_termination_count++;
+        }
         status_log << endl;
 
-        if (elapsed >= update_frequency) {
+        if (elapsed >= update_frequency || loop_termination || time_termination) {
             cout << total << " combinations have been processed." << endl;
             cout << unfiltered << " recipes were output." << endl;
             cout << machine_filtered << " recipes were filtered due to number of machines." << endl;
             cout << dominance_filtered << " recipes were filtered during the dominance filtering." << endl;
             cout << "Execution time: " << elapsed.count() << " seconds." << endl;
             cout << "Output time: " << output_time.count() << " seconds." << endl;
+            if (loop_termination) {
+                cout << "The program exceeded " << max_loops << " loops. The item is too complex." << endl;
+            }
+            else if (time_termination) {
+                cout << "The program exceeded " << max_time.count() << " minutes. The item is too complex." << endl;
+            }
             cout << endl;
         }
 
@@ -497,10 +719,13 @@ int main(int argc, char* argv[]) {
     results.close();
     status_log.close();
 
-    increment_elapsed /= true_total;
-    cout << "Average increment time: " << increment_elapsed.count() << endl;
-
-    if (issue_occured) {
+    if (total_loop_termination) {
+        cout << loop_termination_count << " items exceeded " << max_loops << " loops." << endl;
+    }
+    else if (total_time_termination) {
+        cout << time_termination_count << " items exceeded " << max_time.count() << " minutes." << endl;
+    }
+    else if (duplicate_found) {
         cout << "A duplicate was found in the incrementor. Program terminated while processing " << test_item << "." << endl;
     }
     else {
@@ -508,131 +733,54 @@ int main(int argc, char* argv[]) {
     }
 }
 
-vector<Recipe> build_chain(map<DominanceKey, vector<Recipe>>& sorting_map, const unordered_map<string, Recipe> recipe_map, const unordered_map<string, int> filter_map, const unordered_map<string, Resource>& terminal_map, const vector<size_t>& incrementor, const string test_item, const int max_product) {
-    vector<Recipe> output_recipes; // the vector of all recipes used by the chain
-    stack<Recipe> recipe_stack; // the stack of recipes in the chain
-    string product_name; // the name of the item being processed
-    DominanceKey key; // the key to each section of sorting_map
 
-    // Use to inject an item into the system
-    recipe_stack.push(recipe_map.at(test_item));
-    
-    // Creates the recipe chain based on the provided recipes
-    while (!recipe_stack.empty()) {
-        if (recipe_stack.top().is_processed()) {
-            bool already_added = false; // marks if a recipe is already in the vector
-            size_t location = 0; // the location of the identical recipe in the vector
-            
-            // if the current recipe has already been processed, remove it from the stack
-            for (size_t i = 0; i < output_recipes.size(); i++) {
-                if (output_recipes.at(i).same_name(recipe_stack.top())) {
-                    already_added = true;
-                    location = i;
-                    break;
-                }
-            }
 
-            if (already_added) {
-                output_recipes.at(location) += recipe_stack.top();
+bool check_duplicate_incrementor_values(const vector<size_t>& incrementor_values, const vector<string>& incrementor_products, const unordered_map<string, size_t>& incrementor_map, ofstream& status_log) {
+    bool duplicate_found = false;
+    for (size_t d = 0; d < incrementor_values.size(); d++) {
+        for (size_t f = d + 1; f < incrementor_values.size(); f++) {
+            if (incrementor_values.at(d) == incrementor_values.at(f)) {
+                duplicate_found = true;
+                break;
             }
-            else {
-                output_recipes.push_back(recipe_stack.top());
-            }
-            recipe_stack.pop();
-            continue;
         }
-        else {
-            // if the current recipe has not been processed, process it
-            recipe_stack.top().set_processed(); // sets the processed flag to true
-            vector<Resource> ingredients = recipe_stack.top().get_ingredients(); // gets the ingredients of the current recipe
-            for (size_t i = 0; i < ingredients.size(); i++) { // increments through all the ingredients
-
-                auto terminal_location = terminal_map.find(ingredients.at(i).get_name()); // finds if the item is terminal
-                if (terminal_location != terminal_map.end()) {
-                    continue;
-                }
-
-                auto recipe_location = recipe_map.find(ingredients.at(i).get_name()); // finds the recipe in the map
-                if (recipe_location != recipe_map.end()) {
-                    Recipe new_recipe = recipe_location->second; // sets new_recipe to the recipe found
-                    new_recipe.set_to(ingredients.at(i).get_amount()); // raises the recipe product to match the ingredient it is for
-                    recipe_stack.push(new_recipe); // adds the new recipe to the stack
-                }
-                else {
-                    // if now recipe was found, outputs the fact as there may be missing data somewhere
-                    // the program otherwise continues as if the resource was terminal
-                    cout << "No recipe found for " << ingredients.at(i).get_name() << "." << endl;
-                    // status_log << "No recipe found for " << ingredients.at(i).get_name() << "." << endl;
-                }
-            }
+        if (duplicate_found) {
+            break;
         }
     }
 
-    int speed_lm = 1;
-    Fraction rate;
-    for (size_t i = 0; i < output_recipes.size(); i++) {
-        product_name = output_recipes.at(i).get_product(0).get_name();
-        rate = (output_recipes.at(i).get_product(0).get_amount() / recipe_map.at(product_name).get_product(0).get_amount());
-        rate *= recipe_map.at(product_name).get_machine_speed();
-        rate /= 60;
-        speed_lm = lcm(speed_lm, rate.get_denominator());
-    }
-
-    // converts the output vector into compressed json
-    Recipe output;
-    int item_lm = 1; // the least common multiple of the denominators
-    string incrementor_ID = ""; // The ID that identifies what recipes were used to make the chain
-    output.merge_recipes(output_recipes);
-    output.set_primary_product(test_item);
-    for (size_t i = 0; i < incrementor.size(); i++) {
-        incrementor_ID.append(to_string(incrementor.at(i)));
-        if ((i + 1) != incrementor.size()) {
-            incrementor_ID.append("|");
+    if (duplicate_found) {
+        // outputs the error into the terminal
+        cerr << "ERROR: duplicate incrementor index detected; This should not occur." << endl;
+        cerr << "   output_recipes.size() = " << incrementor_values.size() << endl;
+        cerr << "   incrementor_values = [";
+        for (size_t j = 0; j < incrementor_values.size(); j++) {
+            cerr << incrementor_values.at(j);
+            if (j + 1 < incrementor_values.size()) {
+                cerr << ", ";
+            }
         }
-    }
-    output.set_ID(incrementor_ID);
-    output.set_name(test_item);
-    output *= speed_lm;
-    for (size_t i = 0; i < output.get_ingredients().size(); i++) {
-        item_lm = lcm(item_lm, output.get_ingredient(i).get_amount().get_denominator());
-    }
-    for (size_t i = 0; i < output.get_products().size(); i++) {
-        item_lm = lcm(item_lm, output.get_product(i).get_amount().get_denominator());
-    }
-    output *= item_lm;
-
-    rate = (output.get_product(0).get_amount() / recipe_map.at(product_name).get_product(0).get_amount());
-    rate /= 60;
-    rate *= recipe_map.at(test_item).get_machine_speed();
-    int number_of_machines = rate.get_numerator();
-    if (number_of_machines < 0 || number_of_machines > 10000) {
-        number_of_machines = 2147483647;
-    }
-    output.set_machine_speed(number_of_machines);
-
-    // Checks if the total number of machines is more than the maximum and doesn't add it if it is
-    if (number_of_machines > 0 && number_of_machines <= max_product && (number_of_machines <= filter_map.at(test_item) || filter_map.at(test_item) == 0)) {
-        // if the recipe is valid, adds it to the output
-        sort(output.modify_ingredients().begin(), output.modify_ingredients().end(), [](const Resource& a, const Resource& b) { return a.get_name() < b.get_name(); });
-        key.ingredient_names.clear();
-        key.product_amount = output.get_product(0).get_amount();
-        for (size_t i = 0; i < output.get_ingredients().size(); i++) {
-            key.ingredient_names.push_back(output.get_ingredient(i).get_name());
+        cerr << "]" << endl;
+        for (size_t j = 0; j < incrementor_products.size(); j++) {
+            cerr << "   Recipe " << j << ": product(0) = '" << incrementor_products.at(j) << "' index = " << incrementor_map.at(incrementor_products.at(j)) << endl;
         }
-        sorting_map[key].push_back(output);
 
-        unfiltered += 1;
-        true_unfiltered += 1;
-        total += 1;
-        true_total += 1;
-    }
-    else {
-        // if the recipe is not valid, removes it
-        machine_filtered += 1;
-        true_machine_filtered += 1;
-        total += 1;
-        true_total += 1;
+        // outputs the error into the log file
+        status_log << "ERROR: duplicate incrementor index detected; This should not occur." << endl;
+        status_log << "   output_recipes.size() = " << incrementor_values.size() << endl;
+        status_log << "   incrementor_values = [";
+        for (size_t j = 0; j < incrementor_values.size(); j++) {
+            status_log << incrementor_values.at(j);
+            if (j + 1 < incrementor_values.size()) {
+                status_log << ", ";
+            }
+        }
+        status_log << "]" << endl;
+        for (size_t j = 0; j < incrementor_products.size(); j++) {
+            status_log << "   Recipe " << j << ": product(0) = '" << incrementor_products.at(j) << "' index = " << incrementor_map.at(incrementor_products.at(j)) << endl;
+        }
+        status_log << endl;
     }
 
-    return output_recipes;
+    return duplicate_found;
 }

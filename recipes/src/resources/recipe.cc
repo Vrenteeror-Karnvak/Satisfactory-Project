@@ -107,13 +107,18 @@ void Recipe::set_processed() {
     processed = true;
 }
 
-void Recipe::combine_recipes(const Recipe other) {
+void Recipe::combine_recipes(const Recipe& other) {
+    Stats::combine_recipe_calls++;
+
+    auto combine_start = chrono::steady_clock::now();
     bool found = false;
     // combines the ingredients
     for (size_t i = 0; i < other.get_ingredients().size(); i++) {
         found = false;
         for (size_t j = 0; j < ingredients.size(); j++) {
             if (ingredients.at(j).same_name(other.get_ingredient(i))) {
+                Stats::ingredients_merged++;
+
                 ingredients.at(j) += other.get_ingredient(i);
                 found = true;
                 break;
@@ -129,6 +134,7 @@ void Recipe::combine_recipes(const Recipe other) {
         found = false;
         for (size_t j = 0; j < products.size(); j++) {
             if (products.at(j).same_name(other.get_product(i))) {
+                Stats::products_merged++;
                 products.at(j) += other.get_product(i);
                 found = true;
                 break;
@@ -144,36 +150,44 @@ void Recipe::combine_recipes(const Recipe other) {
         for (size_t j = 0; j < ingredients.size(); j++) {
             if (products.at(i).same_name(ingredients.at(j))) {
                 products.at(i) -= ingredients.at(j);
+                ingredients.at(j).set_amount(0);
             }
         }
     }
-    
+
+    auto clean_start = chrono::steady_clock::now();
+    Stats::ingredient_samples = ingredients.size();
+    Stats::max_ingredients_before_cleanup = max(Stats::max_ingredients_before_cleanup, Stats::ingredient_samples);
+    Stats::total_ingredients_before_cleanup += Stats::ingredient_samples;
     // Remove ingredients that were cancelled out by products (rebuild to avoid index shifting)
     vector<Resource> cleaned_ingredients;
     for (size_t i = 0; i < ingredients.size(); i++) {
-        bool cancelled = false;
-        for (size_t j = 0; j < products.size(); j++) {
-            if (ingredients.at(i).same_name(products.at(j))) {
-                cancelled = true;
-                break;
-            }
+        if (ingredients.at(i).get_amount() == 0) {
+            Stats::ingredients_cancelled++;
+            // Skip zero-amount ingredients
+            continue;
         }
-        if (!cancelled) {
+        else {
             cleaned_ingredients.push_back(ingredients.at(i));
         }
     }
     ingredients = cleaned_ingredients;
 
+    Stats::product_samples = products.size();
+    Stats::max_products_before_cleanup = max(Stats::max_products_before_cleanup, Stats::product_samples);
+    Stats::total_products_before_cleanup += Stats::product_samples;
     // Removes any products that have an amount of 0
     // Also converts products with a negative amount into ingredients
     // Rebuild the vector to preserve original indices of byproducts
     vector<Resource> cleaned_products;
     for (size_t i = 0; i < products.size(); i++) {
         if (products.at(i).get_amount() == 0) {
+            Stats::products_cancelled++;
             // Skip zero-amount products
             continue;
         }
         else if (products.at(i).get_amount() < 0) {
+            Stats::products_cancelled++;
             // Convert negative products to ingredients
             products.at(i) *= -1;
             ingredients.push_back(products.at(i));
@@ -184,15 +198,32 @@ void Recipe::combine_recipes(const Recipe other) {
         }
     }
     products = cleaned_products;
+    auto combine_end = chrono::steady_clock::now();
+    auto clean_end = chrono::steady_clock::now();
+    Stats::combine_time += (combine_end - combine_start);
+    Stats::clean_time += (clean_end - clean_start);
+
+    Stats::ingredient_samples = ingredients.size();
+    Stats::max_ingredients_after_cleanup = max(Stats::max_ingredients_after_cleanup, Stats::ingredient_samples);
+    Stats::total_ingredients_after_cleanup += Stats::ingredient_samples;
+
+    Stats::product_samples = products.size();
+    Stats::max_products_after_cleanup = max(Stats::max_products_after_cleanup, Stats::product_samples);
+    Stats::total_products_after_cleanup += Stats::product_samples;
 }
 
-void Recipe::merge_recipes(const vector<Recipe> data) {
+void Recipe::merge_recipes(const vector<Recipe>& data) {
+    Stats::merge_recipe_calls++;
+
     for (size_t i = 0; i < data.size(); i++) {
         this->combine_recipes(data.at(i));
     }
 }
 
 void Recipe::set_primary_product(const string& primary_name) {
+    auto correct_start = chrono::steady_clock::now();
+    Stats::correct_recipe_calls++;
+
     // Find the product matching primary_name and move it to index 0
     for (size_t i = 0; i < products.size(); i++) {
         if (products.at(i).get_name() == primary_name) {
@@ -206,6 +237,8 @@ void Recipe::set_primary_product(const string& primary_name) {
         }
     }
     // If primary product not found, do nothing
+    auto correct_end = chrono::steady_clock::now();
+    Stats::correct_time += (correct_end - correct_start);
 }
 
 string Recipe::get_name() const {
@@ -314,11 +347,8 @@ bool Recipe::is_processed() const {
 }
 
 bool Recipe::same_name(const Recipe& other) const {
-    return (name == other.get_name() && ID == other.get_ID() 
-            && factory == other.get_factory()
-            && machine_speed == other.get_machine_speed()
-            && ingredients.size() == other.get_ingredients().size()
-            && products.size() == other.get_products().size());
+    Stats::recipe_same_name_calls++;
+    return (name == other.get_name() && ID == other.get_ID());
 }
 
 /**************************************************/
