@@ -36,7 +36,7 @@ int main(int argc, char* argv[]) {
     ifstream test_recipe_in(exePath / "dat" / "test_input.json");
     ifstream terminal_recipe_in(exePath / "dat" / "terminal_resources.json");
     // ofstream results(exePath / "dat" / "test_results.json");
-    ofstream status_log(exePath / "dat" / "test_status.log");
+    ofstream status_log(exePath / "Archived" / "compressed_test_status.log");
 
     // The json file containing all recipes as well as the variables needed to increment through them
     json recipe_root;
@@ -458,7 +458,7 @@ int main(int argc, char* argv[]) {
             output.set_machine_speed(number_of_machines);
 
             // Checks if the total number of machines is more than the maximum and doesn't add it if it is
-            if (number_of_machines > 0 && number_of_machines <= max_num_machines && (number_of_machines <= filter_map.at(test_item) || filter_map.at(test_item) == 0)) {
+            if (number_of_machines > 0 && number_of_machines <= max_num_machines) { // && (number_of_machines <= filter_map.at(test_item) || filter_map.at(test_item) == 0)) {
                 // if the recipe is valid, adds it to the output
                 output_vector.push_back(output);
 
@@ -690,6 +690,9 @@ int main(int argc, char* argv[]) {
     auto true_end = chrono::steady_clock::now();
     chrono::duration<double> true_elapsed = true_end - true_start;
 
+    Stats::print(cout);
+    Stats::print(status_log);
+
     cout << true_total << " combinations were processed." << endl;
     cout << true_unfiltered << " recipes were output." << endl;
     cout << true_machine_filtered << " recipes were filtered due to number of machines." << endl;
@@ -700,9 +703,6 @@ int main(int argc, char* argv[]) {
     status_log << true_machine_filtered << " recipes were filtered due to number of machines." << endl;
     status_log << "Execution time: " << true_elapsed.count() << " seconds." << endl;
     
-    Stats::print(cout);
-    Stats::print(status_log);
-
     for (auto& item : filter_json) {
         test_item = item.value("ItemClass", "N/A");
         item["Depth"] = filter_map.at(test_item);

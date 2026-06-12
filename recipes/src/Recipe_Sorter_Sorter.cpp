@@ -34,6 +34,8 @@ int main(int argc, char* argv[]) {
     terminal_in >> terminal_root;
     terminal_in.close();
     unordered_set<string> terminal_resources;
+    // These are chained terminal recipes
+    // They make everything that uses them terminal
     terminal_resources.insert("Heavy Modular Frame");
     terminal_resources.insert("Pressure Conversion Cube");
     terminal_resources.insert("Battery");
@@ -212,6 +214,10 @@ int main(int argc, char* argv[]) {
         }
     }
     */
+    
+    // These are independent terminals
+    // They do not make anything else terminal
+    terminal_resources.insert("Electromagnetic Control Rod");
     
     json resource_data = json::object();
     for (auto& item : terminal_resources) {

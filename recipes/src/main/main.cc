@@ -257,7 +257,6 @@ int main(int argc, char* argv[]) {
 
             // converts the output vector into compressed json
             Recipe output;
-            int item_lm = 1; // the least common multiple of the denominators
             string incrementor_ID = ""; // The ID that identifies what recipes were used to make the chain
             output.merge_recipes(output_recipes);
             output.set_primary_product(test_item);
@@ -267,17 +266,10 @@ int main(int argc, char* argv[]) {
                     incrementor_ID.append("|");
                 }
             }
-            output.set_ID(incrementor_ID);
+            // output.set_ID(incrementor_ID); no longer uses a string ID
             output.set_name(test_item);
             output *= speed_lm;
             output.set_machine_speed(60.0);
-            for (size_t i = 0; i < output.get_ingredients().size(); i++) {
-                item_lm = lcm(item_lm, output.get_ingredient(i).get_amount().get_denominator());
-            }
-            for (size_t i = 0; i < output.get_products().size(); i++) {
-                item_lm = lcm(item_lm, output.get_product(i).get_amount().get_denominator());
-            }
-            output *= item_lm;
             // output_chain = output.to_compressed_json();
 
             rate = (output.get_product(0).get_amount() / recipe_map.at(product_name).get_product(0).get_amount());

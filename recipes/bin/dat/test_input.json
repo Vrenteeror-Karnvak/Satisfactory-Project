@@ -25,8 +25,8 @@
         "max_loops": "2147483647",
         "max_time": "60",
         "unit_of_time": "Minutes",
-        "number_items_to_test": "74",
-        "old_number_items_to_test": "68"
+        "number_items_to_test": "80",
+        "old_number_items_to_test": "74"
     },
     {
         "Category": "Status Update Data",
@@ -35,10 +35,10 @@
     },
     {
         "Category": "Filter Data",
-        "max_product": 1000,
+        "max_num_machines": 100,
         "max_filter": 100,
         "tiers_per_log": 100,
-        "max_combinations": 100,
+        "max_combinations": 200,
         "absolute_max_combinations": 100,
         "remake_filters": false
     }

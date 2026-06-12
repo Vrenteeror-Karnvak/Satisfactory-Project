@@ -265,7 +265,7 @@ int main(int argc, char* argv[]) {
                     incrementor_ID.append("|");
                 }
             }
-            output.set_ID(incrementor_ID);
+            // output.set_ID(incrementor_ID); no longer uses a string ID
             output.set_name(test_item);
             for (size_t i = 0; i < output.get_ingredients().size(); i++) {
                 lm = lcm(lm, output.get_ingredient(i).get_amount().get_denominator());

@@ -9,14 +9,19 @@ recipe_sorter := bin/recipe_sorter
 recipe_trimmer := bin/recipe_trimmer
 test_file := bin/test_file
 main := bin/main
-main_mega := bin/main_mega
 test := bin/test
 backup_test := bin/backup_test
-filter_creation := bin/filter_creation
-equivalent_remover := bin/equivalent_remover
 obsidian := bin/obsidian
 
-TARGETS := $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_sorter) $(recipe_sorter_sorter) $(recipe_trimmer) $(test_file) $(main) $(main_mega) $(test) $(backup_test) $(filter_creation) $(equivalent_remover) $(obsidian)
+# Archived:
+main_mega := bin/main_mega
+filter_creation := bin/filter_creation
+equivalent_remover := bin/equivalent_remover
+test_compressed := bin/test_compressed
+test_base := bin/test_base
+
+TARGETS := $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_sorter) $(recipe_sorter_sorter) $(recipe_trimmer) $(test_file) $(main) $(test) $(backup_test) $(obsidian)
+ARCHIVED_TARGETS := $(main_mega) $(test_compressed) $(test_base) $(filter_creation) $(equivalent_remover)
 
 all: recipes test resource obsidian
 
@@ -24,9 +29,10 @@ debug: GXXFLAGS += -g
 debug: all
 
 recipes: $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_trimmer) $(recipe_sorter) $(recipe_sorter_sorter) $(test_file)
-test: ensure_critical_files $(test) $(backup_test) $(filter_creation) $(equivalent_remover)
-resource: ensure_critical_files $(main) $(main_mega) $(test)
+test: ensure_critical_files $(test) $(backup_test)
+resource: ensure_critical_files $(main) $(test)
 obsidian: $(obsidian)
+archived: $(ARCHIVED_TARGETS)
 
 $(initializer): src/Initializer.cpp
 	$(GXX) $(GXXFLAGS) $^ -o $@
@@ -52,22 +58,28 @@ $(test_file): src/Test_File.cpp
 $(main): src/main/main.cc src/resources/*.cc
 	$(GXX) $(GXXFLAGS) $^ -o $@
 
-$(main_mega): src/main/main_mega.cc src/resources/*.cc
-	$(GXX) $(GXXFLAGS) $^ -o $@
-
 $(test): src/main/test.cc src/resources/*.cc
 	$(GXX) $(GXXFLAGS) $^ -o $@
 
 $(backup_test): src/main/backup_test.cc src/resources/*.cc
 	$(GXX) $(GXXFLAGS) $^ -o $@
 
-$(filter_creation): src/main/filter_creation.cc src/resources/*.cc
-	$(GXX) $(GXXFLAGS) $^ -o $@
-
-$(equivalent_remover): src/main/equivalent_remover.cc src/resources/*.cc
-	$(GXX) $(GXXFLAGS) $^ -o $@
-
 $(obsidian): src/Obsidian.cpp
+	$(GXX) $(GXXFLAGS) $^ -o $@
+
+$(main_mega): src/Archive/Archived_main_mega.cc src/resources/*.cc
+	$(GXX) $(GXXFLAGS) $^ -o $@
+
+$(test_compressed): src/Archive/Archived_test_compressed.cc src/resources/*.cc
+	$(GXX) $(GXXFLAGS) $^ -o $@
+
+$(test_base): src/Archive/Archived_test_base.cc src/resources/*.cc
+	$(GXX) $(GXXFLAGS) $^ -o $@
+
+$(filter_creation): src/Archive/Archived_filter_creation.cc src/resources/*.cc
+	$(GXX) $(GXXFLAGS) $^ -o $@
+
+$(equivalent_remover): src/Archive/Archived_equivalent_remover.cc src/resources/*.cc
 	$(GXX) $(GXXFLAGS) $^ -o $@
 
 clear_obs:
@@ -98,6 +110,7 @@ clean:
 	@if [ -f bin/dat/test_input.json ]; then cp bin/dat/test_input.json debug/dat/; fi
 	@if [ -f bin/dat/item_filters.json ]; then cp bin/dat/item_filters.json debug/dat/; fi
 	rm -f $(TARGETS)
+	rm -f $(ARCHIVED_TARGETS)
 
 uninstall: clean
 	rm -rf bin/*

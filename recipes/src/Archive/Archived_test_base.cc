@@ -22,9 +22,8 @@ using namespace std;
 using json = nlohmann::ordered_json;
 
 bool merge_ids(vector<int>& candidate_ID, const vector<int>& current_ID, const size_t m);
-void increment_incrementor(const vector<Resource>& ingredients, const string& product, const json& recipe_root, unordered_map<string, Recipe>& recipe_map, const unordered_map<string, vector<Recipe>>& recipes,
-    const unordered_map<string, Resource>& terminal_map, const unordered_map<string, size_t>& incrementor_map, vector<size_t>& incrementor, const vector<size_t>& incrementor_max, ofstream& status_log,
-    vector<size_t>& incrementor_values);
+void increment_incrementor(const vector<Recipe>& output_recipes, const json& recipe_root, unordered_map<string, Recipe>& recipe_map, const unordered_map<string, vector<Recipe>>& recipes,
+    const unordered_map<string, Resource>& terminal_map, const unordered_map<string, size_t>& incrementor_map, vector<size_t>& incrementor, const vector<size_t>& incrementor_max, ofstream& status_log);
 bool check_duplicate_incrementor_values(const vector<size_t>& incrementor_values, const vector<string>& incrementor_products, const unordered_map<string, size_t>& incrementor_map, ofstream& status_log);
 
 int main(int argc, char* argv[]) {
@@ -36,7 +35,7 @@ int main(int argc, char* argv[]) {
     ifstream test_recipe_in(exePath / "dat" / "test_input.json");
     ifstream terminal_recipe_in(exePath / "dat" / "terminal_resources.json");
     // ofstream results(exePath / "dat" / "test_results.json");
-    ofstream status_log(exePath / "dat" / "test_status.log");
+    ofstream status_log(exePath / "Archived" / "base_test_status.log");
 
     // The json file containing all recipes as well as the variables needed to increment through them
     json recipe_root;
@@ -44,8 +43,6 @@ int main(int argc, char* argv[]) {
     unordered_map<string, Recipe> recipe_map;
     vector<size_t> incrementor;
     vector<size_t> incrementor_max;
-    vector<size_t> incrementor_values;
-    bool first_creation = true; // is this the first time incrementor_values has been made?
     vector<size_t> all_zeros(recipe_root.size(), 0);
     unordered_map<string, size_t> incrementor_map; // the location of the incrementor for a given product inside of the incrementor vector
     unordered_map<string, vector<Recipe>> recipes; // holds all the recipes
@@ -98,13 +95,13 @@ int main(int argc, char* argv[]) {
     // bool first = true; // is this the first item being output in the given array?
 
     // Status tracking variables
-    int total = 0; // the number of unique recipe chains found for the current item
-    int true_total = 0; // the total number of unique recipe chains found across all items
+    uint64_t total = 0; // the number of unique recipe chains found for the current item
+    uint64_t true_total = 0; // the total number of unique recipe chains found across all items
     int unfiltered = 0; // the number of recipe chains filtered out for the current item
     int true_unfiltered = 0; // the number of recipe chains filtered out across all items
     int machine_filtered = 0; // the number of recipe chains filtered out for the current item due to the number of machines
     int true_machine_filtered = 0; // the number of recipe chains filtered out due to the number of machines across all items
-    int count = 0; // the number of times the loop has run for the current item
+    vector<uint64_t> theoretical_count; // the number of times the loop has run for the current item
 
     // an empty json array to make the .value() function work
     json empty_array = json::array();
@@ -151,8 +148,16 @@ int main(int argc, char* argv[]) {
 
         recipe_input.set_recipe(data.value("Data", empty_array).at(0));
         recipe_map.insert({test_item, recipe_input});
+
         m += 1;
     }
+
+    status_log << "Theoretical counts:" << endl;
+    for (size_t i = 0; i < theoretical_count.size(); i++) {
+        test_item = recipe_root.at(i).value("Category", "");
+        status_log << test_item << " = " << theoretical_count.at(i) << endl;
+    }
+    status_log << endl;
 
     //
     // Nothing currently
@@ -166,7 +171,6 @@ int main(int argc, char* argv[]) {
         auto start = chrono::steady_clock::now(); // starts the timer
 
         // Clears termination flags and debug variables
-        first_creation = true;
         u = 1;
 
         // clears the output storage vectors
@@ -184,31 +188,12 @@ int main(int argc, char* argv[]) {
             redo_filter = false;
         }
 
-        count = 0;
         unfiltered = 0;
         machine_filtered = 0;
         total = 0;
 
-        auto count_start = chrono::steady_clock::now();
-        for (size_t i = 0; i < recipes.at(test_item).size(); i++) {
-            const vector<Resource>& recipe_vector = recipes.at(test_item)[i].get_ingredients_ref();
-            Stats::recipes_map_lookups++;
-            int temp_count = 1;
-
-            for (size_t j = 0; j < recipe_vector.size(); j++) {
-                string temp_item = recipe_vector[j].get_name();
-                if (terminal_map.find(temp_item) == terminal_map.end()) {
-                    temp_count *= recipes.at(temp_item).size();
-                }
-            }
-            count += temp_count;
-        }
-        auto count_end = chrono::steady_clock::now();
-        Stats::count_time += (count_end - count_start);
-
         status_log << test_item << " about to be processed." << endl;
-        status_log << "Estimated to need to process " << count << " combinations to complete." << endl;
-
+        
         if ((k - 1) == num_to_test) {
             status_log << endl;
             break;
@@ -227,95 +212,6 @@ int main(int argc, char* argv[]) {
             Stats::recipes_map_lookups++;
 
             Stats::combinations_processed++;
-            
-            // Merge the ID's to detect any conflicts
-            auto ID_start = chrono::steady_clock::now();
-            auto ID_prep_start = chrono::steady_clock::now();
-            bool valid = true;
-            vector<int> candidate_ID(recipe_root.size(), -1);
-            const vector<Resource>& ingredients = starting_recipe.get_ingredients_ref();
-
-            auto ID_prep_end = chrono::steady_clock::now();
-            Stats::ID_prep_time += (ID_prep_end - ID_prep_start);
-
-            auto ID_end = chrono::steady_clock::now();
-            Stats::ID_total_time += (ID_end - ID_start);
-
-            if (first_creation) {
-                Stats::incrementor_rebuild_count++;
-                auto incrementor_rebuild_start = chrono::steady_clock::now();
-                incrementor_values.clear();
-                for (size_t i = 0; i < ingredients.size(); i++) {
-                    string item_name = ingredients[i].get_name();
-                    Stats::terminal_map_searches++;
-                    auto terminal_location = terminal_map.find(item_name); // finds if the item is terminal
-                    if (terminal_location == terminal_map.end()) {
-                        incrementor_values.push_back(incrementor_map.at(item_name));
-                        Stats::incrementor_map_lookups++;
-                    }
-                }
-                incrementor_values.push_back(incrementor_map.at(test_item));
-                Stats::incrementor_map_lookups++;
-                sort(incrementor_values.begin(), incrementor_values.end());
-                first_creation = false;
-                auto incrementor_rebuild_end = chrono::steady_clock::now();
-                Stats::incrementor_rebuild_time += (incrementor_rebuild_end - incrementor_rebuild_start);
-            }
-
-            ID_start = chrono::steady_clock::now();
-            auto ID_build_start = chrono::steady_clock::now();
-
-            for (size_t i = 0; i < ingredients.size(); i++) {
-                valid = true;
-                const Resource& item = ingredients[i];
-                product_name = item.get_name();
-                Stats::terminal_map_searches++;
-                auto terminal_location = terminal_map.find(product_name); // finds if the item is terminal
-                if (terminal_location == terminal_map.end()) {
-                    location = incrementor_map[product_name];
-                    Stats::incrementor_map_lookups++;
-                    const Recipe& current_recipe = recipes.at(product_name).at(incrementor[location]);
-                    Stats::recipes_map_lookups++;
-                    if (!current_recipe.get_ID_ref().empty()) {
-                        if (i == 0) {
-                            candidate_ID = current_recipe.get_ID();
-                        }
-                        else if (!merge_ids(candidate_ID, current_recipe.get_ID(), m)) {
-                            Stats::merge_ID_calls++;
-                            valid = false;
-                            break;
-                        }
-                    }
-                }
-            }
-            candidate_ID[m] = incrementor[m];
-
-            Stats::current_ID_entries = 0;
-            for (size_t i = 0; i < candidate_ID.size(); i++) {
-                if (candidate_ID[i] != -1) {
-                    Stats::current_ID_entries++;
-                }
-            }
-            Stats::total_ID_entries_used += Stats::current_ID_entries;
-            Stats::max_ID_entries_used = max(Stats::max_ID_entries_used, Stats::current_ID_entries);
-
-            auto ID_build_end = chrono::steady_clock::now();
-            Stats::ID_build_time += (ID_build_end - ID_build_start);
-
-            if (!valid) {
-                Stats::ID_filtered++;
-                machine_filtered += 1;
-                true_machine_filtered += 1;
-                total += 1;
-                true_total += 1;
-
-                auto ID_end = chrono::steady_clock::now();
-                Stats::ID_total_time += (ID_end - ID_start);
-                increment_incrementor(ingredients, test_item, recipe_root, recipe_map, recipes, terminal_map, incrementor_map, incrementor, incrementor_max, status_log, incrementor_values);
-                continue;
-            }
-            ID_end = chrono::steady_clock::now();
-            Stats::ID_total_time += (ID_end - ID_start);
 
             Stats::chains_generated++;
             recipe_stack.push(starting_recipe);
@@ -426,7 +322,7 @@ int main(int argc, char* argv[]) {
 
                 auto lcm_end = chrono::steady_clock::now();
                 Stats::lcm_time += (lcm_end - lcm_start);
-                increment_incrementor(ingredients, test_item, recipe_root, recipe_map, recipes, terminal_map, incrementor_map, incrementor, incrementor_max, status_log, incrementor_values);
+                increment_incrementor(output_recipes, recipe_root, recipe_map, recipes, terminal_map, incrementor_map, incrementor, incrementor_max, status_log);
                 continue;
             }
 
@@ -436,6 +332,11 @@ int main(int argc, char* argv[]) {
             // converts the output vector into compressed json
             Recipe output;
             auto merge_start = chrono::steady_clock::now();
+            vector<int> candidate_ID(recipe_root.size(), -1);
+            for (size_t i = 0; i < output_recipes.size(); i++) {
+                size_t j = incrementor_map.at(output_recipes[i].get_product(0).get_name());
+                candidate_ID[j] = incrementor[j];
+            }
             output.merge_recipes(output_recipes);
             output.set_ID(candidate_ID);
             output.set_name(test_item);
@@ -458,7 +359,7 @@ int main(int argc, char* argv[]) {
             output.set_machine_speed(number_of_machines);
 
             // Checks if the total number of machines is more than the maximum and doesn't add it if it is
-            if (number_of_machines > 0 && number_of_machines <= max_num_machines && (number_of_machines <= filter_map.at(test_item) || filter_map.at(test_item) == 0)) {
+            if (number_of_machines > 0 && number_of_machines <= max_num_machines) { // && (number_of_machines <= filter_map.at(test_item) || filter_map.at(test_item) == 0)) {
                 // if the recipe is valid, adds it to the output
                 output_vector.push_back(output);
 
@@ -476,7 +377,7 @@ int main(int argc, char* argv[]) {
                 true_total += 1;
             }
 
-            increment_incrementor(ingredients, test_item, recipe_root, recipe_map, recipes, terminal_map, incrementor_map, incrementor, incrementor_max, status_log, incrementor_values);
+            increment_incrementor(output_recipes, recipe_root, recipe_map, recipes, terminal_map, incrementor_map, incrementor, incrementor_max, status_log);
 
             // Provides updates on the current status of the program
             if ((chrono::steady_clock::now() - start) >= (update_frequency * u)) {
@@ -600,8 +501,8 @@ int main(int argc, char* argv[]) {
 
         m = incrementor_map.at(test_item);
         Stats::incrementor_map_lookups++;
-        recipes.at(test_item) = output_vector;
-        incrementor_max[m] = output_vector.size();
+        // recipes.at(test_item) = output_vector;
+        // incrementor_max[m] = output_vector.size();
         
         // Resets recipe_map at test_item to use the new recipes
         recipe_map.at(test_item) = recipes.at(test_item).at(0);
@@ -659,10 +560,6 @@ int main(int argc, char* argv[]) {
         Stats::output_time += output_duration;
 
         cout << test_item << " has been proccessed." << endl;
-        if (count != total) {
-            cout << "Estimated total doesn't equal calculated total. " << count << " != " << total << endl;
-            status_log << "Estimated total doesn't equal calculated total. " << count << " != " << total << endl;
-        }
         status_log << test_item << " has been proccessed." << endl;
         status_log << total << " combinations have been processed." << endl;
         status_log << unfiltered << " recipes were output." << endl;
@@ -690,6 +587,9 @@ int main(int argc, char* argv[]) {
     auto true_end = chrono::steady_clock::now();
     chrono::duration<double> true_elapsed = true_end - true_start;
 
+    Stats::print(cout);
+    Stats::print(status_log);
+
     cout << true_total << " combinations were processed." << endl;
     cout << true_unfiltered << " recipes were output." << endl;
     cout << true_machine_filtered << " recipes were filtered due to number of machines." << endl;
@@ -700,9 +600,6 @@ int main(int argc, char* argv[]) {
     status_log << true_machine_filtered << " recipes were filtered due to number of machines." << endl;
     status_log << "Execution time: " << true_elapsed.count() << " seconds." << endl;
     
-    Stats::print(cout);
-    Stats::print(status_log);
-
     for (auto& item : filter_json) {
         test_item = item.value("ItemClass", "N/A");
         item["Depth"] = filter_map.at(test_item);
@@ -745,13 +642,20 @@ bool merge_ids(vector<int>& a, const vector<int>& b, const size_t m) {
 
 
 
-void increment_incrementor(const vector<Resource>& ingredients, const string& product, const json& recipe_root, unordered_map<string, Recipe>& recipe_map, const unordered_map<string, vector<Recipe>>& recipes,
-    const unordered_map<string, Resource>& terminal_map, const unordered_map<string, size_t>& incrementor_map, vector<size_t>& incrementor, const vector<size_t>& incrementor_max, ofstream& status_log,
-    vector<size_t>& incrementor_values) {
+void increment_incrementor(const vector<Recipe>& output_recipes, const json& recipe_root, unordered_map<string, Recipe>& recipe_map, const unordered_map<string, vector<Recipe>>& recipes,
+    const unordered_map<string, Resource>& terminal_map, const unordered_map<string, size_t>& incrementor_map, vector<size_t>& incrementor, const vector<size_t>& incrementor_max, ofstream& status_log) {
     auto incrementor_start = chrono::steady_clock::now();
-    // increments the incrementor vector
+    // increments the incrementor vector 
     string item_name;
-    bool rebuild_needed = false;
+    vector<size_t> incrementor_values;
+    auto incrementor_rebuild_start = chrono::steady_clock::now();
+    for (size_t i = 0; i < output_recipes.size(); i++) {
+        item_name = output_recipes.at(i).get_product(0).get_name();
+        incrementor_values.push_back(incrementor_map.at(item_name));
+    }
+    sort(incrementor_values.begin(), incrementor_values.end());
+    auto incrementor_rebuild_end = chrono::steady_clock::now();
+    Stats::incrementor_rebuild_time += (incrementor_rebuild_end - incrementor_rebuild_start);
     // duplicate_found = check_duplicate_incrementor_values(incrementor_values, incrementor_products, incrementor_map, status_log);
     bool increment = true; // Determines if the value should be incremented
     for (size_t j = 0; j < incrementor_values.size(); j++) {
@@ -770,33 +674,7 @@ void increment_incrementor(const vector<Resource>& ingredients, const string& pr
             recipe_map[item_name] = recipes.at(item_name).at(incrementor[i]);
             Stats::recipes_map_lookups++;
             Stats::recipe_map_updates++;
-            
-            if(i == incrementor_values.back()) {
-                rebuild_needed = true;
-            }
         }
-    }
-    if (rebuild_needed) {
-        Stats::incrementor_rebuild_count++;
-        auto incrementor_rebuild_start = chrono::steady_clock::now();
-        size_t j = incrementor_values.back();
-        incrementor_values.clear();
-        const vector<Resource>& new_ingredients = recipes.at(item_name).at(incrementor.at(j)).get_ingredients_ref();
-        Stats::recipes_map_lookups++;
-        for (size_t i = 0; i < new_ingredients.size(); i++) {
-            item_name = new_ingredients[i].get_name();
-            Stats::terminal_map_searches++;
-            auto terminal_location = terminal_map.find(item_name); // finds if the item is terminal
-            if (terminal_location == terminal_map.end()) {
-                incrementor_values.push_back(incrementor_map.at(item_name));
-                Stats::incrementor_map_lookups++;
-            }
-        }
-        incrementor_values.push_back(incrementor_map.at(product));
-        Stats::incrementor_map_lookups++;
-        sort(incrementor_values.begin(), incrementor_values.end());
-        auto incrementor_rebuild_end = chrono::steady_clock::now();
-        Stats::incrementor_rebuild_time += (incrementor_rebuild_end - incrementor_rebuild_start);
     }
     auto incrementor_end = chrono::steady_clock::now();
     Stats::incrementor_time += (incrementor_end - incrementor_start);

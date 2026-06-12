@@ -13,8 +13,9 @@ Recipe::Recipe() {
 }
 
 Recipe::Recipe(const json& data) {
+    vector<int> empty_vector;
     name = data.value("DisplayName", "Unknown");
-    ID = data.value("ID", "N/A");
+    ID = data.value("ID", empty_vector);
     factory = data.value("ProducedIn", "N/A");
     machine_speed = stod(data.value("ManufactoringDuration", "0.0"));
     
@@ -34,8 +35,9 @@ Recipe::Recipe(const json& data) {
 }
 
 void Recipe::set_recipe(const json& data) {
+    vector<int> empty_vector;
     name = data.value("DisplayName", "Unknown");
-    ID = data.value("ID", "N/A");
+    ID = data.value("ID", empty_vector);
     factory = data.value("ProducedIn", "N/A");
     machine_speed = stod(data.value("ManufactoringDuration", "0.0"));
     
@@ -71,7 +73,7 @@ void Recipe::set_name(const string title) {
     name = title;
 }
 
-void Recipe::set_ID(const string id) {
+void Recipe::set_ID(const vector<int>& id) {
     ID = id;
 }
 
@@ -83,7 +85,7 @@ void Recipe::set_machine_speed(const double rate) {
     machine_speed = rate;
 }
 
-void Recipe::set_ingredients(const vector<Resource> ingredient) {
+void Recipe::set_ingredients(const vector<Resource>& ingredient) {
     for (size_t i = 0; i < ingredient.size(); i++) {
         ingredients.push_back(ingredient.at(i));
     }
@@ -93,7 +95,7 @@ void Recipe::add_ingredient(const Resource ingredient) {
     ingredients.push_back(ingredient);
 }
 
-void Recipe::set_products(const vector<Resource> product) {
+void Recipe::set_products(const vector<Resource>& product) {
     for (size_t i = 0; i < product.size(); i++) {
         products.push_back(product.at(i));
     }
@@ -155,7 +157,6 @@ void Recipe::combine_recipes(const Recipe& other) {
         }
     }
 
-    auto clean_start = chrono::steady_clock::now();
     Stats::ingredient_samples = ingredients.size();
     Stats::max_ingredients_before_cleanup = max(Stats::max_ingredients_before_cleanup, Stats::ingredient_samples);
     Stats::total_ingredients_before_cleanup += Stats::ingredient_samples;
@@ -199,9 +200,7 @@ void Recipe::combine_recipes(const Recipe& other) {
     }
     products = cleaned_products;
     auto combine_end = chrono::steady_clock::now();
-    auto clean_end = chrono::steady_clock::now();
     Stats::combine_time += (combine_end - combine_start);
-    Stats::clean_time += (clean_end - clean_start);
 
     Stats::ingredient_samples = ingredients.size();
     Stats::max_ingredients_after_cleanup = max(Stats::max_ingredients_after_cleanup, Stats::ingredient_samples);
@@ -215,14 +214,18 @@ void Recipe::combine_recipes(const Recipe& other) {
 void Recipe::merge_recipes(const vector<Recipe>& data) {
     Stats::merge_recipe_calls++;
 
-    for (size_t i = 0; i < data.size(); i++) {
-        this->combine_recipes(data.at(i));
+    if (data.empty()) {
+        return;
+    }
+
+    *this = data.back();
+    for (size_t i = (data.size() - 1); i > 0; i--) {
+        this->combine_recipes(data.at(i - 1));
     }
 }
 
 void Recipe::set_primary_product(const string& primary_name) {
     auto correct_start = chrono::steady_clock::now();
-    Stats::correct_recipe_calls++;
 
     // Find the product matching primary_name and move it to index 0
     for (size_t i = 0; i < products.size(); i++) {
@@ -245,7 +248,15 @@ string Recipe::get_name() const {
     return name;
 }
 
-string Recipe::get_ID() const {
+vector<int>& Recipe::modify_ID() {
+    return ID;
+}
+
+vector<int> Recipe::get_ID() const {
+    return ID;
+}
+
+const vector<int> Recipe::get_ID_ref() const {
     return ID;
 }
 
@@ -265,6 +276,10 @@ vector<Resource> Recipe::get_ingredients() const {
     return ingredients;
 }
 
+const vector<Resource>& Recipe::get_ingredients_ref() const {
+    return ingredients;
+}
+
 Resource Recipe::get_ingredient(int i) const {
     return ingredients.at(i);
 }
@@ -274,6 +289,10 @@ vector<Resource>& Recipe::modify_products() {
 }
 
 vector<Resource> Recipe::get_products() const {
+    return products;
+}
+
+const vector<Resource>& Recipe::get_products_ref() const {
     return products;
 }
 
@@ -293,18 +312,18 @@ json Recipe::to_json() const {
     output["Product"] = empty_array;
     for (size_t i = 0; i < ingredients.size(); i++) {
         current["ItemClass"] = ingredients.at(i).get_name();
-        fraction = to_string(ingredients.at(i).get_amount().get_numerator()) + "/" + to_string(ingredients.at(i).get_amount().get_denominator());
+        fraction = std::to_string(ingredients.at(i).get_amount().get_numerator()) + "/" + std::to_string(ingredients.at(i).get_amount().get_denominator());
         current["Amount"] = fraction;
         output["Ingredients"].push_back(current);
     }
     for (size_t i = 0; i < products.size(); i++) {
         current["ItemClass"] = products.at(i).get_name();
-        fraction = to_string(products.at(i).get_amount().get_numerator()) + "/" + to_string(products.at(i).get_amount().get_denominator());
+        fraction = std::to_string(products.at(i).get_amount().get_numerator()) + "/" + std::to_string(products.at(i).get_amount().get_denominator());
         current["Amount"] = fraction;
         output["Product"].push_back(current);
     }
     output["ProducedIn"] = factory;
-    output["ManufactoringDuration"] = to_string(machine_speed);
+    output["ManufactoringDuration"] = std::to_string(machine_speed);
     return output;
 }
 
@@ -314,20 +333,53 @@ json Recipe::to_compressed_json() const {
     json empty_array = json::array();
 
     output["DisplayName"] = name;
-    output["ID"] = ID;
+    // output["ID"] = ID;
     output["Ingredients"] = empty_array;
     output["Product"] = empty_array;
     for (size_t i = 0; i < ingredients.size(); i++) {
         current["ItemClass"] = ingredients.at(i).get_name();
-        current["Amount"] = to_string(ingredients.at(i).get_amount().get_numerator());
+        current["Amount"] = std::to_string(ingredients.at(i).get_amount().get_numerator());
         output["Ingredients"].push_back(current);
     }
     for (size_t i = 0; i < products.size(); i++) {
         current["ItemClass"] = products.at(i).get_name();
-        current["Amount"] = to_string(products.at(i).get_amount().get_numerator());;
+        current["Amount"] = std::to_string(products.at(i).get_amount().get_numerator());;
         output["Product"].push_back(current);
     }
     return output;
+}
+
+string Recipe::to_string() const {
+    ostringstream out;
+
+    out << "ID: {";
+    for (size_t i = 0; i < ID.size(); i++) {
+        if (i != 0) {
+            out << '|';
+        }
+        out << ID[i];
+    }
+    out << "}" << endl;
+
+    out << "ING: {";
+    for (size_t i = 0; i < ingredients.size(); i++) {
+        if (i != 0) {
+            out << ';';
+        }
+        out << ingredients[i].get_name() << '=' << ingredients[i].get_amount().get_numerator();
+    }
+    out << "}" << endl;
+
+    out << "PROD: {";
+    for (size_t i = 0; i < products.size(); i++) {
+        if (i != 0) {
+            out << ';';
+        }
+        out << products[i].get_name() << '=' << products[i].get_amount().get_numerator();
+    }
+    out << "}" << endl << endl;
+
+    return out.str();
 }
 
 void Recipe::set_to(const Fraction end_result) {
