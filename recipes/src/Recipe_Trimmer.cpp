@@ -87,7 +87,6 @@ int main(int argc, char* argv[]) {
             || data.value("ItemClass", "").find("Dissolved Silica") != string::npos
             || data.value("ItemClass", "").find("Wood") != string::npos
             || data.value("ItemClass", "").find("Leaves") != string::npos
-            || data.value("ItemClass", "").find("Packaged") != string::npos
             || data.value("ItemClass", "").find("Alien Protein") != string::npos) {
                 to_delete = true;
             }
@@ -96,6 +95,7 @@ int main(int argc, char* argv[]) {
         for (auto& data : block["Product"]) {
             if (data.value("ItemClass", "").find("Biomass") != string::npos
             || data.value("ItemClass", "").find("Dissolved Silica") != string::npos
+            || data.value("ItemClass", "").find("Empty") != string::npos
             || data.value("ItemClass", "").find("Packaged") != string::npos
             || data.value("ItemClass", "").find("Alien Protein") != string::npos
             || data.value("ItemClass", "").find("fuel") != string::npos

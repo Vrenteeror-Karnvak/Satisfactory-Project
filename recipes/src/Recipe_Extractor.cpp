@@ -86,10 +86,11 @@ int main(int argc, char* argv[]) {
         }
 
         // Collects the terminal resources
+        resource_data["ItemClass"] = "";
+        resource_data["Amount"] = "0"; // sets amount to 0;
         if (block.value("NativeClass", "") == "/Script/CoreUObject.Class'/Script/FactoryGame.FGResourceDescriptor'") {
             for (const auto& data : block["Classes"]) {
                 resource_data["ItemClass"] = data.value("mDisplayName", ""); // adds the display name
-                resource_data["Amount"] = "0"; // sets amount to 0;
                 terminalOut.push_back(resource_data); // adds the collected data to the vector
             }
         }
@@ -132,37 +133,32 @@ int main(int argc, char* argv[]) {
             }            
         }
     }
-    
-    resource_data["ItemClass"] = "Polymer Resin"; // adds the display name
-    resource_data["Amount"] = "0"; // sets amount to 0;
-    terminalOut.push_back(resource_data); // adds the  data to the vector
-
-    resource_data["ItemClass"] = "Compacted Coal"; // adds the display name
-    resource_data["Amount"] = "0"; // sets amount to 0;
-    terminalOut.push_back(resource_data); // adds the  data to the vector
-
-    resource_data["ItemClass"] = "Dark Matter Residue"; // adds the display name
-    resource_data["Amount"] = "0"; // sets amount to 0;
-    terminalOut.push_back(resource_data); // adds the  data to the vector
-
-    resource_data["ItemClass"] = "Heavy Oil Residue"; // adds the display name
-    resource_data["Amount"] = "0"; // sets amount to 0;
-    terminalOut.push_back(resource_data); // adds the  data to the vector
-
-    resource_data["ItemClass"] = "Sulfuric Acid"; // adds the display name
-    resource_data["Amount"] = "0"; // sets amount to 0;
-    terminalOut.push_back(resource_data); // adds the  data to the vector
 
     resource_data["ItemClass"] = "FICSMAS Gift"; // adds the display name
-    resource_data["Amount"] = "0"; // sets amount to 0;
     terminalOut.push_back(resource_data); // adds the  data to the vector
 
     resource_data["ItemClass"] = "Biomass"; // adds the display name
-    resource_data["Amount"] = "0"; // sets amount to 0;
     terminalOut.push_back(resource_data); // adds the  data to the vector
 
     resource_data["ItemClass"] = "Excited Photonic Matter"; // adds the display name
-    resource_data["Amount"] = "0"; // sets amount to 0;
+    terminalOut.push_back(resource_data); // adds the  data to the vector
+    
+    resource_data["ItemClass"] = "Polymer Resin"; // adds the display name
+    terminalOut.push_back(resource_data); // adds the  data to the vector
+
+    resource_data["ItemClass"] = "Compacted Coal"; // adds the display name
+    terminalOut.push_back(resource_data); // adds the  data to the vector
+
+    resource_data["ItemClass"] = "Dark Matter Residue"; // adds the display name
+    terminalOut.push_back(resource_data); // adds the  data to the vector
+
+    resource_data["ItemClass"] = "Heavy Oil Residue"; // adds the display name
+    terminalOut.push_back(resource_data); // adds the  data to the vector
+
+    resource_data["ItemClass"] = "Sulfuric Acid"; // adds the display name
+    terminalOut.push_back(resource_data); // adds the  data to the vector
+
+    resource_data["ItemClass"] = "Nitric Acid"; // adds the display name
     terminalOut.push_back(resource_data); // adds the  data to the vector
 
     // outputs the collected data

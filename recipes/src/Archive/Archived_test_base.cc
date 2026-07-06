@@ -35,7 +35,7 @@ int main(int argc, char* argv[]) {
     ifstream test_recipe_in(exePath / "dat" / "test_input.json");
     ifstream terminal_recipe_in(exePath / "dat" / "terminal_resources.json");
     // ofstream results(exePath / "dat" / "test_results.json");
-    ofstream status_log(exePath / "Archived" / "base_test_status.log");
+    ofstream status_log(exePath / "Archived" / "test_base_status.log");
 
     // The json file containing all recipes as well as the variables needed to increment through them
     json recipe_root;
@@ -149,13 +149,33 @@ int main(int argc, char* argv[]) {
         recipe_input.set_recipe(data.value("Data", empty_array).at(0));
         recipe_map.insert({test_item, recipe_input});
 
+        auto count_start = chrono::steady_clock::now();
+        uint64_t count = 0;
+        for (size_t i = 0; i < output_recipes.size(); i++) {
+            vector<Resource> recipe_vector = output_recipes.at(i).get_ingredients();
+            uint64_t temp_count = 1;
+            for (size_t j = 0; j < recipe_vector.size(); j++) {
+                string temp_item = recipe_vector.at(j).get_name();
+                Stats::terminal_map_searches++;
+                if (terminal_map.find(temp_item) == terminal_map.end()) {
+                    size_t k = incrementor_map.at(temp_item);
+                    Stats::incrementor_map_lookups++;
+                    temp_count *= theoretical_count.at(k);
+                }
+            }
+            count += temp_count;
+        }
+        theoretical_count.push_back(count);
+        auto count_end = chrono::steady_clock::now();
+        Stats::count_time += (count_end - count_start);
+
         m += 1;
     }
 
     status_log << "Theoretical counts:" << endl;
     for (size_t i = 0; i < theoretical_count.size(); i++) {
         test_item = recipe_root.at(i).value("Category", "");
-        status_log << test_item << " = " << theoretical_count.at(i) << endl;
+        status_log << test_item << " = " << theoretical_count.at(i) << "(item " << i << ")" << endl;
     }
     status_log << endl;
 

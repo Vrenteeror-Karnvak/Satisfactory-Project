@@ -39,6 +39,15 @@ int main(int argc, char* argv[]) {
     terminal_resources.insert("Heavy Modular Frame");
     terminal_resources.insert("Pressure Conversion Cube");
     terminal_resources.insert("Battery");
+    terminal_resources.insert("Packaged Nitrogen Gas");
+    terminal_resources.insert("Packaged Turbofuel");
+
+    unordered_set<string> nuclear_resources;
+    // These are chained nuclear recipes
+    // They make everything that uses them nuclear
+    nuclear_resources.insert("Uranium Fuel Rod");
+
+    unordered_set<string> capstone_resources;
 
     // all of the objects needed to hold the data while processing it.
     json recipe_object = json::object();
@@ -68,6 +77,7 @@ int main(int argc, char* argv[]) {
     for (const auto& category : root) {
         first = true;
         product = category.value("Category", "");
+        recipe_form[product];
         for (const auto& recipe : category["Data"]) {
             if (first) {
                 for (const auto& value : recipe["Ingredients"]) {
@@ -105,12 +115,6 @@ int main(int argc, char* argv[]) {
 
             usage_count.insert({ingredient, 0});
             usage_count[ingredient] += 1;
-
-            if (terminal_resources.find(ingredient) != terminal_resources.end()) {
-                if (product.find("Uranium") == string::npos && product.find("Plutonium") == string::npos && product.find("Ficsonium") == string::npos) {
-                    terminal_resources.insert(product);
-                }
-            }
         }
     }
 
@@ -214,20 +218,77 @@ int main(int argc, char* argv[]) {
         }
     }
     */
+
+    // Transfers statuses from ingredients to products
+    for (const auto& category : dataOut) {
+        string product = category.value("Category", "");
+        unordered_set<string> ingredients = recipe_form.at(product);
+        for (auto& ingredient : ingredients) {
+            if (nuclear_resources.find(ingredient) != nuclear_resources.end()) {
+                nuclear_resources.insert(product);
+            }
+            else if (terminal_resources.find(ingredient) != terminal_resources.end()) {
+                if (product.find("Uranium") == string::npos && product.find("Plutonium") == string::npos && product.find("Ficsonium") == string::npos) {
+                    terminal_resources.insert(product);
+                }
+            }
+        }
+        if (algorithm_form.find(product) == algorithm_form.end()) {
+            capstone_resources.insert(product);
+        }
+    }
     
     // These are independent terminals
     // They do not make anything else terminal
     terminal_resources.insert("Electromagnetic Control Rod");
+    terminal_resources.insert("Encased Uranium Cell");
+    terminal_resources.insert("Ficsite Trigon");
+    terminal_resources.insert("Aluminum Ingot");
+    terminal_resources.insert("Aluminum Casing");
+    terminal_resources.insert("Alclad Aluminum Sheet");
+    terminal_resources.insert("Reanimated SAM");
     
     json resource_data = json::object();
+    resource_data["ItemClass"] = "";
+    resource_data["Amount"] = "0"; // sets amount to 0;
+    cout << "Progagated Terminal Resources: " << terminal_resources.size() << endl;
     for (auto& item : terminal_resources) {
         resource_data["ItemClass"] = item; // adds the display name
-        resource_data["Amount"] = "0"; // sets amount to 0;
         terminal_root.push_back(resource_data);
     }
     ofstream terminal_out(exePath / "dat" / "terminal_resources.json");
     terminal_out << terminal_root.dump(4);
     terminal_out.close();
+
+    json nuclear_root;
+    cout << "Nuclear Resources: " << nuclear_resources.size() << endl;
+    for (auto& item : nuclear_resources) {
+        resource_data["ItemClass"] = item; // adds the display name
+        nuclear_root.push_back(resource_data);
+    }
+    ofstream nuclear_out(exePath / "dat" / "nuclear_resources.json");
+    nuclear_out << nuclear_root.dump(4);
+    nuclear_out.close();
+
+    json true_capstone_root;
+    cout << "True Capstone Resources: " << capstone_resources.size() << endl;
+    for (auto& item : capstone_resources) {
+        resource_data["ItemClass"] = item; // adds the display name
+        true_capstone_root.push_back(resource_data);
+    }
+    ofstream true_capstone_out(exePath / "int" / "true_capstone_resources.json");
+    true_capstone_out << true_capstone_root.dump(4);
+    true_capstone_out.close();
+
+    json capstone_root;
+    capstone_resources.insert(terminal_resources.begin(), terminal_resources.end());
+    for (auto& item : capstone_resources) {
+        resource_data["ItemClass"] = item; // adds the display name
+        capstone_root.push_back(resource_data);
+    }
+    ofstream capstone_out(exePath / "dat" / "capstone_resources.json");
+    capstone_out << capstone_root.dump(4);
+    capstone_out.close();
 
     recipe_out << dataOut.dump(4);
     filter_out << filter_array.dump(4);

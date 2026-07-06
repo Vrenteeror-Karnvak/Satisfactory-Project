@@ -36,7 +36,7 @@ int main(int argc, char* argv[]) {
     ifstream test_recipe_in(exePath / "dat" / "test_input.json");
     ifstream terminal_recipe_in(exePath / "dat" / "terminal_resources.json");
     // ofstream results(exePath / "dat" / "test_results.json");
-    ofstream status_log(exePath / "Archived" / "compressed_test_status.log");
+    ofstream status_log(exePath / "Archived" / "test_compressed_status.log");
 
     // The json file containing all recipes as well as the variables needed to increment through them
     json recipe_root;

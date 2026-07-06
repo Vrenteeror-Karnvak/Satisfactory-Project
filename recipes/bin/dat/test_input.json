@@ -25,12 +25,12 @@
         "max_loops": "2147483647",
         "max_time": "60",
         "unit_of_time": "Minutes",
-        "number_items_to_test": "80",
+        "number_items_to_test": "91",
         "old_number_items_to_test": "74"
     },
     {
         "Category": "Status Update Data",
-        "update_frequency": "180",
+        "update_frequency": "600",
         "unit_of_time": "Seconds"
     },
     {
