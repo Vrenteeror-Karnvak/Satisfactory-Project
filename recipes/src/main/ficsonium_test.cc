@@ -322,10 +322,12 @@ int main(int argc, char* argv[]) {
 
 
             u += 1;
-            auto total_end = chrono::steady_clock::now();
-            chrono::duration<double> total_elapsed = (total_end - total_start);
-            Stats::total_generation_time = total_elapsed;
-            cout << u << " -> " << total_elapsed.count() << endl;
+            if (u % 1000000 == 0) {
+                auto total_end = chrono::steady_clock::now();
+                chrono::duration<double> total_elapsed = (total_end - total_start);
+                Stats::total_generation_time = total_elapsed;
+                cout << u << " -> " << total_elapsed.count() << endl;
+            }
             increment_incrementor(output_recipes, recipe_root, recipe_map, (*recipes_ptr), terminal_resources, incrementor_map, incrementor, incrementor_max, status_log);
 
         } while (!duplicate_found && incrementor != all_zeros);

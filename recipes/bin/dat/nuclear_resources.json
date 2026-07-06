@@ -1,0 +1,38 @@
+[
+    {
+        "ItemClass": "Ficsonium",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Encased Plutonium Cell",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Plutonium Waste",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Plutonium Fuel Rod",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Plutonium Pellet",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Ficsonium Fuel Rod",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Non-Fissile Uranium",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Uranium Waste",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Uranium Fuel Rod",
+        "Amount": "0"
+    }
+]

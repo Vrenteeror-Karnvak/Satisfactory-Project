@@ -1,0 +1,628 @@
+Theoretical counts:
+Excited Photonic Matter = 1(item 0)
+Reanimated SAM = 1(item 1)
+Heavy Oil Residue = 1(item 2)
+Polymer Resin = 1(item 3)
+Silica = 2(item 4)
+FICSMAS Actual Snow = 1(item 5)
+Red FICSMAS Ornament = 1(item 6)
+FICSMAS Bow = 1(item 7)
+FICSMAS Tree Branch = 1(item 8)
+Candy Cane = 1(item 9)
+Blue FICSMAS Ornament = 1(item 10)
+Compacted Coal = 1(item 11)
+Alumina Solution = 2(item 12)
+Quartz Crystal = 3(item 13)
+Sulfuric Acid = 1(item 14)
+Dark Matter Residue = 1(item 15)
+Fuel = 3(item 16)
+Petroleum Coke = 1(item 17)
+Rubber = 2(item 18)
+Plastic = 2(item 19)
+Snowball = 1(item 20)
+Fancy Fireworks = 1(item 21)
+Sparkly Fireworks = 1(item 22)
+Sweet Fireworks = 1(item 23)
+Iron Ingot = 5(item 24)
+Caterium Ingot = 4(item 25)
+Copper Ingot = 5(item 26)
+Aluminum Scrap = 5(item 27)
+Diamonds = 8(item 28)
+Concrete = 6(item 29)
+Steel Ingot = 8(item 30)
+Iron FICSMAS Ornament = 5(item 31)
+Quickwire = 24(item 32)
+Copper Sheet = 10(item 33)
+Copper Powder = 5(item 34)
+Wire = 34(item 35)
+Copper FICSMAS Ornament = 5(item 36)
+Aluminum Ingot = 15(item 37)
+Time Crystal = 1(item 38)
+Steel Pipe = 61(item 39)
+Iron Plate = 55(item 40)
+Encased Uranium Cell = 54(item 41)
+AI Limiter = 288(item 42)
+Circuit Board = 90(item 43)
+Cable = 184(item 44)
+FICSMAS Ornament Bundle = 25(item 45)
+Aluminum Casing = 6(item 46)
+Alclad Aluminum Sheet = 5(item 47)
+Steel Beam = 57(item 48)
+Ficsite Ingot = 10(item 49)
+Iron Rod = 14(item 50)
+Dark Matter Crystal = 3(item 51)
+Stator = 3538(item 52)
+SAM Fluctuator = 2074(item 53)
+Nitric Acid = 55(item 54)
+Portable Miner = 3355(item 55)
+High-Speed Connector = 401760(item 56)
+FICSMAS Wreath = 25(item 57)
+Heat Sink = 62(item 58)
+Battery = 352(item 59)
+Encased Industrial Beam = 708(item 60)
+Ficsite Trigon = 10(item 61)
+Screws = 76(item 62)
+Power Shard = 3(item 63)
+Electromagnetic Control Rod = 1422445824(item 64)
+FICSMAS Wonder Star = 25(item 65)
+Rotor = 3898(item 66)
+Reinforced Iron Plate = 10340(item 67)
+Crystal Oscillator = 5709408(item 68)
+Modular Frame = 1561340(item 69)
+Computer = 513884160(item 70)
+Superposition Oscillator = 28547040(item 71)
+Motor = 78739167489614(item 72)
+Uranium Fuel Rod = 22255273092(item 73)
+Heavy Modular Frame = 5697379622880(item 74)
+Radio Control Unit = 17603852245951680(item 75)
+Cooling System = 4881828384356192(item 76)
+Uranium Waste = 22255273092(item 77)
+Fused Modular Frame = 171(item 78)
+Supercomputer = 9928186113459324928(item 79)
+Non-Fissile Uranium = 3672120060180(item 80)
+Pressure Conversion Cube = 17603852245951680(item 81)
+Neural-Quantum Processor = 1(item 82)
+Plutonium Pellet = 4958519384061017680(item 83)
+Turbo Motor = 16356256257497285372(item 84)
+Nuclear Pasta = 5(item 85)
+Encased Plutonium Cell = 11304394263376915544(item 86)
+Singularity Cell = 330(item 87)
+Plutonium Fuel Rod = 5386057382507647784(item 88)
+Plutonium Waste = 5386057382507647784(item 89)
+Ficsonium = 5386057382507647784(item 90)
+Ficsonium Fuel Rod = 5386057382507647784(item 91)
+
+Excited Photonic Matter about to be processed.
+Excited Photonic Matter has been proccessed.
+1 combinations have been processed.
+1 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000354164 seconds.
+Output time: 0.0335605 seconds.
+
+Reanimated SAM about to be processed.
+Reanimated SAM has been proccessed.
+1 combinations have been processed.
+1 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000305898 seconds.
+Output time: 0.0317108 seconds.
+
+Heavy Oil Residue about to be processed.
+Heavy Oil Residue has been proccessed.
+1 combinations have been processed.
+1 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000608134 seconds.
+Output time: 0.0311606 seconds.
+
+Polymer Resin about to be processed.
+Polymer Resin has been proccessed.
+1 combinations have been processed.
+1 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000569446 seconds.
+Output time: 0.0325732 seconds.
+
+Silica about to be processed.
+Silica has been proccessed.
+2 combinations have been processed.
+2 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000369526 seconds.
+Output time: 0.0308655 seconds.
+
+FICSMAS Actual Snow about to be processed.
+FICSMAS Actual Snow has been proccessed.
+1 combinations have been processed.
+1 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000363849 seconds.
+Output time: 0.034948 seconds.
+
+Red FICSMAS Ornament about to be processed.
+Red FICSMAS Ornament has been proccessed.
+1 combinations have been processed.
+1 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000190602 seconds.
+Output time: 0.0330735 seconds.
+
+FICSMAS Bow about to be processed.
+FICSMAS Bow has been proccessed.
+1 combinations have been processed.
+1 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000546338 seconds.
+Output time: 0.0370107 seconds.
+
+FICSMAS Tree Branch about to be processed.
+FICSMAS Tree Branch has been proccessed.
+1 combinations have been processed.
+1 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000435472 seconds.
+Output time: 0.0360511 seconds.
+
+Candy Cane about to be processed.
+Candy Cane has been proccessed.
+1 combinations have been processed.
+1 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000364596 seconds.
+Output time: 0.0362021 seconds.
+
+Blue FICSMAS Ornament about to be processed.
+Blue FICSMAS Ornament has been proccessed.
+1 combinations have been processed.
+1 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.00042705 seconds.
+Output time: 0.0346966 seconds.
+
+Compacted Coal about to be processed.
+Compacted Coal has been proccessed.
+1 combinations have been processed.
+1 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.00024603 seconds.
+Output time: 0.0313942 seconds.
+
+Alumina Solution about to be processed.
+Alumina Solution has been proccessed.
+2 combinations have been processed.
+2 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000251935 seconds.
+Output time: 0.0316074 seconds.
+
+Quartz Crystal about to be processed.
+Quartz Crystal has been proccessed.
+3 combinations have been processed.
+3 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.00029308 seconds.
+Output time: 0.0376306 seconds.
+
+Sulfuric Acid about to be processed.
+Sulfuric Acid has been proccessed.
+1 combinations have been processed.
+1 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000585793 seconds.
+Output time: 0.0368468 seconds.
+
+Dark Matter Residue about to be processed.
+Dark Matter Residue has been proccessed.
+1 combinations have been processed.
+1 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000517109 seconds.
+Output time: 0.0424816 seconds.
+
+Fuel about to be processed.
+Fuel has been proccessed.
+3 combinations have been processed.
+3 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.00034204 seconds.
+Output time: 0.0321779 seconds.
+
+Petroleum Coke about to be processed.
+Petroleum Coke has been proccessed.
+1 combinations have been processed.
+1 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000461213 seconds.
+Output time: 0.0355033 seconds.
+
+Rubber about to be processed.
+Rubber has been proccessed.
+2 combinations have been processed.
+2 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000529701 seconds.
+Output time: 0.0358258 seconds.
+
+Plastic about to be processed.
+Plastic has been proccessed.
+2 combinations have been processed.
+2 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000685646 seconds.
+Output time: 0.034804 seconds.
+
+Snowball about to be processed.
+Snowball has been proccessed.
+1 combinations have been processed.
+1 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000452583 seconds.
+Output time: 0.0355854 seconds.
+
+Fancy Fireworks about to be processed.
+Fancy Fireworks has been proccessed.
+1 combinations have been processed.
+1 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000300118 seconds.
+Output time: 0.0334867 seconds.
+
+Sparkly Fireworks about to be processed.
+Sparkly Fireworks has been proccessed.
+1 combinations have been processed.
+1 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000704102 seconds.
+Output time: 0.0304046 seconds.
+
+Sweet Fireworks about to be processed.
+Sweet Fireworks has been proccessed.
+1 combinations have been processed.
+1 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000317171 seconds.
+Output time: 0.035058 seconds.
+
+Iron Ingot about to be processed.
+Iron Ingot has been proccessed.
+5 combinations have been processed.
+5 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000444693 seconds.
+Output time: 0.0369536 seconds.
+
+Caterium Ingot about to be processed.
+Caterium Ingot has been proccessed.
+4 combinations have been processed.
+4 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000259325 seconds.
+Output time: 0.0286135 seconds.
+
+Copper Ingot about to be processed.
+Copper Ingot has been proccessed.
+5 combinations have been processed.
+5 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000688171 seconds.
+Output time: 0.0325565 seconds.
+
+Aluminum Scrap about to be processed.
+Aluminum Scrap has been proccessed.
+5 combinations have been processed.
+5 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000446022 seconds.
+Output time: 0.0315317 seconds.
+
+Diamonds about to be processed.
+Diamonds has been proccessed.
+8 combinations have been processed.
+8 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000395352 seconds.
+Output time: 0.0371347 seconds.
+
+Concrete about to be processed.
+Concrete has been proccessed.
+6 combinations have been processed.
+6 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000602026 seconds.
+Output time: 0.0363236 seconds.
+
+Steel Ingot about to be processed.
+Steel Ingot has been proccessed.
+8 combinations have been processed.
+8 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000752243 seconds.
+Output time: 0.0390609 seconds.
+
+Iron FICSMAS Ornament about to be processed.
+Iron FICSMAS Ornament has been proccessed.
+5 combinations have been processed.
+5 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000699864 seconds.
+Output time: 0.0383477 seconds.
+
+Quickwire about to be processed.
+Quickwire has been proccessed.
+24 combinations have been processed.
+22 recipes were output.
+2 recipes were filtered due to number of machines.
+Execution time: 0.000976051 seconds.
+Output time: 0.0369342 seconds.
+
+Copper Sheet about to be processed.
+Copper Sheet has been proccessed.
+10 combinations have been processed.
+10 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000673936 seconds.
+Output time: 0.0320854 seconds.
+
+Copper Powder about to be processed.
+Copper Powder has been proccessed.
+5 combinations have been processed.
+5 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000631604 seconds.
+Output time: 0.0318339 seconds.
+
+Wire about to be processed.
+Wire has been proccessed.
+34 combinations have been processed.
+27 recipes were output.
+7 recipes were filtered due to number of machines.
+Execution time: 0.000764703 seconds.
+Output time: 0.0347245 seconds.
+
+Copper FICSMAS Ornament about to be processed.
+Copper FICSMAS Ornament has been proccessed.
+5 combinations have been processed.
+5 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000323165 seconds.
+Output time: 0.0364529 seconds.
+
+Aluminum Ingot about to be processed.
+Aluminum Ingot has been proccessed.
+15 combinations have been processed.
+13 recipes were output.
+2 recipes were filtered due to number of machines.
+Execution time: 0.000856944 seconds.
+Output time: 0.0363127 seconds.
+
+Time Crystal about to be processed.
+Time Crystal has been proccessed.
+1 combinations have been processed.
+1 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000467539 seconds.
+Output time: 0.0373511 seconds.
+
+Steel Pipe about to be processed.
+Steel Pipe has been proccessed.
+61 combinations have been processed.
+46 recipes were output.
+15 recipes were filtered due to number of machines.
+Execution time: 0.00319798 seconds.
+Output time: 0.0372552 seconds.
+
+Iron Plate about to be processed.
+Iron Plate has been proccessed.
+35 combinations have been processed.
+28 recipes were output.
+7 recipes were filtered due to number of machines.
+Execution time: 0.00164128 seconds.
+Output time: 0.0357884 seconds.
+
+Encased Uranium Cell about to be processed.
+Encased Uranium Cell has been proccessed.
+54 combinations have been processed.
+16 recipes were output.
+38 recipes were filtered due to number of machines.
+Execution time: 0.00199481 seconds.
+Output time: 0.0356516 seconds.
+
+AI Limiter about to be processed.
+AI Limiter has been proccessed.
+128 combinations have been processed.
+90 recipes were output.
+38 recipes were filtered due to number of machines.
+Execution time: 0.00488164 seconds.
+Output time: 0.0405328 seconds.
+
+Circuit Board about to be processed.
+Circuit Board has been proccessed.
+90 combinations have been processed.
+49 recipes were output.
+41 recipes were filtered due to number of machines.
+Execution time: 0.00308391 seconds.
+Output time: 0.032727 seconds.
+
+Cable about to be processed.
+Cable has been proccessed.
+184 combinations have been processed.
+97 recipes were output.
+87 recipes were filtered due to number of machines.
+Execution time: 0.00491992 seconds.
+Output time: 0.040739 seconds.
+
+FICSMAS Ornament Bundle about to be processed.
+FICSMAS Ornament Bundle has been proccessed.
+25 combinations have been processed.
+17 recipes were output.
+8 recipes were filtered due to number of machines.
+Execution time: 0.00267541 seconds.
+Output time: 0.0374412 seconds.
+
+Aluminum Casing about to be processed.
+Aluminum Casing has been proccessed.
+6 combinations have been processed.
+6 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000405829 seconds.
+Output time: 0.0334905 seconds.
+
+Alclad Aluminum Sheet about to be processed.
+Alclad Aluminum Sheet has been proccessed.
+5 combinations have been processed.
+5 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000388485 seconds.
+Output time: 0.032833 seconds.
+
+Steel Beam about to be processed.
+Steel Beam has been proccessed.
+57 combinations have been processed.
+47 recipes were output.
+10 recipes were filtered due to number of machines.
+Execution time: 0.00109084 seconds.
+Output time: 0.0385947 seconds.
+
+Ficsite Ingot about to be processed.
+Ficsite Ingot has been proccessed.
+10 combinations have been processed.
+10 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000517689 seconds.
+Output time: 0.0363314 seconds.
+
+Iron Rod about to be processed.
+Iron Rod has been proccessed.
+14 combinations have been processed.
+13 recipes were output.
+1 recipes were filtered due to number of machines.
+Execution time: 0.000688639 seconds.
+Output time: 0.020578 seconds.
+
+Dark Matter Crystal about to be processed.
+Dark Matter Crystal has been proccessed.
+3 combinations have been processed.
+3 recipes were output.
+0 recipes were filtered due to number of machines.
+Execution time: 0.000257218 seconds.
+Output time: 0.0254879 seconds.
+
+Stator about to be processed.
+Stator has been proccessed.
+3378 combinations have been processed.
+313 recipes were output.
+3065 recipes were filtered due to number of machines.
+Execution time: 0.0578201 seconds.
+Output time: 0.0418856 seconds.
+
+SAM Fluctuator about to be processed.
+SAM Fluctuator has been proccessed.
+1914 combinations have been processed.
+227 recipes were output.
+1687 recipes were filtered due to number of machines.
+Execution time: 0.0326061 seconds.
+Output time: 0.0486358 seconds.
+
+Nitric Acid about to be processed.
+Nitric Acid has been proccessed.
+35 combinations have been processed.
+22 recipes were output.
+13 recipes were filtered due to number of machines.
+Execution time: 0.00110164 seconds.
+Output time: 0.0375857 seconds.
+
+Portable Miner about to be processed.
+Portable Miner has been proccessed.
+595 combinations have been processed.
+37 recipes were output.
+558 recipes were filtered due to number of machines.
+Execution time: 0.00887288 seconds.
+Output time: 0.0382716 seconds.
+
+High-Speed Connector about to be processed.
+High-Speed Connector has been proccessed.
+14832 combinations have been processed.
+1385 recipes were output.
+13447 recipes were filtered due to number of machines.
+Execution time: 0.364073 seconds.
+Output time: 0.066557 seconds.
+
+FICSMAS Wreath about to be processed.
+FICSMAS Wreath has been proccessed.
+25 combinations have been processed.
+13 recipes were output.
+12 recipes were filtered due to number of machines.
+Execution time: 0.00155719 seconds.
+Output time: 0.0259761 seconds.
+
+Heat Sink about to be processed.
+Heat Sink has been proccessed.
+22 combinations have been processed.
+20 recipes were output.
+2 recipes were filtered due to number of machines.
+Execution time: 0.000724236 seconds.
+Output time: 0.0320327 seconds.
+
+Battery about to be processed.
+Battery has been proccessed.
+152 combinations have been processed.
+80 recipes were output.
+72 recipes were filtered due to number of machines.
+Execution time: 0.00346406 seconds.
+Output time: 0.0346928 seconds.
+
+Encased Industrial Beam about to be processed.
+
+
+=== Profiling Statistics ===
+=== Pipeline Summary ===
+Combinations processed: 21797 (raw count)
+Passed ID filter: 21797 (100%)
+Passed speed filter: 2685 (12.3182%)
+Passed merge filter: 2685 (12.3182%)
+Recipes output: 2685 (12.3182%)
+
+=== Filter Statistics ===
+Filtered by ID conflict: 0 (0% of combinations)
+Filtered by speed filter: 19112 (87.6818% of ID-valid combinations)
+Filtered after merge: 0 (0% of speed-valid combinations)
+
+=== Merge Statistics ===
+merge_ID calls: 0 (raw count)
+Average ID entries: 0
+Max ID entries: 0
+Average ID merges per combination: 0
+
+merge_recipes calls: 2685 (raw count)
+combine_recipes calls: 17633 (raw count)
+Merge skip rate: 87.6818%
+
+=== Fraction Statistics ===
+Average LCM calls per generated chain: 9
+Average fraction reductions per generated chain: 77
+Maximum speed LCM: 2700
+
+=== Machine Statistics ===
+Maximum machine count observed: 4.5045e+06
+
+=== Timing Breakdown ===
+Total Generation Time: 2.80809 seconds.
+Count Check: 0.00333736% (4.29949e-09 seconds per combination)
+ID Total: 0% (0 seconds per combination)
+- Prep: -nan% (0 seconds per combination)
+- Build: -nan% (0 seconds per combination)
+Chain generation: 10.2158% (1.3161e-05 seconds per chain)
+Merge: 1.82703% (2.35375e-06 seconds per surviving chain)
+- Combine: 84.8096% (1.62053e-05 seconds per surviving chain)
+LCM: 2.11213% (2.72104e-06 seconds per chain)
+Incrementor: 2.16325% (2.78689e-06 seconds per combination)
+- Rebuild: 59.0426% (1.64545e-06 seconds per combination)
+Output: 75.6373% (0.000791048 seconds per outputed chain)
+Total generation: 0.000128829 seconds per chain
+Total generation: 0.000128829 seconds per combination
+
+21797 combinations were processed.
+2685 recipes were output.
+19112 recipes were filtered due to number of machines.
+Execution time: 2.8431 seconds.
