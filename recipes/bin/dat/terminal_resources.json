@@ -84,6 +84,14 @@
         "Amount": "0"
     },
     {
+        "ItemClass": "Nitric Acid",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Aluminum Casing",
+        "Amount": "0"
+    },
+    {
         "ItemClass": "Aluminum Ingot",
         "Amount": "0"
     },
@@ -109,6 +117,10 @@
     },
     {
         "ItemClass": "Heavy Modular Frame",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Alclad Aluminum Sheet",
         "Amount": "0"
     },
     {

@@ -190,7 +190,7 @@ int main(int argc, char* argv[]) {
         m += 1;
     }
 
-    size_t u = 0;
+    // size_t u = 0;
 
     //
     // Nothing currently
@@ -319,14 +319,15 @@ int main(int argc, char* argv[]) {
 
 
 
+            for (int k = 0; k<incrementor.size(); k++) {cout << incrementor[k] << ' ';}
+            cout << endl;
 
-
-            u += 1;
-            if (u % 1000000 == 0) {
+            true_total += 1;
+            if (true_total % 1000000 == 0) {
                 auto total_end = chrono::steady_clock::now();
                 chrono::duration<double> total_elapsed = (total_end - total_start);
                 Stats::total_generation_time = total_elapsed;
-                cout << u << " -> " << total_elapsed.count() << endl;
+                cout << true_total << " -> " << total_elapsed.count() << endl;
             }
             increment_incrementor(output_recipes, recipe_root, recipe_map, (*recipes_ptr), terminal_resources, incrementor_map, incrementor, incrementor_max, status_log);
 

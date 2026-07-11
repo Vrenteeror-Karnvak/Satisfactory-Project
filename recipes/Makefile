@@ -13,6 +13,7 @@ test := bin/test
 ficsonium_test := bin/ficsonium_test
 backup_test := bin/backup_test
 obsidian := bin/obsidian
+networkalyzer := bin/networkalyzer
 
 # Archived:
 main_mega := bin/main_mega
@@ -24,7 +25,7 @@ test_base := bin/test_base
 TARGETS := $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_sorter) $(recipe_sorter_sorter) $(recipe_trimmer) $(test_file) $(main) $(test) $(ficsonium_test) $(backup_test) $(obsidian)
 ARCHIVED_TARGETS := $(main_mega) $(test_compressed) $(test_base) $(filter_creation) $(equivalent_remover)
 
-all: recipes test resource obsidian
+all: recipes test resource obsidian networkalyzer
 
 debug: GXXFLAGS += -g
 debug: all
@@ -33,6 +34,7 @@ recipes: $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_trimmer) $(
 test: ensure_critical_files $(test) $(backup_test) $(ficsonium_test)
 resource: ensure_critical_files $(main) $(test)
 obsidian: $(obsidian)
+networkalyzer: $(networkalyzer)
 archived: $(ARCHIVED_TARGETS)
 
 $(initializer): src/Initializer.cpp
@@ -85,6 +87,11 @@ $(filter_creation): src/Archive/Archived_filter_creation.cc src/resources/*.cc
 
 $(equivalent_remover): src/Archive/Archived_equivalent_remover.cc src/resources/*.cc
 	$(GXX) $(GXXFLAGS) $^ -o $@
+
+$(networkalyzer): src/network/Networkalyzer.cpp
+	$(GXX) $(GXXFLAGS) $^ -o $@
+	./$(networkalyzer)
+# 	gdb $(networkalyzer)
 
 clear_obs:
 	rm -f bin/dat/satisfactory_vault/*
