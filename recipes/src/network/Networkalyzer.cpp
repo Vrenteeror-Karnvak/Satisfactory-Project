@@ -79,26 +79,25 @@ int main(int argc, char** argv) {
         }
     }
 
-    string query = "Iron Rod";
+    string query = "Ficsonium Fuel Rod";
     cout << m[query].size() << endl;
     // return 0;
 
     queue<string> q;
+    queue<size_t> qL;
     q.push(query);
 
     set<string> seen;
     vector<set<recipe>> layers;
-    size_t ll{};
-
-    //currently adds every new q.front to new layer
-    //needs to process layer by layer, q of q? or recur? or silly variables?
 
     while (q.size()>0) {
         string category = q.front();
         q.pop();
+        size_t ll = qL.front();
+        qL.pop();
         if (seen.count(category)>0) continue;
         seen.insert(category);
-        layers.emplace_back();
+        if (ll>=layers.size()) layers.emplace_back();
 
         cout << "Layer " << ll << '\t' << category << endl;
 
@@ -107,8 +106,8 @@ int main(int argc, char** argv) {
             layers[ll].insert(o);
             for (auto oo : o.ingredients) {
                 q.push(oo.name);
+                qL.push(ll+1);
             }
         }
-        ll++;
     }
 }
