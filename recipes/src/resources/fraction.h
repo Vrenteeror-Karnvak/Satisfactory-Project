@@ -10,6 +10,10 @@
 
 #include "stats.h"
 
+#include <cstdint>
+#include <stdexcept>
+#include <type_traits>
+
 using namespace std;
 using json = nlohmann::ordered_json;
 
@@ -34,7 +38,13 @@ class Fraction {
          * @param n The numerator.
          * @param d The denominator (default is 1).
          */
-        Fraction(const int n, const int d = 1);
+        template <typename IntegerType, typename = std::enable_if_t<std::is_integral_v<IntegerType>>>
+        explicit Fraction(IntegerType n, IntegerType d = 1) : numerator(static_cast<int64_t>(n)), denominator(static_cast<int64_t>(d)) {
+            if (denominator == 0) {
+                throw std::invalid_argument("Fraction denominator cannot be zero.");
+            }
+            reduce();
+        }
 
         Fraction(const double value);
 
@@ -43,28 +53,39 @@ class Fraction {
          *
          * @param n The new numerator.
          */
-        void set_numerator(const int n);
+        template <typename IntegerType, typename = std::enable_if_t<std::is_integral_v<IntegerType>>>
+        void set_numerator(IntegerType n) {
+            numerator = static_cast<int64_t>(n);
+        }
 
         /**
          * @brief Set the denominator.
          *
          * @param d The new denominator.
          */
-        void set_denominator(const int d);
+        template <typename IntegerType, typename = std::enable_if_t<std::is_integral_v<IntegerType>>>
+        void set_denominator(IntegerType d) {
+            if (d == 0) {
+                throw std::invalid_argument("Fraction denominator cannot be zero.");
+            }
+            denominator = static_cast<int64_t>(d);
+        }
 
         /**
          * @brief Get the numerator.
          *
          * @return The current numerator.
          */
-        int get_numerator() const;
+        int64_t get_numerator() const;
 
         /**
          * @brief Get the denominator.
          *
          * @return The current denominator.
          */
-        int get_denominator() const;
+        int64_t get_denominator() const;
+
+        void reduce();
 
         /**************************************************/
         // Operator Overloads
@@ -157,6 +178,14 @@ class Fraction {
          * @return A reference to this fraction after multiplication.
          */
         Fraction& operator*=(const Fraction& other);
+        Fraction& operator*=(const int64_t other);
+
+        template <typename IntegerType, typename = std::enable_if_t<std::is_integral_v<IntegerType>>>
+        Fraction& operator*=(IntegerType other) {
+            numerator *= static_cast<int64_t>(other);
+            reduce();
+            return *this;
+        }
 
         /**
          * @brief Return the product of two fractions.
@@ -165,6 +194,14 @@ class Fraction {
          * @return A new Fraction representing the product.
          */
         Fraction operator*(const Fraction& other) const;
+        Fraction operator*(const int64_t other) const;
+
+        template <typename IntegerType, typename = std::enable_if_t<std::is_integral_v<IntegerType>>>
+        Fraction operator*(IntegerType other) const {
+            Fraction result = *this;
+            result *= other;
+            return result;
+        }
 
         /**
          * @brief Divide this fraction by another.
@@ -173,6 +210,17 @@ class Fraction {
          * @return A reference to this fraction after division.
          */
         Fraction& operator/=(const Fraction& other);
+        Fraction& operator/=(const int64_t other);
+
+        template <typename IntegerType, typename = std::enable_if_t<std::is_integral_v<IntegerType>>>
+        Fraction& operator/=(IntegerType other) {
+            if (other == 0) {
+                throw std::invalid_argument("Fraction denominator cannot be zero.");
+            }
+            denominator *= static_cast<int64_t>(other);
+            reduce();
+            return *this;
+        }
 
         /**
          * @brief Return the quotient of two fractions.
@@ -181,10 +229,18 @@ class Fraction {
          * @return A new Fraction representing the quotient.
          */
         Fraction operator/(const Fraction& other) const;
+        Fraction operator/(const int64_t other) const;
+
+        template <typename IntegerType, typename = std::enable_if_t<std::is_integral_v<IntegerType>>>
+        Fraction operator/(IntegerType other) const {
+            Fraction result = *this;
+            result /= other;
+            return result;
+        }
 
     private:
-        int numerator;
-        int denominator;
+        int64_t numerator;
+        int64_t denominator;
 
 };
 

@@ -19,10 +19,10 @@ int main(int argc, char* argv[]) {
     ofstream recipe_out(exePath / "dat/recipes.json");
     ofstream item_out(exePath / "int/item_list.txt");
     ofstream item_analysis(exePath / "int/item_analysis.txt");
-    ofstream filter_out(exePath / "dat" / "item_tiers.json");
+    ofstream tier_out(exePath / "dat" / "item_tiers.json");
     
-    json filter_array = json::array();
-    json filter_object = json::object();
+    json tier_array = json::array();
+    json tier_object = json::object();
     unordered_map<string, int> filter_map;
 
     // pulls the resouce file for refining
@@ -39,8 +39,7 @@ int main(int argc, char* argv[]) {
     terminal_resources.insert("Heavy Modular Frame");
     terminal_resources.insert("Pressure Conversion Cube");
     terminal_resources.insert("Battery");
-    terminal_resources.insert("Packaged Nitrogen Gas");
-    terminal_resources.insert("Packaged Turbofuel");
+    terminal_resources.insert("Diamonds");
 
     unordered_set<string> nuclear_resources;
     // These are chained nuclear recipes
@@ -188,14 +187,14 @@ int main(int argc, char* argv[]) {
             }
         }
         if (max_tier != 0) {
-            filter_object["ItemClass"] = current;
-            filter_object["Depth"] = max_tier - 1;
-            filter_array.push_back(filter_object);
+            tier_object["ItemClass"] = current;
+            tier_object["Depth"] = max_tier - 1;
+            tier_array.push_back(tier_object);
         }
         else if (current == "Excited Photonic Matter") {
-            filter_object["ItemClass"] = current;
-            filter_object["Depth"] = max_tier;
-            filter_array.push_back(filter_object);
+            tier_object["ItemClass"] = current;
+            tier_object["Depth"] = max_tier;
+            tier_array.push_back(tier_object);
         }
     }
 
@@ -260,6 +259,26 @@ int main(int argc, char* argv[]) {
     terminal_out << terminal_root.dump(4);
     terminal_out.close();
 
+    json base_root;
+    for (auto& item : terminal_root) {
+        product = item["ItemClass"];
+        bool unique = true;
+        for (size_t i = 0; i < dataOut.size(); i++) {
+            if (dataOut.at(i).value("Category", "") == product) {
+                unique = false;
+                break;
+            }
+        }
+        if (unique) {
+            resource_data["ItemClass"] = product; // adds the display name
+            base_root.push_back(resource_data);
+        }
+    }
+    cout << "Base Resources: " << base_root.size() << endl;
+    ofstream base_out(exePath / "dat" / "base_resources.json");
+    base_out << base_root.dump(4);
+    base_out.close();
+
     json nuclear_root;
     cout << "Nuclear Resources: " << nuclear_resources.size() << endl;
     for (auto& item : nuclear_resources) {
@@ -291,13 +310,30 @@ int main(int argc, char* argv[]) {
     capstone_out.close();
 
     recipe_out << dataOut.dump(4);
-    filter_out << filter_array.dump(4);
+    tier_out << tier_array.dump(4);
+
+    ifstream test_recipe_in(exePath / "dat" / "test_input.json");
+    json test_recipe_root;
+    test_recipe_in >> test_recipe_root;
+    test_recipe_in.close();
+
+    bool remake_filters = test_recipe_root[4].value("remake_filters", false); // whether or not to remake the filter
+    if (remake_filters) {
+        ofstream filter_out(exePath / "dat" / "item_filters.json");
+        json filter_array = json::array();
+        for (const auto& data : dataOut) {
+            resource_data["ItemClass"] = data.value("Category", "Error");
+            filter_array.push_back(resource_data);
+        }
+        filter_out << filter_array.dump(4);
+        filter_out.close();
+    }
 
     // closes all the opened files
     recipe_out.close();
     item_out.close();
     item_analysis.close();
-    filter_out.close();
+    tier_out.close();
 
     return 0;
 }

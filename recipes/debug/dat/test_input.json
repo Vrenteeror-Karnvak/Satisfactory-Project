@@ -25,7 +25,7 @@
         "max_loops": "2147483647",
         "max_time": "60",
         "unit_of_time": "Minutes",
-        "number_items_to_test": "91",
+        "number_items_to_test": "92",
         "old_number_items_to_test": "74"
     },
     {
@@ -41,5 +41,11 @@
         "max_combinations": 200,
         "absolute_max_combinations": 100,
         "remake_filters": false
+    },
+    {
+        "Category": "Log File Comparison",
+        "meaning" : "positive means better and negative means worse",
+        "file1": "backup_test_status.log",
+        "file2": "test_status.log"
     }
 ]

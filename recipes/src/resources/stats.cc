@@ -5,302 +5,166 @@
 
 using namespace std;
 
+bool MethodStats::has_data() const {
+    return item_count != 0 || combinations_processed != 0 || chains_generated != 0 || ID_filtered != 0 || speed_filtered != 0 || merge_filtered != 0 || total_time.count() != 0 || count_time.count() != 0 || ID_total_time.count() != 0 || ID_build_time.count() != 0 || chain_generation_time.count() != 0 || merge_time.count() != 0 || combine_time.count() != 0 || lcm_time.count() != 0 || incrementor_time.count() != 0 || incrementor_rebuild_time.count() != 0 || output_time.count() != 0;
+}
+
+void MethodStats::print(std::ostream& out, const string& method) {
+    const auto survived_id_filter = combinations_processed - ID_filtered;
+    const auto survived_speed_filter = survived_id_filter - speed_filtered;
+    const auto survived_merge_filter = survived_speed_filter - merge_filtered;
+    
+    out << "\n\n\n";
+    out << "========================================\n";
+    out << "=== " << method << " Method" << " ===\n";
+    out << "========================================\n";
+    out << "\n=== Summary ===\n";
+    out << "Items processed: " << item_count << " (raw count)\n";
+    out << "Combinations processed: " << combinations_processed << " (raw count)\n";
+    out << "Chains generated: " << chains_generated << " (raw count)\n";
+    out << "Recipes output: " << survived_merge_filter << " (" << (combinations_processed > 0 ? 100.0 * survived_merge_filter / combinations_processed : 0.0) << "%)\n";
+    out << "Runtime: " << total_time.count() << " seconds\n";
+    out << "Seconds per combination: " << (combinations_processed > 0 ? total_time.count() / combinations_processed : 0.0) << " seconds \n";
+    out << "Combinations per second: " << (total_time.count() > 0 ? combinations_processed / total_time.count() : 0.0) << " per second\n";
+    out << "Resource same_name calls: " << resource_same_name_calls << "\n";
+    out << "Recipe same_name calls: " << recipe_same_name_calls << "\n";
+    out << "Resource same_product_ID calls: " << resource_same_product_ID_calls << "\n";
+    out << "Recipe same_product_ID calls: " << recipe_same_product_ID_calls << "\n";
+    out << "\n";
+
+    out << "=== Filters ===\n";
+    out << "Passed ID filter: " << survived_id_filter << " (" << (combinations_processed > 0 ? 100.0 * survived_id_filter / combinations_processed : 0.0) << "%)\n";
+    out << "Passed speed filter: " << survived_speed_filter << " (" << (combinations_processed > 0 ? 100.0 * survived_speed_filter / combinations_processed : 0.0) << "%)\n";
+    out << "Passed merge filter: " << survived_merge_filter << " (" << (combinations_processed > 0 ? 100.0 * survived_merge_filter / combinations_processed : 0.0) << "%)\n";
+    out << "Filtered by ID conflict: " << ID_filtered << " (" << (combinations_processed > 0 ? 100.0 * ID_filtered / combinations_processed : 0.0) << "% of combinations)\n";
+    out << "Filtered by speed filter: " << speed_filtered << " (" << (survived_id_filter > 0 ? 100.0 * speed_filtered / survived_id_filter : 0.0) << "% of ID-valid combinations)\n";
+    out << "Filtered after merge: " << merge_filtered << " (" << (survived_speed_filter > 0 ? 100.0 * merge_filtered / survived_speed_filter : 0.0) << "% of speed-valid combinations)\n";
+    out << "\n";
+
+    out << "=== Function Calls ===\n";
+    out << "merge_ID calls: " << merge_ID_calls << "\n";
+    out << "merge_recipe calls: " << merge_recipe_calls << "\n";
+    out << "combine_recipe calls: " << combine_recipe_calls << "\n";
+    out << "LCM calls: " << lcm_calls << "\n";
+    out << "Fraction reductions: " << fraction_reductions << "\n";
+    out << "Incrementor rebuild count: " << incrementor_rebuild_count << "\n";
+    out << "\n";
+
+    out << "=== Average Workload ===\n";
+    out << "Average ID entries per chain: " << (chains_generated > 0 ? static_cast<double>(total_ID_entries_used) / chains_generated : 0.0) << "\n";
+    out << "Average LCMs per chain: " << (chains_generated > 0 ? static_cast<double>(lcm_calls) / chains_generated : 0.0) << "\n";
+    out << "Average reductions per chain: " << (chains_generated > 0 ? static_cast<double>(fraction_reductions) / chains_generated : 0.0) << "\n";
+    out << "\n";
+
+    out << "=== Timing Breakdown ===\n";
+    out << "Count: " << (total_time.count() > 0 ? 100.0 * count_time.count() / total_time.count() : 0.0) << "% (" << (combinations_processed > 0 ? count_time.count() / combinations_processed : 0.0) << " seconds per combination)\n";
+    out << "ID Total: " << (total_time.count() > 0 ? 100.0 * ID_total_time.count() / total_time.count() : 0.0) << "% (" << (combinations_processed > 0 ? ID_total_time.count() / combinations_processed : 0.0) << " seconds per combination)\n";
+    out << "- ID Build: " << (ID_total_time.count() > 0 ? 100.0 * ID_build_time.count() / ID_total_time.count() : 0.0) << "% (" << (combinations_processed > 0 ? ID_build_time.count() / combinations_processed : 0.0) << " seconds per combination)\n";
+    out << "Chain Generation: " << (total_time.count() > 0 ? 100.0 * chain_generation_time.count() / total_time.count() : 0.0) << "% (" << (survived_id_filter > 0 ? chain_generation_time.count() / survived_id_filter : 0.0) << " seconds per surviving chain)\n";
+    out << "LCM: " << (total_time.count() > 0 ? 100.0 * lcm_time.count() / total_time.count() : 0.0) << "% (" << (survived_id_filter > 0 ? lcm_time.count() / survived_id_filter : 0.0) << " seconds per surviving chain)\n";
+    out << "Merge: " << (total_time.count() > 0 ? 100.0 * merge_time.count() / total_time.count() : 0.0) << "% (" << (survived_speed_filter > 0 ? merge_time.count() / survived_speed_filter : 0.0) << " seconds per surviving chain)\n";
+    out << "- Combine: " << (merge_time.count() > 0 ? 100.0 * combine_time.count() / merge_time.count() : 0.0) << "% (" << (survived_speed_filter > 0 ? combine_time.count() / survived_speed_filter : 0.0) << " seconds per surviving chain)\n";
+    out << "Incrementor: " << (total_time.count() > 0 ? 100.0 * incrementor_time.count() / total_time.count() : 0.0) << "% (" << (combinations_processed > 0 ? incrementor_time.count() / combinations_processed : 0.0) << " seconds per combination)\n";
+    out << "- Rebuild: " << (incrementor_time.count() > 0 ? 100.0 * incrementor_rebuild_time.count() / incrementor_time.count() : 0.0) << "% (" << (incrementor_rebuild_count > 0 ? incrementor_rebuild_time.count() / incrementor_rebuild_count : 0.0) << " seconds per rebuild)\n";
+    out << "Output: " << (total_time.count() > 0 ? 100.0 * output_time.count() / total_time.count() : 0.0) << "% (" << (survived_merge_filter > 0 ? output_time.count() / survived_merge_filter : 0.0) << " seconds per output chain)\n";
+    out << "\n";
+
+    out << "=== Function Cost ===\n";
+    out << "Time/merge_ID: " << (merge_ID_calls > 0 ? ID_build_time.count() / merge_ID_calls : 0.0) << " seconds\n";
+    out << "Time/combine_recipe: " << (combine_recipe_calls > 0 ? combine_time.count() / combine_recipe_calls : 0.0) << " seconds\n";
+    out << "Time/LCM: " << (lcm_calls > 0 ? lcm_time.count() / lcm_calls : 0.0) << " seconds\n";
+    out << "Time/rebuild: " << (incrementor_rebuild_count > 0 ? incrementor_rebuild_time.count() / incrementor_rebuild_count : 0.0) << " seconds\n";
+    out << "\n";
+
+    out << "=== Peak Values ===\n";
+    out << "Max machine count: " << max_machine_count << "\n";
+    out << "Max LCM: " << max_speed_lm << "\n";
+    out << "Max ID entries: " << max_ID_entries_used << "\n";
+    out << "item_lm = 1: " << item_lm_1 << "\n";
+    out << "item_lm > 1: " << item_lm_over_1 << "\n";
+}
+
+MethodStats& MethodStats::operator+=(const MethodStats& other) {
+    item_lm_1 += other.item_lm_1;
+    item_lm_over_1 += other.item_lm_over_1;
+
+    item_count += other.item_count;
+    combinations_processed += other.combinations_processed;
+    chains_generated += other.chains_generated;
+    ID_filtered += other.ID_filtered;
+    speed_filtered += other.speed_filtered;
+    merge_filtered += other.merge_filtered;
+    merge_ID_calls += other.merge_ID_calls;
+    merge_recipe_calls += other.merge_recipe_calls;
+    combine_recipe_calls += other.combine_recipe_calls;
+    lcm_calls += other.lcm_calls;
+    fraction_reductions += other.fraction_reductions;
+    incrementor_rebuild_count += other.incrementor_rebuild_count;
+    total_ID_entries_used += other.total_ID_entries_used;
+    max_ID_entries_used = std::max(max_ID_entries_used, other.max_ID_entries_used);
+    max_speed_lm = std::max(max_speed_lm, other.max_speed_lm);
+    resource_same_name_calls += other.resource_same_name_calls;
+    recipe_same_name_calls += other.recipe_same_name_calls;
+    resource_same_product_ID_calls += other.resource_same_product_ID_calls;
+    recipe_same_product_ID_calls += other.recipe_same_product_ID_calls;
+    max_machine_count = std::max(max_machine_count, other.max_machine_count);
+    total_time += other.total_time;
+    count_time += other.count_time;
+    ID_total_time += other.ID_total_time;
+    ID_build_time += other.ID_build_time;
+    chain_generation_time += other.chain_generation_time;
+    merge_time += other.merge_time;
+    combine_time += other.combine_time;
+    lcm_time += other.lcm_time;
+    incrementor_time += other.incrementor_time;
+    incrementor_rebuild_time += other.incrementor_rebuild_time;
+    output_time += other.output_time;
+    return *this;
+}
+
+MethodStats MethodStats::operator+(const MethodStats& other) const {
+    MethodStats result = *this;
+    result += other;
+    return result;
+}
+
+
+
 namespace Stats {
-    /*
-    ==================================================
-    CATEGORY 1: PIPELINE FUNNEL
-    ==================================================
-    Purpose:
-    Track how many combinations survive each stage.
-    This tells where work is being eliminated.
-    */
+    MethodStats total;
+    MethodStats base;
+    MethodStats compressed;
+    MethodStats nuclear;
+    MethodStats* active_method_stats = nullptr;
 
-    uint64_t combinations_processed = 0;
-
-    uint64_t ID_filtered = 0;
-    uint64_t survived_id_filter = 0;
-
-    uint64_t speed_filtered = 0;
-    uint64_t survived_speed_filter = 0;
-
-    uint64_t merge_filtered = 0;
-    uint64_t survived_merge_filter = 0;
-
-    uint64_t machine_accepted_count = 0;
-
-
-
-    /*
-    ==================================================
-    CATEGORY 2: CHAIN CONSTRUCTION
-    ==================================================
-    Purpose:
-    Understand actual chain complexity.
-    */
-
-    uint64_t chains_generated = 0;
-    uint64_t incrementor_rebuild_count = 0;
-    uint64_t merge_ID_calls = 0;
-    uint64_t current_ID_entries = 0;
-    uint64_t total_ID_entries_used = 0;
-    uint64_t max_ID_entries_used = 0;
-
-    uint64_t recipes_pushed_to_stack = 0;
-
-    uint64_t terminal_hits = 0;
-
-    uint64_t total_output_recipes = 0;
-    uint64_t output_recipe_samples = 0;
-
-    uint64_t max_chain_depth = 0;
-    uint64_t max_output_recipes = 0;
-
-
-
-    /*
-    ==================================================
-    CATEGORY 3: RECIPE MERGING
-    ==================================================
-    Purpose:
-    Measure merge effectiveness.
-    */
-
-    uint64_t merge_recipe_calls = 0;
-    uint64_t combine_recipe_calls = 0;
-
-    uint64_t ingredients_merged = 0;
-    uint64_t products_merged = 0;
-
-    uint64_t ingredients_cancelled = 0;
-    uint64_t products_cancelled = 0;
-
-
-
-    /*
-    ==================================================
-    CATEGORY 4: RECIPE SIZE STATISTICS
-    ==================================================
-    Purpose:
-    Determine actual recipe sizes.
-    */
-
-    uint64_t total_ingredients_before_cleanup = 0;
-    uint64_t total_products_before_cleanup = 0;
-
-    uint64_t total_ingredients_after_cleanup = 0;
-    uint64_t total_products_after_cleanup = 0;
-
-    uint64_t ingredient_samples = 0;
-    uint64_t product_samples = 0;
-
-    uint64_t max_ingredients_before_cleanup = 0;
-    uint64_t max_products_before_cleanup = 0;
-
-    uint64_t max_ingredients_after_cleanup = 0;
-    uint64_t max_products_after_cleanup = 0;
-    
-    
-
-    /*
-    ==================================================
-    CATEGORY 5: FRACTION WORK
-    ==================================================
-    Purpose:
-    Measure cost of fraction arithmetic.
-    */
-
-    uint64_t lcm_calls = 0;
-    uint64_t fraction_reductions = 0;
-
-    uint64_t max_speed_lm = 0;
-    
-
-
-    /*
-    ==================================================
-    CATEGORY 6: MAP ACTIVITY
-    ==================================================
-    Purpose:
-    Measure lookup pressure.
-    */
-
-    uint64_t recipe_map_searches = 0;
-    uint64_t recipe_map_lookups = 0;
-    uint64_t recipe_map_updates = 0;
-
-    uint64_t incrementor_map_lookups = 0;
-
-    uint64_t terminal_map_searches = 0;
-
-    uint64_t recipes_map_lookups = 0;
-
-    
-
-    /*
-    ==================================================
-    CATEGORY 7: COMPARISONS
-    ==================================================
-    Purpose:
-    Measure comparison workload.
-    */
-
-    uint64_t resource_same_name_calls = 0;
-    uint64_t recipe_same_name_calls = 0;
-
-
-
-    /*
-    ==================================================
-    CATEGORY 8: MACHINE COUNTS
-    ==================================================
-    Purpose:
-    Understand machine scaling behavior.
-    */
-
-    double max_machine_count = 0;
-    double total_machine_count = 0;
-    uint64_t machine_count_samples = 0;
-
-
-
-    /*
-    ==================================================
-    CATEGORY 9: TIMING
-    ==================================================
-    Purpose:
-    Identify bottlenecks.
-    */
-
-    chrono::duration<double> total_generation_time;
-    chrono::duration<double> count_time;
-    chrono::duration<double> ID_total_time;
-    chrono::duration<double> ID_prep_time;
-    chrono::duration<double> ID_build_time;
-    chrono::duration<double> chain_generation_time;
-    chrono::duration<double> merge_time;
-    chrono::duration<double> combine_time;
-    chrono::duration<double> correct_time;
-    chrono::duration<double> lcm_time;
-    chrono::duration<double> incrementor_time;
-    chrono::duration<double> incrementor_rebuild_time;
-    chrono::duration<double> output_time;
+    MethodStats& current_method_stats() {
+        return active_method_stats ? *active_method_stats : total;
+    }
 
     void print(std::ostream& out) {
-        survived_id_filter = combinations_processed - ID_filtered;
-        survived_speed_filter = survived_id_filter - speed_filtered;
-        survived_merge_filter = survived_speed_filter - merge_filtered;
-        machine_accepted_count = survived_merge_filter;
+        total = MethodStats{};
+        bool base_has_data = false;
+        bool compressed_has_data = false;
+        bool nuclear_has_data = false;
 
-        out << "\n=== Profiling Statistics ===\n";
-
-        out << "=== Pipeline Summary ===\n";
-        out << "Combinations processed: " << combinations_processed << " (raw count)\n";
-        out << "Passed ID filter: " << survived_id_filter << " (" << 100.0 * survived_id_filter / combinations_processed << "%)\n";
-        out << "Passed speed filter: " << survived_speed_filter << " (" << 100.0 * survived_speed_filter / combinations_processed << "%)\n";
-        out << "Passed merge filter: " << survived_merge_filter << " (" << 100.0 * survived_merge_filter / combinations_processed << "%)\n";
-        out << "Recipes output: " << machine_accepted_count << " (" << 100.0 * machine_accepted_count / combinations_processed << "%)\n";
-        out << "\n";
-
-        out << "=== Filter Statistics ===\n";
-        out << "Filtered by ID conflict: " << ID_filtered << " (" << 100.0 * ID_filtered / combinations_processed << "% of combinations)\n";
-        out << "Filtered by speed filter: " << speed_filtered << " (" << 100.0 * speed_filtered / survived_id_filter << "% of ID-valid combinations)\n";
-        out << "Filtered after merge: " << merge_filtered << " (" << 100.0 * merge_filtered / survived_speed_filter << "% of speed-valid combinations)\n";
-        out << "\n";
-
-        /*
-        out << "=== Chain Construction ===\n";
-        out << "Chains generated: " << chains_generated << " (raw count)\n";
-        out << "Incrementor rebuild count: " << incrementor_rebuild_count << " (" << (static_cast<double>(incrementor_rebuild_count) / combinations_processed) << "%)\n";
-        out << "Recipes pushed to stack: " << recipes_pushed_to_stack << " (raw count)\n";
-        out << "Average recipes pushed per chain: " << (static_cast<double>(recipes_pushed_to_stack) / chains_generated) << '\n';
-        out << "Terminal resource hits: " << terminal_hits << " (raw count)\n";
-        out << "Average terminal hits per chain: " << (static_cast<double>(terminal_hits) / chains_generated) << '\n';
-        out << "Maximum chain depth: " << max_chain_depth << " recipes\n";
-        out << "\n";
-        */
-
-        out << "=== Merge Statistics ===\n";
-        out << "merge_ID calls: " << merge_ID_calls << " (raw count)\n";
-        out << "Average ID entries: " << (static_cast<double>(total_ID_entries_used) / combinations_processed) << '\n';
-        out << "Max ID entries: " << max_ID_entries_used << '\n';
-        out << "Average ID merges per combination: " << (static_cast<double>(merge_ID_calls) / combinations_processed) << '\n';
-        out << "\n";
-        out << "merge_recipes calls: " << merge_recipe_calls << " (raw count)\n";
-        out << "combine_recipes calls: " << combine_recipe_calls << " (raw count)\n";
-        out << "Merge skip rate: " << 100.0 * speed_filtered / combinations_processed << "%\n";
-        out << "\n";
-        /*
-        out << "Ingredients merged: " << ingredients_merged << '\n';
-        out << "Products merged: " << products_merged << '\n';
-        out << "Ingredients cancelled: " << ingredients_cancelled << '\n';
-        out << "Products cancelled: " << products_cancelled << '\n';
-        out << "\n";
-        out << "Average ingredients merged per combine: " << static_cast<double>(ingredients_merged) / combine_recipe_calls << '\n';
-        out << "Average products merged per combine: " << static_cast<double>(products_merged) / combine_recipe_calls << '\n';
-        out << "\n";
-        */
-
-        /*
-        out << "=== Recipe Size Statistics ===\n";
-        out << "Average ingredients before cleanup: " << static_cast<double>(total_ingredients_before_cleanup) / survived_speed_filter << '\n';
-        out << "Maximum ingredients before cleanup: " << max_ingredients_before_cleanup << '\n';
-        out << "Average products before cleanup: " << static_cast<double>(total_products_before_cleanup) / survived_speed_filter << '\n';
-        out << "Maximum products before cleanup: " << max_products_before_cleanup << '\n';
-        out << '\n';
-        out << "Average ingredients after cleanup: " << static_cast<double>(total_ingredients_after_cleanup) / survived_speed_filter << '\n';
-        out << "Maximum ingredients after cleanup: " << max_ingredients_after_cleanup << '\n';
-        out << "Average products after cleanup: " << static_cast<double>(total_products_after_cleanup) / survived_speed_filter << '\n';
-        out << "Maximum products after cleanup: " << max_products_after_cleanup << '\n';
-        out << '\n';
-        */
-
-        /*
-        out << "=== Output Recipe Statistics ===\n";
-        out << "Average output recipes per chain: " << static_cast<double>(total_output_recipes) / survived_id_filter << '\n';
-        out << "Maximum output recipes in a chain: " << max_output_recipes << '\n';
-        out << "\n";
-        */
-
-        out << "=== Fraction Statistics ===\n";
-        /*
-        out << "LCM calls: " << lcm_calls << " (raw count)\n";
-        out << "Fraction reductions: " << fraction_reductions << " (raw count)\n";
-        */
-        out << "Average LCM calls per generated chain: " << static_cast<double>(lcm_calls / chains_generated) << '\n';
-        out << "Average fraction reductions per generated chain: " << static_cast<double>(fraction_reductions / chains_generated) << '\n';
-        out << "Maximum speed LCM: " << max_speed_lm << '\n';
-        out << "\n";
-
-        /*
-        out << "=== Comparison Statistics ===\n";
-        out << "Resource same_name calls: " << resource_same_name_calls << '\n';
-        out << "Recipe same_name calls: " << recipe_same_name_calls << '\n';
-        out << "Average Resource comparisons per generated chain: " << static_cast<double>(resource_same_name_calls / chains_generated) << '\n';
-        out << "Average Recipe comparisons per generated chain: " << static_cast<double>(recipe_same_name_calls / chains_generated) << '\n';
-        out << "\n";
-        */
-
-        out << "=== Machine Statistics ===\n";
-        out << "Maximum machine count observed: " << max_machine_count << '\n';
-        out << '\n';
-
-        double total = total_generation_time.count();
-        out << "=== Timing Breakdown ===\n";
-        out << "Total Generation Time: " << total << " seconds.\n";
-        out << "Count Check: " << 100.0 * count_time.count() / total << "% (" << count_time.count() / combinations_processed << " seconds per combination)\n";
-        out << "ID Total: " << 100.0 * ID_total_time.count() / total << "% (" << ID_total_time.count() / combinations_processed << " seconds per combination)\n";
-        out << "- Prep: " << 100.0 * ID_prep_time.count() / ID_total_time.count() << "% (" << ID_prep_time.count() / combinations_processed << " seconds per combination)\n";
-        out << "- Build: " << 100.0 * ID_build_time.count() / ID_total_time.count() << "% (" << ID_build_time.count() / combinations_processed << " seconds per combination)\n";
-        out << "Chain generation: " << 100.0 * chain_generation_time.count() / total << "% (" << chain_generation_time.count() / chains_generated << " seconds per chain)\n";
-        out << "Merge: " << 100.0 * merge_time.count() / total << "% (" << merge_time.count() / chains_generated << " seconds per surviving chain)\n";
-        out << "- Combine: " << 100.0 * combine_time.count() / merge_time.count() << "% (" << combine_time.count() / survived_speed_filter << " seconds per surviving chain)\n";
-        out << "LCM: " << 100.0 * lcm_time.count() / total << "% (" << lcm_time.count() / chains_generated << " seconds per chain)\n";
-        out << "Incrementor: " << 100.0 * incrementor_time.count() / total << "% (" << incrementor_time.count() / chains_generated << " seconds per combination)\n";
-        out << "- Rebuild: " << 100.0 * incrementor_rebuild_time.count() / incrementor_time.count() << "% (" << incrementor_rebuild_time.count() / chains_generated << " seconds per combination)\n";
-        out << "Output: " << 100.0 * output_time.count() / total << "% (" << output_time.count() / machine_accepted_count << " seconds per outputed chain)\n";
-        out << "Total generation: " << total_generation_time.count() / chains_generated << " seconds per chain\n";
-        out << "Total generation: " << total_generation_time.count() / combinations_processed << " seconds per combination\n";
-        out << "\n";
+        if (base.has_data()) {
+            base.print(out, "Base");
+            base_has_data = true;
+            total += base;
+        }
+        if (compressed.has_data()) {
+            compressed.print(out, "Compressed");
+            compressed_has_data = true;
+            total += compressed;
+        }
+        if (nuclear.has_data()) {
+            nuclear.print(out, "Nuclear");
+            nuclear_has_data = true;
+            total += nuclear;
+        }
+        if (base_has_data || compressed_has_data || nuclear_has_data || total.has_data()) {
+            total.print(out, "Combined");
+        }
     }
 }
 

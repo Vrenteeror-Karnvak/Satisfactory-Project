@@ -60,6 +60,14 @@
         "Amount": "0"
     },
     {
+        "ItemClass": "Packaged Turbofuel",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Packaged Nitrogen Gas",
+        "Amount": "0"
+    },
+    {
         "ItemClass": "Excited Photonic Matter",
         "Amount": "0"
     },
@@ -108,15 +116,11 @@
         "Amount": "0"
     },
     {
-        "ItemClass": "Nuclear Pasta",
+        "ItemClass": "Heavy Modular Frame",
         "Amount": "0"
     },
     {
         "ItemClass": "Turbo Motor",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Heavy Modular Frame",
         "Amount": "0"
     },
     {
@@ -133,10 +137,6 @@
     },
     {
         "ItemClass": "Neural-Quantum Processor",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Packaged Nitrogen Gas",
         "Amount": "0"
     },
     {
@@ -160,11 +160,11 @@
         "Amount": "0"
     },
     {
-        "ItemClass": "Packaged Turbofuel",
+        "ItemClass": "Power Shard",
         "Amount": "0"
     },
     {
-        "ItemClass": "Power Shard",
+        "ItemClass": "Nuclear Pasta",
         "Amount": "0"
     },
     {

@@ -9,9 +9,10 @@ using json = nlohmann::ordered_json;
 Resource::Resource() {
     name = "N/A";
     amount = 0;
+    product_ID = SIZE_MAX;
 }
 
-Resource::Resource(const json& data) {
+Resource::Resource(const json& data, const size_t ID) {
     name = data.value("ItemClass", "");
     if (data.value("Amount", "").find("/") != string::npos) {
         int pos = data.value("Amount", "").find("/");
@@ -21,17 +22,20 @@ Resource::Resource(const json& data) {
     else {
         amount = stoi(data.value("Amount", ""));
     }
+    product_ID = ID;
 }
 
-Resource::Resource(const string title, const Fraction rate) {
+Resource::Resource(const string title, const Fraction rate, const size_t ID) {
     name = title;
     amount = rate;
+    product_ID = ID;
 }
 
-Resource::Resource(const string title) {
+Resource::Resource(const string title, const size_t ID) {
     name = title;
     amount.set_numerator(0);
     amount.set_denominator(1);
+    product_ID = ID;
 }
 
 void Resource::set_resource(const json& data) {
@@ -51,6 +55,10 @@ void Resource::set_amount(const Fraction value) {
     amount = value;
 }
 
+void Resource::set_product_ID(const size_t value) {
+    product_ID = value;
+}
+
 string Resource::get_name() const {
     return name;
 }
@@ -59,9 +67,18 @@ Fraction Resource::get_amount() const {
     return amount;
 }
 
+size_t Resource::get_product_ID() const {
+    return product_ID;
+}
+
 bool Resource::same_name(const Resource& other) const {
-    Stats::resource_same_name_calls++;
+    Stats::current_method_stats().resource_same_name_calls++;
     return name == other.get_name();
+}
+
+bool Resource::same_product_ID(const Resource& other) const {
+    Stats::current_method_stats().resource_same_product_ID_calls++;
+    return product_ID == other.get_product_ID();
 }
 
 /**************************************************/
@@ -77,7 +94,7 @@ bool Resource::operator!=(const Resource& other) const {
 }
 
 bool Resource::operator<(const Resource& other) const {
-    if (!same_name(other)) {
+    if (!same_product_ID(other)) {
         throw invalid_argument("Cannot combine different resources.\n" + name + " != " + other.get_name() + ".");
     }
 
@@ -89,7 +106,7 @@ bool Resource::operator<=(const Resource& other) const {
 }
 
 bool Resource::operator>(const Resource& other) const {
-    if (!same_name(other)) {
+    if (!same_product_ID(other)) {
         throw invalid_argument("Cannot combine different resources.\n" + name + " != " + other.get_name() + ".");
     }
 
@@ -101,7 +118,7 @@ bool Resource::operator>=(const Resource& other) const {
 }
 
 Resource& Resource::operator+=(const Resource& other) {
-    if (!same_name(other)) {
+    if (!same_product_ID(other)) {
         throw invalid_argument("Cannot combine different resources.\n" + name + " != " + other.get_name() + ".");
     }
 
@@ -116,7 +133,7 @@ Resource Resource::operator+(const Resource& other) const {
 }
 
 Resource& Resource::operator-=(const Resource& other) {
-    if (!same_name(other)) {
+    if (!same_product_ID(other)) {
         throw invalid_argument("Cannot combine different resources.\n" + name + " != " + other.get_name() + ".");
     }
 
@@ -136,7 +153,7 @@ Resource& Resource::operator*=(const Fraction multiple) {
 }
 
 Resource Resource::operator*(const Fraction multiple) const {
-    Resource result;
+    Resource result = *this;
     result *= multiple;
     return result;
 }

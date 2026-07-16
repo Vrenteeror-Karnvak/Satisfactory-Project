@@ -1,114 +1,10 @@
 [
     {
-        "ItemClass": "Fused Modular Frame",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Neural-Quantum Processor",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "FICSMAS Wonder Star",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Reanimated SAM",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Packaged Turbofuel",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Power Shard",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Superposition Oscillator",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Singularity Cell",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Encased Uranium Cell",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Turbo Motor",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Sweet Fireworks",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "SAM Fluctuator",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Sparkly Fireworks",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Fancy Fireworks",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Aluminum Casing",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Heavy Modular Frame",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Ficsonium Fuel Rod",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Snowball",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Alclad Aluminum Sheet",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Diamonds",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Aluminum Ingot",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Ficsite Trigon",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Electromagnetic Control Rod",
-        "Amount": "0"
-    },
-    {
         "ItemClass": "Nuclear Pasta",
         "Amount": "0"
     },
     {
-        "ItemClass": "Pressure Conversion Cube",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Time Crystal",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Packaged Nitrogen Gas",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Dark Matter Crystal",
+        "ItemClass": "Supercomputer",
         "Amount": "0"
     },
     {
@@ -116,11 +12,107 @@
         "Amount": "0"
     },
     {
+        "ItemClass": "Dark Matter Crystal",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Time Crystal",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Electromagnetic Control Rod",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Ficsite Trigon",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Aluminum Ingot",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Diamonds",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Pressure Conversion Cube",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Alclad Aluminum Sheet",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Snowball",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Heavy Modular Frame",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Fancy Fireworks",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Sparkly Fireworks",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Sweet Fireworks",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Turbo Motor",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Ficsonium Fuel Rod",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Singularity Cell",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "SAM Fluctuator",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Fused Modular Frame",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Encased Uranium Cell",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Superposition Oscillator",
+        "Amount": "0"
+    },
+    {
         "ItemClass": "Portable Miner",
         "Amount": "0"
     },
     {
-        "ItemClass": "Supercomputer",
+        "ItemClass": "Reanimated SAM",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Power Shard",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Aluminum Casing",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "FICSMAS Wonder Star",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Neural-Quantum Processor",
         "Amount": "0"
     }
 ]

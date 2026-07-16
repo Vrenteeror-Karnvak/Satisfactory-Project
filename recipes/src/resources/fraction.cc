@@ -16,39 +16,30 @@ Fraction::Fraction() {
     denominator = 1;
 }
 
-/**
- * @brief Construct a fraction with a numerator and denominator.
- *
- * @param n The numerator.
- * @param d The denominator (the default is 1).
- */
-Fraction::Fraction(const int n, const int d) {
-    numerator = n;
-    denominator = d;
-}
+Fraction::Fraction(double value) {
+    if (value <= 1e-12) {
+        numerator = 0;
+        denominator = 1;
+        return;
+    }
 
-Fraction::Fraction(const double value) {
-    numerator = value * 1000000;
-    denominator = 1000000;
-    *this *= 1;
-}
+    int exp;
+    double mant = std::frexp(value, &exp);  // value = mant * 2^exp
 
-/**
- * @brief Set the numerator.
- *
- * @param n The new numerator.
- */
-void Fraction::set_numerator(const int n) {
-    numerator = n;
-}
+    // Convert mantissa to a fraction
+    const int64_t scale = (1LL << 52);  // double has 52 bits of mantissa
+    numerator = static_cast<int64_t>(mant * scale);
+    denominator = scale;
 
-/**
- * @brief Set the denominator.
- *
- * @param d The new denominator.
- */
-void Fraction::set_denominator(const int d) {
-    denominator = d;
+    // Apply exponent
+    if (exp > 0) {
+        numerator <<= exp;
+    }
+    else {
+        denominator <<= -exp;
+    }
+
+    reduce();
 }
 
 /**
@@ -56,7 +47,7 @@ void Fraction::set_denominator(const int d) {
  *
  * @return The current numerator.
  */
-int Fraction::get_numerator() const {
+int64_t Fraction::get_numerator() const {
     return numerator;
 }
 
@@ -65,8 +56,15 @@ int Fraction::get_numerator() const {
  *
  * @return The current denominator.
  */
-int Fraction::get_denominator() const {
+int64_t Fraction::get_denominator() const {
     return denominator;
+}
+
+void Fraction::reduce() {
+    Stats::current_method_stats().fraction_reductions++;
+    int64_t gd = gcd(numerator, denominator);
+    numerator /= gd;
+    denominator /= gd;
 }
 
 /**************************************************/
@@ -80,15 +78,16 @@ int Fraction::get_denominator() const {
  * @return true if both fractions represent the same value.
  */
 bool Fraction::operator==(const Fraction& other) const {
-    int lm = 1; // the least common multiple
     bool result; // the result
-    int temp_numerator = numerator;
-    int temp_other_numerator = other.get_numerator();
 
     if (denominator == other.get_denominator()) {
         result = (numerator == other.get_numerator());
     }
     else {
+        int64_t temp_numerator = numerator;
+        int64_t temp_other_numerator = other.get_numerator();
+        int64_t lm = 1; // the least common multiple
+
         lm = lcm(denominator, other.get_denominator());
         temp_numerator *= (lm / denominator);
         temp_other_numerator *= (lm / other.get_denominator());
@@ -115,15 +114,16 @@ bool Fraction::operator!=(const Fraction& other) const {
  * @return true if this fraction is smaller.
  */
 bool Fraction::operator<(const Fraction& other) const {
-    int lm = 1; // the least common multiple
     bool result; // the result
-    int temp_numerator = numerator;
-    int temp_other_numerator = other.get_numerator();
 
     if (denominator == other.get_denominator()) {
         result = (numerator < other.get_numerator());
     }
     else {
+        int64_t temp_numerator = numerator;
+        int64_t temp_other_numerator = other.get_numerator();
+        int64_t lm = 1; // the least common multiple
+
         lm = lcm(denominator, other.get_denominator());
         temp_numerator *= (lm / denominator);
         temp_other_numerator *= (lm / other.get_denominator());
@@ -150,15 +150,16 @@ bool Fraction::operator<=(const Fraction& other) const {
  * @return true if this fraction is larger.
  */
 bool Fraction::operator>(const Fraction& other) const {
-    int lm = 1; // the least common multiple
     bool result; // the result
-    int temp_numerator = numerator;
-    int temp_other_numerator = other.get_numerator();
 
     if (denominator == other.get_denominator()) {
         result = (numerator > other.get_numerator());
     }
     else {
+        int64_t temp_numerator = numerator;
+        int64_t temp_other_numerator = other.get_numerator();
+        int64_t lm = 1; // the least common multiple
+
         lm = lcm(denominator, other.get_denominator());
         temp_numerator *= (lm / denominator);
         temp_other_numerator *= (lm / other.get_denominator());
@@ -185,14 +186,13 @@ bool Fraction::operator>=(const Fraction& other) const {
  * @return A reference to this fraction after addition.
  */
 Fraction& Fraction::operator+=(const Fraction& other) {
-    int lm = 1; // the least common multiple
-    int gd = 1; // the greatest common divisor
-    Fraction temp = other; // a temporary variable
-
-    if (denominator == temp.get_denominator()) {
-        numerator += temp.get_numerator();
+    if (denominator == other.get_denominator()) {
+        numerator += other.get_numerator();
     }
     else {
+        Fraction temp = other; // a temporary variable
+        int64_t lm = 1; // the least common multiple
+        
         lm = lcm(denominator, temp.get_denominator());
         numerator *= (lm / denominator);
         denominator = lm;
@@ -201,11 +201,7 @@ Fraction& Fraction::operator+=(const Fraction& other) {
         numerator += temp.get_numerator();
     }
 
-    gd = gcd(numerator, denominator);
-    numerator /= gd;
-    denominator /= gd;
-    Stats::fraction_reductions++;
-
+    this->reduce();
     return *this;
 }
 
@@ -228,14 +224,15 @@ Fraction Fraction::operator+(const Fraction& other) const {
  * @return A reference to this fraction after subtraction.
  */
 Fraction& Fraction::operator-=(const Fraction& other) {
-    int lm = 1; // the least common multiple
-    int gd = 1; // the greatest common divisor
     Fraction temp = other; // a temporary variable
 
     if (denominator == temp.get_denominator()) {
         numerator -= temp.get_numerator();
     }
     else {
+        Fraction temp = other; // a temporary variable
+        int64_t lm = 1; // the least common multiple
+        
         lm = lcm(denominator, temp.get_denominator());
         numerator *= (lm / denominator);
         denominator = lm;
@@ -244,11 +241,7 @@ Fraction& Fraction::operator-=(const Fraction& other) {
         numerator -= temp.get_numerator();
     }
 
-    gd = gcd(numerator, denominator);
-    numerator /= gd;
-    denominator /= gd;
-    Stats::fraction_reductions++;
-
+    this->reduce();
     return *this;
 }
 
@@ -271,16 +264,16 @@ Fraction Fraction::operator-(const Fraction& other) const {
  * @return A reference to this fraction after multiplication.
  */
 Fraction& Fraction::operator*=(const Fraction& other) {
-    int gd = 1; // the greatest common divisor
-
     numerator *= other.get_numerator();
     denominator *= other.get_denominator();
 
-    gd = gcd(numerator, denominator);
-    numerator /= gd;
-    denominator /= gd;
-    Stats::fraction_reductions++;
+    this->reduce();
+    return *this;
+}
 
+Fraction& Fraction::operator*=(const int64_t other) {
+    numerator *= other;
+    this->reduce();
     return *this;
 }
 
@@ -296,6 +289,12 @@ Fraction Fraction::operator*(const Fraction& other) const {
     return result;
 }
 
+Fraction Fraction::operator*(const int64_t other) const {
+    Fraction result = *this;
+    result *= other;
+    return result;
+}
+
 /**
  * @brief Divide this fraction by another.
  *
@@ -303,16 +302,16 @@ Fraction Fraction::operator*(const Fraction& other) const {
  * @return A reference to this fraction after division.
  */
 Fraction& Fraction::operator/=(const Fraction& other) {
-    int gd = 1; // the greatest common divisor
-
     numerator *= other.get_denominator();
     denominator *= other.get_numerator();
 
-    gd = gcd(numerator, denominator);
-    numerator /= gd;
-    denominator /= gd;
-    Stats::fraction_reductions++;
+    this->reduce();
+    return *this;
+}
 
+Fraction& Fraction::operator/=(const int64_t other) {
+    denominator *= other;
+    this->reduce();
     return *this;
 }
 
@@ -323,6 +322,12 @@ Fraction& Fraction::operator/=(const Fraction& other) {
  * @return A new Fraction representing the quotient.
  */
 Fraction Fraction::operator/(const Fraction& other) const {
+    Fraction result = *this;
+    result /= other;
+    return result;
+}
+
+Fraction Fraction::operator/(const int64_t other) const {
     Fraction result = *this;
     result /= other;
     return result;

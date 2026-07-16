@@ -12,6 +12,7 @@ main := bin/main
 test := bin/test
 ficsonium_test := bin/ficsonium_test
 backup_test := bin/backup_test
+speed_tester := bin/speed_tester
 obsidian := bin/obsidian
 networkalyzer := bin/networkalyzer
 
@@ -22,7 +23,7 @@ equivalent_remover := bin/equivalent_remover
 test_compressed := bin/test_compressed
 test_base := bin/test_base
 
-TARGETS := $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_sorter) $(recipe_sorter_sorter) $(recipe_trimmer) $(test_file) $(main) $(test) $(ficsonium_test) $(backup_test) $(obsidian)
+TARGETS := $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_sorter) $(recipe_sorter_sorter) $(recipe_trimmer) $(test_file) $(main) $(test) $(ficsonium_test) $(backup_test) $(speed_tester) $(obsidian)
 ARCHIVED_TARGETS := $(main_mega) $(test_compressed) $(test_base) $(filter_creation) $(equivalent_remover)
 
 all: recipes test resource obsidian networkalyzer
@@ -32,7 +33,7 @@ debug: all
 
 recipes: $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_trimmer) $(recipe_sorter) $(recipe_sorter_sorter) $(test_file)
 test: ensure_critical_files $(test) $(backup_test) $(ficsonium_test)
-resource: ensure_critical_files $(main) $(test)
+resource: ensure_critical_files $(main) $(test) $(speed_tester)
 obsidian: $(obsidian)
 networkalyzer: $(networkalyzer)
 archived: $(ARCHIVED_TARGETS)
@@ -68,6 +69,9 @@ $(ficsonium_test): src/main/ficsonium_test.cc src/resources/*.cc
 	$(GXX) $(GXXFLAGS) $^ -o $@
 
 $(backup_test): src/main/backup_test.cc src/resources/*.cc
+	$(GXX) $(GXXFLAGS) $^ -o $@
+
+$(speed_tester): src/main/speed_tester.cc src/resources/*.cc
 	$(GXX) $(GXXFLAGS) $^ -o $@
 
 $(obsidian): src/Obsidian.cpp
