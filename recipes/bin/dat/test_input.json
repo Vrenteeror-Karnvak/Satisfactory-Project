@@ -36,16 +36,23 @@
     {
         "Category": "Filter Data",
         "max_num_machines": 100,
-        "max_filter": 100,
+        "max_num_machines_output": 50,
+        "max_filter_value": 100,
         "tiers_per_log": 100,
-        "max_combinations": 200,
+        "max_combinations": 500,
         "absolute_max_combinations": 100,
         "remake_filters": false
     },
     {
         "Category": "Log File Comparison",
         "meaning" : "positive means better and negative means worse",
+        "quantity": 2,
+        "folder_for_all": "dat",
         "file1": "backup_test_status.log",
-        "file2": "test_status.log"
+        "file2": "test_status.log",
+        "file3": "comp_test_O3_universal.log",
+        "file4": "comp_test_O3_native.log",
+        "file5": "comp_test_Ofast_universal.log",
+        "file6": "comp_test_Ofast_native.log"
     }
 ]

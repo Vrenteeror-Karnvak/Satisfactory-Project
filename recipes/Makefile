@@ -1,5 +1,5 @@
 GXX := g++
-GXXFLAGS := -Wall -std=c++17
+GXXFLAGS := -Wall -O2 -std=c++17
 
 initializer := bin/initializer
 recipe_extractor := bin/recipe_extractor
@@ -13,6 +13,7 @@ test := bin/test
 ficsonium_test := bin/ficsonium_test
 backup_test := bin/backup_test
 speed_tester := bin/speed_tester
+multi_log_comparison := bin/multi_log_comparison
 obsidian := bin/obsidian
 networkalyzer := bin/networkalyzer
 
@@ -23,7 +24,7 @@ equivalent_remover := bin/equivalent_remover
 test_compressed := bin/test_compressed
 test_base := bin/test_base
 
-TARGETS := $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_sorter) $(recipe_sorter_sorter) $(recipe_trimmer) $(test_file) $(main) $(test) $(ficsonium_test) $(backup_test) $(speed_tester) $(obsidian)
+TARGETS := $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_sorter) $(recipe_sorter_sorter) $(recipe_trimmer) $(test_file) $(main) $(test) $(ficsonium_test) $(backup_test) $(speed_tester) $(multi_log_comparison) $(obsidian)
 ARCHIVED_TARGETS := $(main_mega) $(test_compressed) $(test_base) $(filter_creation) $(equivalent_remover)
 
 all: recipes test resource obsidian networkalyzer
@@ -33,7 +34,7 @@ debug: all
 
 recipes: $(initializer) $(recipe_extractor) $(recipe_fixer) $(recipe_trimmer) $(recipe_sorter) $(recipe_sorter_sorter) $(test_file)
 test: ensure_critical_files $(test) $(backup_test) $(ficsonium_test)
-resource: ensure_critical_files $(main) $(test) $(speed_tester)
+resource: ensure_critical_files $(main) $(test) $(speed_tester) $(multi_log_comparison)
 obsidian: $(obsidian)
 networkalyzer: $(networkalyzer)
 archived: $(ARCHIVED_TARGETS)
@@ -72,6 +73,9 @@ $(backup_test): src/main/backup_test.cc src/resources/*.cc
 	$(GXX) $(GXXFLAGS) $^ -o $@
 
 $(speed_tester): src/main/speed_tester.cc src/resources/*.cc
+	$(GXX) $(GXXFLAGS) $^ -o $@
+
+$(multi_log_comparison): src/main/multi_log_comparison.cc src/resources/*.cc
 	$(GXX) $(GXXFLAGS) $^ -o $@
 
 $(obsidian): src/Obsidian.cpp
@@ -117,9 +121,22 @@ run_recipes: recipes bin/dat/en-US.json
 	./bin/recipe_sorter_sorter
 
 run_test: test ensure_critical_files
-	./bin/test > ./bin/tests/test.dat
+#	./bin/test > ./bin/tests/test.dat
 #	./bin/backup_test > ./bin/tests/backup_test.dat
-	./bin/filter_creation > ./bin/tests/filter_creation.dat
+#	./bin/filter_creation > ./bin/tests/filter_creation.dat
+	g++ -Wall -O2 -std=c++17 src/main/test.cc src/resources/dominance.cc src/resources/fraction.cc src/resources/recipe.cc src/resources/resource.cc src/resources/stats.cc -o bin/test
+	./bin/test test_O2_universal.log
+	g++ -Wall -O2 -march=native -std=c++17 src/main/test.cc src/resources/dominance.cc src/resources/fraction.cc src/resources/recipe.cc src/resources/resource.cc src/resources/stats.cc -o bin/test
+	./bin/test test_O2_native.log
+	g++ -Wall -O3 -std=c++17 src/main/test.cc src/resources/dominance.cc src/resources/fraction.cc src/resources/recipe.cc src/resources/resource.cc src/resources/stats.cc -o bin/test
+	./bin/test test_O3_universal.log
+	g++ -Wall -O3 -march=native -std=c++17 src/main/test.cc src/resources/dominance.cc src/resources/fraction.cc src/resources/recipe.cc src/resources/resource.cc src/resources/stats.cc -o bin/test
+	./bin/test test_O3_native.log
+	g++ -Wall -Ofast -std=c++17 src/main/test.cc src/resources/dominance.cc src/resources/fraction.cc src/resources/recipe.cc src/resources/resource.cc src/resources/stats.cc -o bin/test
+	./bin/test test_Ofast_universal.log
+	g++ -Wall -Ofast -march=native -std=c++17 src/main/test.cc src/resources/dominance.cc src/resources/fraction.cc src/resources/recipe.cc src/resources/resource.cc src/resources/stats.cc -o bin/test
+	./bin/test test_Ofast_native.log
+	./bin/multi_log_comparison
 
 clean:
 	@if [ -f bin/dat/test_input.json ]; then cp bin/dat/test_input.json debug/dat/; fi

@@ -96,6 +96,10 @@
         "Amount": "0"
     },
     {
+        "ItemClass": "High-Speed Connector",
+        "Amount": "0"
+    },
+    {
         "ItemClass": "Aluminum Casing",
         "Amount": "0"
     },
@@ -116,23 +120,15 @@
         "Amount": "0"
     },
     {
+        "ItemClass": "Nuclear Pasta",
+        "Amount": "0"
+    },
+    {
         "ItemClass": "Heavy Modular Frame",
         "Amount": "0"
     },
     {
-        "ItemClass": "Turbo Motor",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Alclad Aluminum Sheet",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Pressure Conversion Cube",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Diamonds",
+        "ItemClass": "Radio Control Unit",
         "Amount": "0"
     },
     {
@@ -156,15 +152,15 @@
         "Amount": "0"
     },
     {
+        "ItemClass": "Crystal Oscillator",
+        "Amount": "0"
+    },
+    {
         "ItemClass": "Reanimated SAM",
         "Amount": "0"
     },
     {
         "ItemClass": "Power Shard",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Nuclear Pasta",
         "Amount": "0"
     },
     {
@@ -177,6 +173,22 @@
     },
     {
         "ItemClass": "Fused Modular Frame",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Alclad Aluminum Sheet",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Diamonds",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Pressure Conversion Cube",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Turbo Motor",
         "Amount": "0"
     }
 ]

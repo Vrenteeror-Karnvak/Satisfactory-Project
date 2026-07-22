@@ -117,9 +117,6 @@ void Recipe::set_processed() {
 }
 
 void Recipe::combine_recipes(const Recipe& other) {
-    Stats::current_method_stats().combine_recipe_calls++;
-
-    auto combine_start = chrono::steady_clock::now();
     bool found = false;
     // combines the ingredients
     const vector<Resource>& other_ingredients = other.get_ingredients_ref();
@@ -199,13 +196,9 @@ void Recipe::combine_recipes(const Recipe& other) {
         }
     }
     products = cleaned_products;
-    auto combine_end = chrono::steady_clock::now();
-    Stats::current_method_stats().combine_time += (combine_end - combine_start);
 }
 
 void Recipe::merge_recipes(const vector<Recipe>& data) {
-    Stats::current_method_stats().merge_recipe_calls++;
-
     if (data.empty()) {
         return;
     }
@@ -413,12 +406,10 @@ bool Recipe::is_processed() const {
 }
 
 bool Recipe::same_name(const Recipe& other) const {
-    Stats::current_method_stats().recipe_same_name_calls++;
     return (name == other.get_name() && ID == other.get_ID());
 }
 
 bool Recipe::same_product_ID(const Recipe& other) const {
-    Stats::current_method_stats().recipe_same_product_ID_calls++;
     return (product_ID == other.get_product_ID() && ID == other.get_ID());
 }
 

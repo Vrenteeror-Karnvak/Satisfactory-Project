@@ -72,12 +72,10 @@ size_t Resource::get_product_ID() const {
 }
 
 bool Resource::same_name(const Resource& other) const {
-    Stats::current_method_stats().resource_same_name_calls++;
     return name == other.get_name();
 }
 
 bool Resource::same_product_ID(const Resource& other) const {
-    Stats::current_method_stats().resource_same_product_ID_calls++;
     return product_ID == other.get_product_ID();
 }
 

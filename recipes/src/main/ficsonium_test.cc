@@ -17,8 +17,6 @@
 #include "../resources/resource.h"
 #include "../resources/fraction.h"
 
-#include "../resources/stats.h"
-
 using namespace std;
 using json = nlohmann::ordered_json;
 
@@ -299,7 +297,6 @@ int main(int argc, char* argv[]) {
             if (true_total % 1000000 == 0) {
                 auto total_end = chrono::steady_clock::now();
                 chrono::duration<double> total_elapsed = (total_end - total_start);
-                Stats::total_generation_time = total_elapsed;
                 cout << true_total << " -> " << total_elapsed.count() << endl;
             }
             increment_incrementor(output_recipes, recipe_root, recipe_map, (*recipes_ptr), terminal_resources, incrementor_map, incrementor, incrementor_max, status_log);

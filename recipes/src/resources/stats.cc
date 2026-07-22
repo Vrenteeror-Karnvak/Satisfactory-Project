@@ -6,13 +6,14 @@
 using namespace std;
 
 bool MethodStats::has_data() const {
-    return item_count != 0 || combinations_processed != 0 || chains_generated != 0 || ID_filtered != 0 || speed_filtered != 0 || merge_filtered != 0 || total_time.count() != 0 || count_time.count() != 0 || ID_total_time.count() != 0 || ID_build_time.count() != 0 || chain_generation_time.count() != 0 || merge_time.count() != 0 || combine_time.count() != 0 || lcm_time.count() != 0 || incrementor_time.count() != 0 || incrementor_rebuild_time.count() != 0 || output_time.count() != 0;
+    return item_count != 0 || combinations_processed != 0 || chains_generated != 0 || ID_filtered != 0 || speed_filtered != 0 || merge_filtered != 0 || output_filtered != 0 || total_time.count() != 0 || count_time.count() != 0 || ID_total_time.count() != 0 || ID_build_time.count() != 0 || chain_generation_time.count() != 0 || merge_time.count() != 0 || combine_time.count() != 0 || lcm_time.count() != 0 || incrementor_time.count() != 0 || incrementor_rebuild_time.count() != 0 || output_time.count() != 0;
 }
 
 void MethodStats::print(std::ostream& out, const string& method) {
     const auto survived_id_filter = combinations_processed - ID_filtered;
     const auto survived_speed_filter = survived_id_filter - speed_filtered;
     const auto survived_merge_filter = survived_speed_filter - merge_filtered;
+    const auto survived_output_filter = survived_merge_filter - output_filtered;
     
     out << "\n\n\n";
     out << "========================================\n";
@@ -22,10 +23,10 @@ void MethodStats::print(std::ostream& out, const string& method) {
     out << "Items processed: " << item_count << " (raw count)\n";
     out << "Combinations processed: " << combinations_processed << " (raw count)\n";
     out << "Chains generated: " << chains_generated << " (raw count)\n";
-    out << "Recipes output: " << survived_merge_filter << " (" << (combinations_processed > 0 ? 100.0 * survived_merge_filter / combinations_processed : 0.0) << "%)\n";
+    out << "Recipes output: " << survived_output_filter << " (" << (combinations_processed > 0 ? 100.0 * survived_output_filter / combinations_processed : 0.0) << "%)\n";
     out << "Runtime: " << total_time.count() << " seconds\n";
     out << "Seconds per combination: " << (combinations_processed > 0 ? total_time.count() / combinations_processed : 0.0) << " seconds \n";
-    out << "Combinations per second: " << (total_time.count() > 0 ? combinations_processed / total_time.count() : 0.0) << " per second\n";
+    out << "Combinations per second: " << (total_time.count() > 0 ? static_cast<double>(combinations_processed) / total_time.count() : 0.0) << " per second\n";
     out << "Resource same_name calls: " << resource_same_name_calls << "\n";
     out << "Recipe same_name calls: " << recipe_same_name_calls << "\n";
     out << "Resource same_product_ID calls: " << resource_same_product_ID_calls << "\n";
@@ -36,9 +37,11 @@ void MethodStats::print(std::ostream& out, const string& method) {
     out << "Passed ID filter: " << survived_id_filter << " (" << (combinations_processed > 0 ? 100.0 * survived_id_filter / combinations_processed : 0.0) << "%)\n";
     out << "Passed speed filter: " << survived_speed_filter << " (" << (combinations_processed > 0 ? 100.0 * survived_speed_filter / combinations_processed : 0.0) << "%)\n";
     out << "Passed merge filter: " << survived_merge_filter << " (" << (combinations_processed > 0 ? 100.0 * survived_merge_filter / combinations_processed : 0.0) << "%)\n";
+    out << "Passed output filter: " << survived_output_filter << " (" << (combinations_processed > 0 ? 100.0 * survived_output_filter / combinations_processed : 0.0) << "%)\n";
     out << "Filtered by ID conflict: " << ID_filtered << " (" << (combinations_processed > 0 ? 100.0 * ID_filtered / combinations_processed : 0.0) << "% of combinations)\n";
     out << "Filtered by speed filter: " << speed_filtered << " (" << (survived_id_filter > 0 ? 100.0 * speed_filtered / survived_id_filter : 0.0) << "% of ID-valid combinations)\n";
     out << "Filtered after merge: " << merge_filtered << " (" << (survived_speed_filter > 0 ? 100.0 * merge_filtered / survived_speed_filter : 0.0) << "% of speed-valid combinations)\n";
+    out << "Filtered at output: " << output_filtered << " (" << (survived_merge_filter > 0 ? 100.0 * output_filtered / survived_merge_filter : 0.0) << "% of merge-valid combinations)\n";
     out << "\n";
 
     out << "=== Function Calls ===\n";
@@ -66,7 +69,7 @@ void MethodStats::print(std::ostream& out, const string& method) {
     out << "- Combine: " << (merge_time.count() > 0 ? 100.0 * combine_time.count() / merge_time.count() : 0.0) << "% (" << (survived_speed_filter > 0 ? combine_time.count() / survived_speed_filter : 0.0) << " seconds per surviving chain)\n";
     out << "Incrementor: " << (total_time.count() > 0 ? 100.0 * incrementor_time.count() / total_time.count() : 0.0) << "% (" << (combinations_processed > 0 ? incrementor_time.count() / combinations_processed : 0.0) << " seconds per combination)\n";
     out << "- Rebuild: " << (incrementor_time.count() > 0 ? 100.0 * incrementor_rebuild_time.count() / incrementor_time.count() : 0.0) << "% (" << (incrementor_rebuild_count > 0 ? incrementor_rebuild_time.count() / incrementor_rebuild_count : 0.0) << " seconds per rebuild)\n";
-    out << "Output: " << (total_time.count() > 0 ? 100.0 * output_time.count() / total_time.count() : 0.0) << "% (" << (survived_merge_filter > 0 ? output_time.count() / survived_merge_filter : 0.0) << " seconds per output chain)\n";
+    out << "Output: " << (total_time.count() > 0 ? 100.0 * output_time.count() / total_time.count() : 0.0) << "% (" << (survived_output_filter > 0 ? output_time.count() / survived_output_filter : 0.0) << " seconds per output chain)\n";
     out << "\n";
 
     out << "=== Function Cost ===\n";
@@ -94,6 +97,7 @@ MethodStats& MethodStats::operator+=(const MethodStats& other) {
     ID_filtered += other.ID_filtered;
     speed_filtered += other.speed_filtered;
     merge_filtered += other.merge_filtered;
+    output_filtered += other.output_filtered;
     merge_ID_calls += other.merge_ID_calls;
     merge_recipe_calls += other.merge_recipe_calls;
     combine_recipe_calls += other.combine_recipe_calls;
@@ -142,7 +146,6 @@ namespace Stats {
     }
 
     void print(std::ostream& out) {
-        total = MethodStats{};
         bool base_has_data = false;
         bool compressed_has_data = false;
         bool nuclear_has_data = false;

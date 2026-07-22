@@ -1,46 +1,78 @@
 [
     {
-        "ItemClass": "Nuclear Pasta",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Supercomputer",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Battery",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Dark Matter Crystal",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Time Crystal",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Electromagnetic Control Rod",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Ficsite Trigon",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Aluminum Ingot",
-        "Amount": "0"
-    },
-    {
         "ItemClass": "Diamonds",
         "Amount": "0"
     },
     {
-        "ItemClass": "Pressure Conversion Cube",
+        "ItemClass": "Alclad Aluminum Sheet",
         "Amount": "0"
     },
     {
-        "ItemClass": "Alclad Aluminum Sheet",
+        "ItemClass": "Neural-Quantum Processor",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "FICSMAS Wonder Star",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Reanimated SAM",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "High-Speed Connector",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Power Shard",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Superposition Oscillator",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Fused Modular Frame",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Singularity Cell",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Encased Uranium Cell",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Turbo Motor",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Sweet Fireworks",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "SAM Fluctuator",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Sparkly Fireworks",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Crystal Oscillator",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Fancy Fireworks",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Radio Control Unit",
+        "Amount": "0"
+    },
+    {
+        "ItemClass": "Ficsonium Fuel Rod",
         "Amount": "0"
     },
     {
@@ -52,43 +84,39 @@
         "Amount": "0"
     },
     {
-        "ItemClass": "Fancy Fireworks",
+        "ItemClass": "Aluminum Casing",
         "Amount": "0"
     },
     {
-        "ItemClass": "Sparkly Fireworks",
+        "ItemClass": "Aluminum Ingot",
         "Amount": "0"
     },
     {
-        "ItemClass": "Sweet Fireworks",
+        "ItemClass": "Ficsite Trigon",
         "Amount": "0"
     },
     {
-        "ItemClass": "Turbo Motor",
+        "ItemClass": "Electromagnetic Control Rod",
         "Amount": "0"
     },
     {
-        "ItemClass": "Ficsonium Fuel Rod",
+        "ItemClass": "Nuclear Pasta",
         "Amount": "0"
     },
     {
-        "ItemClass": "Singularity Cell",
+        "ItemClass": "Pressure Conversion Cube",
         "Amount": "0"
     },
     {
-        "ItemClass": "SAM Fluctuator",
+        "ItemClass": "Time Crystal",
         "Amount": "0"
     },
     {
-        "ItemClass": "Fused Modular Frame",
+        "ItemClass": "Dark Matter Crystal",
         "Amount": "0"
     },
     {
-        "ItemClass": "Encased Uranium Cell",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Superposition Oscillator",
+        "ItemClass": "Battery",
         "Amount": "0"
     },
     {
@@ -96,23 +124,7 @@
         "Amount": "0"
     },
     {
-        "ItemClass": "Reanimated SAM",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Power Shard",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Aluminum Casing",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "FICSMAS Wonder Star",
-        "Amount": "0"
-    },
-    {
-        "ItemClass": "Neural-Quantum Processor",
+        "ItemClass": "Supercomputer",
         "Amount": "0"
     }
 ]

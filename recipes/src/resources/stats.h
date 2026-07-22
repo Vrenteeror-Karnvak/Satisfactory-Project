@@ -18,6 +18,7 @@ struct MethodStats {
     uint64_t ID_filtered = 0;
     uint64_t speed_filtered = 0;
     uint64_t merge_filtered = 0;
+    uint64_t output_filtered = 0;
 
     uint64_t merge_ID_calls = 0;
     uint64_t merge_recipe_calls = 0;

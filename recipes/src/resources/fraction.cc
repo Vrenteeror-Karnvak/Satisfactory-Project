@@ -61,7 +61,6 @@ int64_t Fraction::get_denominator() const {
 }
 
 void Fraction::reduce() {
-    Stats::current_method_stats().fraction_reductions++;
     int64_t gd = gcd(numerator, denominator);
     numerator /= gd;
     denominator /= gd;

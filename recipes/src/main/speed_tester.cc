@@ -47,12 +47,13 @@ int main(int argc, char* argv[]) {
     ifstream test_recipe_in(exePath / "dat" / "test_input.json");
     json test_recipe_root;
     test_recipe_in >> test_recipe_root;
+    filesystem::path folder = test_recipe_root[5].value("folder_for_all", "");
     filesystem::path file1 = test_recipe_root[5].value("file1", ""); // The first log file
     filesystem::path file2 = test_recipe_root[5].value("file2", ""); // The second log file
     test_recipe_in.close();
 
-    ifstream log_file_1(exePath/ "dat" / file1);
-    ifstream log_file_2(exePath/ "dat" / file2);
+    ifstream log_file_1(exePath/ folder / file1);
+    ifstream log_file_2(exePath/ folder / file2);
 
     bool error = false;
     if (!log_file_1.is_open()) {
@@ -234,8 +235,8 @@ int main(int argc, char* argv[]) {
 
         // Filters
         output_raw_lines(status_log, log_file_1, log_file_2, 2);
-        int_more(status_log, log_file_1, log_file_2, 3);
-        int_less(status_log, log_file_1, log_file_2, 3);
+        int_more(status_log, log_file_1, log_file_2, 4);
+        int_less(status_log, log_file_1, log_file_2, 4);
 
         // Function Calls
         output_raw_lines(status_log, log_file_1, log_file_2, 2);

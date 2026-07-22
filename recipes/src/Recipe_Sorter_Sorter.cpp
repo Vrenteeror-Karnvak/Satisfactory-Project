@@ -37,7 +37,7 @@ int main(int argc, char* argv[]) {
     // These are chained terminal recipes
     // They make everything that uses them terminal
     terminal_resources.insert("Heavy Modular Frame");
-    terminal_resources.insert("Pressure Conversion Cube");
+    terminal_resources.insert("Radio Control Unit");
     terminal_resources.insert("Battery");
     terminal_resources.insert("Diamonds");
 
@@ -246,6 +246,8 @@ int main(int argc, char* argv[]) {
     terminal_resources.insert("Aluminum Casing");
     terminal_resources.insert("Alclad Aluminum Sheet");
     terminal_resources.insert("Reanimated SAM");
+    terminal_resources.insert("High-Speed Connector");
+    terminal_resources.insert("Crystal Oscillator");
     
     json resource_data = json::object();
     resource_data["ItemClass"] = "";
